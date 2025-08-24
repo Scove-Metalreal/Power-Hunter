@@ -120,9 +120,9 @@ Dự án được chia thành nhiều giai đoạn và cột mốc quan trọng.
 | Vai trò                        | Tên thành viên           |
 |--------------------------------|---------------------------|
 | Project Manager / Game Designer | Trần Nguyễn Phương , Hoàng Mạnh Huy           |
-| Lead Programmer                 | Trần Nguyễn Phương , Hoàng Mạnh Huy  |
+| Lead Programmer                 | Trần Nguyễn Phương , Hoàng Mạnh Huy, Nguyễn Anh Tuấn  |
 | Lead Artist                     | Trần Nguyễn Phương      |
-| Sound Designer / Composer       | [Tên người làm âm thanh] |
+| Sound Designer / Composer       | Nguyễn Anh Tuấn |
 
 ---
 

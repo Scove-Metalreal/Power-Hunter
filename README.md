@@ -31,11 +31,11 @@ Nhiệm vụ của người chơi là **săn lùng những vị thần cũ đã 
 
 Dự án này được xây dựng và phát triển bằng các công nghệ sau:
 
-- **Game Engine:** [Chưa cập nhật]  
-- **Ngôn ngữ lập trình:** [Chưa cập nhật]  
+- **Game Engine:** Unity 6.3  
+- **Ngôn ngữ lập trình:** C#
 - **Quản lý phiên bản:** Git & GitHub  
 - **Thiết kế Art:** Aseprite, Photoshop  
-- **Quản lý dự án:** Trello, Google Sheets  
+- **Quản lý dự án:** Zalo, Discord, Google Sheets  
 
 ---
 
@@ -119,11 +119,11 @@ Dự án được chia thành nhiều giai đoạn và cột mốc quan trọng.
 
 | Vai trò                        | Tên thành viên           |
 |--------------------------------|---------------------------|
-| Project Manager / Game Designer | [Tên của bạn]            |
-| Lead Programmer                 | [Tên Lập trình viên chính] |
-| Lead Artist                     | [Tên Họa sĩ chính]       |
+| Project Manager / Game Designer | Trần Nguyễn Phương , Hoàng Mạnh Huy           |
+| Lead Programmer                 | Trần Nguyễn Phương , Hoàng Mạnh Huy ] |
+| Lead Artist                     | Trần Nguyễn Phương      |
 | Sound Designer / Composer       | [Tên người làm âm thanh] |
 
 ---
 
-📌 *Dự án được thực hiện trong khuôn khổ đồ án tại [Tên trường/học viện].*
+📌 *Dự án được thực hiện trong khuôn khổ đồ án tại Học Viện Công Nghệ Thông Tin & Thiết Kế VTC Academy.*

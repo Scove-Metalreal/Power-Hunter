@@ -1,0 +1,598 @@
+fileFormatVersion: 2
+guid: 98a4f9f6be5bf31478b325abe2c63abe
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8892084414611406378
+    second: Idle-MoonstoneKeeper-SUCART_0
+  - first:
+      213: -7778231928115383593
+    second: Idle-MoonstoneKeeper-SUCART_1
+  - first:
+      213: 1872703724560594023
+    second: Idle-MoonstoneKeeper-SUCART_2
+  - first:
+      213: -1924594008834799222
+    second: Idle-MoonstoneKeeper-SUCART_3
+  - first:
+      213: 978386152602834142
+    second: Idle-MoonstoneKeeper-SUCART_4
+  - first:
+      213: 7552572455730207841
+    second: Idle-MoonstoneKeeper-SUCART_5
+  - first:
+      213: 5775061775581251731
+    second: Idle-MoonstoneKeeper-SUCART_6
+  - first:
+      213: -7506921752886626281
+    second: Idle-MoonstoneKeeper-SUCART_7
+  - first:
+      213: 6929105584159290353
+    second: Idle-MoonstoneKeeper-SUCART_8
+  - first:
+      213: 5485104460938780189
+    second: Idle-MoonstoneKeeper-SUCART_9
+  - first:
+      213: -8102492394074598645
+    second: Idle-MoonstoneKeeper-SUCART_10
+  - first:
+      213: -7182023695701054064
+    second: Idle-MoonstoneKeeper-SUCART_11
+  - first:
+      213: -4101151977112259643
+    second: Idle-MoonstoneKeeper-SUCART_12
+  - first:
+      213: -117621723748655213
+    second: Idle-MoonstoneKeeper-SUCART_13
+  - first:
+      213: 3955603496973789658
+    second: Idle-MoonstoneKeeper-SUCART_14
+  - first:
+      213: 4345947046855984240
+    second: Idle-MoonstoneKeeper-SUCART_15
+  - first:
+      213: -1251543297154929200
+    second: Idle-MoonstoneKeeper-SUCART_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 509
+        width: 19
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e33bda9a7076b70800000000000000
+      internalID: 8892084414611406378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 508
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2b410b54b2e0490800000000000000
+      internalID: -7778231928115383593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_2
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 508
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7643cff8d1e2df910800000000000000
+      internalID: 1872703724560594023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_3
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 507
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a898e8622f77a45e0800000000000000
+      internalID: -1924594008834799222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_4
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 507
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed49d07a50de39d00800000000000000
+      internalID: 978386152602834142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 508
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16cd23c12a020d860800000000000000
+      internalID: 7552572455730207841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_6
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 507
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39805795614252050800000000000000
+      internalID: 5775061775581251731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_7
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 509
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7183a8a607e02d790800000000000000
+      internalID: -7506921752886626281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_8
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 509
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f37dfa11d0292060800000000000000
+      internalID: 6929105584159290353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_9
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 508
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1e9a2622710f1c40800000000000000
+      internalID: 5485104460938780189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_10
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 508
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0311efa81a2e8f80800000000000000
+      internalID: -8102492394074598645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_11
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 499
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09dec413083545c90800000000000000
+      internalID: -7182023695701054064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_12
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 499
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c335527108c517c0800000000000000
+      internalID: -4101151977112259643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_13
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 498
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39f971a5aaf1e5ef0800000000000000
+      internalID: -117621723748655213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_14
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 498
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad96a6d3c6025e630800000000000000
+      internalID: 3955603496973789658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_15
+      rect:
+        serializedVersion: 2
+        x: 1108
+        y: 499
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 074428430d7ef4c30800000000000000
+      internalID: 4345947046855984240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Idle-MoonstoneKeeper-SUCART_16
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 500
+        width: 20
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd2f009000a1aee0800000000000000
+      internalID: -1251543297154929200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Idle-MoonstoneKeeper-SUCART_0: 8892084414611406378
+      Idle-MoonstoneKeeper-SUCART_1: -7778231928115383593
+      Idle-MoonstoneKeeper-SUCART_10: -8102492394074598645
+      Idle-MoonstoneKeeper-SUCART_11: -7182023695701054064
+      Idle-MoonstoneKeeper-SUCART_12: -4101151977112259643
+      Idle-MoonstoneKeeper-SUCART_13: -117621723748655213
+      Idle-MoonstoneKeeper-SUCART_14: 3955603496973789658
+      Idle-MoonstoneKeeper-SUCART_15: 4345947046855984240
+      Idle-MoonstoneKeeper-SUCART_16: -1251543297154929200
+      Idle-MoonstoneKeeper-SUCART_2: 1872703724560594023
+      Idle-MoonstoneKeeper-SUCART_3: -1924594008834799222
+      Idle-MoonstoneKeeper-SUCART_4: 978386152602834142
+      Idle-MoonstoneKeeper-SUCART_5: 7552572455730207841
+      Idle-MoonstoneKeeper-SUCART_6: 5775061775581251731
+      Idle-MoonstoneKeeper-SUCART_7: -7506921752886626281
+      Idle-MoonstoneKeeper-SUCART_8: 6929105584159290353
+      Idle-MoonstoneKeeper-SUCART_9: 5485104460938780189
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

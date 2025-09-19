@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 5952acf766bf4ea4c88b6631295e9b20
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4916701010219290878
+    second: Walk-MoonstoneKeeper-SUCART_0
+  - first:
+      213: -2868735652600103449
+    second: Walk-MoonstoneKeeper-SUCART_1
+  - first:
+      213: -6430967120565742981
+    second: Walk-MoonstoneKeeper-SUCART_2
+  - first:
+      213: 1871639917401172355
+    second: Walk-MoonstoneKeeper-SUCART_3
+  - first:
+      213: -4818037073582028198
+    second: Walk-MoonstoneKeeper-SUCART_4
+  - first:
+      213: 7954820907832556679
+    second: Walk-MoonstoneKeeper-SUCART_5
+  - first:
+      213: -6363191192125129259
+    second: Walk-MoonstoneKeeper-SUCART_6
+  - first:
+      213: -7140729808082288686
+    second: Walk-MoonstoneKeeper-SUCART_7
+  - first:
+      213: -4983514155555935662
+    second: Walk-MoonstoneKeeper-SUCART_8
+  - first:
+      213: -1486755581681731435
+    second: Walk-MoonstoneKeeper-SUCART_9
+  - first:
+      213: -8735429808443238715
+    second: Walk-MoonstoneKeeper-SUCART_10
+  - first:
+      213: 3840178107687645142
+    second: Walk-MoonstoneKeeper-SUCART_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_0
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 461
+        width: 21
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f23132b7e54cbb0800000000000000
+      internalID: -4916701010219290878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_1
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 460
+        width: 22
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edb5488f143038d0800000000000000
+      internalID: -2868735652600103449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_2
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 461
+        width: 22
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7256700a7d90c6a0800000000000000
+      internalID: -6430967120565742981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_3
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 460
+        width: 22
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3896328a69669f910800000000000000
+      internalID: 1871639917401172355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_4
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 460
+        width: 22
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5a0b720fc4e22db0800000000000000
+      internalID: -4818037073582028198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_5
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 459
+        width: 21
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78cb53f1873356e60800000000000000
+      internalID: 7954820907832556679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_6
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 459
+        width: 21
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ddbc7b035761b7a0800000000000000
+      internalID: -6363191192125129259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_7
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 461
+        width: 21
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df3630a21807ec90800000000000000
+      internalID: -7140729808082288686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_8
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 460
+        width: 21
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25a25f0874007dab0800000000000000
+      internalID: -4983514155555935662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_9
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 460
+        width: 21
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598f706fcabfd5be0800000000000000
+      internalID: -1486755581681731435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_10
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 459
+        width: 22
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c6d16b1fd485c680800000000000000
+      internalID: -8735429808443238715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Walk-MoonstoneKeeper-SUCART_11
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 459
+        width: 23
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6df24fe84ad0b4530800000000000000
+      internalID: 3840178107687645142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Walk-MoonstoneKeeper-SUCART_0: -4916701010219290878
+      Walk-MoonstoneKeeper-SUCART_1: -2868735652600103449
+      Walk-MoonstoneKeeper-SUCART_10: -8735429808443238715
+      Walk-MoonstoneKeeper-SUCART_11: 3840178107687645142
+      Walk-MoonstoneKeeper-SUCART_2: -6430967120565742981
+      Walk-MoonstoneKeeper-SUCART_3: 1871639917401172355
+      Walk-MoonstoneKeeper-SUCART_4: -4818037073582028198
+      Walk-MoonstoneKeeper-SUCART_5: 7954820907832556679
+      Walk-MoonstoneKeeper-SUCART_6: -6363191192125129259
+      Walk-MoonstoneKeeper-SUCART_7: -7140729808082288686
+      Walk-MoonstoneKeeper-SUCART_8: -4983514155555935662
+      Walk-MoonstoneKeeper-SUCART_9: -1486755581681731435
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

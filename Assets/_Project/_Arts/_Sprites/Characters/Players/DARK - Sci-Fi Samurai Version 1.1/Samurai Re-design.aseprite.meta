@@ -129,7 +129,7 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Frame_0
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7159612, y: 0.35100412}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -150,7 +150,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 44}
   - name: Frame_1
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.38001776}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -171,7 +171,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 84}
   - name: Frame_2
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7267568, y: 0.35100555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -192,7 +192,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 124}
   - name: Frame_3
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.40903044}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -213,7 +213,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 164}
   - name: Frame_4
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.4090309}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -234,7 +234,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 204}
   - name: Frame_5
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.3364992}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -255,7 +255,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 244}
   - name: Frame_6
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.39452553}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -276,7 +276,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 284}
   - name: Frame_7
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.39452457}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -297,7 +297,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 324}
   - name: Frame_8
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7267568, y: 0.3655119}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -318,7 +318,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 364}
   - name: Frame_9
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.3655119}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -339,7 +339,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 404}
   - name: Frame_10
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7159612, y: 0.40903187}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -360,7 +360,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 444}
   - name: Frame_11
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.32199287}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -381,7 +381,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 484}
   - name: Frame_12
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.35100555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -402,7 +402,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 524}
   - name: Frame_13
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.7586185, y: 0.33650017}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -423,7 +423,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 604}
   - name: Frame_14
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.7586185, y: 0.46705818}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -444,7 +444,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 644}
   - name: Frame_15
     originalName: 
-    pivot: {x: 0.8313253, y: -3.1612904}
+    pivot: {x: 0.7474325, y: 0.3876589}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -465,7 +465,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 122}
   - name: Frame_16
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.73065406, y: 0.4235382}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -486,7 +486,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 684}
   - name: Frame_17
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.71892303, y: 0.33650017}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -507,7 +507,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 844}
   - name: Frame_18
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.7407681, y: 0.36551285}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -528,7 +528,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 884}
   - name: Frame_19
     originalName: 
-    pivot: {x: 0.8117647, y: -3.1612904}
+    pivot: {x: 0.72438496, y: 0.3577113}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -549,7 +549,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 884}
   - name: Frame_20
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.72438425, y: 0.46705818}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -570,7 +570,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 924}
   - name: Frame_21
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.72984564, y: 0.36551285}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -591,7 +591,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 964}
   - name: Frame_22
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.7353074, y: 0.3800183}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -612,7 +612,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 4}
   - name: Frame_23
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.7407686, y: 0.39452362}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -633,7 +633,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 44}
   - name: Frame_24
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.7353074, y: 0.42353725}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -654,7 +654,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 84}
   - name: Frame_25
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.7353074, y: 0.43804455}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -675,7 +675,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 124}
   - name: Frame_26
     originalName: 
-    pivot: {x: 0.8214286, y: -3.1290321}
+    pivot: {x: 0.7606397, y: 0.31509596}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -696,7 +696,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 83}
   - name: Frame_27
     originalName: 
-    pivot: {x: 0.8313253, y: -3.1290321}
+    pivot: {x: 0.7586185, y: 0.3749941}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -717,7 +717,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 161}
   - name: Frame_28
     originalName: 
-    pivot: {x: 0.8313253, y: -3.1290321}
+    pivot: {x: 0.7530253, y: 0.43489125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -738,7 +738,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 200}
   - name: Frame_29
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.73624724, y: 0.40903282}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -759,7 +759,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 724}
   - name: Frame_30
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.7474328, y: 0.39452553}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -780,7 +780,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 764}
   - name: Frame_31
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.74184006, y: 0.38002014}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -801,7 +801,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 804}
   - name: Frame_32
     originalName: 
-    pivot: {x: 0.8313253, y: -3}
+    pivot: {x: 0.75302565, y: 0.42354012}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -822,7 +822,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 844}
   - name: Frame_33
     originalName: 
-    pivot: {x: 0.8117647, y: -3.2}
+    pivot: {x: 0.75715226, y: 0.28156483}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -843,7 +843,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 239}
   - name: Frame_34
     originalName: 
-    pivot: {x: 0.8117647, y: -3.096774}
+    pivot: {x: 0.7353074, y: 0.24253403}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -864,7 +864,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 923}
   - name: Frame_35
     originalName: 
-    pivot: {x: 0.8117647, y: -3.096774}
+    pivot: {x: 0.7353074, y: 0.24253403}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -885,7 +885,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 962}
   - name: Frame_36
     originalName: 
-    pivot: {x: 0.8117647, y: -3.096774}
+    pivot: {x: 0.7298458, y: 0.24253224}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -906,7 +906,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 4}
   - name: Frame_37
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.35100555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -927,7 +927,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 564}
   - name: Frame_38
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7213591, y: 0.33650017}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -948,7 +948,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 604}
   - name: Frame_63
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7159612, y: 0.36551285}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -969,7 +969,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 644}
   - name: Frame_64
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7267568, y: 0.38002014}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -990,7 +990,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 684}
   - name: Frame_65
     originalName: 
-    pivot: {x: 0.8117647, y: -3}
+    pivot: {x: 0.7407686, y: 0.40903044}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1011,7 +1011,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 164}
   - name: Frame_66
     originalName: 
-    pivot: {x: 0.8214286, y: -3}
+    pivot: {x: 0.7606401, y: 0.36551285}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1032,7 +1032,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 564}
   - name: Frame_67
     originalName: 
-    pivot: {x: 0.8414634, y: -3}
+    pivot: {x: 0.7735317, y: 0.3945241}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1053,7 +1053,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 43}
   - name: Frame_68
     originalName: 
-    pivot: {x: 0.4888889, y: -2.1333334}
+    pivot: {x: 0.48888895, y: 0.21865574}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1074,7 +1074,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 226}
   - name: Frame_69
     originalName: 
-    pivot: {x: 0.47142857, y: -2}
+    pivot: {x: 0.45816553, y: 0.19531886}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1095,7 +1095,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 118}
   - name: Frame_70
     originalName: 
-    pivot: {x: 0.46808508, y: -2.1818182}
+    pivot: {x: 0.45820838, y: 0.20252575}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1116,7 +1116,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 174}
   - name: Frame_71
     originalName: 
-    pivot: {x: 0.46478873, y: -1.9591837}
+    pivot: {x: 0.45498157, y: 0.18186001}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1137,7 +1137,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 61}
   - name: Frame_72
     originalName: 
-    pivot: {x: 0.46153846, y: -1.9591837}
+    pivot: {x: 0.44855365, y: 0.19133334}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1158,7 +1158,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Frame_73
     originalName: 
-    pivot: {x: 0.49253732, y: -2.1818182}
+    pivot: {x: 0.4752162, y: 0.21307512}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1179,7 +1179,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 279}
   - name: Frame_74
     originalName: 
-    pivot: {x: 0.57391304, y: -3}
+    pivot: {x: 0, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1200,7 +1200,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 658}
   - name: Frame_75
     originalName: 
-    pivot: {x: 0.65999997, y: -3}
+    pivot: {x: 0.6322673, y: 0.2932663}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1221,7 +1221,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 938}
   - name: Frame_76
     originalName: 
-    pivot: {x: 0.65346533, y: -3}
+    pivot: {x: 0.62509924, y: 0.3126316}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1242,7 +1242,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 818}
   - name: Frame_77
     originalName: 
-    pivot: {x: 0.65346533, y: -3}
+    pivot: {x: 0.63140285, y: 0.33252716}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1263,7 +1263,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 858}
   - name: Frame_78
     originalName: 
-    pivot: {x: 0.65346533, y: -3}
+    pivot: {x: 0.6199055, y: 0.3317833}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1284,7 +1284,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 898}
   - name: Frame_79
     originalName: 
-    pivot: {x: 0.6699029, y: -3}
+    pivot: {x: 0.5988193, y: 0.34247398}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1305,7 +1305,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 738}
   - name: Frame_80
     originalName: 
-    pivot: {x: 0.6699029, y: -3}
+    pivot: {x: 0.59572875, y: 0.36237144}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1326,7 +1326,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 778}
   - name: Frame_81
     originalName: 
-    pivot: {x: 0.78409094, y: -3}
+    pivot: {x: 0.6996893, y: 0.3800183}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1347,7 +1347,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 4}
   - name: Frame_82
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7159612, y: 0.40903282}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1368,7 +1368,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 724}
   - name: Frame_83
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7267568, y: 0.40903282}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1389,7 +1389,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 764}
   - name: Frame_84
     originalName: 
-    pivot: {x: 0.8023256, y: -3}
+    pivot: {x: 0.7321545, y: 0.33650017}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1410,7 +1410,7 @@ ScriptedImporter:
     uvTransform: {x: 155, y: 804}
   - name: Frame_85
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7382421, y: 0.30748558}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1431,7 +1431,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 204}
   - name: Frame_86
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7491645, y: 0.3219924}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1452,7 +1452,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 244}
   - name: Frame_87
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.75462574, y: 0.33650017}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1473,7 +1473,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 284}
   - name: Frame_88
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.75462574, y: 0.33649826}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1494,7 +1494,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 324}
   - name: Frame_89
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7491645, y: 0.35100555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1515,7 +1515,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 364}
   - name: Frame_90
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7491645, y: 0.29297924}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1536,7 +1536,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 404}
   - name: Frame_91
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7437033, y: 0.2929802}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1557,7 +1557,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 444}
   - name: Frame_92
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7491645, y: 0.26396656}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1578,7 +1578,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 484}
   - name: Frame_93
     originalName: 
-    pivot: {x: 0.7764706, y: -3}
+    pivot: {x: 0.7382421, y: 0.2929802}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1599,7 +1599,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 524}
   - name: Frame_94
     originalName: 
-    pivot: {x: 0.54761904, y: -5.3333335}
+    pivot: {x: 0.46449572, y: 0.48523965}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1620,7 +1620,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 905}
   - name: Frame_95
     originalName: 
-    pivot: {x: 0.5348837, y: -5.0526314}
+    pivot: {x: 0.5024975, y: 0.20025635}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1641,7 +1641,7 @@ ScriptedImporter:
     uvTransform: {x: 251, y: 1001}
   - name: Frame_96
     originalName: 
-    pivot: {x: 0.5348837, y: -4.8}
+    pivot: {x: 0.4768904, y: 0.28709716}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1662,7 +1662,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 877}
   - name: Frame_97
     originalName: 
-    pivot: {x: 0.5348837, y: -4.571429}
+    pivot: {x: 0.4884899, y: 0.32092357}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1683,7 +1683,7 @@ ScriptedImporter:
     uvTransform: {x: 435, y: 200}
   - name: Frame_98
     originalName: 
-    pivot: {x: 0.5348837, y: -4.3636365}
+    pivot: {x: 0.5116868, y: 0.28366783}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1704,7 +1704,7 @@ ScriptedImporter:
     uvTransform: {x: 435, y: 161}
   - name: Frame_99
     originalName: 
-    pivot: {x: 0.5348837, y: -4.173913}
+    pivot: {x: 0.46529227, y: 0.37975577}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1725,7 +1725,7 @@ ScriptedImporter:
     uvTransform: {x: 436, y: 83}
   - name: Frame_100
     originalName: 
-    pivot: {x: 0.5348837, y: -4.173913}
+    pivot: {x: 0.4884899, y: 0.27133378}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1746,7 +1746,7 @@ ScriptedImporter:
     uvTransform: {x: 435, y: 122}
   - name: Frame_101
     originalName: 
-    pivot: {x: 0.5348837, y: -4}
+    pivot: {x: 0.465293, y: 0.21846645}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1767,7 +1767,7 @@ ScriptedImporter:
     uvTransform: {x: 437, y: 239}
   - name: Frame_102
     originalName: 
-    pivot: {x: 0.5348837, y: -3.84}
+    pivot: {x: 0.51329327, y: 0.3193091}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1788,7 +1788,7 @@ ScriptedImporter:
     uvTransform: {x: 104, y: 978}
   - name: Frame_103
     originalName: 
-    pivot: {x: 0.5348837, y: -4}
+    pivot: {x: 0.500088, y: 0.23924823}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1809,7 +1809,7 @@ ScriptedImporter:
     uvTransform: {x: 437, y: 4}
   - name: Frame_104
     originalName: 
-    pivot: {x: 0.5348837, y: -24}
+    pivot: {x: 0.43772444, y: 0.48701477}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1830,7 +1830,7 @@ ScriptedImporter:
     uvTransform: {x: 104, y: 1011}
   - name: Frame_39
     originalName: 
-    pivot: {x: 0.9583334, y: -3}
+    pivot: {x: 0.861357, y: 0.4288025}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1851,7 +1851,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 757}
   - name: Frame_40
     originalName: 
-    pivot: {x: 0.94520545, y: -3}
+    pivot: {x: 0.8495575, y: 0.3664608}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1872,7 +1872,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 517}
   - name: Frame_41
     originalName: 
-    pivot: {x: 0.94520545, y: -3}
+    pivot: {x: 0.87005365, y: 0.3352909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1893,7 +1893,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 557}
   - name: Frame_42
     originalName: 
-    pivot: {x: 0.94520545, y: -3}
+    pivot: {x: 0.87005365, y: 0.3664608}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1914,7 +1914,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 597}
   - name: Frame_43
     originalName: 
-    pivot: {x: 0.94520545, y: -3}
+    pivot: {x: 0.8495575, y: 0.38204765}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1935,7 +1935,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 637}
   - name: Frame_44
     originalName: 
-    pivot: {x: 0.40217394, y: -3}
+    pivot: {x: 0.31509048, y: 0.2740078}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1956,7 +1956,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 978}
   - name: Frame_45
     originalName: 
-    pivot: {x: 0.2857143, y: -3}
+    pivot: {x: 0.18925655, y: 0.29297924}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1977,7 +1977,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 277}
   - name: Frame_46
     originalName: 
-    pivot: {x: 0.26666662, y: -3}
+    pivot: {x: 0.13049927, y: 0.2929802}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1998,7 +1998,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 397}
   - name: Frame_47
     originalName: 
-    pivot: {x: 0.25675678, y: -3}
+    pivot: {x: 0.14892207, y: 0.30412078}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2019,7 +2019,7 @@ ScriptedImporter:
     uvTransform: {x: 434, y: 43}
   - name: Frame_48
     originalName: 
-    pivot: {x: 0.25675678, y: -3}
+    pivot: {x: 0.14892207, y: 0.319705}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2040,7 +2040,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 477}
   - name: Frame_49
     originalName: 
-    pivot: {x: 0.62857145, y: -2.1333334}
+    pivot: {x: 0.6153084, y: 0.16707899}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2061,7 +2061,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 605}
   - name: Frame_50
     originalName: 
-    pivot: {x: 0.6168224, y: -2}
+    pivot: {x: 0.5907921, y: 0.20499103}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2082,7 +2082,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 445}
   - name: Frame_51
     originalName: 
-    pivot: {x: 0.6, y: -2.1818182}
+    pivot: {x: 0.58311975, y: 0.22362727}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2103,7 +2103,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 553}
   - name: Frame_52
     originalName: 
-    pivot: {x: 0.58928573, y: -1.9591837}
+    pivot: {x: 0.5644175, y: 0.19133338}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2124,7 +2124,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 388}
   - name: Frame_53
     originalName: 
-    pivot: {x: 0.5840708, y: -1.9591837}
+    pivot: {x: 0.5635307, y: 0.20080753}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2145,7 +2145,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 331}
   - name: Frame_54
     originalName: 
-    pivot: {x: 0.57894737, y: -2.1818182}
+    pivot: {x: 0.56673145, y: 0.22362657}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2166,7 +2166,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 501}
   - name: Frame_55
     originalName: 
-    pivot: {x: 0.57391304, y: -3}
+    pivot: {x: 0.55176836, y: 0.26289177}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2187,7 +2187,7 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 698}
   - name: Frame_56
     originalName: 
-    pivot: {x: 0.868421, y: -3}
+    pivot: {x: 0.85009724, y: 0.32199287}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2208,7 +2208,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 317}
   - name: Frame_57
     originalName: 
-    pivot: {x: 0.868421, y: -3}
+    pivot: {x: 0.83177304, y: 0.35100555}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2229,7 +2229,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 357}
   - name: Frame_58
     originalName: 
-    pivot: {x: 0.88, y: -3}
+    pivot: {x: 0.8467509, y: 0.3352909}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2250,7 +2250,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 437}
   - name: Frame_59
     originalName: 
-    pivot: {x: 0.9041096, y: -3}
+    pivot: {x: 0.84945345, y: 0.3272934}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2271,7 +2271,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 677}
   - name: Frame_60
     originalName: 
-    pivot: {x: 0.94520545, y: -3}
+    pivot: {x: 0.84272575, y: 0.3584652}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2292,7 +2292,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 717}
   - name: Frame_61
     originalName: 
-    pivot: {x: 0.9583334, y: -3}
+    pivot: {x: 0.868284, y: 0.38204575}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -2313,7 +2313,7 @@ ScriptedImporter:
     uvTransform: {x: 344, y: 797}
   - name: Frame_62
     originalName: 
-    pivot: {x: 0.9583334, y: -3}
+    pivot: {x: 0.861357, y: 0.38204575}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 20595370e30c42544881ed647574d86d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8740403707192539494
+    second: Zweihander_Heavy_Attack_0
+  - first:
+      213: -7062503257870909854
+    second: Zweihander_Heavy_Attack_1
+  - first:
+      213: 267398497390868355
+    second: Zweihander_Heavy_Attack_2
+  - first:
+      213: 1522514924475435491
+    second: Zweihander_Heavy_Attack_3
+  - first:
+      213: 855269729168702993
+    second: Zweihander_Heavy_Attack_4
+  - first:
+      213: -7198159314121879206
+    second: Zweihander_Heavy_Attack_5
+  - first:
+      213: 3592943091311196011
+    second: Zweihander_Heavy_Attack_6
+  - first:
+      213: 6528375057191454063
+    second: Zweihander_Heavy_Attack_7
+  - first:
+      213: 1023230465914860909
+    second: Zweihander_Heavy_Attack_8
+  - first:
+      213: -2337789645841157852
+    second: Zweihander_Heavy_Attack_9
+  - first:
+      213: -4949761298509957601
+    second: Zweihander_Heavy_Attack_10
+  - first:
+      213: -2618373385745898489
+    second: Zweihander_Heavy_Attack_11
+  - first:
+      213: -4638689415247775867
+    second: Zweihander_Heavy_Attack_12
+  - first:
+      213: 2181324110972338518
+    second: Zweihander_Heavy_Attack_13
+  - first:
+      213: 7625848984449064854
+    second: Zweihander_Heavy_Attack_14
+  - first:
+      213: 7914592190771687973
+    second: Zweihander_Heavy_Attack_15
+  - first:
+      213: 8296588188201503872
+    second: Zweihander_Heavy_Attack_16
+  - first:
+      213: 2785605423360028793
+    second: Zweihander_Heavy_Attack_17
+  - first:
+      213: 2768505775923259890
+    second: Zweihander_Heavy_Attack_18
+  - first:
+      213: -1964587166219394136
+    second: Zweihander_Heavy_Attack_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 79
+        width: 97
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 669f7b0fcd62c4970800000000000000
+      internalID: 8740403707192539494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 79
+        width: 110
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26eb099a4b2fcfd90800000000000000
+      internalID: -7062503257870909854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 79
+        width: 86
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387b472448df5b300800000000000000
+      internalID: 267398497390868355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 79
+        width: 63
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e9c696d14f012510800000000000000
+      internalID: 1522514924475435491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 68
+        width: 99
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11ebe3a89478edb00800000000000000
+      internalID: 855269729168702993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 68
+        width: 99
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a519815cd300b1c90800000000000000
+      internalID: -7198159314121879206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 1648
+        y: 69
+        width: 99
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b673ccf84b2bcd130800000000000000
+      internalID: 3592943091311196011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 68
+        width: 99
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65ca649682799a50800000000000000
+      internalID: 6528375057191454063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 2160
+        y: 71
+        width: 99
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65763cffae333e00800000000000000
+      internalID: 1023230465914860909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 72
+        width: 88
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4213d0804b08e8fd0800000000000000
+      internalID: -2337789645841157852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 2672
+        y: 73
+        width: 85
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f16765fe25aee4bb0800000000000000
+      internalID: -4949761298509957601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 2923
+        y: 79
+        width: 87
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7046745474ba9abd0800000000000000
+      internalID: -2618373385745898489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 3175
+        y: 79
+        width: 102
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587baccbd8010afb0800000000000000
+      internalID: -4638689415247775867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 3429
+        y: 79
+        width: 97
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6514086c8be954e10800000000000000
+      internalID: 2181324110972338518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 3674
+        y: 79
+        width: 116
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69f1cd47f3574d960800000000000000
+      internalID: 7625848984449064854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 3923
+        y: 79
+        width: 76
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 522f6090aa746dd60800000000000000
+      internalID: 7914592190771687973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 4163
+        y: 79
+        width: 62
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08cc37dfff6632370800000000000000
+      internalID: 8296588188201503872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 4385
+        y: 78
+        width: 87
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 970b6cfaf5578a620800000000000000
+      internalID: 2785605423360028793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_18
+      rect:
+        serializedVersion: 2
+        x: 4641
+        y: 78
+        width: 87
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9e584c555bb6620800000000000000
+      internalID: 2768505775923259890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_Heavy_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 4897
+        y: 78
+        width: 87
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3a33391626cb4e0800000000000000
+      internalID: -1964587166219394136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zweihander_Heavy_Attack_0: 8740403707192539494
+      Zweihander_Heavy_Attack_1: -7062503257870909854
+      Zweihander_Heavy_Attack_10: -4949761298509957601
+      Zweihander_Heavy_Attack_11: -2618373385745898489
+      Zweihander_Heavy_Attack_12: -4638689415247775867
+      Zweihander_Heavy_Attack_13: 2181324110972338518
+      Zweihander_Heavy_Attack_14: 7625848984449064854
+      Zweihander_Heavy_Attack_15: 7914592190771687973
+      Zweihander_Heavy_Attack_16: 8296588188201503872
+      Zweihander_Heavy_Attack_17: 2785605423360028793
+      Zweihander_Heavy_Attack_18: 2768505775923259890
+      Zweihander_Heavy_Attack_19: -1964587166219394136
+      Zweihander_Heavy_Attack_2: 267398497390868355
+      Zweihander_Heavy_Attack_3: 1522514924475435491
+      Zweihander_Heavy_Attack_4: 855269729168702993
+      Zweihander_Heavy_Attack_5: -7198159314121879206
+      Zweihander_Heavy_Attack_6: 3592943091311196011
+      Zweihander_Heavy_Attack_7: 6528375057191454063
+      Zweihander_Heavy_Attack_8: 1023230465914860909
+      Zweihander_Heavy_Attack_9: -2337789645841157852
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

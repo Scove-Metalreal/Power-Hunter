@@ -1,0 +1,710 @@
+fileFormatVersion: 2
+guid: c794620930bc73d41a14097f95c3b22c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5518680349846214716
+    second: Death-MoonstoneKeeper-SUCART_0
+  - first:
+      213: -2675911584283187137
+    second: Death-MoonstoneKeeper-SUCART_1
+  - first:
+      213: -3409947747444320084
+    second: Death-MoonstoneKeeper-SUCART_2
+  - first:
+      213: 1239548394217083639
+    second: Death-MoonstoneKeeper-SUCART_3
+  - first:
+      213: 1365924015749212117
+    second: Death-MoonstoneKeeper-SUCART_4
+  - first:
+      213: -7174838378550475595
+    second: Death-MoonstoneKeeper-SUCART_5
+  - first:
+      213: -7734626297288242879
+    second: Death-MoonstoneKeeper-SUCART_6
+  - first:
+      213: -4590127814004391609
+    second: Death-MoonstoneKeeper-SUCART_7
+  - first:
+      213: -1829939452908370541
+    second: Death-MoonstoneKeeper-SUCART_8
+  - first:
+      213: -8619738277349570041
+    second: Death-MoonstoneKeeper-SUCART_9
+  - first:
+      213: -1585844836891807525
+    second: Death-MoonstoneKeeper-SUCART_10
+  - first:
+      213: -1172851170297050284
+    second: Death-MoonstoneKeeper-SUCART_11
+  - first:
+      213: 5550811924523757061
+    second: Death-MoonstoneKeeper-SUCART_12
+  - first:
+      213: 7295585550393221099
+    second: Death-MoonstoneKeeper-SUCART_13
+  - first:
+      213: -7686600218988457890
+    second: Death-MoonstoneKeeper-SUCART_14
+  - first:
+      213: -6676902827550088978
+    second: Death-MoonstoneKeeper-SUCART_15
+  - first:
+      213: 218528113802631622
+    second: Death-MoonstoneKeeper-SUCART_16
+  - first:
+      213: 114128061903749395
+    second: Death-MoonstoneKeeper-SUCART_17
+  - first:
+      213: -7770341027189452967
+    second: Death-MoonstoneKeeper-SUCART_18
+  - first:
+      213: -443897780506855201
+    second: Death-MoonstoneKeeper-SUCART_19
+  - first:
+      213: 8281379029105666
+    second: Death-MoonstoneKeeper-SUCART_20
+  - first:
+      213: -994350341992907968
+    second: Death-MoonstoneKeeper-SUCART_21
+  - first:
+      213: -7784633485672091479
+    second: Death-MoonstoneKeeper-SUCART_22
+  - first:
+      213: -4838519634911721484
+    second: Death-MoonstoneKeeper-SUCART_23
+  - first:
+      213: 7939788885552476394
+    second: Death-MoonstoneKeeper-SUCART_24
+  - first:
+      213: 6185230547828302478
+    second: Death-MoonstoneKeeper-SUCART_25
+  - first:
+      213: 392589608653095150
+    second: Death-MoonstoneKeeper-SUCART_26
+  - first:
+      213: 5338270707666311121
+    second: Death-MoonstoneKeeper-SUCART_27
+  - first:
+      213: -5178474128492538248
+    second: Death-MoonstoneKeeper-SUCART_28
+  - first:
+      213: -781510423243178237
+    second: Death-MoonstoneKeeper-SUCART_29
+  - first:
+      213: 1944715903090330794
+    second: Death-MoonstoneKeeper-SUCART_30
+  - first:
+      213: 1092221274804654727
+    second: Death-MoonstoneKeeper-SUCART_31
+  - first:
+      213: 8165234650308020163
+    second: Death-MoonstoneKeeper-SUCART_32
+  - first:
+      213: 2465322186963172664
+    second: Death-MoonstoneKeeper-SUCART_33
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 492
+        width: 22
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c7ec760675b963b0800000000000000
+      internalID: -5518680349846214716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 495
+        width: 27
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38a27877904ddad0800000000000000
+      internalID: -2675911584283187137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 492
+        width: 26
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca810f2279e6da0d0800000000000000
+      internalID: -3409947747444320084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_3
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 493
+        width: 32
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2173772b2c33110800000000000000
+      internalID: 1239548394217083639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_4
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 491
+        width: 35
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d728e4c7acb4f210800000000000000
+      internalID: 1365924015749212117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_13
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 491
+        width: 36
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bef19a787602f3560800000000000000
+      internalID: 7295585550393221099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_18
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 493
+        width: 37
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95f8aba31043a2490800000000000000
+      internalID: -7770341027189452967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_19
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 491
+        width: 40
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd8fd4c0255f6d9f0800000000000000
+      internalID: -443897780506855201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_21
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 488
+        width: 45
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04b793bd1ab5332f0800000000000000
+      internalID: -994350341992907968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_23
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 493
+        width: 50
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7855217002adcb0800000000000000
+      internalID: -4838519634911721484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_24
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 487
+        width: 50
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae033f2bcebcf2e60800000000000000
+      internalID: 7939788885552476394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_25
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 486
+        width: 50
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e826339996a56d550800000000000000
+      internalID: 6185230547828302478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_26
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 485
+        width: 50
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee007464b22c27500800000000000000
+      internalID: 392589608653095150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_28
+      rect:
+        serializedVersion: 2
+        x: 485
+        y: 382
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876d6a4873d5228b0800000000000000
+      internalID: -5178474128492538248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_29
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 386
+        width: 50
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30f335229648725f0800000000000000
+      internalID: -781510423243178237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_30
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 383
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac80c07fc40dfa10800000000000000
+      internalID: 1944715903090330794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_31
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 383
+        width: 50
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7821bdc6679582f00800000000000000
+      internalID: 1092221274804654727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_32
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 382
+        width: 50
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c7025737adb05170800000000000000
+      internalID: 8165234650308020163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Death-MoonstoneKeeper-SUCART_33
+      rect:
+        serializedVersion: 2
+        x: 578
+        y: 383
+        width: 50
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83d34da9775963220800000000000000
+      internalID: 2465322186963172664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ddbb827691a423f41b4f1995a6d270ca
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Death-MoonstoneKeeper-SUCART_0: -5518680349846214716
+      Death-MoonstoneKeeper-SUCART_1: -2675911584283187137
+      Death-MoonstoneKeeper-SUCART_10: -1585844836891807525
+      Death-MoonstoneKeeper-SUCART_11: -1172851170297050284
+      Death-MoonstoneKeeper-SUCART_12: 5550811924523757061
+      Death-MoonstoneKeeper-SUCART_13: 7295585550393221099
+      Death-MoonstoneKeeper-SUCART_14: -7686600218988457890
+      Death-MoonstoneKeeper-SUCART_15: -6676902827550088978
+      Death-MoonstoneKeeper-SUCART_16: 218528113802631622
+      Death-MoonstoneKeeper-SUCART_17: 114128061903749395
+      Death-MoonstoneKeeper-SUCART_18: -7770341027189452967
+      Death-MoonstoneKeeper-SUCART_19: -443897780506855201
+      Death-MoonstoneKeeper-SUCART_2: -3409947747444320084
+      Death-MoonstoneKeeper-SUCART_20: 8281379029105666
+      Death-MoonstoneKeeper-SUCART_21: -994350341992907968
+      Death-MoonstoneKeeper-SUCART_22: -7784633485672091479
+      Death-MoonstoneKeeper-SUCART_23: -4838519634911721484
+      Death-MoonstoneKeeper-SUCART_24: 7939788885552476394
+      Death-MoonstoneKeeper-SUCART_25: 6185230547828302478
+      Death-MoonstoneKeeper-SUCART_26: 392589608653095150
+      Death-MoonstoneKeeper-SUCART_27: 5338270707666311121
+      Death-MoonstoneKeeper-SUCART_28: -5178474128492538248
+      Death-MoonstoneKeeper-SUCART_29: -781510423243178237
+      Death-MoonstoneKeeper-SUCART_3: 1239548394217083639
+      Death-MoonstoneKeeper-SUCART_30: 1944715903090330794
+      Death-MoonstoneKeeper-SUCART_31: 1092221274804654727
+      Death-MoonstoneKeeper-SUCART_32: 8165234650308020163
+      Death-MoonstoneKeeper-SUCART_33: 2465322186963172664
+      Death-MoonstoneKeeper-SUCART_4: 1365924015749212117
+      Death-MoonstoneKeeper-SUCART_5: -7174838378550475595
+      Death-MoonstoneKeeper-SUCART_6: -7734626297288242879
+      Death-MoonstoneKeeper-SUCART_7: -4590127814004391609
+      Death-MoonstoneKeeper-SUCART_8: -1829939452908370541
+      Death-MoonstoneKeeper-SUCART_9: -8619738277349570041
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

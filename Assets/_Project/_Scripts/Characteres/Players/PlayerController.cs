@@ -3,17 +3,29 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    //Stat
+    [Header("Chi So Nhan Vat")]
     public float PlayerSpeed = 5f;
     public int direction = 1;
     public bool isGround = true;
     public float jumpForce =5f;
-    //Other
-
+    [Header("Khac")]
     public Animator animator;
+    public int Direction = 1;
+    [Header("Trong luc")]
+    private float defaultGravity; 
+    public float fallGravityAdd = 1f;
+    [Header("Dash")]
+    public float dashSpeed = 15f;
+
+    public float dashTime = 0.2f; 
+    public float dashCooldown = 1f;
+    public bool isDash = false;
+    public float dashTimeLeft;
+    public float dashCooldownTime;
     void Start()
     {
         animator = GetComponent<Animator>();
+        defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
     }
 
     
@@ -21,6 +33,8 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMove();
         PlayerJumping();
+        UpdateJumpAndFall();
+        Dash();
     }
     void PlayerMove()
     {
@@ -39,10 +53,12 @@ public class PlayerController : MonoBehaviour
         Vector3 currentScale= transform.localScale;//LocalScale hien tai
         if (x > 0)
         {
+            Direction = 1;//mat phai
             transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y,currentScale.z);// phai
         }
         if (x < 0)
         {
+            Direction=-1;//mat trai
             transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y,currentScale.z);// trai
         }
     }
@@ -63,4 +79,60 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2 (0,jumpForce),ForceMode2D.Impulse);
         }
     }
+    void UpdateJumpAndFall()
+    {
+        if (!isGround) 
+        {
+            if (GetComponent<Rigidbody2D>().linearVelocity.y > 0.1f) 
+            {
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
+            }
+            else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.1f) 
+            {
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFalling", true);
+                GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
+            }
+        }
+        else 
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+            GetComponent<Rigidbody2D>().gravityScale = defaultGravity;
+
+
+        }
+    }
+    void Dash()
+    {
+        if (dashCooldownTime > 0)
+        {
+            dashCooldownTime -= Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && isDash == false)
+        {
+            isDash = true;
+            dashTimeLeft = dashTime;
+            dashCooldownTime = dashCooldown;
+            animator.SetBool("isDashing", true);
+        }
+        if(isDash == true)
+        {
+            if (dashTimeLeft > 0)
+            {
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Direction * dashSpeed,GetComponent<Rigidbody2D>().linearVelocity.y);
+
+                dashTimeLeft -= Time.deltaTime;
+            }
+            else
+            {
+                isDash = false;
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, GetComponent<Rigidbody2D>().linearVelocity.y);
+                animator.SetBool("isDashing",false);
+                
+            }
+        }
+    }
+    
 }

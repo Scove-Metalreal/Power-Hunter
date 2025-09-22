@@ -53,15 +53,15 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public void StartAnimAttack()
     {
         var spawmSpearHB = Instantiate(spearHitBoxPre, spearSpawm.position, Quaternion.identity);
-        Vector3 currentSpawmScale = spearHitBoxPre.transform.localScale;
-        if (playerController.Direction == -1)
-        {
-            spawmSpearHB.transform.localScale = new Vector3(-Mathf.Abs(currentSpawmScale.x), currentSpawmScale.y, currentSpawmScale.z);
-        }
-        if (playerController.Direction == 1)
-        {
-            spawmSpearHB.transform.localScale = new Vector3(Mathf.Abs(currentSpawmScale.x), currentSpawmScale.y, currentSpawmScale.z);
-        }
+        //Vector3 currentSpawmScale = spearHitBoxPre.transform.localScale;
+        //if (playerController.Direction == -1)
+        //{
+        //    spawmSpearHB.transform.localScale = new Vector3(-Mathf.Abs(currentSpawmScale.x), currentSpawmScale.y, currentSpawmScale.z);
+        //}
+        //if (playerController.Direction == 1)
+        //{
+        //    spawmSpearHB.transform.localScale = new Vector3(Mathf.Abs(currentSpawmScale.x), currentSpawmScale.y, currentSpawmScale.z);
+        //}
         spawmSpearHB.transform.SetParent(Spear);
         Destroy(spawmSpearHB, 1.2f);
     }

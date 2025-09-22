@@ -112,32 +112,6 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
     }
-    void PlayerMoveUp()
-    {
-        // di chuyen theo truc X
-        var x = Input.GetAxis("Horizontal");
-        transform.Translate(new Vector2(x * PlayerSpeed * Time.deltaTime, 0));
-        //animation dung yen
-        if (isGround == true && animator != null)
-        {
-
-            animator.SetBool("isIdie", x == 0);
-            animator.SetBool("isRunning", x != 0);
-
-        }
-        //Huong theo huong di chuyen
-        Vector3 currentScale = transform.localScale;//LocalScale hien tai
-        if (x > 0)
-        {
-            Direction = 1;//mat phai
-            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
-        }
-        if (x < 0)
-        {
-            Direction = -1;//mat trai
-            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
-        }
-    }
     void PlayerJumpingUp()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
@@ -155,32 +129,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -jumpForce), ForceMode2D.Impulse);
         }
     }
-    void PlayerMoveLeft ()
-    {
-        // di chuyen theo truc X
-        var y = Input.GetAxis("Vertical");
-        transform.Translate(new Vector2(0, y * PlayerSpeed * Time.deltaTime));
-        //animation dung yen
-        if (isGround == true && animator != null)
-        {
-
-            animator.SetBool("isIdie", y == 0);
-            animator.SetBool("isRunning", y != 0);
-
-        }
-        //Huong theo huong di chuyen
-        Vector3 currentScale = transform.localScale;//LocalScale hien tai
-        if (y > 0)
-        {
-            Direction = 1;//mat phai
-            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
-        }
-        if (y < 0)
-        {
-            Direction = -1;//mat trai
-            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
-        }
-    }
+    
     void PlayerJumpingLeft()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
@@ -198,32 +147,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce,0 ), ForceMode2D.Impulse);
         }
     }
-    void PlayerMoveRight ()
-    {
-        // di chuyen theo truc X
-        var y = Input.GetAxis("Vertical");
-        transform.Translate(new Vector2(0, y * PlayerSpeed * Time.deltaTime));
-        //animation dung yen
-        if (isGround == true && animator != null)
-        {
-
-            animator.SetBool("isIdie", y == 0);
-            animator.SetBool("isRunning", y != 0);
-
-        }
-        //Huong theo huong di chuyen
-        Vector3 currentScale = transform.localScale;//LocalScale hien tai
-        if (y > 0)
-        {
-            Direction = 1;//mat phai
-            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
-        }
-        if (y < 0)
-        {
-            Direction = -1;//mat trai
-            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
-        }
-    }
+    
     void PlayerJumpingRight()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat

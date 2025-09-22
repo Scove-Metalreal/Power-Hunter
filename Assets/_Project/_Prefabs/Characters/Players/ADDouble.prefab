@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5445799718683842309
+--- !u!1 &2446022504871504675
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,37 +8,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2965174454887191287}
-  - component: {fileID: 3580581247777817632}
+  - component: {fileID: 9007314560847006214}
+  - component: {fileID: 8834534143851994812}
   m_Layer: 0
-  m_Name: HBSpear
+  m_Name: ADDouble
   m_TagString: HItboxWeapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2965174454887191287
+--- !u!4 &9007314560847006214
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5445799718683842309}
+  m_GameObject: {fileID: 2446022504871504675}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52147, y: -0.94437, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!60 &3580581247777817632
+--- !u!60 &8834534143851994812
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5445799718683842309}
+  m_GameObject: {fileID: 2446022504871504675}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -78,14 +78,21 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.4129104, y: 1.617397}
-      - {x: -0.166316, y: 1.5116174}
-      - {x: -0.48920232, y: 0.9222985}
-      - {x: 0.31447002, y: 1.2357037}
-      - {x: 0.74838704, y: 0.98734385}
-      - {x: 0.7523487, y: 0.9853984}
-      - {x: 0.7278146, y: 0.96722203}
-      - {x: 1.1404946, y: 0.6825436}
-      - {x: 1.2499173, y: 1.1627042}
-      - {x: 1.0267692, y: 1.4144375}
+    - - {x: 0.28733677, y: 0.46166667}
+      - {x: 0.031379223, y: 0.5711548}
+      - {x: -0.30778873, y: 0.4868309}
+      - {x: -0.4863761, y: 0.21895142}
+      - {x: -0.50258136, y: 0.117439024}
+      - {x: -0.442097, y: 0.09926868}
+      - {x: -0.2703771, y: 0.15051025}
+      - {x: -0.09604934, y: 0.21709529}
+      - {x: 0.05233985, y: 0.17730777}
+      - {x: 0.14327191, y: 0.12636559}
+      - {x: 0.22374362, y: 0.008119002}
+      - {x: 0.1505142, y: -0.14500248}
+      - {x: 0.23852646, y: -0.2285068}
+      - {x: 0.4414695, y: -0.28207275}
+      - {x: 0.5804538, y: -0.29192343}
+      - {x: 0.57209563, y: 0.10097176}
+      - {x: 0.53267074, y: 0.2567189}
   m_UseDelaunayMesh: 0

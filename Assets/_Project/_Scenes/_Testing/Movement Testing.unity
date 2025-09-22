@@ -403,6 +403,38 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
+--- !u!1 &621353752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621353753}
+  m_Layer: 0
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621353753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621353752}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2095649327}
+  m_Father: {fileID: 5015108423580507855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641069772
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +895,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 419788326}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2095649326
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2095649327}
+  m_Layer: 0
+  m_Name: AttackSpawm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2095649327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095649326}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621353753}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2167346214486099469
 GameObject:
   m_ObjectHideFlags: 0
@@ -901,6 +964,7 @@ Transform:
   - {fileID: 33015202}
   - {fileID: 419788326}
   - {fileID: 641069773}
+  - {fileID: 621353753}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &5127014732649177703
@@ -961,6 +1025,7 @@ MonoBehaviour:
   animator: {fileID: 8201961227626730990}
   Direction: 1
   fallGravityAdd: 1
+  jumpDampingAdd: 0.2
   dashSpeed: 15
   dashTime: 0.2
   dashCooldown: 1
@@ -1059,13 +1124,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1084ffb833acea8409c67116131d578c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
-  spearSpawm: {fileID: 1958669675}
-  spearHitBoxPre: {fileID: 5445799718683842309, guid: e91d7a537b7b6f542b148520d3b7436c, type: 3}
+  ATTSPAWM: {fileID: 2095649327}
   playerController: {fileID: 8201961227626730988}
-  Spear: {fileID: 419788326}
-  AttackTime: 0.2
-  AttackCooldown: 1
-  isAttacking: 0
+  Attack: {fileID: 621353753}
+  Slash1Hitbox: {fileID: 537590562275139641, guid: 1549eb8ce73f32244a0ed1551e359100, type: 3}
+  Slash2Hitbox: {fileID: 2446022504871504675, guid: aa4b9286d75a2a04fad18992d99ee4ac, type: 3}
+  doubleClickTime: 0.25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

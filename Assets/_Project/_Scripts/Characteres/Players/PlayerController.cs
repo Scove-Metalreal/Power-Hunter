@@ -11,9 +11,11 @@ public class PlayerController : MonoBehaviour
     [Header("Khac")]
     public Animator animator;
     public int Direction = 1;
-    [Header("Trong luc")]
+    [Header("Stat Rigibody 2d")]
     private float defaultGravity;
     public float fallGravityAdd = 1f;
+    public float jumpDampingAdd = 0.2f;
+    private float defailtDamping;
     [Header("Dash")]
     public float dashSpeed = 15f;
 
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
+        defailtDamping = GetComponent<Rigidbody2D>().linearDamping;
     }
 
 
@@ -87,11 +90,13 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("isJumping", true);
                 animator.SetBool("isFalling", false);
+                GetComponent<Rigidbody2D>().linearDamping += jumpDampingAdd;
             }
             else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.1f)
             {
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isFalling", true);
+                GetComponent<Rigidbody2D>().linearDamping = defailtDamping;
                 GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
             }
         }

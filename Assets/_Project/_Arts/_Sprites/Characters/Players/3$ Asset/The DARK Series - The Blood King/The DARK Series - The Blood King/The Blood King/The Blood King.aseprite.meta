@@ -1705,7 +1705,7 @@ ScriptedImporter:
     uvTransform: {x: 221, y: 135}
   - name: Frame_58
     originalName: 
-    pivot: {x: 0.69822633, y: 0.41362152}
+    pivot: {x: 0.75, y: 0.45}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
@@ -1978,7 +1978,7 @@ ScriptedImporter:
     uvTransform: {x: 442, y: 392}
   - name: Frame_71
     originalName: 
-    pivot: {x: 0.74947685, y: 0.38180694}
+    pivot: {x: 0.7, y: 0.48}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     customData: 

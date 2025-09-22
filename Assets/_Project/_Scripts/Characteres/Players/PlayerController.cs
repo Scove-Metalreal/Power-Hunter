@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -24,18 +25,47 @@ public class PlayerController : MonoBehaviour
     public bool isDash = false;
     public float dashTimeLeft;
     public float dashCooldownTime;
+    [Header("SkillGrafity")]
+    public bool GrafityDown;
+    public bool GrafityUp;
+    public bool GrafityLeft;
+    public bool GrafityRight;
     void Start()
     {
         animator = GetComponent<Animator>();
         defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
         defailtDamping = GetComponent<Rigidbody2D>().linearDamping;
+        GrafityDown = true;
+        GrafityUp = false;
+        GrafityLeft = false;
+        GrafityRight = false;
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
 
     void Update()
     {
-        PlayerMove();
-        PlayerJumping();
+        if (GrafityDown == true)
+        {
+            PlayerMove();
+            PlayerJumping();
+        }
+        if (GrafityUp == true)
+        {
+            PlayerMove();
+            PlayerJumpingUp();
+        }
+        if (GrafityLeft == true)
+        {
+            PlayerMove();
+            PlayerJumpingLeft();
+        }
+        if (GrafityRight == true)
+        {
+            PlayerMove();
+            PlayerJumpingRight();
+        }
+        
         UpdateJumpAndFall();
         Dash();
     }
@@ -80,6 +110,135 @@ public class PlayerController : MonoBehaviour
             }
             // nhay
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
+    }
+    void PlayerMoveUp()
+    {
+        // di chuyen theo truc X
+        var x = Input.GetAxis("Horizontal");
+        transform.Translate(new Vector2(x * PlayerSpeed * Time.deltaTime, 0));
+        //animation dung yen
+        if (isGround == true && animator != null)
+        {
+
+            animator.SetBool("isIdie", x == 0);
+            animator.SetBool("isRunning", x != 0);
+
+        }
+        //Huong theo huong di chuyen
+        Vector3 currentScale = transform.localScale;//LocalScale hien tai
+        if (x > 0)
+        {
+            Direction = 1;//mat phai
+            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
+        }
+        if (x < 0)
+        {
+            Direction = -1;//mat trai
+            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
+        }
+    }
+    void PlayerJumpingUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        {
+            // dang khong o tren mat dat
+            isGround = false;
+            // anition nhay
+            if (animator != null)
+            {
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isRunning", false);
+
+            }
+            // nhay
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -jumpForce), ForceMode2D.Impulse);
+        }
+    }
+    void PlayerMoveLeft ()
+    {
+        // di chuyen theo truc X
+        var y = Input.GetAxis("Vertical");
+        transform.Translate(new Vector2(0, y * PlayerSpeed * Time.deltaTime));
+        //animation dung yen
+        if (isGround == true && animator != null)
+        {
+
+            animator.SetBool("isIdie", y == 0);
+            animator.SetBool("isRunning", y != 0);
+
+        }
+        //Huong theo huong di chuyen
+        Vector3 currentScale = transform.localScale;//LocalScale hien tai
+        if (y > 0)
+        {
+            Direction = 1;//mat phai
+            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
+        }
+        if (y < 0)
+        {
+            Direction = -1;//mat trai
+            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
+        }
+    }
+    void PlayerJumpingLeft()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        {
+            // dang khong o tren mat dat
+            isGround = false;
+            // anition nhay
+            if (animator != null)
+            {
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isRunning", false);
+
+            }
+            // nhay
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce,0 ), ForceMode2D.Impulse);
+        }
+    }
+    void PlayerMoveRight ()
+    {
+        // di chuyen theo truc X
+        var y = Input.GetAxis("Vertical");
+        transform.Translate(new Vector2(0, y * PlayerSpeed * Time.deltaTime));
+        //animation dung yen
+        if (isGround == true && animator != null)
+        {
+
+            animator.SetBool("isIdie", y == 0);
+            animator.SetBool("isRunning", y != 0);
+
+        }
+        //Huong theo huong di chuyen
+        Vector3 currentScale = transform.localScale;//LocalScale hien tai
+        if (y > 0)
+        {
+            Direction = 1;//mat phai
+            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
+        }
+        if (y < 0)
+        {
+            Direction = -1;//mat trai
+            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
+        }
+    }
+    void PlayerJumpingRight()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        {
+            // dang khong o tren mat dat
+            isGround = false;
+            // anition nhay
+            if (animator != null)
+            {
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isRunning", false);
+
+            }
+            // nhay
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(-jumpForce,0 ), ForceMode2D.Impulse);
         }
     }
     void UpdateJumpAndFall()

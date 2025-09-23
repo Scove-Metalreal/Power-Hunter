@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: bd4a44b31174ddb4faefbda60bf977ad
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5110792247822302298
+    second: Zweihander_FX_Combo_01_0
+  - first:
+      213: 2844371432179586111
+    second: Zweihander_FX_Combo_01_1
+  - first:
+      213: 3883294162260832855
+    second: Zweihander_FX_Combo_01_2
+  - first:
+      213: 702253153257239206
+    second: Zweihander_FX_Combo_01_3
+  - first:
+      213: 7758826152721874704
+    second: Zweihander_FX_Combo_01_4
+  - first:
+      213: -3473780579458524615
+    second: Zweihander_FX_Combo_01_5
+  - first:
+      213: 1075757443731575588
+    second: Zweihander_FX_Combo_01_6
+  - first:
+      213: 7153191450438152638
+    second: Zweihander_FX_Combo_01_7
+  - first:
+      213: 7971179965124693832
+    second: Zweihander_FX_Combo_01_8
+  - first:
+      213: -2019832624387668589
+    second: Zweihander_FX_Combo_01_9
+  - first:
+      213: -3395357371073812096
+    second: Zweihander_FX_Combo_01_10
+  - first:
+      213: -8463426308348413345
+    second: Zweihander_FX_Combo_01_11
+  - first:
+      213: -6627851211510035362
+    second: Zweihander_FX_Combo_01_12
+  - first:
+      213: -5123428215637247771
+    second: Zweihander_FX_Combo_01_13
+  - first:
+      213: 8588981243941988210
+    second: Zweihander_FX_Combo_01_14
+  - first:
+      213: 2896705808064744179
+    second: Zweihander_FX_Combo_01_15
+  - first:
+      213: -2570965036245400119
+    second: Zweihander_FX_Combo_01_16
+  - first:
+      213: -4147919207833950015
+    second: Zweihander_FX_Combo_01_17
+  - first:
+      213: -5395328591273591144
+    second: Zweihander_FX_Combo_01_18
+  - first:
+      213: 26890741036286431
+    second: Zweihander_FX_Combo_01_19
+  - first:
+      213: -6618275511840084795
+    second: Zweihander_FX_Combo_01_20
+  - first:
+      213: 2985200199270783702
+    second: Zweihander_FX_Combo_01_21
+  - first:
+      213: -8208498631084336334
+    second: Zweihander_FX_Combo_01_22
+  - first:
+      213: -1356501587130699935
+    second: Zweihander_FX_Combo_01_23
+  - first:
+      213: -9096513239305412673
+    second: Zweihander_FX_Combo_01_24
+  - first:
+      213: 3411561276143593860
+    second: Zweihander_FX_Combo_01_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_0
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 108
+        width: 72
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5cb444a87e2de640800000000000000
+      internalID: 5110792247822302298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_1
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 184
+        width: 26
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3455585fbc397720800000000000000
+      internalID: 2844371432179586111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_2
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 170
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 752b7eb477b34e530800000000000000
+      internalID: 3883294162260832855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_3
+      rect:
+        serializedVersion: 2
+        x: 1131
+        y: 108
+        width: 72
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a2bb4ea587eeb900800000000000000
+      internalID: 702253153257239206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_4
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 152
+        width: 23
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01f7ff22743ecab60800000000000000
+      internalID: 7758826152721874704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_5
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 124
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93a59b5c7f6aacfc0800000000000000
+      internalID: -3473780579458524615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_6
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 111
+        width: 55
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4235a1a02bbddee00800000000000000
+      internalID: 1075757443731575588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_7
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 131
+        width: 20
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb13ab599bd354360800000000000000
+      internalID: 7153191450438152638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_8
+      rect:
+        serializedVersion: 2
+        x: 2296
+        y: 134
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84fc7f5f1f15f9e60800000000000000
+      internalID: 7971179965124693832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_9
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 114
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 395c0adfdec18f3e0800000000000000
+      internalID: -2019832624387668589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_10
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 117
+        width: 20
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08924abd57441e0d0800000000000000
+      internalID: -3395357371073812096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_11
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 79
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a723c1d9edb8a80800000000000000
+      internalID: -8463426308348413345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_12
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 79
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5c4dc160742504a0800000000000000
+      internalID: -6627851211510035362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_13
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 78
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e87ab6de2de5e8b0800000000000000
+      internalID: -5123428215637247771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_14
+      rect:
+        serializedVersion: 2
+        x: 1097
+        y: 84
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 277a7ab5fe0323770800000000000000
+      internalID: 8588981243941988210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_15
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 87
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fa8284c59a233820800000000000000
+      internalID: 2896705808064744179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_16
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 77
+        width: 55
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c5c4accbe8125cd0800000000000000
+      internalID: -2570965036245400119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_17
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 54
+        width: 37
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8a9040571af66c0800000000000000
+      internalID: -4147919207833950015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_18
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 83
+        width: 40
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89ef0ae5b31ff15b0800000000000000
+      internalID: -5395328591273591144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_19
+      rect:
+        serializedVersion: 2
+        x: 2280
+        y: 88
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd1073b8cf88f5000800000000000000
+      internalID: 26890741036286431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_20
+      rect:
+        serializedVersion: 2
+        x: 848
+        y: 76
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ccea13bc792724a0800000000000000
+      internalID: -6618275511840084795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_21
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 79
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dad5f4d3cf8d6920800000000000000
+      internalID: 2985200199270783702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_22
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 75
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23b10fa4cfd851e80800000000000000
+      internalID: -8208498631084336334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_23
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 81
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16f22d95efcbc2de0800000000000000
+      internalID: -1356501587130699935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_24
+      rect:
+        serializedVersion: 2
+        x: 2030
+        y: 64
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbf109c7761b2c180800000000000000
+      internalID: -9096513239305412673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Combo_01_25
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 71
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 489640ac7ec485f20800000000000000
+      internalID: 3411561276143593860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zweihander_FX_Combo_01_0: 5110792247822302298
+      Zweihander_FX_Combo_01_1: 2844371432179586111
+      Zweihander_FX_Combo_01_10: -3395357371073812096
+      Zweihander_FX_Combo_01_11: -8463426308348413345
+      Zweihander_FX_Combo_01_12: -6627851211510035362
+      Zweihander_FX_Combo_01_13: -5123428215637247771
+      Zweihander_FX_Combo_01_14: 8588981243941988210
+      Zweihander_FX_Combo_01_15: 2896705808064744179
+      Zweihander_FX_Combo_01_16: -2570965036245400119
+      Zweihander_FX_Combo_01_17: -4147919207833950015
+      Zweihander_FX_Combo_01_18: -5395328591273591144
+      Zweihander_FX_Combo_01_19: 26890741036286431
+      Zweihander_FX_Combo_01_2: 3883294162260832855
+      Zweihander_FX_Combo_01_20: -6618275511840084795
+      Zweihander_FX_Combo_01_21: 2985200199270783702
+      Zweihander_FX_Combo_01_22: -8208498631084336334
+      Zweihander_FX_Combo_01_23: -1356501587130699935
+      Zweihander_FX_Combo_01_24: -9096513239305412673
+      Zweihander_FX_Combo_01_25: 3411561276143593860
+      Zweihander_FX_Combo_01_3: 702253153257239206
+      Zweihander_FX_Combo_01_4: 7758826152721874704
+      Zweihander_FX_Combo_01_5: -3473780579458524615
+      Zweihander_FX_Combo_01_6: 1075757443731575588
+      Zweihander_FX_Combo_01_7: 7153191450438152638
+      Zweihander_FX_Combo_01_8: 7971179965124693832
+      Zweihander_FX_Combo_01_9: -2019832624387668589
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,502 @@
+fileFormatVersion: 2
+guid: 8efb55aa095d565499c9933a9a1600aa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1509138364049409095
+    second: Attack1-MoonstoneKeeper-SUCART_0
+  - first:
+      213: -5967735185783251683
+    second: Attack1-MoonstoneKeeper-SUCART_1
+  - first:
+      213: 1101564791418916975
+    second: Attack1-MoonstoneKeeper-SUCART_2
+  - first:
+      213: -858070671337724419
+    second: Attack1-MoonstoneKeeper-SUCART_3
+  - first:
+      213: -1675051964106771421
+    second: Attack1-MoonstoneKeeper-SUCART_4
+  - first:
+      213: -2837047877871192745
+    second: Attack1-MoonstoneKeeper-SUCART_5
+  - first:
+      213: -8872341244102053187
+    second: Attack1-MoonstoneKeeper-SUCART_6
+  - first:
+      213: -7108667460669749389
+    second: Attack1-MoonstoneKeeper-SUCART_7
+  - first:
+      213: 4684948283928162524
+    second: Attack1-MoonstoneKeeper-SUCART_8
+  - first:
+      213: 7047639221219869985
+    second: Attack1-MoonstoneKeeper-SUCART_9
+  - first:
+      213: 5303732733115925791
+    second: Attack1-MoonstoneKeeper-SUCART_10
+  - first:
+      213: 1332743822361603084
+    second: Attack1-MoonstoneKeeper-SUCART_11
+  - first:
+      213: -8346845739964065807
+    second: Attack1-MoonstoneKeeper-SUCART_12
+  - first:
+      213: 2749412608485806638
+    second: Attack1-MoonstoneKeeper-SUCART_13
+  - first:
+      213: 2375332759188297474
+    second: Attack1-MoonstoneKeeper-SUCART_14
+  - first:
+      213: 4009773878179279845
+    second: Attack1-MoonstoneKeeper-SUCART_15
+  - first:
+      213: 2417182328866784682
+    second: Attack1-MoonstoneKeeper-SUCART_16
+  - first:
+      213: 1912203760241613146
+    second: Attack1-MoonstoneKeeper-SUCART_17
+  - first:
+      213: -8944336212770669267
+    second: Attack1-MoonstoneKeeper-SUCART_18
+  - first:
+      213: -1238529982997250106
+    second: Attack1-MoonstoneKeeper-SUCART_19
+  - first:
+      213: 3006178791099640648
+    second: Attack1-MoonstoneKeeper-SUCART_20
+  - first:
+      213: 1841078705245950768
+    second: Attack1-MoonstoneKeeper-SUCART_21
+  - first:
+      213: -6129888553868327883
+    second: Attack1-MoonstoneKeeper-SUCART_22
+  - first:
+      213: 6553684490375316969
+    second: Attack1-MoonstoneKeeper-SUCART_23
+  - first:
+      213: 8016787867355561701
+    second: Attack1-MoonstoneKeeper-SUCART_24
+  - first:
+      213: 7369158471678586784
+    second: Attack1-MoonstoneKeeper-SUCART_25
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_0
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 473
+        width: 174
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 744441aa85981f410800000000000000
+      internalID: 1509138364049409095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_1
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 474
+        width: 183
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d1ac987785e2da0800000000000000
+      internalID: -5967735185783251683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 488
+        width: 20
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2ff3b65ac1fd480800000000000000
+      internalID: -8872341244102053187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_9
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 471
+        width: 189
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 125cbed188e3ec160800000000000000
+      internalID: 7047639221219869985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_12
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 492
+        width: 68
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f79572e50c0a2c80800000000000000
+      internalID: -8346845739964065807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_14
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 492
+        width: 96
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20754c63f80e6f020800000000000000
+      internalID: 2375332759188297474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_16
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 489
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa5c475758e8b8120800000000000000
+      internalID: 2417182328866784682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_21
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 356
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03398b5f353dc8910800000000000000
+      internalID: 1841078705245950768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_23
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 357
+        width: 64
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e5cec2325d53fa50800000000000000
+      internalID: 6553684490375316969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_24
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 356
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5eeb361371a514f60800000000000000
+      internalID: 8016787867355561701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Attack1-MoonstoneKeeper-SUCART_25
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 352
+        width: 31
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0af66f52692844660800000000000000
+      internalID: 7369158471678586784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b8312dad7a4f5434787aed43b8df9e6b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Attack1-MoonstoneKeeper-SUCART_0: 1509138364049409095
+      Attack1-MoonstoneKeeper-SUCART_1: -5967735185783251683
+      Attack1-MoonstoneKeeper-SUCART_10: 5303732733115925791
+      Attack1-MoonstoneKeeper-SUCART_11: 1332743822361603084
+      Attack1-MoonstoneKeeper-SUCART_12: -8346845739964065807
+      Attack1-MoonstoneKeeper-SUCART_13: 2749412608485806638
+      Attack1-MoonstoneKeeper-SUCART_14: 2375332759188297474
+      Attack1-MoonstoneKeeper-SUCART_15: 4009773878179279845
+      Attack1-MoonstoneKeeper-SUCART_16: 2417182328866784682
+      Attack1-MoonstoneKeeper-SUCART_17: 1912203760241613146
+      Attack1-MoonstoneKeeper-SUCART_18: -8944336212770669267
+      Attack1-MoonstoneKeeper-SUCART_19: -1238529982997250106
+      Attack1-MoonstoneKeeper-SUCART_2: 1101564791418916975
+      Attack1-MoonstoneKeeper-SUCART_20: 3006178791099640648
+      Attack1-MoonstoneKeeper-SUCART_21: 1841078705245950768
+      Attack1-MoonstoneKeeper-SUCART_22: -6129888553868327883
+      Attack1-MoonstoneKeeper-SUCART_23: 6553684490375316969
+      Attack1-MoonstoneKeeper-SUCART_24: 8016787867355561701
+      Attack1-MoonstoneKeeper-SUCART_25: 7369158471678586784
+      Attack1-MoonstoneKeeper-SUCART_3: -858070671337724419
+      Attack1-MoonstoneKeeper-SUCART_4: -1675051964106771421
+      Attack1-MoonstoneKeeper-SUCART_5: -2837047877871192745
+      Attack1-MoonstoneKeeper-SUCART_6: -8872341244102053187
+      Attack1-MoonstoneKeeper-SUCART_7: -7108667460669749389
+      Attack1-MoonstoneKeeper-SUCART_8: 4684948283928162524
+      Attack1-MoonstoneKeeper-SUCART_9: 7047639221219869985
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

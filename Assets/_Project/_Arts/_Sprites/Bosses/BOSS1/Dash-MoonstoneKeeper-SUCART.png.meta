@@ -1,0 +1,546 @@
+fileFormatVersion: 2
+guid: a8a8304957ca61540805abd034844e43
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2135555626586159068
+    second: Dash-MoonstoneKeeper-SUCART_0
+  - first:
+      213: -5376219166536565208
+    second: Dash-MoonstoneKeeper-SUCART_1
+  - first:
+      213: 2713320054664930626
+    second: Dash-MoonstoneKeeper-SUCART_2
+  - first:
+      213: 515119106045677253
+    second: Dash-MoonstoneKeeper-SUCART_3
+  - first:
+      213: -2460175795384093959
+    second: Dash-MoonstoneKeeper-SUCART_4
+  - first:
+      213: -5981434167771970370
+    second: Dash-MoonstoneKeeper-SUCART_5
+  - first:
+      213: 4950571067094004165
+    second: Dash-MoonstoneKeeper-SUCART_6
+  - first:
+      213: 4417232230946305035
+    second: Dash-MoonstoneKeeper-SUCART_7
+  - first:
+      213: -7947568744457603621
+    second: Dash-MoonstoneKeeper-SUCART_8
+  - first:
+      213: 7216971410656789964
+    second: Dash-MoonstoneKeeper-SUCART_9
+  - first:
+      213: 6682699789615272207
+    second: Dash-MoonstoneKeeper-SUCART_10
+  - first:
+      213: 1027392473347898411
+    second: Dash-MoonstoneKeeper-SUCART_11
+  - first:
+      213: 988516703675457781
+    second: Dash-MoonstoneKeeper-SUCART_12
+  - first:
+      213: -5246839149225734213
+    second: Dash-MoonstoneKeeper-SUCART_13
+  - first:
+      213: -3184471426923385671
+    second: Dash-MoonstoneKeeper-SUCART_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_0
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 506
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 428ce37e87bfc52e0800000000000000
+      internalID: -2135555626586159068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_1
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 497
+        width: 82
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82ef0f70725d365b0800000000000000
+      internalID: -5376219166536565208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_2
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 497
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2452f34c636a7a520800000000000000
+      internalID: 2713320054664930626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_3
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 497
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ce8ed40912162700800000000000000
+      internalID: 515119106045677253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_4
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 499
+        width: 86
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f2fd1f0623bbddd0800000000000000
+      internalID: -2460175795384093959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_5
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 499
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb4419eb05dadfca0800000000000000
+      internalID: -5981434167771970370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_6
+      rect:
+        serializedVersion: 2
+        x: 897
+        y: 497
+        width: 82
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c1f6710826f3b440800000000000000
+      internalID: 4950571067094004165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_7
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 497
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b04f5ff7f492d4d30800000000000000
+      internalID: 4417232230946305035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_8
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 397
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd57b9eb55094b190800000000000000
+      internalID: -7947568744457603621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_9
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 389
+        width: 86
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc50956c245d72460800000000000000
+      internalID: 7216971410656789964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_10
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 389
+        width: 85
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01989c5d08bdbc50800000000000000
+      internalID: 6682699789615272207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_11
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 389
+        width: 82
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2cbfcad208024e00800000000000000
+      internalID: 1027392473347898411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_12
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 389
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f0ad1164bae7bd00800000000000000
+      internalID: 988516703675457781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_13
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 389
+        width: 84
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf89ccb79b7f27b0800000000000000
+      internalID: -5246839149225734213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dash-MoonstoneKeeper-SUCART_14
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 397
+        width: 86
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bca9d8fb1c7ec3d0800000000000000
+      internalID: -3184471426923385671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Dash-MoonstoneKeeper-SUCART_0: -2135555626586159068
+      Dash-MoonstoneKeeper-SUCART_1: -5376219166536565208
+      Dash-MoonstoneKeeper-SUCART_10: 6682699789615272207
+      Dash-MoonstoneKeeper-SUCART_11: 1027392473347898411
+      Dash-MoonstoneKeeper-SUCART_12: 988516703675457781
+      Dash-MoonstoneKeeper-SUCART_13: -5246839149225734213
+      Dash-MoonstoneKeeper-SUCART_14: -3184471426923385671
+      Dash-MoonstoneKeeper-SUCART_2: 2713320054664930626
+      Dash-MoonstoneKeeper-SUCART_3: 515119106045677253
+      Dash-MoonstoneKeeper-SUCART_4: -2460175795384093959
+      Dash-MoonstoneKeeper-SUCART_5: -5981434167771970370
+      Dash-MoonstoneKeeper-SUCART_6: 4950571067094004165
+      Dash-MoonstoneKeeper-SUCART_7: 4417232230946305035
+      Dash-MoonstoneKeeper-SUCART_8: -7947568744457603621
+      Dash-MoonstoneKeeper-SUCART_9: 7216971410656789964
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

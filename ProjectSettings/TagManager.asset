@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - HItboxWeapon
+  - cantMove
   layers:
   - Default
   - TransparentFX
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 745451509
+    locked: 0
+  - name: Tilemap
+    uniqueID: 1730001233
     locked: 0
   m_RenderingLayers:
   - Default

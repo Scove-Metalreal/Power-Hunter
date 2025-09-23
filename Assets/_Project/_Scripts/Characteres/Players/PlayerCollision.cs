@@ -22,8 +22,18 @@ public class PlayerCollision : MonoBehaviour
             if (playerController.animator != null)
             {
                 playerController.animator.SetBool("isJumping", false);
+
                
+
             }
+        }
+        
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            playerController.isGround = false;
         }
     }
 }

@@ -1,6 +1,8 @@
-using Unity.Mathematics;
+﻿using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,8 +17,8 @@ public class PlayerController : MonoBehaviour
     [Header("Stat Rigibody 2d")]
     private float defaultGravity;
     public float fallGravityAdd = 1f;
-    public float jumpDampingAdd = 0.2f;
-    private float defailtDamping;
+    
+    
     [Header("Dash")]
     public float dashSpeed = 15f;
 
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
-        defailtDamping = GetComponent<Rigidbody2D>().linearDamping;
+        
         GrafityDown = true;
         GrafityUp = false;
         GrafityLeft = false;
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        
         if (GrafityDown == true)
         {
             PlayerMove();
@@ -72,14 +75,39 @@ public class PlayerController : MonoBehaviour
     void PlayerMove()
     {
         // di chuyen theo truc X
-        var x = Input.GetAxis("Horizontal");
-        transform.Translate(new Vector2(x * PlayerSpeed * Time.deltaTime, 0));
+        float x = Input.GetAxisRaw("Horizontal");
+        float moveInput = 0f;
+        Vector2 velocity = GetComponent<Rigidbody2D>().linearVelocity;
+
+        if (GrafityDown) 
+        {
+            velocity.x = x * PlayerSpeed;
+            moveInput = x;
+        }
+        else if (GrafityUp) 
+        {
+            velocity.x = -x * PlayerSpeed;
+            moveInput = x;
+        }
+        else if (GrafityLeft) 
+        {
+            velocity.y = x * PlayerSpeed;
+            moveInput = x;
+        }
+        else if (GrafityRight) 
+        {
+            velocity.y = -x * PlayerSpeed;
+            moveInput = x;
+        }
+        GetComponent<Rigidbody2D>().linearVelocity = velocity;
+
         //animation dung yen
         if (isGround == true && animator != null)
         {
 
-            animator.SetBool("isIdie", x == 0);
-            animator.SetBool("isRunning", x != 0);
+            animator.SetBool("isIdie", moveInput == 0);
+            animator.SetBool("isRunning", moveInput != 0);
+            
 
         }
         //Huong theo huong di chuyen
@@ -173,14 +201,18 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("isJumping", true);
                 animator.SetBool("isFalling", false);
-                GetComponent<Rigidbody2D>().linearDamping += jumpDampingAdd;
+                
             }
-            else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.1f)
+            else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.01f)
             {
                 animator.SetBool("isJumping", false);
                 animator.SetBool("isFalling", true);
-                GetComponent<Rigidbody2D>().linearDamping = defailtDamping;
+                
                 GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
+            }
+            else
+            {
+                isGround = true;
             }
         }
         else
@@ -188,6 +220,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", false);
             GetComponent<Rigidbody2D>().gravityScale = defaultGravity;
+            
 
 
         }

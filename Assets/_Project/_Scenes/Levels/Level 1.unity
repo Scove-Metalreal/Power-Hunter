@@ -10164,6 +10164,7 @@ MonoBehaviour:
   weight: 1
   sharedProfile: {fileID: 11400000, guid: c732130bedfbcb94b8acd955c0207f20, type: 2}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &176246306
 GameObject:
@@ -10474,6 +10475,8 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 >>>>>>> parent of 91c84f7 (Mini map update)
+=======
+>>>>>>> f2d5e013ee0046c171bcdd4164d41eef0f8f596c
 --- !u!1 &267534632
 GameObject:
   m_ObjectHideFlags: 0
@@ -10548,6 +10551,7 @@ MonoBehaviour:
   HashOfParent: []
   m_LegacyLookAt: {fileID: 0}
   m_LegacyFollow: {fileID: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 --- !u!1 &435510326
@@ -10641,6 +10645,8 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 >>>>>>> parent of 91c84f7 (Mini map update)
+=======
+>>>>>>> f2d5e013ee0046c171bcdd4164d41eef0f8f596c
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -40035,6 +40041,7 @@ TilemapCollider2D:
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 --- !u!1 &1176346648
 GameObject:
@@ -41903,6 +41910,8 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 >>>>>>> parent of 91c84f7 (Mini map update)
+=======
+>>>>>>> f2d5e013ee0046c171bcdd4164d41eef0f8f596c
 --- !u!1 &2008996234
 GameObject:
   m_ObjectHideFlags: 0
@@ -42407,9 +42416,12 @@ SceneRoots:
   - {fileID: 62317783}
   - {fileID: 8246549812025812897}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   - {fileID: 176246307}
   - {fileID: 1374501873}
   - {fileID: 898811410}
   - {fileID: 1724173480}
 >>>>>>> parent of 91c84f7 (Mini map update)
+=======
+>>>>>>> f2d5e013ee0046c171bcdd4164d41eef0f8f596c

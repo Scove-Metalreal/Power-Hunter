@@ -91,12 +91,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (GrafityLeft) 
         {
-            velocity.y = -x * PlayerSpeed;
+            velocity.y = x * PlayerSpeed;
             moveInput = x;
         }
         else if (GrafityRight) 
         {
-            velocity.y = x * PlayerSpeed;
+            velocity.y = -x * PlayerSpeed;
             moveInput = x;
         }
         GetComponent<Rigidbody2D>().linearVelocity = velocity;

@@ -36761,15 +36761,9 @@ SceneRoots:
   - {fileID: 773201899}
   - {fileID: 62317783}
   - {fileID: 8246549812025812897}
-
-
   - {fileID: 176246307}
   - {fileID: 1374501873}
   - {fileID: 898811410}
   - {fileID: 1724173480}
-parent of 91c84f7 (Mini map update)
-
- 2d5e013ee0046c171bcdd4164d41eef0f8f596c
   - {fileID: 638478517}
-parent of e803bc1 (update MAP 1)
-
+  - {fileID: 638478517}

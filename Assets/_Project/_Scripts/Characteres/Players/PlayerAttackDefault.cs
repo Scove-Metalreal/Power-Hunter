@@ -13,7 +13,7 @@ public class PlayerAttackDefault : MonoBehaviour
 
     [Header("Combo Settings")]
     private GameObject varhitbox1;
-    public float doubleClickTime = 0.1f; 
+    public float doubleClickTime = 0.25f; 
     private int clickCount = 0;
     private float clickTimer = 0f;
 

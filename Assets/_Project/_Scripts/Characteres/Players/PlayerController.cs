@@ -91,12 +91,12 @@ public class PlayerController : MonoBehaviour
         }
         else if (GrafityLeft) 
         {
-            velocity.y = -x * PlayerSpeed;
+            velocity.y = x * PlayerSpeed;
             moveInput = x;
         }
         else if (GrafityRight) 
         {
-            velocity.y = x * PlayerSpeed;
+            velocity.y = -x * PlayerSpeed;
             moveInput = x;
         }
         GetComponent<Rigidbody2D>().linearVelocity = velocity;
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerJumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround )// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerJumpingUp()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround )// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
     
     void PlayerJumpingLeft()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround )// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
@@ -178,7 +178,7 @@ public class PlayerController : MonoBehaviour
     
     void PlayerJumpingRight()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround )// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;

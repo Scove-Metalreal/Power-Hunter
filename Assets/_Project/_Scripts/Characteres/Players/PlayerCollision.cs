@@ -3,9 +3,11 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     private PlayerController playerController;
+    private Enemy enemy;
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        enemy = FindAnyObjectByType<Enemy>();
     }
 
 
@@ -42,13 +44,26 @@ public class PlayerCollision : MonoBehaviour
         {
             PlayerDead();
         }
+        if (collision.CompareTag("FindPlayer"))
+        {
+            enemy.isCollidingWithPlayer = true;
+            enemy.DoAttack();
+        }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("FindPlayer"))
+        {
+            enemy.isCollidingWithPlayer = false;
 
+        }
+    }
     void PlayerDead()
     {
         if (playerController.animator != null)
         {
             playerController.animator.SetBool("isDead",true);
+            playerController.CanMove=false;
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }

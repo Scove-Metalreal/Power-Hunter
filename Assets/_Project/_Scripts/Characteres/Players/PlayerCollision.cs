@@ -36,4 +36,24 @@ public class PlayerCollision : MonoBehaviour
             playerController.isGround = false;
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+         if(collision.gameObject.CompareTag("DeathZone"))
+        {
+            PlayerDead();
+        }
+    }
+
+    void PlayerDead()
+    {
+        if (playerController.animator != null)
+        {
+            playerController.animator.SetBool("isDead",true);
+            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        }
+    }
+    public void EndGameAnimation()
+    {
+        Time.timeScale = 0f;
+    }
 }

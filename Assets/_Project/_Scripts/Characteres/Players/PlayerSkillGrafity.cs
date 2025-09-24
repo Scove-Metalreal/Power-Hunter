@@ -1,3 +1,4 @@
+using Unity.Android.Gradle.Manifest;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class PlayerSkillGrafity : MonoBehaviour
 {
     private PlayerController playerController;
     public int GrafityValueSkill = 50;
+    
     void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -16,6 +18,7 @@ public class PlayerSkillGrafity : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.A))
         {
             Physics2D.gravity = new Vector2(-9.8f, 0);
+            
             playerController.CanMove = false;
             transform.rotation = Quaternion.Euler(0, 0, -90);
             playerController.GrafityLeft = true;
@@ -64,5 +67,8 @@ public class PlayerSkillGrafity : MonoBehaviour
             playerController.isGround = false;
             GetComponent<Rigidbody2D>().gravityScale = GrafityValueSkill;
         }
+
+        
     }
+    
 }

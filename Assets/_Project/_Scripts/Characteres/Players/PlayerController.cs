@@ -14,11 +14,13 @@ public class PlayerController : MonoBehaviour
     [Header("Khac")]
     public Animator animator;
     public int Direction = 1;
+    private bool isJump = false;
+    public bool CanMove = true;
     [Header("Stat Rigibody 2d")]
     private float defaultGravity;
     public float fallGravityAdd = 1f;
-    
-    
+
+
     [Header("Dash")]
     public float dashSpeed = 15f;
 
@@ -36,41 +38,47 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
-        
+
         GrafityDown = true;
         GrafityUp = false;
         GrafityLeft = false;
         GrafityRight = false;
+        CanMove = true;
         transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
 
     void Update()
     {
-        
-        if (GrafityDown == true)
+        if (CanMove == true)
         {
-            PlayerMove();
-            PlayerJumping();
+            if (GrafityDown == true)
+            {
+                PlayerMove();
+                Dash(Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.y, 0, GetComponent<Rigidbody2D>().linearVelocity.y);
+
+                PlayerJumping();
+            }
+            if (GrafityUp == true)
+            {
+                PlayerMove();
+                Dash(-Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.y, 0, GetComponent<Rigidbody2D>().linearVelocity.y);
+                PlayerJumpingUp();
+            }
+            if (GrafityLeft == true)
+            {
+                PlayerMove();
+                Dash(GetComponent<Rigidbody2D>().linearVelocity.x, -Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.x, 0);
+                PlayerJumpingLeft();
+            }
+            if (GrafityRight == true)
+            {
+                PlayerMove();
+                Dash(GetComponent<Rigidbody2D>().linearVelocity.x, Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.x, 0);
+                PlayerJumpingRight();
+            }
         }
-        if (GrafityUp == true)
-        {
-            PlayerMove();
-            PlayerJumpingUp();
-        }
-        if (GrafityLeft == true)
-        {
-            PlayerMove();
-            PlayerJumpingLeft();
-        }
-        if (GrafityRight == true)
-        {
-            PlayerMove();
-            PlayerJumpingRight();
-        }
-        
         UpdateJumpAndFall();
-        Dash();
     }
     void PlayerMove()
     {
@@ -79,24 +87,24 @@ public class PlayerController : MonoBehaviour
         float moveInput = 0f;
         Vector2 velocity = GetComponent<Rigidbody2D>().linearVelocity;
 
-        if (GrafityDown) 
+        if (GrafityDown)
         {
             velocity.x = x * PlayerSpeed;
             moveInput = x;
         }
-        else if (GrafityUp) 
+        else if (GrafityUp)
         {
             velocity.x = -x * PlayerSpeed;
             moveInput = x;
         }
-        else if (GrafityLeft) 
-        {
-            velocity.y = x * PlayerSpeed;
-            moveInput = x;
-        }
-        else if (GrafityRight) 
+        else if (GrafityLeft)
         {
             velocity.y = -x * PlayerSpeed;
+            moveInput = x;
+        }
+        else if (GrafityRight)
+        {
+            velocity.y = x * PlayerSpeed;
             moveInput = x;
         }
         GetComponent<Rigidbody2D>().linearVelocity = velocity;
@@ -107,7 +115,7 @@ public class PlayerController : MonoBehaviour
 
             animator.SetBool("isIdie", moveInput == 0);
             animator.SetBool("isRunning", moveInput != 0);
-            
+
 
         }
         //Huong theo huong di chuyen
@@ -125,10 +133,11 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerJumping()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
+            isJump = true;
             // anition nhay
             if (animator != null)
             {
@@ -142,10 +151,11 @@ public class PlayerController : MonoBehaviour
     }
     void PlayerJumpingUp()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
+            isJump = true;
             // anition nhay
             if (animator != null)
             {
@@ -157,13 +167,14 @@ public class PlayerController : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -jumpForce), ForceMode2D.Impulse);
         }
     }
-    
+
     void PlayerJumpingLeft()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
+            isJump = true;
             // anition nhay
             if (animator != null)
             {
@@ -172,16 +183,17 @@ public class PlayerController : MonoBehaviour
 
             }
             // nhay
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce,0 ), ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce, 0), ForceMode2D.Impulse);
         }
     }
-    
+
     void PlayerJumpingRight()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround == true)// khi an Space va tren mat dat
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
         {
             // dang khong o tren mat dat
             isGround = false;
+            isJump = true;
             // anition nhay
             if (animator != null)
             {
@@ -190,29 +202,106 @@ public class PlayerController : MonoBehaviour
 
             }
             // nhay
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(-jumpForce,0 ), ForceMode2D.Impulse);
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(-jumpForce, 0), ForceMode2D.Impulse);
         }
     }
     void UpdateJumpAndFall()
     {
         if (!isGround)
         {
-            if (GetComponent<Rigidbody2D>().linearVelocity.y > 0.1f)
+            if (GrafityDown)
             {
-                animator.SetBool("isJumping", true);
-                animator.SetBool("isFalling", false);
-                
+                if (GetComponent<Rigidbody2D>().linearVelocity.y > 0.01f)
+                {
+                    animator.SetBool("isJumping", true);
+                    animator.SetBool("isFalling", false);
+
+                }
+                else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.01f)
+                {
+                    animator.SetBool("isJumping", false);
+                    animator.SetBool("isFalling", true);
+                    isJump = false;
+
+                    GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
+                }
+                else
+                {
+                    if (isJump == false)
+                    {
+                        isGround = true;
+                    }
+                }
             }
-            else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.01f)
+            if (GrafityUp)
             {
-                animator.SetBool("isJumping", false);
-                animator.SetBool("isFalling", true);
-                
-                GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
-            }
-            else
-            {
-                isGround = true;
+                if (GetComponent<Rigidbody2D>().linearVelocity.y > -0.01f)
+                {
+                    animator.SetBool("isJumping", true);
+                    animator.SetBool("isFalling", false);
+
+                }
+                else if (GetComponent<Rigidbody2D>().linearVelocity.y < 0.01f)
+                {
+                    animator.SetBool("isJumping", false);
+                    animator.SetBool("isFalling", true);
+                    isJump = false;
+                    GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
+                }
+                else
+                {
+                    if (isJump == false)
+                    {
+                        isGround = true;
+                    }
+                }
+                if (GrafityLeft)
+                {
+                    if (GetComponent<Rigidbody2D>().linearVelocity.x > 0.01f)
+                    {
+                        animator.SetBool("isJumping", true);
+                        animator.SetBool("isFalling", false);
+
+                    }
+                    else if (GetComponent<Rigidbody2D>().linearVelocity.x < -0.01f)
+                    {
+                        animator.SetBool("isJumping", false);
+                        animator.SetBool("isFalling", true);
+                        isJump = false;
+                        GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
+                    }
+                    else
+                    {
+                        if (isJump == false)
+                        {
+                            isGround = true;
+                        }
+                    }
+                }
+                if (GrafityRight)
+                {
+                    if (GetComponent<Rigidbody2D>().linearVelocity.x > -0.01f)
+                    {
+                        animator.SetBool("isJumping", true);
+                        animator.SetBool("isFalling", false);
+
+                    }
+                    else if (GetComponent<Rigidbody2D>().linearVelocity.x < 0.01f)
+                    {
+                        animator.SetBool("isJumping", false);
+                        animator.SetBool("isFalling", true);
+                        isJump = false;
+                        GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
+                    }
+                    else
+                    {
+                        CanMove = true;
+                        if (isJump == false)
+                        {
+                            isGround = true;
+                        }
+                    }
+                }
             }
         }
         else
@@ -220,12 +309,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("isJumping", false);
             animator.SetBool("isFalling", false);
             GetComponent<Rigidbody2D>().gravityScale = defaultGravity;
-            
+
 
 
         }
     }
-    void Dash()
+    void Dash(float x, float y, float xAfterDash, float yAfterDash)
     {
         if (dashCooldownTime > 0)
         {
@@ -242,15 +331,16 @@ public class PlayerController : MonoBehaviour
         {
             if (dashTimeLeft > 0)
             {
-                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.y);
+
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(x, y);
 
                 dashTimeLeft -= Time.deltaTime;
             }
             else
             {
                 isDash = false;
-                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, GetComponent<Rigidbody2D>().linearVelocity.y);
-                
+                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(xAfterDash, yAfterDash);
+
 
             }
         }

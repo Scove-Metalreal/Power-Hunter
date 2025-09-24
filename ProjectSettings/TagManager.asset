@@ -14,8 +14,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Grid
+  - IconPlayer
   - 
   - 
   - 
@@ -55,6 +55,9 @@ TagManager:
     locked: 0
   - name: Tilemap
     uniqueID: 1260712897
+    locked: 0
+  - name: UI
+    uniqueID: 4024655881
     locked: 0
   m_RenderingLayers:
   - Default

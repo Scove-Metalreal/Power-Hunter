@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 975f3127081efd64cbbf194122b96371
+guid: a5a9e543c5f65e747bc94291efff53f4
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects:
@@ -157,7 +157,7 @@ ScriptedImporter:
     textureFormatSet: 0
     applyGammaDecoding: 0
   previousAsepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -172,7 +172,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   asepriteImporterSettings:
-    fileImportMode: 1
+    fileImportMode: 0
     importHiddenLayers: 0
     layerImportMode: 1
     defaultPivotSpace: 0
@@ -187,7 +187,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638944380195744063
+  platformSettingsDirtyTick: 638944380423526833
   textureAssetName: 
   singleSpriteImportData:
   - name: 

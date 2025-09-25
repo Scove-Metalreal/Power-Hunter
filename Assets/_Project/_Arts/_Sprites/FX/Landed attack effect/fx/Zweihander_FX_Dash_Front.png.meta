@@ -1,0 +1,884 @@
+fileFormatVersion: 2
+guid: 3d7c59bb70ed73843b489776a0b8041a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7110016099071530613
+    second: Zweihander_FX_Dash_Front_0
+  - first:
+      213: -3034112885045398630
+    second: Zweihander_FX_Dash_Front_1
+  - first:
+      213: 7481861573935997797
+    second: Zweihander_FX_Dash_Front_2
+  - first:
+      213: -6641730192669036397
+    second: Zweihander_FX_Dash_Front_3
+  - first:
+      213: -1811363330362777811
+    second: Zweihander_FX_Dash_Front_4
+  - first:
+      213: 6529348757282464532
+    second: Zweihander_FX_Dash_Front_5
+  - first:
+      213: 9212736724643434975
+    second: Zweihander_FX_Dash_Front_6
+  - first:
+      213: -6485952765609023837
+    second: Zweihander_FX_Dash_Front_7
+  - first:
+      213: -372695903538514061
+    second: Zweihander_FX_Dash_Front_8
+  - first:
+      213: 6740267029712343840
+    second: Zweihander_FX_Dash_Front_9
+  - first:
+      213: 2974836788939591035
+    second: Zweihander_FX_Dash_Front_10
+  - first:
+      213: 1640040367015957212
+    second: Zweihander_FX_Dash_Front_11
+  - first:
+      213: -1451672453559826345
+    second: Zweihander_FX_Dash_Front_12
+  - first:
+      213: -5153003923222857818
+    second: Zweihander_FX_Dash_Front_13
+  - first:
+      213: -1732082067512965401
+    second: Zweihander_FX_Dash_Front_14
+  - first:
+      213: 847907225570972117
+    second: Zweihander_FX_Dash_Front_15
+  - first:
+      213: -222999700805755827
+    second: Zweihander_FX_Dash_Front_16
+  - first:
+      213: 8998636479285233137
+    second: Zweihander_FX_Dash_Front_17
+  - first:
+      213: -5023638753247659938
+    second: Zweihander_FX_Dash_Front_18
+  - first:
+      213: 4994336413261838888
+    second: Zweihander_FX_Dash_Front_19
+  - first:
+      213: -5044076262484983756
+    second: Zweihander_FX_Dash_Front_20
+  - first:
+      213: -6199262129371044477
+    second: Zweihander_FX_Dash_Front_21
+  - first:
+      213: -1343968154622854682
+    second: Zweihander_FX_Dash_Front_22
+  - first:
+      213: -1188837617106090367
+    second: Zweihander_FX_Dash_Front_23
+  - first:
+      213: -4281549290539950264
+    second: Zweihander_FX_Dash_Front_24
+  - first:
+      213: 3561532057091905838
+    second: Zweihander_FX_Dash_Front_25
+  - first:
+      213: -2702961970326792477
+    second: Zweihander_FX_Dash_Front_26
+  - first:
+      213: -2596658896520307336
+    second: Zweihander_FX_Dash_Front_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_0
+      rect:
+        serializedVersion: 2
+        x: 1037
+        y: 105
+        width: 103
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8968834706245d90800000000000000
+      internalID: -7110016099071530613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_1
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 119
+        width: 25
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a93fe6e086aa4e5d0800000000000000
+      internalID: -3034112885045398630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_2
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 132
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563a91df579e4d760800000000000000
+      internalID: 7481861573935997797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_3
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 149
+        width: 56
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 390b9f34495d3d3a0800000000000000
+      internalID: -6641730192669036397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_4
+      rect:
+        serializedVersion: 2
+        x: 1197
+        y: 47
+        width: 58
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2fde86e5aebcd6e0800000000000000
+      internalID: -1811363330362777811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_5
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 105
+        width: 103
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 413a57cc918ec9a50800000000000000
+      internalID: 6529348757282464532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_6
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 121
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd151996d373adf70800000000000000
+      internalID: 9212736724643434975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_7
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 125
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a669efd2544df5a0800000000000000
+      internalID: -6485952765609023837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_8
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 47
+        width: 73
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377f754ec0be3daf0800000000000000
+      internalID: -372695903538514061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_9
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 125
+        width: 79
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 023184de62d3a8d50800000000000000
+      internalID: 6740267029712343840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_10
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 58
+        width: 76
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d02855c4eb84920800000000000000
+      internalID: 2974836788939591035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_11
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 134
+        width: 20
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd29945460892c610800000000000000
+      internalID: 1640040367015957212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_12
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 125
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 758c853489f9adbe0800000000000000
+      internalID: -1451672453559826345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_13
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 116
+        width: 16
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a77b1ecb3adc78b0800000000000000
+      internalID: -5153003923222857818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_14
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 110
+        width: 95
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e6c01c598866f7e0800000000000000
+      internalID: -1732082067512965401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_15
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 105
+        width: 36
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d115a6112f54cb00800000000000000
+      internalID: 847907225570972117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_16
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 110
+        width: 20
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c547024feb7ecf0800000000000000
+      internalID: -222999700805755827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_17
+      rect:
+        serializedVersion: 2
+        x: 1188
+        y: 105
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f50baa733491ec70800000000000000
+      internalID: 8998636479285233137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_18
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 109
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5879c89b23784ab0800000000000000
+      internalID: -5023638753247659938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_19
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 110
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82a3549b1827f4540800000000000000
+      internalID: 4994336413261838888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_20
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 109
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4304a9a2d57dff9b0800000000000000
+      internalID: -5044076262484983756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_21
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 82
+        width: 58
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385ae4d30fbc7f9a0800000000000000
+      internalID: -6199262129371044477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_22
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 75
+        width: 54
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e974428514495de0800000000000000
+      internalID: -1343968154622854682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_23
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 82
+        width: 58
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18605c86c76608fe0800000000000000
+      internalID: -1188837617106090367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_24
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 74
+        width: 56
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f5a09da91e494c0800000000000000
+      internalID: -4281549290539950264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_25
+      rect:
+        serializedVersion: 2
+        x: 1750
+        y: 88
+        width: 9
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29112f398a1d6130800000000000000
+      internalID: 3561532057091905838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_26
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 67
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6184da8662d7ad0800000000000000
+      internalID: -2702961970326792477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zweihander_FX_Dash_Front_27
+      rect:
+        serializedVersion: 2
+        x: 1705
+        y: 50
+        width: 16
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87d9c06cd70d6fbd0800000000000000
+      internalID: -2596658896520307336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Zweihander_FX_Dash_Front_0: -7110016099071530613
+      Zweihander_FX_Dash_Front_1: -3034112885045398630
+      Zweihander_FX_Dash_Front_10: 2974836788939591035
+      Zweihander_FX_Dash_Front_11: 1640040367015957212
+      Zweihander_FX_Dash_Front_12: -1451672453559826345
+      Zweihander_FX_Dash_Front_13: -5153003923222857818
+      Zweihander_FX_Dash_Front_14: -1732082067512965401
+      Zweihander_FX_Dash_Front_15: 847907225570972117
+      Zweihander_FX_Dash_Front_16: -222999700805755827
+      Zweihander_FX_Dash_Front_17: 8998636479285233137
+      Zweihander_FX_Dash_Front_18: -5023638753247659938
+      Zweihander_FX_Dash_Front_19: 4994336413261838888
+      Zweihander_FX_Dash_Front_2: 7481861573935997797
+      Zweihander_FX_Dash_Front_20: -5044076262484983756
+      Zweihander_FX_Dash_Front_21: -6199262129371044477
+      Zweihander_FX_Dash_Front_22: -1343968154622854682
+      Zweihander_FX_Dash_Front_23: -1188837617106090367
+      Zweihander_FX_Dash_Front_24: -4281549290539950264
+      Zweihander_FX_Dash_Front_25: 3561532057091905838
+      Zweihander_FX_Dash_Front_26: -2702961970326792477
+      Zweihander_FX_Dash_Front_27: -2596658896520307336
+      Zweihander_FX_Dash_Front_3: -6641730192669036397
+      Zweihander_FX_Dash_Front_4: -1811363330362777811
+      Zweihander_FX_Dash_Front_5: 6529348757282464532
+      Zweihander_FX_Dash_Front_6: 9212736724643434975
+      Zweihander_FX_Dash_Front_7: -6485952765609023837
+      Zweihander_FX_Dash_Front_8: -372695903538514061
+      Zweihander_FX_Dash_Front_9: 6740267029712343840
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

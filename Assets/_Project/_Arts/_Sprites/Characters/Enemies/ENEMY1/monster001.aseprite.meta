@@ -7,42 +7,42 @@ ScriptedImporter:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Attack 1
-    second: {fileID: 7400000, guid: d044ad9b6a9acc44a941d213c0991d18, type: 2}
+    second: {fileID: 7400000, guid: 6a437200e1c6a0746b44e9e49885c27c, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Attack 2
-    second: {fileID: 7400000, guid: 90466f6a88c35a44786a60ee7b6eb663, type: 2}
+    second: {fileID: 7400000, guid: d07c24c2a5c6cc44990aa3b3ca7f05a1, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Death 1
-    second: {fileID: 7400000, guid: 0dacbff275d721c45baee6febe24f276, type: 2}
+    second: {fileID: 7400000, guid: 4ac9b2fa9307e3e48b708cf607cdb1b4, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Death 2
-    second: {fileID: 7400000, guid: a09a10d8cfb79304b88180975fdd21d3, type: 2}
+    second: {fileID: 7400000, guid: 716fffe01314cda48bffa8509bd1ee2e, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Hit
-    second: {fileID: 7400000, guid: 27c2b2a92736ba0468d3a2edb39660c4, type: 2}
+    second: {fileID: 7400000, guid: 80a4cf61aad9425409a0663d50c3e5cb, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Idle
-    second: {fileID: 7400000, guid: d7cd07e3cffd93a47b53e450f555d472, type: 2}
+    second: {fileID: 7400000, guid: 0f1487128f21a194aa72d796781a2b01, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Walk 1
-    second: {fileID: 7400000, guid: 898cc4fa2e4e2a6429b36b939968ed19, type: 2}
+    second: {fileID: 7400000, guid: 850102cfc4a8f014b9d63bc80da60d45, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: Walk 2
-    second: {fileID: 7400000, guid: 4b66105c8b310f54b8b751474471c4b1, type: 2}
+    second: {fileID: 7400000, guid: 3993f8917ad2ba64f9e37a68a027240a, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -142,7 +142,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638943408479060115
+  platformSettingsDirtyTick: 638944514973942792
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -2025,6 +2025,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 16384

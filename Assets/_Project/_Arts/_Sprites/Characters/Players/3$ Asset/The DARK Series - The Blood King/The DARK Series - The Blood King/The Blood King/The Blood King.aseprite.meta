@@ -7,87 +7,87 @@ ScriptedImporter:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: attack
-    second: {fileID: 7400000, guid: 5d40c6d4605846a449f983a65cc21e44, type: 2}
+    second: {fileID: 7400000, guid: 6b1047e0e246f06408e88c7c7c218cc8, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: attack 1
-    second: {fileID: 7400000, guid: 109224bc9e3a8c443907bfdd1ac46ae0, type: 2}
+    second: {fileID: 7400000, guid: 252e34bef6f07684da8bc8207ad87021, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: attack 3
-    second: {fileID: 7400000, guid: 7736ba4c743d8bd468466af70d892090, type: 2}
+    second: {fileID: 7400000, guid: d1497147502432f4f81bbc3c27d5ab73, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: blood gif
-    second: {fileID: 7400000, guid: fb2b9a81b1e4ef948b9fe2c002da118e, type: 2}
+    second: {fileID: 7400000, guid: e81ff088889fd6443bc37d6af53499ae, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: blood teleport 2
-    second: {fileID: 7400000, guid: 89434184db27de34b8a9989c83d8bbbe, type: 2}
+    second: {fileID: 7400000, guid: 006e9b2b7c872794a89b3f737d018288, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: charge
-    second: {fileID: 7400000, guid: 6d704fdbdf20a1b4fb2cc0dc4add25e6, type: 2}
+    second: {fileID: 7400000, guid: ec1aa8329bdb8a5488390908e19bede6, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: double slash
-    second: {fileID: 7400000, guid: 567b9c89331519f4c80d049571e7911e, type: 2}
+    second: {fileID: 7400000, guid: 08b759c544cfa7b41afbed1ef5fee8f1, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: fall
-    second: {fileID: 7400000, guid: 3bdaadf87cccc0d4ea322be963adc3f9, type: 2}
+    second: {fileID: 7400000, guid: f016b886bc6b41041bd50145cdb88aeb, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: heart slam
-    second: {fileID: 7400000, guid: bdfdc8c1614652a419531c96399cdd30, type: 2}
+    second: {fileID: 7400000, guid: b6789945c3b4aa44b82220f8730d913e, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: hit
-    second: {fileID: 7400000, guid: 330ae2a63d946634e822156ec76fb19b, type: 2}
+    second: {fileID: 7400000, guid: f9e95a010151236459566ff81b59ec5a, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: idle
-    second: {fileID: 7400000, guid: 29264a562a52e7e4ea1ef74d8431748a, type: 2}
+    second: {fileID: 7400000, guid: ac66529d38448c147a37b7a14193084e, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: jump
-    second: {fileID: 7400000, guid: 0616bb32f85fe2b4a96579a883b953dc, type: 2}
+    second: {fileID: 7400000, guid: 9545bf4701016e24aac4eff2151850de, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: jump slam
-    second: {fileID: 7400000, guid: b5f7ac46d7c23e54092e3417572deb1b, type: 2}
+    second: {fileID: 7400000, guid: 9ea190439caa55b48bfbeb98d30fae5a, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: jump to fall trans
-    second: {fileID: 7400000, guid: ffb9c99ba88f9974ab663f62554ab896, type: 2}
+    second: {fileID: 7400000, guid: ef4b85a863d021a46ac86314e93d69be, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: run
-    second: {fileID: 7400000, guid: e2183979b344e3b4fb86e35c008c2891, type: 2}
+    second: {fileID: 7400000, guid: f6f6a7ef2bf5b6647a1a583e4110f7e8, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: transition down
-    second: {fileID: 7400000, guid: c79c298311b790748aa1030c65b6793f, type: 2}
+    second: {fileID: 7400000, guid: 7f40ef72c1eb6ce41b92c330db0a90ff, type: 2}
   - first:
       type: UnityEngine:AnimationClip
       assembly: UnityEngine.AnimationModule
       name: transition to charge
-    second: {fileID: 7400000, guid: e95a1d526ba7832498abbfe574518a16, type: 2}
+    second: {fileID: 7400000, guid: e59a91f04494eea438fdb4979cfbd877, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -187,7 +187,7 @@ ScriptedImporter:
     generateIndividualEvents: 1
     generateSpriteAtlas: 1
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638944460501283260
+  platformSettingsDirtyTick: 638944474124867052
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -8874,6 +8874,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: iPhone
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 16384

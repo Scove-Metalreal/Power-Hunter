@@ -631,6 +631,45 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1520,7 +1559,7 @@ TextureImporter:
         serializedVersion: 2
         x: 870
         y: 631
-        width: 54
+        width: 59
         height: 28
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1540,12 +1579,12 @@ TextureImporter:
       name: The Blood King_41
       rect:
         serializedVersion: 2
-        x: 896
-        y: 652
-        width: 11
-        height: 8
+        x: 715
+        y: 78
+        width: 60
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1562,12 +1601,12 @@ TextureImporter:
       name: The Blood King_42
       rect:
         serializedVersion: 2
-        x: 912
-        y: 641
-        width: 18
-        height: 14
+        x: 863
+        y: 78
+        width: 93
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1586,7 +1625,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1049
         y: 631
-        width: 42
+        width: 56
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1606,12 +1645,12 @@ TextureImporter:
       name: The Blood King_44
       rect:
         serializedVersion: 2
-        x: 1092
-        y: 648
-        width: 12
-        height: 12
+        x: 1031
+        y: 77
+        width: 102
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1630,7 +1669,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1215
         y: 631
-        width: 26
+        width: 62
         height: 31
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1650,12 +1689,12 @@ TextureImporter:
       name: The Blood King_46
       rect:
         serializedVersion: 2
-        x: 1241
-        y: 631
-        width: 37
-        height: 30
+        x: 1191
+        y: 77
+        width: 131
+        height: 18
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1697,7 +1736,7 @@ TextureImporter:
         x: 1556
         y: 631
         width: 61
-        height: 24
+        height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1716,12 +1755,12 @@ TextureImporter:
       name: The Blood King_49
       rect:
         serializedVersion: 2
-        x: 1557
-        y: 653
-        width: 6
-        height: 6
+        x: 1355
+        y: 77
+        width: 147
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1738,12 +1777,12 @@ TextureImporter:
       name: The Blood King_50
       rect:
         serializedVersion: 2
-        x: 1566
-        y: 654
-        width: 12
-        height: 7
+        x: 1521
+        y: 77
+        width: 153
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1784,7 +1823,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1895
         y: 631
-        width: 27
+        width: 52
         height: 29
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1914,12 +1953,12 @@ TextureImporter:
       name: The Blood King_58
       rect:
         serializedVersion: 2
-        x: 1080
-        y: 631
-        width: 23
-        height: 8
+        x: 1689
+        y: 76
+        width: 147
+        height: 14
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1936,12 +1975,12 @@ TextureImporter:
       name: The Blood King_59
       rect:
         serializedVersion: 2
-        x: 1923
-        y: 631
-        width: 24
-        height: 15
+        x: 1739
+        y: 157
+        width: 33
+        height: 27
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2065,28 +2104,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_67
-      rect:
-        serializedVersion: 2
-        x: 711
-        y: 557
-        width: 10
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8d20d10ec6db0950800000000000000
-      internalID: 6416458274401430924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_68
       rect:
         serializedVersion: 2
@@ -2197,56 +2214,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_73
-      rect:
-        serializedVersion: 2
-        x: 1702
-        y: 559
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: be6760c7e3596a9c0800000000000000
-      internalID: -3916278730350758165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_74
-      rect:
-        serializedVersion: 2
-        x: 1710
-        y: 552
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 46458f997858ec070800000000000000
-      internalID: 8128581194900591716
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_75
       rect:
         serializedVersion: 2
-        x: 1714
+        x: 1703
         y: 552
-        width: 33
+        width: 44
         height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2289,9 +2262,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 2015
-        y: 473
+        y: 552
         width: 81
-        height: 100
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2311,9 +2284,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 394
+        y: 471
         width: 70
-        height: 95
+        height: 18
       alignment: 9
       pivot: {x: 0.6483557, y: 0.8805757}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2527,79 +2500,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_88
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 473
-        width: 9
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 382d74775d8d24a30800000000000000
-      internalID: 4198156214003552899
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_89
-      rect:
-        serializedVersion: 2
-        x: 1686
-        y: 473
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09fefc3bb06f21510800000000000000
-      internalID: 1518546554499100560
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_90
-      rect:
-        serializedVersion: 2
-        x: 1687
-        y: 485
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0f11b23052dcf76b0800000000000000
-      internalID: -5296289077913775632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_91
       rect:
         serializedVersion: 2
-        x: 1697
+        x: 1679
         y: 473
-        width: 89
-        height: 18
+        width: 107
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2615,79 +2522,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_92
-      rect:
-        serializedVersion: 2
-        x: 1705
-        y: 473
-        width: 12
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: cb938ae7bf3fdbb60800000000000000
-      internalID: 7763629594143898044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_93
-      rect:
-        serializedVersion: 2
-        x: 1847
-        y: 473
-        width: 27
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b824ee1878b11a540800000000000000
-      internalID: 5017321728681853579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_94
-      rect:
-        serializedVersion: 2
-        x: 1874
-        y: 473
-        width: 10
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62dd9dd07142c72f0800000000000000
-      internalID: -973863737983640282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_95
       rect:
         serializedVersion: 2
-        x: 1896
+        x: 1848
         y: 473
-        width: 61
-        height: 20
+        width: 109
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2703,35 +2544,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_96
-      rect:
-        serializedVersion: 2
-        x: 1949
-        y: 474
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a7fb55d8ace68a670800000000000000
-      internalID: 8550205708796542842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_97
       rect:
         serializedVersion: 2
-        x: 2091
+        x: 2017
         y: 473
-        width: 39
-        height: 20
+        width: 113
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2750,10 +2569,10 @@ TextureImporter:
       name: The Blood King_98
       rect:
         serializedVersion: 2
-        x: 79
+        x: 4
         y: 394
-        width: 37
-        height: 20
+        width: 112
+        height: 22
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2840,7 +2659,7 @@ TextureImporter:
         serializedVersion: 2
         x: 755
         y: 394
-        width: 33
+        width: 41
         height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -2852,28 +2671,6 @@ TextureImporter:
       bones: []
       spriteID: 0b17e69825a3cec90800000000000000
       internalID: -7139267183121632848
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_103
-      rect:
-        serializedVersion: 2
-        x: 786
-        y: 395
-        width: 10
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 650fe3c5f916f90e0800000000000000
-      internalID: -2260981150841376682
       vertices: []
       indices: 
       edges: []
@@ -3016,7 +2813,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1927
         y: 394
-        width: 39
+        width: 76
         height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3033,34 +2830,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_113
-      rect:
-        serializedVersion: 2
-        x: 1980
-        y: 402
-        width: 22
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 632b6fd8bd0c530d0800000000000000
-      internalID: -3443634290842750410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_114
       rect:
         serializedVersion: 2
         x: 2098
         y: 394
-        width: 37
+        width: 85
         height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3072,28 +2847,6 @@ TextureImporter:
       bones: []
       spriteID: c75230cc5ed7ec6b0800000000000000
       internalID: -5274139687680531076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_115
-      rect:
-        serializedVersion: 2
-        x: 2136
-        y: 394
-        width: 47
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1f8da584a9d27d5e0800000000000000
-      internalID: -1884987778369136399
       vertices: []
       indices: 
       edges: []
@@ -3297,34 +3050,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_125
-      rect:
-        serializedVersion: 2
-        x: 747
-        y: 315
-        width: 24
-        height: 13
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 53c8735e34b4e5180800000000000000
-      internalID: -9124773040025531339
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_126
       rect:
         serializedVersion: 2
-        x: 770
+        x: 746
         y: 315
-        width: 22
+        width: 46
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3407,72 +3138,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_130
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 264
-        width: 9
-        height: 19
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fc63e41566a22ff10800000000000000
-      internalID: 2301948978478855887
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_131
-      rect:
-        serializedVersion: 2
-        x: 247
-        y: 242
-        width: 9
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88dffb1995f0057b0800000000000000
-      internalID: -5237669489260102264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_132
-      rect:
-        serializedVersion: 2
-        x: 413
-        y: 243
-        width: 8
-        height: 26
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b0147a839ab0e71c0800000000000000
-      internalID: -4504149755896053493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_133
       rect:
         serializedVersion: 2
@@ -3495,35 +3160,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_134
-      rect:
-        serializedVersion: 2
-        x: 84
-        y: 248
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a85887e01012c4d60800000000000000
-      internalID: 7875706136785618314
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_135
       rect:
         serializedVersion: 2
-        x: 89
+        x: 80
         y: 236
-        width: 27
-        height: 24
+        width: 36
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3542,10 +3185,10 @@ TextureImporter:
       name: The Blood King_136
       rect:
         serializedVersion: 2
-        x: 257
+        x: 248
         y: 236
-        width: 30
-        height: 22
+        width: 39
+        height: 37
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3564,10 +3207,10 @@ TextureImporter:
       name: The Blood King_137
       rect:
         serializedVersion: 2
-        x: 425
+        x: 414
         y: 236
-        width: 33
-        height: 22
+        width: 44
+        height: 34
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3675,9 +3318,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1386
-        y: 157
+        y: 236
         width: 41
-        height: 100
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3698,7 +3341,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1550
         y: 236
-        width: 27
+        width: 32
         height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -3710,28 +3353,6 @@ TextureImporter:
       bones: []
       spriteID: 447558128eb86a6a0800000000000000
       internalID: -6438304788168485052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_144
-      rect:
-        serializedVersion: 2
-        x: 1573
-        y: 249
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2b5ae020794252a50800000000000000
-      internalID: 6495638268544984498
       vertices: []
       indices: 
       edges: []
@@ -3803,35 +3424,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: The Blood King_148
-      rect:
-        serializedVersion: 2
-        x: 421
-        y: 236
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d355055607d191fb0800000000000000
-      internalID: -4676674369474243267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: The Blood King_149
       rect:
         serializedVersion: 2
         x: 1359
-        y: 78
-        width: 473
-        height: 105
+        y: 155
+        width: 103
+        height: 13
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3872,10 +3471,10 @@ TextureImporter:
       name: The Blood King_151
       rect:
         serializedVersion: 2
-        x: 2078
-        y: 174
-        width: 23
-        height: 23
+        x: 2076
+        y: 159
+        width: 25
+        height: 38
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4005,9 +3604,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 687
-        y: 78
+        y: 155
         width: 90
-        height: 82
+        height: 5
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4027,9 +3626,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 854
-        y: 78
+        y: 153
         width: 94
-        height: 82
+        height: 7
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4049,9 +3648,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1022
-        y: 78
+        y: 154
         width: 107
-        height: 82
+        height: 6
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4071,9 +3670,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1198
-        y: 78
+        y: 153
         width: 74
-        height: 83
+        height: 9
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -4106,28 +3705,6 @@ TextureImporter:
       bones: []
       spriteID: 2a5a17a22598b5a10800000000000000
       internalID: 1899262653859210658
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_162
-      rect:
-        serializedVersion: 2
-        x: 2074
-        y: 157
-        width: 27
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78419740ae13d6e30800000000000000
-      internalID: 4498306483980145799
       vertices: []
       indices: 
       edges: []
@@ -4216,28 +3793,6 @@ TextureImporter:
       bones: []
       spriteID: b1de30e7b2457a810800000000000000
       internalID: 1776481123795463451
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: The Blood King_167
-      rect:
-        serializedVersion: 2
-        x: 1282
-        y: 78
-        width: 31
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3b3072f72feec2c00800000000000000
-      internalID: 877338752713163699
       vertices: []
       indices: 
       edges: []

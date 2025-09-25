@@ -16,26 +16,32 @@ namespace _Project._Scripts.System
         private Vector3 previousCameraPosition;
         private float spriteWidth;
 
-        void Start()
-        {
-            cameraTransform = transform;
-            previousCameraPosition = cameraTransform.position;
-
-            // Tự động lấy chiều rộng của sprite từ con của lớp background đầu tiên
-            // Giả định tất cả các sprite con trong một layer đều có cùng kích thước
-            if (layerParents.Length > 0 && layerParents[0].childCount > 0)
-            {
-                SpriteRenderer sr = layerParents[0].GetChild(0).GetComponent<SpriteRenderer>();
-                if (sr != null)
-                {
-                    spriteWidth = sr.bounds.size.x;
-                }
-            }
-        }
+        // --- THAY ĐỔI 1: Bỏ hàm Start() đi ---
 
         void LateUpdate()
         {
-            // 1. Tính toán vector di chuyển của camera
+            // --- THAY ĐỔI 2: Khởi tạo vị trí ở frame đầu tiên ---
+            // Nếu previousCameraPosition chưa được thiết lập (chỉ xảy ra 1 lần)
+            if (previousCameraPosition == Vector3.zero)
+            {
+                // Lấy vị trí camera SAU KHI Cinemachine đã cập nhật
+                cameraTransform = transform;
+                previousCameraPosition = cameraTransform.position;
+
+                // Tự động lấy chiều rộng của sprite
+                if (layerParents.Length > 0 && layerParents[0].childCount > 0)
+                {
+                    SpriteRenderer sr = layerParents[0].GetChild(0).GetComponent<SpriteRenderer>();
+                    if (sr != null)
+                    {
+                        spriteWidth = sr.bounds.size.x;
+                    }
+                }
+                // Bỏ qua frame đầu tiên này để không tính delta movement
+                return; 
+            }
+
+            // 1. Tính toán vector di chuyển của camera (từ frame thứ 2 trở đi)
             Vector3 deltaMovement = cameraTransform.position - previousCameraPosition;
 
             // 2. Di chuyển từng lớp background (di chuyển đối tượng CHA)
@@ -47,21 +53,15 @@ namespace _Project._Scripts.System
                 layerParents[i].position += new Vector3(parallaxMoveX, parallaxMoveY, 0);
             }
 
-            // 3. Cập nhật vị trí camera
+            // 3. Cập nhật vị trí camera cho lần tính toán ở frame tiếp theo
             previousCameraPosition = cameraTransform.position;
 
-            // 4. LOGIC LẶP LẠI MỚI - Chống lỗi sai số
+            // 4. LOGIC LẶP LẠI (giữ nguyên)
             foreach (Transform layer in layerParents)
             {
-                // Khoảng cách tương đối giữa camera và tâm của layer
                 float relativeDistance = cameraTransform.position.x - layer.position.x;
-
-                // Nếu camera đã di chuyển qua một nửa chiều rộng của sprite
-                // (tức là camera đang nhìn vào "đường nối" giữa 2 sprite)
                 if (Mathf.Abs(relativeDistance) >= spriteWidth)
                 {
-                    // Dịch chuyển layer một khoảng bằng đúng chiều rộng sprite
-                    // để đưa đường nối ra khỏi tầm nhìn của camera
                     float offset = (relativeDistance > 0) ? spriteWidth : -spriteWidth;
                     layer.position = new Vector3(layer.position.x + offset, layer.position.y, layer.position.z);
                 }

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerSkillGrafity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerSkillGrafity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_RenderTexture/MinimapRT.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_RenderTexture/MinimapRT.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/ParallaxBackground.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/ParallaxBackground.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +93,7 @@
       <workItem from="1758642378829" duration="649000" />
       <workItem from="1758652633851" duration="46000" />
       <workItem from="1758772823165" duration="55000" />
+      <workItem from="1758795470097" duration="883000" />
     </task>
     <servers />
   </component>

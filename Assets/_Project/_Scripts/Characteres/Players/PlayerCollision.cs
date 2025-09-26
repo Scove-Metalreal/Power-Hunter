@@ -1,13 +1,22 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
     private PlayerController playerController;
     private Enemy enemy;
+    private PlayerStat playerStat;
+    [Header("PlayerTakeDamage")]
+    public float TakeDamage = 20;
+    [Header("UI")]
+    public GameObject LoseUIPanel;
+    
     void Start()
     {
         playerController = GetComponent<PlayerController>();
         enemy = FindAnyObjectByType<Enemy>();
+        playerStat = GetComponent<PlayerStat>();
+        LoseUIPanel.SetActive(false);
     }
 
 
@@ -42,7 +51,12 @@ public class PlayerCollision : MonoBehaviour
     {
          if(collision.gameObject.CompareTag("DeathZone"))
         {
-            PlayerDead();
+            playerStat.TakeDamage(20f);
+
+            if (playerStat.HeathPlayer <= 0)
+            {
+                PlayerDead();
+            }
         }
         if (collision.CompareTag("FindPlayer"))
         {
@@ -67,8 +81,13 @@ public class PlayerCollision : MonoBehaviour
             GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         }
     }
-    public void EndGameAnimation()
+    public void StartDeadAnimation()
     {
         Time.timeScale = 0f;
+    }
+    public void EndDeadAnimation()
+    {
+        Destroy(gameObject);
+        LoseUIPanel.SetActive(true);
     }
 }

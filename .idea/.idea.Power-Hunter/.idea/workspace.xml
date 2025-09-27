@@ -6,6 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Shader/PlayerSpriteGlowUnlit.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Shader/PlayerSpriteGlowUnlit.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King 1.aseprite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King 1.aseprite.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King Lighting.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King Lighting.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King Lighting.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King Lighting.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King.aseprite.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/The Blood King/The Blood King.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/TypographerRotunda SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/TypographerRotunda SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_RenderTexture/MinimapRT.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_RenderTexture/MinimapRT.renderTexture" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ShaderGraphSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +26,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/System/ExtractTexture.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -91,6 +106,7 @@
       <workItem from="1758652633851" duration="46000" />
       <workItem from="1758772823165" duration="55000" />
       <workItem from="1758795470097" duration="1542000" />
+      <workItem from="1758941776965" duration="1265000" />
     </task>
     <servers />
   </component>

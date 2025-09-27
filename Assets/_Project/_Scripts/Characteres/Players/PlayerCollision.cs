@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +7,7 @@ public class PlayerCollision : MonoBehaviour
     private PlayerController playerController;
     private Enemy enemy;
     private PlayerStat playerStat;
+    public float KnockBackSpeed = 10f;
     [Header("PlayerTakeDamage")]
     public float TakeDamage = 20;
     [Header("UI")]
@@ -52,6 +54,42 @@ public class PlayerCollision : MonoBehaviour
          if(collision.gameObject.CompareTag("DeathZone"))
         {
             playerStat.TakeDamage(20f);
+            playerController.CanMove = false;
+
+            
+            Vector2 dir = Vector2.zero;
+
+            
+            if (playerController.GrafityDown)
+            {
+                dir = (playerController.Direction == 1)
+                    ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.left)
+                    : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.right);
+            }
+            else if (playerController.GrafityUp)
+            {
+                dir = (playerController.Direction == -1)
+                    ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.left)
+                    : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.right);
+            }
+            else if (playerController.GrafityLeft)
+            {
+                dir = (playerController.Direction == 1)
+                    ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.down)
+                    : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.up);
+            }
+            else if (playerController.GrafityRight)
+            {
+                dir = (playerController.Direction == -1)
+                    ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.down)
+                    : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.up);
+            }
+
+
+            GetComponent<Rigidbody2D>().AddForce(dir.normalized * KnockBackSpeed, ForceMode2D.Impulse);
+
+            
+            StartCoroutine(RecoverFromKnockback(0.25f));
 
             if (playerStat.HeathPlayer <= 0)
             {
@@ -89,5 +127,10 @@ public class PlayerCollision : MonoBehaviour
     {
         Destroy(gameObject);
         LoseUIPanel.SetActive(true);
+    }
+    IEnumerator RecoverFromKnockback(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        playerController.CanMove = true;
     }
 }

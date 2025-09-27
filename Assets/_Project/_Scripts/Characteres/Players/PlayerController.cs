@@ -108,8 +108,10 @@ public class PlayerController : MonoBehaviour
             velocity.y = x * PlayerSpeed;
             moveInput = x;
         }
-        GetComponent<Rigidbody2D>().linearVelocity = velocity;
-
+        if (CanMove == true)
+        {
+            GetComponent<Rigidbody2D>().linearVelocity = velocity;
+        }
         //animation dung yen
         if (isGround == true && animator != null)
         {

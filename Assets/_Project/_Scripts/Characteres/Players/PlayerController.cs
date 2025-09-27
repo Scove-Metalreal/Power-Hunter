@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public int Direction = 1;
     private bool isJump = false;
     public bool CanMove = true;
+    private PlayerStat playerStat;
     [Header("Stat Rigibody 2d")]
     private float defaultGravity;
     public float fallGravityAdd = 1f;
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
-
+        playerStat = GetComponent<PlayerStat>();
         GrafityDown = true;
         GrafityUp = false;
         GrafityLeft = false;
@@ -320,8 +321,9 @@ public class PlayerController : MonoBehaviour
         {
             dashCooldownTime -= Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && isDash == false)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && isDash == false && playerStat.StaminaPlayer >=20)
         {
+            playerStat.UseStamina(20);
             isDash = true;
             dashTimeLeft = dashTime;
             dashCooldownTime = dashCooldown;
@@ -340,7 +342,7 @@ public class PlayerController : MonoBehaviour
             {
                 isDash = false;
                 GetComponent<Rigidbody2D>().linearVelocity = new Vector2(xAfterDash, yAfterDash);
-
+                animator.ResetTrigger("isDashing");
 
             }
         }

@@ -24,7 +24,7 @@ public class PlayerAttackDefault : MonoBehaviour
         if (clickTimer > 0)
             clickTimer -= Time.deltaTime;
 
-        if (Input.GetMouseButtonDown(0) && !isAttacking)
+        if (Input.GetMouseButton(0) && !isAttacking)
         {
             clickCount++;
 
@@ -88,6 +88,8 @@ public class PlayerAttackDefault : MonoBehaviour
             playerController.animator.SetBool("isRunning", x != 0);
             
         }
+        playerController.animator.ResetTrigger("Slash1");
+        playerController.animator.ResetTrigger("DoubleSlash");
         isAttacking = false;
     }
 }

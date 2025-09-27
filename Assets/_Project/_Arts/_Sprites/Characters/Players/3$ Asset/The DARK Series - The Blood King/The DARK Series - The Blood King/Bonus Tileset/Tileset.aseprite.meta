@@ -5954,7 +5954,9 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   generatePhysicsShape: 0
-  secondarySpriteTextures: []
+  secondarySpriteTextures:
+  - name: _Emission
+    texture: {fileID: 2800000, guid: 771e0a89c90ed484485fc9d985f68a5e, type: 3}
   spritePackingTag: 
   canvasSize: {x: 320, y: 208}
   previousTextureSize: {x: 256, y: 512}

@@ -1,353 +1,225 @@
-﻿using Unity.Mathematics;
-using UnityEngine;
-using UnityEngine.InputSystem;
-
-
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Chi So Nhan Vat")]
+    [Header("Movement Stats")]
     public float PlayerSpeed = 5f;
-    public int direction = 1;
-    public bool isGround = true;
     public float jumpForce = 5f;
-    [Header("Khac")]
-    public Animator animator;
-    public int Direction = 1;
-    private bool isJump = false;
-    public bool CanMove = true;
-    private PlayerStat playerStat;
-    [Header("Stat Rigibody 2d")]
-    private float defaultGravity;
-    public float fallGravityAdd = 1f;
+    private Rigidbody2D rb;
 
+    [Header("Ground Check")]
+    public Transform groundCheck;
+    public float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
+    public bool isGround = true;
 
     [Header("Dash")]
     public float dashSpeed = 15f;
-
     public float dashTime = 0.2f;
     public float dashCooldown = 1f;
-    public bool isDash = false;
-    public float dashTimeLeft;
-    public float dashCooldownTime;
-    [Header("SkillGrafity")]
+    [HideInInspector] public bool isDash = false;
+    private float dashTimeLeft;
+    private float dashCooldownTime;
+
+    [Header("Gravity")]
     public bool GrafityDown;
     public bool GrafityUp;
     public bool GrafityLeft;
     public bool GrafityRight;
-    void Start()
+    private float defaultGravityScale;
+    public float fallGravityAdd = 1f;
+
+    [Header("State")]
+    public int Direction = 1;
+    private bool isChangingGravity = false; // BIẾN TRẠNG THÁI MỚI, THAY THẾ CHO CanMove
+
+    // Components
+    [HideInInspector] public Animator animator;
+    private PlayerStat playerStat;
+    
+    // Hàm này giúp bạn thấy được vòng tròn check ground trong cửa sổ Scene
+    void OnDrawGizmos()
     {
-        animator = GetComponent<Animator>();
-        defaultGravity = GetComponent<Rigidbody2D>().gravityScale;
-        playerStat = GetComponent<PlayerStat>();
-        GrafityDown = true;
-        GrafityUp = false;
-        GrafityLeft = false;
-        GrafityRight = false;
-        CanMove = true;
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
     }
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        playerStat = GetComponent<PlayerStat>();
+        defaultGravityScale = rb.gravityScale;
+        
+        GrafityDown = true;
+    }
 
     void Update()
     {
-        if (CanMove == true)
+        // Nếu đang trong quá trình đổi trọng lực, ta sẽ kiểm tra xem đã tiếp đất chưa
+        if (isChangingGravity)
         {
-            if (GrafityDown == true)
+            if (isGround)
             {
-                PlayerMove();
-                Dash(Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.y, 0, GetComponent<Rigidbody2D>().linearVelocity.y);
-
-                PlayerJumping();
+                // Khi đã tiếp đất, kết thúc quá trình đổi trọng lực và cho phép di chuyển lại
+                isChangingGravity = false;
+                rb.gravityScale = defaultGravityScale; // Trả gravity scale về bình thường
             }
-            if (GrafityUp == true)
-            {
-                PlayerMove();
-                Dash(-Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.y, 0, GetComponent<Rigidbody2D>().linearVelocity.y);
-                PlayerJumpingUp();
-            }
-            if (GrafityLeft == true)
-            {
-                PlayerMove();
-                Dash(GetComponent<Rigidbody2D>().linearVelocity.x, -Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.x, 0);
-                PlayerJumpingLeft();
-            }
-            if (GrafityRight == true)
-            {
-                PlayerMove();
-                Dash(GetComponent<Rigidbody2D>().linearVelocity.x, Direction * dashSpeed, GetComponent<Rigidbody2D>().linearVelocity.x, 0);
-                PlayerJumpingRight();
-            }
+            // Không làm gì khác cho đến khi tiếp đất
+            return; 
         }
-        UpdateJumpAndFall();
-    }
-    void PlayerMove()
-    {
-        // di chuyen theo truc X
-        float x = Input.GetAxisRaw("Horizontal");
-        float moveInput = 0f;
-        Vector2 velocity = GetComponent<Rigidbody2D>().linearVelocity;
 
-        if (GrafityDown)
-        {
-            velocity.x = x * PlayerSpeed;
-            moveInput = x;
-        }
-        else if (GrafityUp)
-        {
-            velocity.x = -x * PlayerSpeed;
-            moveInput = x;
-        }
-        else if (GrafityLeft)
-        {
-            velocity.y = -x * PlayerSpeed;
-            moveInput = x;
-        }
-        else if (GrafityRight)
-        {
-            velocity.y = x * PlayerSpeed;
-            moveInput = x;
-        }
-        if (CanMove == true)
-        {
-            GetComponent<Rigidbody2D>().linearVelocity = velocity;
-        }
-        //animation dung yen
-        if (isGround == true && animator != null)
-        {
-
-            animator.SetBool("isIdie", moveInput == 0);
-            animator.SetBool("isRunning", moveInput != 0);
-
-
-        }
-        //Huong theo huong di chuyen
-        Vector3 currentScale = transform.localScale;//LocalScale hien tai
-        if (x > 0)
-        {
-            Direction = 1;//mat phai
-            transform.localScale = new Vector3(Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// phai
-        }
-        if (x < 0)
-        {
-            Direction = -1;//mat trai
-            transform.localScale = new Vector3(-Mathf.Abs(currentScale.x), currentScale.y, currentScale.z);// trai
-        }
-    }
-    void PlayerJumping()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
-        {
-            // dang khong o tren mat dat
-            isGround = false;
-            isJump = true;
-            // anition nhay
-            if (animator != null)
-            {
-                animator.SetBool("isJumping", true);
-                animator.SetBool("isRunning", false);
-
-            }
-            // nhay
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        }
-    }
-    void PlayerJumpingUp()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
-        {
-            // dang khong o tren mat dat
-            isGround = false;
-            isJump = true;
-            // anition nhay
-            if (animator != null)
-            {
-                animator.SetBool("isJumping", true);
-                animator.SetBool("isRunning", false);
-
-            }
-            // nhay
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -jumpForce), ForceMode2D.Impulse);
-        }
+        // Nếu không đổi trọng lực, xử lý input như bình thường
+        HandleMovementAndDash();
+        Flip();
+        UpdateAnimationState(); // Gọi hàm cập nhật animation tập trung
     }
 
-    void PlayerJumpingLeft()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
-        {
-            // dang khong o tren mat dat
-            isGround = false;
-            isJump = true;
-            // anition nhay
-            if (animator != null)
-            {
-                animator.SetBool("isJumping", true);
-                animator.SetBool("isRunning", false);
-
-            }
-            // nhay
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(jumpForce, 0), ForceMode2D.Impulse);
-        }
+        // Luôn kiểm tra isGround trong FixedUpdate để đảm bảo tính ổn định vật lý
+        isGround = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
-
-    void PlayerJumpingRight()
+    
+    // --- TẬP TRUNG LOGIC INPUT VÀO MỘT HÀM ---
+    void HandleMovementAndDash()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGround)// khi an Space va tren mat dat
+        if (isDash)
         {
-            // dang khong o tren mat dat
-            isGround = false;
-            isJump = true;
-            // anition nhay
-            if (animator != null)
-            {
-                animator.SetBool("isJumping", true);
-                animator.SetBool("isRunning", false);
-
-            }
-            // nhay
-            GetComponent<Rigidbody2D>().AddForce(new Vector2(-jumpForce, 0), ForceMode2D.Impulse);
-        }
-    }
-    void UpdateJumpAndFall()
-    {
-        if (!isGround)
-        {
-            if (GrafityDown)
-            {
-                if (GetComponent<Rigidbody2D>().linearVelocity.y > 0.01f)
-                {
-                    animator.SetBool("isJumping", true);
-                    animator.SetBool("isFalling", false);
-
-                }
-                else if (GetComponent<Rigidbody2D>().linearVelocity.y < -0.01f)
-                {
-                    animator.SetBool("isJumping", false);
-                    animator.SetBool("isFalling", true);
-                    isJump = false;
-
-                    GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
-                }
-                else
-                {
-                    if (isJump == false)
-                    {
-                        isGround = true;
-                    }
-                }
-            }
-            if (GrafityUp)
-            {
-                if (GetComponent<Rigidbody2D>().linearVelocity.y > -0.01f)
-                {
-                    animator.SetBool("isJumping", true);
-                    animator.SetBool("isFalling", false);
-
-                }
-                else if (GetComponent<Rigidbody2D>().linearVelocity.y < 0.01f)
-                {
-                    animator.SetBool("isJumping", false);
-                    animator.SetBool("isFalling", true);
-                    isJump = false;
-                    GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
-                }
-                else
-                {
-                    if (isJump == false)
-                    {
-                        isGround = true;
-                    }
-                }
-                if (GrafityLeft)
-                {
-                    if (GetComponent<Rigidbody2D>().linearVelocity.x > 0.01f)
-                    {
-                        animator.SetBool("isJumping", true);
-                        animator.SetBool("isFalling", false);
-
-                    }
-                    else if (GetComponent<Rigidbody2D>().linearVelocity.x < -0.01f)
-                    {
-                        animator.SetBool("isJumping", false);
-                        animator.SetBool("isFalling", true);
-                        isJump = false;
-                        GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
-                    }
-                    else
-                    {
-                        if (isJump == false)
-                        {
-                            isGround = true;
-                        }
-                    }
-                }
-                if (GrafityRight)
-                {
-                    if (GetComponent<Rigidbody2D>().linearVelocity.x > -0.01f)
-                    {
-                        animator.SetBool("isJumping", true);
-                        animator.SetBool("isFalling", false);
-
-                    }
-                    else if (GetComponent<Rigidbody2D>().linearVelocity.x < 0.01f)
-                    {
-                        animator.SetBool("isJumping", false);
-                        animator.SetBool("isFalling", true);
-                        isJump = false;
-                        GetComponent<Rigidbody2D>().gravityScale = defaultGravity + fallGravityAdd;
-                    }
-                    else
-                    {
-                        CanMove = true;
-                        if (isJump == false)
-                        {
-                            isGround = true;
-                        }
-                    }
-                }
-            }
-        }
-        else
-        {
-            animator.SetBool("isJumping", false);
-            animator.SetBool("isFalling", false);
-            GetComponent<Rigidbody2D>().gravityScale = defaultGravity;
-
-
-
-        }
-    }
-    void Dash(float x, float y, float xAfterDash, float yAfterDash)
-    {
-        if (dashCooldownTime > 0)
-        {
-            dashCooldownTime -= Time.deltaTime;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && isDash == false && playerStat.StaminaPlayer >=20)
-        {
-            playerStat.UseStamina(20);
-            isDash = true;
-            dashTimeLeft = dashTime;
-            dashCooldownTime = dashCooldown;
-            animator.SetTrigger("isDashing");
-        }
-        if (isDash == true)
-        {
+            // Xử lý khi đang Dash
             if (dashTimeLeft > 0)
             {
-
-                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(x, y);
+                // Logic dash của bạn, nhưng cần được điều chỉnh cho các hướng trọng lực
+                Vector2 dashVelocity = Vector2.zero;
+                if (GrafityDown) dashVelocity = new Vector2(Direction * dashSpeed, 0);
+                if (GrafityUp) dashVelocity = new Vector2(-Direction * dashSpeed, 0);
+                if (GrafityLeft) dashVelocity = new Vector2(0, -Direction * dashSpeed);
+                if (GrafityRight) dashVelocity = new Vector2(0, Direction * dashSpeed);
+                rb.linearVelocity = dashVelocity;
 
                 dashTimeLeft -= Time.deltaTime;
             }
             else
             {
                 isDash = false;
-                GetComponent<Rigidbody2D>().linearVelocity = new Vector2(xAfterDash, yAfterDash);
+                rb.linearVelocity = Vector2.zero; // Dừng lại sau khi dash xong
                 animator.ResetTrigger("isDashing");
+            }
+        }
+        else
+        {
+            // Xử lý di chuyển và nhảy khi không Dash
+            PlayerMove();
+            PlayerJumping();
 
+            // Xử lý input Dash
+            if (dashCooldownTime > 0) dashCooldownTime -= Time.deltaTime;
+            if (Input.GetKeyDown(KeyCode.LeftShift) && dashCooldownTime <= 0 && playerStat.StaminaPlayer >= 20)
+            {
+                playerStat.UseStamina(20);
+                isDash = true;
+                dashTimeLeft = dashTime;
+                dashCooldownTime = dashCooldown;
+                animator.SetTrigger("isDashing");
             }
         }
     }
 
+    void PlayerMove()
+    {
+        float x = Input.GetAxisRaw("Horizontal");
+        
+        // Điều chỉnh hướng di chuyển dựa trên trọng lực
+        if (GrafityDown || GrafityUp)
+        {
+            float moveDirection = GrafityDown ? 1f : -1f;
+            rb.linearVelocity = new Vector2(x * PlayerSpeed * moveDirection, rb.linearVelocity.y);
+        }
+        else if (GrafityLeft || GrafityRight)
+        {
+            float moveDirection = GrafityRight ? 1f : -1f;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, x * PlayerSpeed * moveDirection);
+        }
+
+        // Cập nhật hướng nhìn
+        if (x > 0) Direction = 1;
+        if (x < 0) Direction = -1;
+    }
+
+    void PlayerJumping()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGround)
+        {
+            Vector2 jumpDirection = Vector2.zero;
+            if (GrafityDown) jumpDirection = Vector2.up;
+            if (GrafityUp) jumpDirection = Vector2.down;
+            if (GrafityLeft) jumpDirection = Vector2.right;
+            if (GrafityRight) jumpDirection = Vector2.left;
+
+            rb.AddForce(jumpDirection * jumpForce, ForceMode2D.Impulse);
+        }
+    }
+
+    // --- HÀM CẬP NHẬT ANIMATION TẬP TRUNG ---
+    void UpdateAnimationState()
+    {
+        float moveInput = Input.GetAxisRaw("Horizontal");
+
+        if (isGround)
+        {
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
+
+            if (moveInput != 0 && !isDash)
+            {
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isIdie", false);
+            }
+            else
+            {
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isIdie", true);
+            }
+        }
+        else // Khi đang ở trên không
+        {
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isIdie", false);
+            
+            // Xác định đang nhảy lên hay rơi xuống dựa trên vận tốc tương đối với trọng lực
+            float verticalVelocity = 0;
+            if (GrafityDown) verticalVelocity = rb.linearVelocity.y;
+            if (GrafityUp) verticalVelocity = -rb.linearVelocity.y;
+            if (GrafityLeft) verticalVelocity = rb.linearVelocity.x;
+            if (GrafityRight) verticalVelocity = -rb.linearVelocity.x;
+
+            if (verticalVelocity > 0.1f) // Đang bay lên (ngược trọng lực)
+            {
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
+            }
+            else // Đang rơi xuống
+            {
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFalling", true);
+            }
+        }
+    }
+
+    void Flip()
+    {
+        transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * Direction, transform.localScale.y, transform.localScale.z);
+    }
+    
+    // --- HÀM ĐỂ BẮT ĐẦU QUÁ TRÌNH ĐỔI TRỌNG LỰC ---
+    public void StartGravityChange()
+    {
+        isChangingGravity = true; // Bật trạng thái đang đổi trọng lực
+        isGround = false;         // Coi như không còn trên mặt đất cũ
+        rb.linearVelocity = Vector2.zero; // Reset vận tốc để rơi tự nhiên hơn
+        rb.gravityScale = defaultGravityScale * 3f; // Tăng mạnh trọng lực để "hút" xuống nhanh hơn
+    }
 }

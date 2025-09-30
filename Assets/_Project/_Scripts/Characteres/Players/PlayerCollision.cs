@@ -75,16 +75,36 @@ public class PlayerCollision : MonoBehaviour
 
         // --- ĐƠN GIẢN HÓA LOGIC KNOCKBACK ---
         // Hướng văng ra sẽ luôn ngược lại với hướng trọng lực hiện tại
-        Vector2 knockbackDir = Vector2.zero;
-        if (playerController.GrafityDown) knockbackDir = Vector2.up;
-        else if (playerController.GrafityUp) knockbackDir = Vector2.down;
-        else if (playerController.GrafityLeft) knockbackDir = Vector2.right;
-        else if (playerController.GrafityRight) knockbackDir = Vector2.left;
+        Vector2 dir = Vector2.zero;
+        if (playerController.GrafityDown)
+        {
+            dir = (playerController.Direction == 1)
+                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.left)
+                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.right);
+        }
+        else if (playerController.GrafityUp)
+        {
+            dir = (playerController.Direction == -1)
+                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.left)
+                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.right);
+        }
+        else if (playerController.GrafityLeft)
+        {
+            dir = (playerController.Direction == 1)
+                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.down)
+                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.up);
+        }
+        else if (playerController.GrafityRight)
+        {
+            dir = (playerController.Direction == -1)
+                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.down)
+                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.up);
+        }
 
         // Reset vận tốc cũ và áp dụng lực văng ra
         var rb = GetComponent<Rigidbody2D>();
         rb.linearVelocity = Vector2.zero;
-        rb.AddForce(knockbackDir * KnockBackSpeed, ForceMode2D.Impulse);
+        rb.AddForce(dir.normalized * KnockBackSpeed, ForceMode2D.Impulse);
 
         StartCoroutine(RecoverFromKnockback(0.4f));
 
@@ -108,7 +128,7 @@ public class PlayerCollision : MonoBehaviour
         }
         this.enabled = false; // Vô hiệu hóa script này
         playerController.enabled = false; // Vô hiệu hóa script điều khiển
-        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        
     }
 
     // Các hàm này được gọi từ Animation Event trên animation "Dead"
@@ -123,11 +143,13 @@ public class PlayerCollision : MonoBehaviour
         Destroy(gameObject);
         if (LoseUIPanel != null)
         {
-            LoseUIPanel.SetActive(true);
-            gameManager.isGameEnd = true;
-            gameManager.gamePauseUI.SetActive(false);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.Confined;
+            LoseUIPanel.SetActive(true);
+
+            gameManager.isGameEnd = true;
+            gameManager.gamePauseUI.SetActive(false);
+            
         }
 
     }

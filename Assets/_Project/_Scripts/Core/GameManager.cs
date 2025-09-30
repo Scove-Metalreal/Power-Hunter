@@ -5,11 +5,12 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gamePauseUI;
     public GameObject MenuOptionUI;
-    
+    public PlayerController playerController;
     public bool isGameEnd;
     public static int SceneIndex;
     void Start()
     {
+        playerController = GetComponent<PlayerController>();
         gamePauseUI.SetActive(false);
         MenuOptionUI.SetActive(false);
         isGameEnd = false;
@@ -34,8 +35,18 @@ public class GameManager : MonoBehaviour
                 Pause();
             }
         }
-
-
+        if (SceneManager.GetActiveScene().buildIndex != 0)
+        {
+            if (Input.GetKey(KeyCode.LeftAlt))
+            {
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+            else {
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
     }
     public void Option()
     {
@@ -48,6 +59,7 @@ public class GameManager : MonoBehaviour
         isGameEnd = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        playerController.GrafityDown = true;
     }
     public void Pause()
     {
@@ -75,7 +87,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
         isGameEnd = false;
     }
-    public void Play()
+    public void Play()  
     {
         if (SceneIndex == 0)
         {
@@ -88,7 +100,7 @@ public class GameManager : MonoBehaviour
     }
     public void Back()
     {
-        if (gamePauseUI.activeSelf == true)
+        if (gamePauseUI.activeSelf == true  && gamePauseUI != null)
         {
             Time.timeScale = 1f;
             gamePauseUI.SetActive(false);
@@ -96,7 +108,7 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        if (MenuOptionUI.activeSelf == true)
+        if (MenuOptionUI.activeSelf == true && MenuOptionUI != null)
         {
             MenuOptionUI.SetActive(false);
         }

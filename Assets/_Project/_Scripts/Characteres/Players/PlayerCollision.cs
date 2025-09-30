@@ -7,19 +7,20 @@ public class PlayerCollision : MonoBehaviour
     // --- THAM CHIẾU COMPONENT ---
     private PlayerController playerController;
     private PlayerStat playerStat;
-    
+    public GameManager gameManager;
     [Header("Knockback Settings")]
     public float KnockBackSpeed = 10f;
 
     [Header("UI")]
     public GameObject LoseUIPanel;
     
+    
     void Start()
     {
         // Lấy các component cần thiết từ chính Player
         playerController = GetComponent<PlayerController>();
         playerStat = GetComponent<PlayerStat>();
-
+        gameManager = GetComponent<GameManager>();
         // Kiểm tra an toàn để tránh lỗi nếu quên gán UI
         if (LoseUIPanel != null)
         {
@@ -118,8 +119,16 @@ public class PlayerCollision : MonoBehaviour
 
     public void EndDeadAnimation()
     {
-        Time.timeScale = 1f; // Reset lại timeScale trước khi hiện UI
+        
         Destroy(gameObject);
-        if (LoseUIPanel != null) LoseUIPanel.SetActive(true);
+        if (LoseUIPanel != null)
+        {
+            LoseUIPanel.SetActive(true);
+            gameManager.isGameEnd = true;
+            gameManager.gamePauseUI.SetActive(false);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
+        }
+
     }
 }

@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Shader/Enemies/Enemy 1 SpriteGlowUnlit.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Shader/Enemies/Enemy 1 SpriteGlowUnlit.shadergraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/Shader/Tilemap/Tilemap 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/Shader/Tilemap/Tilemap 1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/Bonus Tileset/Tileset.aseprite.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/Bonus Tileset/Tileset.aseprite.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/Bonus Tileset/Tileset_extracted.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Characters/Players/3$ Asset/The DARK Series - The Blood King/The DARK Series - The Blood King/Bonus Tileset/Tileset_extracted.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/TypographerRotunda SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/TypographerRotunda SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerSkillGrafity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerSkillGrafity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerState.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerState.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +23,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GlowBreathingEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/System/ExtractTexture.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -102,6 +104,7 @@
       <workItem from="1758795470097" duration="1542000" />
       <workItem from="1758941776965" duration="1265000" />
       <workItem from="1758985985814" duration="4862000" />
+      <workItem from="1759245167307" duration="1816000" />
     </task>
     <servers />
   </component>

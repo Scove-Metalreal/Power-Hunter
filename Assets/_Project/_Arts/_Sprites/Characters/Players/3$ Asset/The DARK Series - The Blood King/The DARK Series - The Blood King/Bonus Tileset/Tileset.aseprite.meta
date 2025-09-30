@@ -5957,6 +5957,8 @@ ScriptedImporter:
   secondarySpriteTextures:
   - name: _Emission
     texture: {fileID: 2800000, guid: 771e0a89c90ed484485fc9d985f68a5e, type: 3}
+  - name: _Emission 2
+    texture: {fileID: 2800000, guid: 9b972c43ab4d63a4fa35f3d605eeca7b, type: 3}
   spritePackingTag: 
   canvasSize: {x: 320, y: 208}
   previousTextureSize: {x: 256, y: 512}

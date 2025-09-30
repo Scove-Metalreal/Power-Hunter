@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public PlayerController playerController;
     public bool isGameEnd;
     public static int SceneIndex;
+    [SerializeField] private AudioSource sfxSource;  
+    [SerializeField] private AudioClip clickClip;
     void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -23,6 +25,7 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        
     }
 
     // Update is called once per frame
@@ -33,6 +36,10 @@ public class GameManager : MonoBehaviour
             if (SceneManager.GetActiveScene().buildIndex == 1)
             {
                 Pause();
+                if (sfxSource != null && clickClip != null)
+                {
+                    sfxSource.PlayOneShot(clickClip);
+                }
             }
         }
         if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -51,6 +58,10 @@ public class GameManager : MonoBehaviour
     public void Option()
     {
         MenuOptionUI.SetActive(true);
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
     }
     public void Again()
     {
@@ -60,6 +71,10 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         playerController.GrafityDown = true;
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
     }
     public void Pause()
     {
@@ -68,6 +83,10 @@ public class GameManager : MonoBehaviour
 
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
 
     }
     public void Remuse()
@@ -76,19 +95,35 @@ public class GameManager : MonoBehaviour
         gamePauseUI.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-       
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
+
     }
     public void MainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
     }
     public void MainMenuInGameEndUI()
     {
         SceneManager.LoadScene("MainMenu");
         isGameEnd = false;
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
     }
     public void Play()  
     {
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
         if (SceneIndex == 0)
         {
             SceneIndex = 1;
@@ -106,15 +141,27 @@ public class GameManager : MonoBehaviour
             gamePauseUI.SetActive(false);
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
+            if (sfxSource != null && clickClip != null)
+            {
+                sfxSource.PlayOneShot(clickClip);
+            }
         }
 
         if (MenuOptionUI.activeSelf == true && MenuOptionUI != null)
         {
             MenuOptionUI.SetActive(false);
+            if (sfxSource != null && clickClip != null)
+            {
+                sfxSource.PlayOneShot(clickClip);
+            }
         }
     }
     public void Exitgame()
     {
         Application.Quit();
+        if (sfxSource != null && clickClip != null)
+        {
+            sfxSource.PlayOneShot(clickClip);
+        }
     }
 }

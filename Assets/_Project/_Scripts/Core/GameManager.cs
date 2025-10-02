@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static int SceneIndex;
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioClip clickClip;
+    public GameObject FullMapUI;
     void Start()
     {
         playerController = GetComponent<PlayerController>();
@@ -25,6 +26,7 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
+        FullMapUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -55,6 +57,11 @@ public class GameManager : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
         }
+        if (Input.GetKey(KeyCode.M))
+        {
+            FullMapUI.SetActive(true);
+        }
+        else {  FullMapUI.SetActive(false);}
     }
     public void Option()
     {

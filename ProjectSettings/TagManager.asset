@@ -10,6 +10,7 @@ TagManager:
   - DeathZone
   - FindPlayer
   - EnemyHitbox
+  - SpikeTrap
   layers:
   - Default
   - TransparentFX

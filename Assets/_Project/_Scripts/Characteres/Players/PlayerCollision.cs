@@ -10,7 +10,7 @@ public class PlayerCollision : MonoBehaviour
     private PlayerController playerController; // Tham chiếu đến script PlayerController để điều khiển hành vi và trạng thái của người chơi.
     private PlayerStat playerStat;             // Tham chiếu đến script PlayerStat để quản lý các chỉ số như máu và khả năng hồi phục.
     public GameManager gameManager;            // Tham chiếu đến GameManager để quản lý các trạng thái tổng thể của trò chơi (ví dụ: kết thúc game).
-
+   
     [Header("Knockback Settings")] // Đánh dấu các thuộc tính liên quan đến thiết lập Knockback.
     public float KnockBackSpeed = 10f; // Tốc độ mà người chơi bị văng ra khi nhận sát thương.
 
@@ -26,7 +26,7 @@ public class PlayerCollision : MonoBehaviour
         
         // --- THAY ĐỔI: Tìm GameManager trong scene thay vì get component từ Player ---
         // Điều này hữu ích nếu GameManager không được đính kèm trực tiếp lên GameObject Player.
-        gameManager = FindObjectOfType<GameManager>();
+        gameManager = FindAnyObjectByType<GameManager>();
 
         // Kiểm tra an toàn để tránh lỗi nếu quên gán UI trong Inspector.
         if (LoseUIPanel != null)
@@ -71,7 +71,16 @@ public class PlayerCollision : MonoBehaviour
                 Debug.LogWarning("Found 'EnemyHitbox' tag but no Hitbox component on: " + collision.gameObject.name);
             }
         }
-        
+        if (collision.CompareTag("SpikeTrap"))
+        {
+            
+            SpikeTrap spikeTrap = collision.GetComponent<SpikeTrap>();
+            if (spikeTrap != null)
+            {
+                spikeTrap.ActiceSpikeTrap();
+            }
+        }
+
         // <<< LOGIC CŨ ĐÃ BỊ LOẠI BỎ (hoặc điều chỉnh)
         // Xử lý va chạm với vùng tìm kiếm của Enemy (FindPlayer)
         // Logic này đã được tích hợp vào `HandleDamageAndKnockback` hoặc xử lý trực tiếp bởi Enemy.

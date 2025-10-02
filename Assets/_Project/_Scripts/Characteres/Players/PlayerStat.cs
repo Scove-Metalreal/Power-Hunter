@@ -25,6 +25,10 @@ public class PlayerStat : MonoBehaviour
         HeathSilder.maxValue = HeathPlayer;
         HeathSilder.value = HeathPlayer;
         StaminaSlider.value = StaminaPlayer;
+
+        HeathSilder.interactable = false;
+        StaminaSlider.interactable = false;
+        
     }
 
     // Update is called once per frame
@@ -50,7 +54,7 @@ public class PlayerStat : MonoBehaviour
             StaminaSlider.value = Mathf.MoveTowards(StaminaSlider.value, targetStamina, 10f * Time.unscaledDeltaTime);
         }
     }
-
+        
     public void UseStamina(float enegy)
     {
         StaminaPlayer -= enegy;

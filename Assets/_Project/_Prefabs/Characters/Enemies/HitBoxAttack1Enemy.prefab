@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3184094198267255812}
   - component: {fileID: 1876037156737568116}
   - component: {fileID: 1530600335971978362}
+  - component: {fileID: 2546004706276882598}
   m_Layer: 0
   m_Name: HitBoxAttack1Enemy
-  m_TagString: DeathZone
+  m_TagString: EnemyHitbox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,3 +107,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2546004706276882598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3031616454288993865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a72a4b3f64b5f3d40b75d03dda4427c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hitbox
+  damage: 10

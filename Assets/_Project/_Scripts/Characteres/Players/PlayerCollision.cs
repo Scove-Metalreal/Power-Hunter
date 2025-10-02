@@ -1,156 +1,206 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UI; // Cần thiết cho việc làm việc với UI như GameObject và các thành phần UI.
 
+// Lớp này chịu trách nhiệm xử lý các va chạm của người chơi với các đối tượng khác trong game,
+// bao gồm cả va chạm với môi trường, kẻ địch, và các trigger.
 public class PlayerCollision : MonoBehaviour
 {
     // --- THAM CHIẾU COMPONENT ---
-    private PlayerController playerController;
-    private PlayerStat playerStat;
-    public GameManager gameManager;
-    [Header("Knockback Settings")]
-    public float KnockBackSpeed = 10f;
+    private PlayerController playerController; // Tham chiếu đến script PlayerController để điều khiển hành vi và trạng thái của người chơi.
+    private PlayerStat playerStat;             // Tham chiếu đến script PlayerStat để quản lý các chỉ số như máu và khả năng hồi phục.
+    public GameManager gameManager;            // Tham chiếu đến GameManager để quản lý các trạng thái tổng thể của trò chơi (ví dụ: kết thúc game).
 
-    [Header("UI")]
-    public GameObject LoseUIPanel;
+    [Header("Knockback Settings")] // Đánh dấu các thuộc tính liên quan đến thiết lập Knockback.
+    public float KnockBackSpeed = 10f; // Tốc độ mà người chơi bị văng ra khi nhận sát thương.
+
+    [Header("UI")] // Đánh dấu các thuộc tính liên quan đến giao diện người dùng.
+    public GameObject LoseUIPanel; // Tham chiếu đến GameObject chứa bảng UI hiển thị khi người chơi thua.
     
-    
+    // Hàm Start được gọi một lần khi script được kích hoạt.
     void Start()
     {
-        // Lấy các component cần thiết từ chính Player
+        // Lấy các component cần thiết được đính kèm với GameObject Player.
         playerController = GetComponent<PlayerController>();
         playerStat = GetComponent<PlayerStat>();
-        gameManager = GetComponent<GameManager>();
-        // Kiểm tra an toàn để tránh lỗi nếu quên gán UI
+        
+        // --- THAY ĐỔI: Tìm GameManager trong scene thay vì get component từ Player ---
+        // Điều này hữu ích nếu GameManager không được đính kèm trực tiếp lên GameObject Player.
+        gameManager = FindObjectOfType<GameManager>();
+
+        // Kiểm tra an toàn để tránh lỗi nếu quên gán UI trong Inspector.
         if (LoseUIPanel != null)
         {
-            LoseUIPanel.SetActive(false);
+            LoseUIPanel.SetActive(false); // Ẩn bảng thua khi bắt đầu.
+        }
+        else
+        {
+            Debug.LogWarning("LoseUIPanel chưa được gán trong PlayerCollision!");
         }
     }
 
     // --- XÓA BỎ: Toàn bộ logic check ground cũ đã được di chuyển sang PlayerController ---
-    // Hàm OnCollisionEnter2D và OnCollisionExit2D đã bị xóa vì không còn cần thiết.
+    // Các hàm OnCollisionEnter2D và OnCollisionExit2D đã bị xóa vì logic kiểm tra mặt đất
+    // đã được tập trung và xử lý hiệu quả hơn trong `PlayerController.FixedUpdate`.
+    // Điều này giúp script này chỉ tập trung vào xử lý va chạm và các hiệu ứng liên quan.
 
+    // Hàm OnTriggerEnter2D được gọi khi một Collider khác đi vào Trigger Collider của đối tượng này.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Xử lý va chạm với vùng chết (DeathZone)
+        // Xử lý va chạm với vùng chết (DeathZone).
         if (collision.CompareTag("DeathZone"))
         {
-            HandleDeathZoneCollision();
+            // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
+            // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
+            HandleDamageAndKnockback(20f, collision.transform);
         }
 
-        // TỐI ƯU: Xử lý va chạm với vùng tìm kiếm của Enemy
-        if (collision.CompareTag("FindPlayer"))
+        // <<< LOGIC MỚI: Xử lý va chạm với hitbox của Enemy
+        // Khi người chơi va chạm với hitbox của kẻ địch.
+        if (collision.CompareTag("EnemyHitbox"))
         {
-            // Lấy component Enemy trực tiếp từ đối tượng va chạm, thay vì tìm kiếm cả scene
-            Enemy enemy = collision.GetComponentInParent<Enemy>();
-            if (enemy != null)
+            // Lấy component Hitbox từ đối tượng va chạm để biết thông tin (ví dụ: sát thương).
+            Hitbox hitbox = collision.GetComponent<Hitbox>();
+            if (hitbox != null)
             {
-                enemy.isCollidingWithPlayer = true;
-                enemy.DoAttack();
+                // Gọi hàm xử lý sát thương và knockback với thông tin từ hitbox.
+                HandleDamageAndKnockback(hitbox.damage, collision.transform);
+            }
+            else
+            {
+                Debug.LogWarning("Found 'EnemyHitbox' tag but no Hitbox component on: " + collision.gameObject.name);
             }
         }
+        
+        // <<< LOGIC CŨ ĐÃ BỊ LOẠI BỎ (hoặc điều chỉnh)
+        // Xử lý va chạm với vùng tìm kiếm của Enemy (FindPlayer)
+        // Logic này đã được tích hợp vào `HandleDamageAndKnockback` hoặc xử lý trực tiếp bởi Enemy.
+        // if (collision.CompareTag("FindPlayer"))
+        // {
+        //     Enemy enemy = collision.GetComponentInParent<Enemy>();
+        //     if (enemy != null)
+        //     {
+        //         enemy.isCollidingWithPlayer = true;
+        //         enemy.DoAttack();
+        //     }
+        // }
     }
 
+    // Hàm OnTriggerExit2D được gọi khi một Collider khác rời khỏi Trigger Collider của đối tượng này.
     private void OnTriggerExit2D(Collider2D collision)
     {
+        // <<< LOGIC CŨ ĐÃ BỊ LOẠI BỎ (hoặc điều chỉnh)
         // TỐI ƯU: Xử lý khi thoát khỏi vùng tìm kiếm của Enemy
-        if (collision.CompareTag("FindPlayer"))
-        {
-            Enemy enemy = collision.GetComponentInParent<Enemy>();
-            if (enemy != null)
-            {
-                enemy.isCollidingWithPlayer = false;
-            }
-        }
+        // if (collision.CompareTag("FindPlayer"))
+        // {
+        //     Enemy enemy = collision.GetComponentInParent<Enemy>();
+        //     if (enemy != null)
+        //     {
+        //         enemy.isCollidingWithPlayer = false;
+        //     }
+        // }
     }
 
-    private void HandleDeathZoneCollision()
+    // <<< HÀM MỚI: Gom logic nhận sát thương và knockback vào một chỗ
+    // Hàm này xử lý việc người chơi nhận sát thương và bị đẩy lùi (knockback).
+    // damage: Lượng sát thương nhận vào.
+    // damageSource: Transform của đối tượng gây sát thương, dùng để tính hướng knockback.
+    private void HandleDamageAndKnockback(float damage, Transform damageSource)
     {
-        playerStat.TakeDamage(20f);
+        // Trừ máu người chơi.
+        playerStat.TakeDamage(damage);
         
-        // Dừng di chuyển của người chơi để thực hiện knockback
-        // (Giả sử PlayerController có biến isChangingGravity hoặc tương tự để khóa di chuyển)
-        playerController.enabled = false; // Tạm thời vô hiệu hóa script để ngăn input
+        // Tạm thời vô hiệu hóa script PlayerController để ngăn input và hành động khác trong khi bị knockback.
+        if(playerController != null) playerController.enabled = false;
 
-        // --- ĐƠN GIẢN HÓA LOGIC KNOCKBACK ---
-        // Hướng văng ra sẽ luôn ngược lại với hướng trọng lực hiện tại
-        Vector2 dir = Vector2.zero;
-        if (playerController.GrafityDown)
-        {
-            dir = (playerController.Direction == 1)
-                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.left)
-                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.right);
-        }
-        else if (playerController.GrafityUp)
-        {
-            dir = (playerController.Direction == -1)
-                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.left)
-                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.right);
-        }
-        else if (playerController.GrafityLeft)
-        {
-            dir = (playerController.Direction == 1)
-                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.down)
-                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.up);
-        }
-        else if (playerController.GrafityRight)
-        {
-            dir = (playerController.Direction == -1)
-                ? (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.down)
-                : (Quaternion.Euler(0, 0, Random.Range(10f, 40f)) * Vector2.up);
-        }
+        // Tính toán hướng văng ra: Luôn đẩy người chơi ra xa nguồn sát thương.
+        // `transform.position` là vị trí của người chơi.
+        // `damageSource.position` là vị trí của nguồn gây sát thương.
+        // `(transform.position - damageSource.position).normalized` cho ra vector hướng từ nguồn sát thương đến người chơi, đã chuẩn hóa.
+        Vector2 knockbackDir = (transform.position - damageSource.position).normalized;
 
-        // Reset vận tốc cũ và áp dụng lực văng ra
+        // Lấy Rigidbody2D của người chơi để áp dụng lực.
         var rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = Vector2.zero;
-        rb.AddForce(dir.normalized * KnockBackSpeed, ForceMode2D.Impulse);
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero; // Reset vận tốc hiện tại để lực knockback có hiệu lực hoàn toàn.
+            rb.AddForce(knockbackDir * KnockBackSpeed, ForceMode2D.Impulse); // Áp dụng lực knockback.
+        }
+        else
+        {
+            Debug.LogWarning("Rigidbody2D not found for knockback on: " + gameObject.name);
+        }
 
-        StartCoroutine(RecoverFromKnockback(0.4f));
+        // Bắt đầu Coroutine để xử lý việc phục hồi sau knockback.
+        StartCoroutine(RecoverFromKnockback(0.4f)); // Thời gian phục hồi là 0.4 giây.
 
+        // Kiểm tra xem người chơi có chết sau khi nhận sát thương không.
         if (playerStat.HeathPlayer <= 0)
         {
-            PlayerDead();
+            PlayerDead(); // Gọi hàm xử lý khi người chơi chết.
         }
     }
-
+    
+    // Coroutine để phục hồi sau khi Knockback.
+    // delay: Thời gian chờ trước khi phục hồi.
     IEnumerator RecoverFromKnockback(float delay)
     {
-        yield return new WaitForSeconds(delay);
-        playerController.enabled = true; // Kích hoạt lại script PlayerController
+        yield return new WaitForSeconds(delay); // Chờ trong khoảng thời gian `delay`.
+        // Kích hoạt lại script PlayerController để người chơi có thể nhận input và di chuyển lại.
+        if(playerController != null) playerController.enabled = true; 
     }
 
+    // Hàm xử lý khi người chơi chết.
     void PlayerDead()
     {
+        // Nếu có Animator, bật cờ "isDead" để kích hoạt animation chết.
         if (playerController.animator != null)
         {
             playerController.animator.SetBool("isDead", true);
         }
-        this.enabled = false; // Vô hiệu hóa script này
-        playerController.enabled = false; // Vô hiệu hóa script điều khiển
         
+        this.enabled = false; // Vô hiệu hóa script PlayerCollision này.
+        // Vô hiệu hóa script PlayerController để ngăn mọi hành vi của người chơi.
+        if(playerController != null) playerController.enabled = false;
+        
+        // Lưu ý: Phần xử lý animation chết và chuyển sang màn hình thua được thực hiện trong các Animation Event.
     }
 
-    // Các hàm này được gọi từ Animation Event trên animation "Dead"
+    // --- CÁC HÀM NÀY ĐƯỢC GỌI TỪ ANIMATION EVENT TRÊN ANIMATION "Dead" ---
+
+    // Hàm này được gọi ở đầu của animation "Dead".
     public void StartDeadAnimation()
     {
-        Time.timeScale = 0f;
+        Time.timeScale = 0f; // Dừng toàn bộ thời gian trong game, bao gồm cả physics và Update.
     }
 
+    // Hàm này được gọi ở cuối của animation "Dead".
     public void EndDeadAnimation()
     {
-        
+        // Xóa GameObject Player khỏi Scene.
         Destroy(gameObject);
-        if (LoseUIPanel != null)
+        
+        // Xử lý hiển thị UI thua cuộc và cập nhật trạng thái game.
+        // Kiểm tra an toàn cho cả LoseUIPanel và GameManager.
+        if (LoseUIPanel != null && gameManager != null)
         {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
-            LoseUIPanel.SetActive(true);
+            Cursor.visible = true; // Hiển thị con trỏ chuột.
+            Cursor.lockState = CursorLockMode.Confined; // Khóa con trỏ chuột trong cửa sổ game.
+            LoseUIPanel.SetActive(true); // Hiển thị bảng UI thua cuộc.
 
-            gameManager.isGameEnd = true;
-            gameManager.gamePauseUI.SetActive(false);
+            // Cập nhật trạng thái GameManager để báo hiệu game đã kết thúc.
+            gameManager.isGameEnd = true; 
             
+            // Ẩn UI tạm dừng game (nếu có).
+            if (gameManager.gamePauseUI != null)
+            {
+                gameManager.gamePauseUI.SetActive(false);
+            }
         }
-
+        else
+        {
+            if (LoseUIPanel == null) Debug.LogWarning("LoseUIPanel is null when EndDeadAnimation is called.");
+            if (gameManager == null) Debug.LogWarning("GameManager is null when EndDeadAnimation is called.");
+        }
     }
 }

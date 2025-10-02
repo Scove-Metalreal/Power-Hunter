@@ -6,12 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 2.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Death 1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Death 1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Enemy.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Enemy.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Idle.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Walk 1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Walk 1.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/monster001.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/monster001.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/TypographerRotunda SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/TypographerRotunda SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_RenderTexture/MinimapRT.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_RenderTexture/MinimapRT.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerAttackDefault.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerAttackDefault.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/HitBoxAttack1Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/HitBoxAttack1Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/HitBoxAttack2Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/HitBoxAttack2Enemy.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Hitbox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GlowBreathingEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/System/ExtractTexture.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -104,6 +115,7 @@
       <workItem from="1758941776965" duration="1265000" />
       <workItem from="1758985985814" duration="4862000" />
       <workItem from="1759245167307" duration="1816000" />
+      <workItem from="1759368656693" duration="7713000" />
     </task>
     <servers />
   </component>

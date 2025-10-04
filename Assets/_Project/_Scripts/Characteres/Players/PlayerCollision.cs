@@ -1,5 +1,7 @@
+
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; // Cần thiết cho việc làm việc với UI như GameObject và các thành phần UI.
 
 // Lớp này chịu trách nhiệm xử lý các va chạm của người chơi với các đối tượng khác trong game,
@@ -79,6 +81,11 @@ public class PlayerCollision : MonoBehaviour
             {
                 spikeTrap.ActiceSpikeTrap();
             }
+        }
+        if (collision.gameObject.CompareTag("Gate"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
         }
 
         // <<< LOGIC CŨ ĐÃ BỊ LOẠI BỎ (hoặc điều chỉnh)

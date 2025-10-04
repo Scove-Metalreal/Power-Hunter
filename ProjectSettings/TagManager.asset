@@ -11,6 +11,7 @@ TagManager:
   - FindPlayer
   - EnemyHitbox
   - SpikeTrap
+  - Gate
   layers:
   - Default
   - TransparentFX

@@ -18,7 +18,13 @@ public class PlayerAttackDefault : MonoBehaviour
     private bool isAttackSequenceStarted = false; // Cờ trạng thái mới: true nếu người chơi đang trong một chuỗi tấn công (giữ chuột).
 
     private GameObject currentHitbox; // Biến chung để lưu trữ hitbox hiện tại, thay thế cho varhitbox1.
-
+    [Header("SoundEffect")]
+    public AudioSource SfxSource;
+    public AudioClip SwingSlash1;
+    public AudioClip SwingSlash2;
+    public AudioClip SwingSlash3;
+    public AudioClip SwingSlash4;
+    public AudioClip SwingSlash5;
     // Hàm Update được gọi mỗi frame. Dùng để xử lý input và logic dựa trên thời gian.
     void Update()
     {
@@ -77,6 +83,7 @@ public class PlayerAttackDefault : MonoBehaviour
     {
         isAttacking = true; // Đánh dấu đang tấn công để khóa input.
         playerController.animator.SetTrigger("Slash1"); // Kích hoạt animation.
+
     }
 
     // Hàm thực hiện đòn tấn công Double Slash.
@@ -172,6 +179,28 @@ public class PlayerAttackDefault : MonoBehaviour
             var x = Input.GetAxis("Horizontal");
             playerController.animator.SetBool("isIdie", x == 0);
             playerController.animator.SetBool("isRunning", x != 0);
+        }
+    }
+    public void SoundEffectSlash1()
+    {
+        int RandomSFX = Random.Range(1, 5);
+        switch (RandomSFX)
+        {
+            case (1):
+                SfxSource.PlayOneShot(SwingSlash1);
+                break;
+            case (2):
+                SfxSource.PlayOneShot(SwingSlash2);
+                break;
+            case (3):
+                SfxSource.PlayOneShot(SwingSlash3);
+                break;
+            case (4):
+                SfxSource.PlayOneShot(SwingSlash4);
+                break;
+            case (5):
+                SfxSource.PlayOneShot(SwingSlash5);
+                break;
         }
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - EnemyHitbox
   - SpikeTrap
   - Gate
+  - GroundTrap
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - IconPlayer
   - Ground
   - Player
-  - 
+  - GroundTrap
   - 
   - 
   - 

@@ -49,6 +49,13 @@ public class PlayerCollision : MonoBehaviour
     // Hàm OnTriggerEnter2D được gọi khi một Collider khác đi vào Trigger Collider của đối tượng này.
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("GroundTrap"))
+        {
+            FindAnyObjectByType<FallingGround>().TriggerCollapse();
+            FindAnyObjectByType<CameraShake>().StartCoroutine(FindAnyObjectByType<CameraShake>().Shake());
+            
+
+        }
         // Xử lý va chạm với vùng chết (DeathZone).
         if (collision.CompareTag("DeathZone"))
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSkillGrafity : MonoBehaviour
 {
@@ -11,15 +12,18 @@ public class PlayerSkillGrafity : MonoBehaviour
 
     void Update()
     {
-        // Kiểm tra nếu người chơi đang không trong quá trình đổi trọng lực thì mới cho đổi tiếp
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (SceneManager.GetActiveScene().name != "Level 3")
         {
-            if (Input.GetKeyDown(KeyCode.S)) ChangeGravity(Vector2.down, 0, true, false, false, false);
-            if (Input.GetKeyDown(KeyCode.W)) ChangeGravity(Vector2.up, 180, false, true, false, false);
-            
-            // --- SỬA LỖI Ở ĐÂY: Đảo ngược góc xoay cho A và D ---
-            if (Input.GetKeyDown(KeyCode.A)) ChangeGravity(Vector2.left, -90, false, false, true, false); // Đổi thành -90
-            if (Input.GetKeyDown(KeyCode.D)) ChangeGravity(Vector2.right, 90, false, false, false, true);  // Đổi thành 90
+            // Kiểm tra nếu người chơi đang không trong quá trình đổi trọng lực thì mới cho đổi tiếp
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                if (Input.GetKeyDown(KeyCode.S)) ChangeGravity(Vector2.down, 0, true, false, false, false);
+                if (Input.GetKeyDown(KeyCode.W)) ChangeGravity(Vector2.up, 180, false, true, false, false);
+                
+                // --- SỬA LỖI Ở ĐÂY: Đảo ngược góc xoay cho A và D ---
+                if (Input.GetKeyDown(KeyCode.A)) ChangeGravity(Vector2.left, -90, false, false, true, false); // Đổi thành -90
+                if (Input.GetKeyDown(KeyCode.D)) ChangeGravity(Vector2.right, 90, false, false, false, true);  // Đổi thành 90
+            }
         }
     }
 

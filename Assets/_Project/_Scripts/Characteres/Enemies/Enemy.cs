@@ -79,6 +79,7 @@ public class Enemy : MonoBehaviour
     // Hàm Update được gọi mỗi frame. Dùng để xử lý logic dựa trên input và trạng thái không phụ thuộc vào vật lý.
     void Update()
     {
+        Debug.Log("Current State: " + currentState);
         // <<< LOGIC MỚI: Chỉ xử lý thay đổi trạng thái trong Update.
         HandleStateTransitions();
         // Cập nhật Animator dựa trên trạng thái và hành vi hiện tại.
@@ -94,6 +95,12 @@ public class Enemy : MonoBehaviour
         if (!isGrounded)
         {
             rb.AddForce(gravityDirection * gravityStrength);
+            Debug.Log("Apply custom garvity: " + gravityDirection * gravityStrength);
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
+            Debug.Log("Enemy is grounded.");
         }
         // Xử lý di chuyển và kiểm tra môi trường.
         HandleMovement();
@@ -225,6 +232,8 @@ public class Enemy : MonoBehaviour
         // Kiểm tra tường: Raycast từ `wallCheckPoint` theo hướng `transform.right` (hướng mặt của enemy).
         // Sử dụng `whatIsGround` để coi tường là vật cản tương tự mặt đất trong trường hợp này.
         isTouchingWall = Physics2D.Raycast(wallCheckPoint.position, transform.right, checkDistance, whatIsGround);
+        
+        Debug.Log("Is grounded: " + isGrounded + "\nIs touching wall: " + isTouchingWall);
     }
 
     // Hàm để lật mặt enemy (quay ngang).
@@ -234,6 +243,7 @@ public class Enemy : MonoBehaviour
         // Xoay enemy 180 độ quanh trục Y cục bộ của nó. Điều này làm cho nó quay mặt sang hướng ngược lại.
         // Lưu ý: Nếu transform của bạn không có scale ban đầu là 1, hoặc có các phép xoay khác, logic này có thể cần điều chỉnh.
         transform.Rotate(0f, 180f, 0f);
+        moveDirection = -moveDirection;
     }
 
     // Hàm thay đổi trạng thái của enemy.

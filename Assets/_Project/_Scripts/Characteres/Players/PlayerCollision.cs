@@ -18,7 +18,20 @@ public class PlayerCollision : MonoBehaviour
 
     [Header("UI")] // Đánh dấu các thuộc tính liên quan đến giao diện người dùng.
     public GameObject LoseUIPanel; // Tham chiếu đến GameObject chứa bảng UI hiển thị khi người chơi thua.
+
+    [Header("Enemy Spawn Settings")]
+    public FinalBoss finalBoss;
     
+    public Transform area1Spawns;
+    public Transform area2Spawns;
+    public Transform area3Spawns;
+    public Transform area4Spawns;
+    public Transform area5Spawns;
+    
+
+    public Vector2 currentAreaTranform;
+    
+
     // Hàm Start được gọi một lần khi script được kích hoạt.
     void Start()
     {
@@ -49,6 +62,34 @@ public class PlayerCollision : MonoBehaviour
     // Hàm OnTriggerEnter2D được gọi khi một Collider khác đi vào Trigger Collider của đối tượng này.
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (finalBoss != null)
+        {
+            if (collision.gameObject.CompareTag("Area1") && finalBoss.isTurn1 == true)
+            {
+                currentAreaTranform = area1Spawns.position;
+
+            }
+            if (collision.gameObject.CompareTag("Area2") && finalBoss.isTurn1 == true)
+            {
+                currentAreaTranform = area2Spawns.position;
+
+            }
+            if (collision.gameObject.CompareTag("Area3") && finalBoss.isTurn1 == true)
+            {
+                currentAreaTranform = area3Spawns.position;
+
+            }
+            if (collision.gameObject.CompareTag("Area4") && finalBoss.isTurn1 == true)
+            {
+                currentAreaTranform = area4Spawns.position;
+
+            }
+            if (collision.gameObject.CompareTag("Area5") && finalBoss.isTurn1 == true)
+            {
+                currentAreaTranform = area5Spawns.position;
+
+            }
+        }
         if (collision.gameObject.CompareTag("GroundTrap"))
         {
             FindAnyObjectByType<FallingGround>().TriggerCollapse();
@@ -226,4 +267,6 @@ public class PlayerCollision : MonoBehaviour
             if (gameManager == null) Debug.LogWarning("GameManager is null when EndDeadAnimation is called.");
         }
     }
+
+
 }

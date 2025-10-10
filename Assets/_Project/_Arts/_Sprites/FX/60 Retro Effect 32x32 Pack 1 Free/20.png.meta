@@ -79,7 +79,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -93,7 +93,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -114,10 +114,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -168,15 +168,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 20_0
+      name: 20_6
       rect:
         serializedVersion: 2
-        x: 13
-        y: 51
-        width: 6
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 160
+        y: 33
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -190,15 +190,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_1
+      name: 20_5
       rect:
         serializedVersion: 2
-        x: 41
-        y: 36
-        width: 14
-        height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 128
+        y: 33
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -212,15 +212,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_2
+      name: 20_4
       rect:
         serializedVersion: 2
-        x: 69
-        y: 12
-        width: 22
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 33
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: 20_3
       rect:
         serializedVersion: 2
-        x: 97
-        y: 0
+        x: 64
+        y: 33
         width: 32
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -256,15 +256,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_4
+      name: 20_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 32
         y: 33
         width: 32
         height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,15 +278,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_5
+      name: 20_1
       rect:
         serializedVersion: 2
-        x: 173
-        y: 47
-        width: 8
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 33
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -300,15 +300,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_6
+      name: 20_7
       rect:
         serializedVersion: 2
-        x: 160
-        y: 33
-        width: 31
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 2
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -322,15 +322,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_7
+      name: 20_8
       rect:
         serializedVersion: 2
-        x: 173
-        y: 37
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 32
+        y: 2
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -344,15 +344,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_8
+      name: 20_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1
+        x: 64
+        y: 2
         width: 32
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -366,15 +366,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 20_9
+      name: 20_10
       rect:
         serializedVersion: 2
-        x: 13
-        y: 15
-        width: 8
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 96
+        y: 2
+        width: 32
+        height: 31
+      alignment: 9
+      pivot: {x: 0.5, y: 0.19}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,121 +387,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: 20_10
-      rect:
-        serializedVersion: 2
-        x: 13
-        y: 5
-        width: 6
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0baa89bd23faec970800000000000000
-      internalID: 8777145356759116464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20_11
-      rect:
-        serializedVersion: 2
-        x: 40
-        y: 0
-        width: 32
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab9b451473d10fe70800000000000000
-      internalID: 9146842966345955770
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20_12
-      rect:
-        serializedVersion: 2
-        x: 46
-        y: 10
-        width: 6
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf95b2c898d914390800000000000000
-      internalID: -7835808662560220677
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20_13
-      rect:
-        serializedVersion: 2
-        x: 72
-        y: 0
-        width: 26
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9236a85a849b88fa0800000000000000
-      internalID: -5798180798573419735
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: 20_14
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 1
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dba48a32f09fe2fe0800000000000000
-      internalID: -1211757406298027331
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ff06a49a4a493e9488aa19a652c792b9
     internalID: 0
     vertices: []
     indices: 
@@ -511,21 +401,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      20_0: 4164744761163438241
-      20_1: -1618876010602653056
-      20_10: 8777145356759116464
+      20_1: 2613617493498645940
+      20_10: 1836839868561596909
       20_11: 9146842966345955770
       20_12: -7835808662560220677
       20_13: -5798180798573419735
       20_14: -1211757406298027331
-      20_2: 2996787348143842123
+      20_2: -7338798130296587941
       20_3: -8050929758849500354
-      20_4: -7338798130296587941
-      20_5: 2613617493498645940
-      20_6: 5852224616622800122
-      20_7: 979943482280044467
-      20_8: 6778096231087240794
-      20_9: 1836839868561596909
+      20_4: 2996787348143842123
+      20_5: -1618876010602653056
+      20_6: 4164744761163438241
+      20_7: 5852224616622800122
+      20_8: 979943482280044467
+      20_9: 6778096231087240794
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

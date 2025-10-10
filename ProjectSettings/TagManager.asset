@@ -13,6 +13,7 @@ TagManager:
   - SpikeTrap
   - Gate
   - GroundTrap
+  - Area1
   layers:
   - Default
   - TransparentFX

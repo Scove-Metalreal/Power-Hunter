@@ -62,10 +62,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Glow_Intensity_1: 0
-    - _Glow_Intensity_2: 0
+    - _Glow_Intensity_1: 10
+    - _Glow_Intensity_2: 3
     m_Colors:
-    - _Color1: {r: 0, g: 0, b: 0, a: 1}
-    - _Color2: {r: 0, g: 0, b: 0, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 0, g: 1, b: 0.59595966, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

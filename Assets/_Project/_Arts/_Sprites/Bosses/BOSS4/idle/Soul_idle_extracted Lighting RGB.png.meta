@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 3b69f3080ff162d41b6558fa28ddf7ce
+guid: 71481cd7cca0a8e42bb9d59bc1621e06
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6279321771332348512
-    second: Soul_attack_extracted Lighting eyes_0
+      213: -7165260392429960158
+    second: Soul_idle_extracted Lighting RGB_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soul_attack_extracted Lighting eyes_0
+      name: Soul_idle_extracted Lighting RGB_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 96
-        height: 960
+        height: 480
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06a24aab1e1a42750800000000000000
-      internalID: 6279321771332348512
+      spriteID: 2244902e2a1ef8c90800000000000000
+      internalID: -7165260392429960158
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soul_attack_extracted Lighting eyes_0: 6279321771332348512
+      Soul_idle_extracted Lighting RGB_0: -7165260392429960158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

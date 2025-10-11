@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0e124531a1e82c843a0e939a1b9d6a92
+guid: 356016c857b3a0247aefdee7f4a1d476
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3834555242230293516
-    second: Soul_death_extracted Lighting eyes_0
+      213: -1458859433592171144
+    second: Soul_move Lighting RGB_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soul_death_extracted Lighting eyes_0
+      name: Soul_move Lighting RGB_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4fb5043d25ce8cac0800000000000000
-      internalID: -3834555242230293516
+      spriteID: 875d283131711cbe0800000000000000
+      internalID: -1458859433592171144
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soul_death_extracted Lighting eyes_0: -3834555242230293516
+      Soul_move Lighting RGB_0: -1458859433592171144
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

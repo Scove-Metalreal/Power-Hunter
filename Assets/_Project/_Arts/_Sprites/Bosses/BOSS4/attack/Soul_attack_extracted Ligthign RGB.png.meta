@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f3c1215e5053a6e45ad75f6cc8ebf7a1
+guid: 0c53b5a38ae312b41867a74c746b0898
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7887301713566553020
-    second: Soul_move Lighting eyes_0
+      213: -6755296624746386061
+    second: Soul_attack_extracted Ligthign RGB_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Soul_move Lighting eyes_0
+      name: Soul_attack_extracted Ligthign RGB_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 96
-        height: 768
+        height: 960
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cb3d679ae13557d60800000000000000
-      internalID: 7887301713566553020
+      spriteID: 37da899c28d5042a0800000000000000
+      internalID: -6755296624746386061
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Soul_move Lighting eyes_0: 7887301713566553020
+      Soul_attack_extracted Ligthign RGB_0: -6755296624746386061
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

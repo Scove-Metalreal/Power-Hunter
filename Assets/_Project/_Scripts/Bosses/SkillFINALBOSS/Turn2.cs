@@ -24,10 +24,13 @@ public class Turn2 : MonoBehaviour
             
             for (int i = 0; i < 360; i = i + 45)
             {
-                SpawmBullet(i = AddRotation);
+                SpawmBullet(i + AddRotation);
+                yield return new WaitForSeconds(.05f);
+                
+
             }
-            AddRotation += 10;
-            yield return new WaitForSeconds(1f);
+            AddRotation = (AddRotation + 10) % 360;
+            yield return new WaitForSeconds(.1f);
             
         }
        

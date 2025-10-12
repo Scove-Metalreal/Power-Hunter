@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 453701278496834452}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.86, y: 0.001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 737659601069878991}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.094, y: 0.144, z: 0}
+  m_LocalPosition: {x: -0.663, y: 0.074, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 3035974708923962965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0524, y: -0.2723, z: 0}
+  m_LocalPosition: {x: 0.0541, y: -0.2037, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,10 +446,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9753b67abdb36f44db6b02c09e0fb087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  patrolSpeed: 1.5
-  chaseSpeed: 3
+  patrolSpeed: 0.5
+  chaseSpeed: 1.5
   detectionRange: 8
-  attackRange: 1.5
+  attackRange: 0.7
   whatIsPlayer:
     serializedVersion: 2
     m_Bits: 512
@@ -457,6 +457,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   loseSightTime: 3
+  maxHealth: 20
+  attack1HitboxPrefab: {fileID: 3031616454288993865, guid: b50a7fcfa45025f4bb8925e243e1ced5, type: 3}
+  attack1Point: {fileID: 7272739892601854274}
+  attack2HitboxPrefab: {fileID: 4546812865732836210, guid: 19c767db1fe568e46a438b8d4d7bd3b6, type: 3}
+  attack2Point: {fileID: 4411452524246908126}
+  attackCooldown: 2
   gravityStrength: 50
   groundCheckPoint: {fileID: 6152647004227790147}
   wallCheckPoint: {fileID: 1970639520356107312}

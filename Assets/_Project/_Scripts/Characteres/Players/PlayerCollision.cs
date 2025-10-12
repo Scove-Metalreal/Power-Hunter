@@ -113,6 +113,8 @@ public class PlayerCollision : MonoBehaviour
             Hitbox hitbox = collision.GetComponent<Hitbox>();
             if (hitbox != null)
             {
+                Debug.Log("<color=cyan>PLAYER: Đã va chạm với EnemyHitbox!</color>"); // <<< THÊM DÒNG NÀY
+                Debug.Log("PLAYER: Đọc được " + hitbox.damage + " sát thương từ hitbox.");
                 // Gọi hàm xử lý sát thương và knockback với thông tin từ hitbox.
                 HandleDamageAndKnockback(hitbox.damage, collision.transform);
             }

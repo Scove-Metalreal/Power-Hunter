@@ -64,10 +64,13 @@ public class PlayerStat : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
+        // <<< THÊM DÒNG NÀY >>>
+        Debug.Log("PLAYER_STAT: Bắt đầu trừ máu. Máu hiện tại: " + HeathPlayer + ", Sát thương nhận: " + damage);
         HeathPlayer -= damage;
         if (HeathPlayer < 0) HeathPlayer = 0;
-
-        
+    
         targetHealth = HeathPlayer;
+        // <<< THÊM DÒNG NÀY >>>
+        Debug.Log("PLAYER_STAT: Máu sau khi trừ: " + HeathPlayer);
     }
 }

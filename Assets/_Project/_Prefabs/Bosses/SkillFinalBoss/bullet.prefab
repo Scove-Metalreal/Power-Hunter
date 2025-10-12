@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6703985721986360889}
   - component: {fileID: 6164460077276736920}
   - component: {fileID: 400022140621565154}
-  - component: {fileID: 5461009082143917791}
   m_Layer: 0
   m_Name: bullet
   m_TagString: DeathZone
@@ -179,15 +178,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.0434037, y: -0.000768207}
   m_Radius: 0.07045058
---- !u!114 &5461009082143917791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4223195948736650531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de55ae24cc254c6439c3a3b4b29d0af9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletTurn2

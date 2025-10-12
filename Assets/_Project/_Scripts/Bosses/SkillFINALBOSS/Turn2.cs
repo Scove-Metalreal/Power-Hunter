@@ -41,6 +41,6 @@ public class Turn2 : MonoBehaviour
         var bullet = Instantiate(Bullet, transform.position, quaternion);
         Vector2 direction = quaternion * Vector2.right;
         bullet.GetComponent<Rigidbody2D>().linearVelocity = direction * bulletSpeed ;
-        
+        Destroy(bullet,3f);
     }
 }

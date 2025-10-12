@@ -11,7 +11,7 @@ public class PlayerAttackDefault : MonoBehaviour
     [Header("Prefabs")] // Đánh dấu các thuộc tính liên quan đến Prefab.
     public GameObject Slash1Hitbox; // Prefab cho hitbox của đòn tấn công đầu tiên (Slash 1).
     public GameObject Slash2Hitbox; // Prefab cho hitbox của đòn tấn công thứ hai (Slash 2 - Combo).
-    public GameObject DashAttackHitbox; // <<< THÊM MỚI: Prefab cho hitbox của đòn tấn công sau khi dash.
+    public GameObject DashAttackHitbox; // Prefab cho hitbox của đòn tấn công sau khi dash.
     
     [Header("Attack State")]
     private bool isAttacking = false; // Cờ trạng thái, true nếu người chơi đang trong quá trình thực hiện một đòn tấn công.
@@ -25,6 +25,7 @@ public class PlayerAttackDefault : MonoBehaviour
     public AudioClip SwingSlash3;
     public AudioClip SwingSlash4;
     public AudioClip SwingSlash5;
+    
     // Hàm Update được gọi mỗi frame. Dùng để xử lý input và logic dựa trên thời gian.
     void Update()
     {
@@ -83,7 +84,6 @@ public class PlayerAttackDefault : MonoBehaviour
     {
         isAttacking = true; // Đánh dấu đang tấn công để khóa input.
         playerController.animator.SetTrigger("Slash1"); // Kích hoạt animation.
-
     }
 
     // Hàm thực hiện đòn tấn công Double Slash.
@@ -93,15 +93,14 @@ public class PlayerAttackDefault : MonoBehaviour
         playerController.animator.SetTrigger("DoubleSlash"); // Kích hoạt animation.
     }
     
-    // <<< THÊM MỚI: Hàm thực hiện đòn tấn công Dash.
+    // Hàm thực hiện đòn tấn công Dash.
     public void PerformDashAttack()
     {
         isAttacking = true;
         playerController.animator.SetTrigger("DashAttack");
     }
 
-    // --- HÀM MỚI ĐỂ NGẮT TẤN CÔNG ---
-    // <<< THAY ĐỔI: Thêm hàm public này.
+    // Hàm để ngắt tấn công.
     public void InterruptAttack()
     {
         // Nếu đang trong một đòn đánh, hãy hủy nó.
@@ -112,7 +111,7 @@ public class PlayerAttackDefault : MonoBehaviour
             // Reset các trigger để animation tấn công không bị "nhớ" và chạy sau khi dash.
             playerController.animator.ResetTrigger("Slash1");
             playerController.animator.ResetTrigger("DoubleSlash");
-            playerController.animator.ResetTrigger("DashAttack"); // <<< THÊM MỚI
+            playerController.animator.ResetTrigger("DashAttack");
 
             // Hủy hitbox đang tồn tại (nếu có) để tránh "hitbox ma".
             if (currentHitbox != null)
@@ -125,12 +124,13 @@ public class PlayerAttackDefault : MonoBehaviour
     
     // -------- Animation Events --------
     // Các hàm này được gọi trực tiếp từ các Animation Event trên các clip animation tấn công.
-    // KHÔNG CẦN THAY ĐỔI GÌ TRONG UNITY EDITOR.
 
     // Sự kiện animation: Tạo hitbox cho đòn Slash 1.
     public void SpawnSlash1()
     {
-        currentHitbox = Instantiate(Slash1Hitbox, ATTSPAWM.position, Quaternion.identity);
+        // <<< THAY ĐỔI: Sử dụng rotation của ATTSPAWM thay vì Quaternion.identity >>>
+        currentHitbox = Instantiate(Slash1Hitbox, ATTSPAWM.position, ATTSPAWM.rotation);
+        currentHitbox.transform.localScale = transform.localScale; // <<< THÊM DÒNG NÀY
         currentHitbox.transform.SetParent(Attack);
     }
 
@@ -146,18 +146,22 @@ public class PlayerAttackDefault : MonoBehaviour
     // Sự kiện animation: Tạo hitbox cho đòn Slash 2 (Double Slash).
     public void SpawnSlash2()
     {
-        var hitbox = Instantiate(Slash2Hitbox, ATTSPAWM.position, Quaternion.identity);
+        // <<< THAY ĐỔI: Sử dụng rotation của ATTSPAWM thay vì Quaternion.identity >>>
+        var hitbox = Instantiate(Slash2Hitbox, ATTSPAWM.position, ATTSPAWM.rotation);
+        hitbox.transform.localScale = transform.localScale; // <<< THÊM DÒNG NÀY
         hitbox.transform.SetParent(Attack);
         Destroy(hitbox, 0.3f);
     }
     
-    // <<< THÊM MỚI: Animation Event cho Dash Attack
+    // Animation Event cho Dash Attack
     public void SpawnDashAttackHitbox()
     {
         // Đảm bảo bạn đã gán Prefab trong Inspector.
         if (DashAttackHitbox != null)
         {
-            var hitbox = Instantiate(DashAttackHitbox, ATTSPAWM.position, Quaternion.identity);
+            // <<< THAY ĐỔI: Sử dụng rotation của ATTSPAWM thay vì Quaternion.identity >>>
+            var hitbox = Instantiate(DashAttackHitbox, ATTSPAWM.position, ATTSPAWM.rotation);
+            hitbox.transform.localScale = transform.localScale; // <<< THÊM DÒNG NÀY
             hitbox.transform.SetParent(Attack);
             Destroy(hitbox, 0.35f); // Thời gian tồn tại của hitbox có thể tùy chỉnh.
         }
@@ -166,14 +170,14 @@ public class PlayerAttackDefault : MonoBehaviour
     // Sự kiện animation: Kết thúc một đòn tấn công (cả Slash 1 và Double Slash).
     public void EndAttack()
     {
-        // Reset các trigger animation tấn công. Điều này quan trọng để chúng có thể được kích hoạt lại.
+        // Reset các trigger animation tấn công.
         playerController.animator.ResetTrigger("Slash1");
         playerController.animator.ResetTrigger("DoubleSlash");
-        playerController.animator.ResetTrigger("DashAttack"); // <<< THÊM MỚI
+        playerController.animator.ResetTrigger("DashAttack");
         
         isAttacking = false; // Đánh dấu đã kết thúc tấn công, cho phép nhận input mới ở frame tiếp theo.
 
-        // Cập nhật lại trạng thái idle/running sau khi tấn công xong (giữ nguyên logic cũ).
+        // Cập nhật lại trạng thái idle/running sau khi tấn công xong.
         if (playerController.isGround)
         {
             var x = Input.GetAxis("Horizontal");
@@ -181,6 +185,7 @@ public class PlayerAttackDefault : MonoBehaviour
             playerController.animator.SetBool("isRunning", x != 0);
         }
     }
+
     public void SoundEffectSlash1()
     {
         int RandomSFX = Random.Range(1, 5);

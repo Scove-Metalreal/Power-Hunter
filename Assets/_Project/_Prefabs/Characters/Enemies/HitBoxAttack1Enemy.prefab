@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3184094198267255812}
   - component: {fileID: 1876037156737568116}
   - component: {fileID: 1530600335971978362}
-  - component: {fileID: 2546004706276882598}
+  - component: {fileID: 8357090788438213328}
   m_Layer: 0
   m_Name: HitBoxAttack1Enemy
   m_TagString: EnemyHitbox
@@ -88,7 +88,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3031616454288993865}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -107,7 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2546004706276882598
+--- !u!114 &8357090788438213328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -16,16 +16,25 @@ public class FinalBoss : MonoBehaviour
     public GameObject Turn3;
     public GameObject Turn4pre;
     public Transform positionSpawmTurn4;
+    private Transform currentPlayer;
+    public Transform PointA;
+    public Transform PointB;
+    private Animator anim;
+    public Vector3 currenLocalScale;
     void Start()
     {
+        anim = GetComponent<Animator>();
         Turn2.SetActive(false);
         Turn3.SetActive(false);
         StartCoroutine(RandomTurn());
+        transform.position = PointA.position;
+        currenLocalScale = transform.localScale;
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentPlayer = player.transform;
         
     }
     IEnumerator RandomTurn()
@@ -45,6 +54,7 @@ public class FinalBoss : MonoBehaviour
             if (!isTurnRunning)
             {
                 Turn = Random.Range(0, 5);
+                anim.SetTrigger("Skill");
                 isTurnRunning = true;
                 switch (Turn)
                 {
@@ -73,12 +83,30 @@ public class FinalBoss : MonoBehaviour
                         yield return new WaitForSeconds(10f);
                         break;
                 }
+                Tele();
                 isTurnRunning = false;
             }
             yield return null;
         }
     }
+    void Tele()
+    {
+        float distanceToA = Vector3.Distance(transform.position, PointA.position);
+        float distanceToB = Vector3.Distance(transform.position, PointB.position);
 
+        if (distanceToA < 0.1f)
+        {
+            anim.SetTrigger("isTeleport");
+            transform.position = PointB.position;
+            transform.localScale = new Vector3(-Mathf.Abs(currenLocalScale.x), currenLocalScale.y, currenLocalScale.z);
+        }
+        else if (distanceToB < 0.1f)
+        {
+            anim.SetTrigger("isTeleport");
+            transform.position = PointA.position;
+            transform.localScale = new Vector3(Mathf.Abs(currenLocalScale.x), currenLocalScale.y, currenLocalScale.z);
+        }
+    }
     IEnumerator turn1(Vector2 AreaPosition)
     {
         
@@ -91,14 +119,15 @@ public class FinalBoss : MonoBehaviour
         Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
         yield return new WaitForSeconds(2f);
         Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2f);    
         
     }
     void SpawmTurn4()
     {
 
-        Vector3 spawnPos = player.position + player.up * 2.2f;
+        Vector3 spawnPos = currentPlayer.position + currentPlayer.up * 2.2f;
         Instantiate(Turn4pre, spawnPos, player.rotation);
+
     }
 
 }

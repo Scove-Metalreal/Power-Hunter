@@ -16,6 +16,7 @@ TagManager:
   - Area1
   - PlayerHitbox
   - PowerUIText
+  - BlockTurn1
   layers:
   - Default
   - TransparentFX

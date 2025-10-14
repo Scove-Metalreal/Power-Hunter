@@ -24,6 +24,14 @@ public class Enemy : MonoBehaviour
     public float maxHealth = 50f;
     private float currentHealth;
     private bool isDead = false; // Cờ để đảm bảo hàm Die() chỉ được gọi một lần
+    
+    [Header("Item Drop")]
+    [Tooltip("Prefab của vật phẩm sẽ rơi ra khi enemy này chết.")]
+    public GameObject itemDropPrefab;
+
+    [Tooltip("Tỉ lệ rơi ra vật phẩm (từ 0.0 đến 1.0). 0.3 = 30%")]
+    [Range(0f, 1f)]
+    public float dropChance = 0.3f; // Mặc định là 30%
 
     [Header("Attack Settings")]
     // Sát thương giờ sẽ được thiết lập trực tiếp trên Prefab của Hitbox.
@@ -299,16 +307,46 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
         Debug.Log(gameObject.name + " đã bị tiêu diệt.");
-        
+    
         // Kích hoạt animation chết
         anim.SetTrigger("Die");
 
         // Vô hiệu hóa các component để quái không thể di chuyển hay tấn công nữa
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false; // Vô hiệu hóa chính script Enemy.cs này
-        rb.bodyType = RigidbodyType2D.Static; // Ngăn không cho xác chết bị đẩy đi
+        this.enabled = false; 
+        rb.bodyType = RigidbodyType2D.Static;
 
-        Destroy(gameObject);
+        // <<< THÊM MỚI: LOGIC RƠI VẬT PHẨM >>>
+        HandleItemDrop();
+        // <<< KẾT THÚC PHẦN THÊM MỚI >>>
+
+        // Hủy đối tượng enemy sau một khoảng trễ nhỏ để animation chết kịp chạy
+        // Nếu animation của bạn có Animation Event để tự hủy thì không cần dòng này
+        Destroy(gameObject, 2f); // Ví dụ hủy sau 2 giây
+    }
+
+    // <<< THÊM MỚI: HÀM XỬ LÝ RƠI ĐỒ >>>
+    private void HandleItemDrop()
+    {
+        // Kiểm tra xem có prefab vật phẩm và tỉ lệ có cho phép rơi không
+        if (itemDropPrefab != null && Random.value <= dropChance)
+        {
+            // Tạo một instance của vật phẩm tại vị trí của enemy
+            GameObject droppedItemObject = Instantiate(itemDropPrefab, transform.position, Quaternion.identity);
+
+            // Lấy script Item từ vật phẩm vừa tạo
+            Item itemScript = droppedItemObject.GetComponent<Item>();
+
+            // Nếu có script, truyền hướng trọng lực của enemy cho vật phẩm
+            if (itemScript != null)
+            {
+                itemScript.Initialize(gravityDirection);
+            }
+            else
+            {
+                Debug.LogWarning("Prefab vật phẩm " + itemDropPrefab.name + " không chứa script Item.cs!");
+            }
+        }
     }
 
     // <<< THÊM MỚI: Thêm logic va chạm >>>

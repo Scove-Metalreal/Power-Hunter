@@ -7,7 +7,7 @@ public class FinalBoss : MonoBehaviour
     public int Turn;
     public bool isAttack = false;
     
-    public bool isTurn1 = false;
+    
     public GameObject turn1Prefab;
     public Transform player;
     public bool isTurnRunning = false;
@@ -16,16 +16,31 @@ public class FinalBoss : MonoBehaviour
     public GameObject Turn3;
     public GameObject Turn4pre;
     public Transform positionSpawmTurn4;
+    private Transform currentPlayer;
+    public Transform PointA;
+    public Transform PointB;
+    private Animator anim;
+    public Vector3 currenLocalScale;
+    public Turn1New turn1New;
     void Start()
     {
+        anim = GetComponent<Animator>();
         Turn2.SetActive(false);
         Turn3.SetActive(false);
         StartCoroutine(RandomTurn());
+        transform.position = PointA.position;
+        currenLocalScale = transform.localScale;
+        turn1New = GetComponent<Turn1New>();
+        if (turn1New == null)
+        {
+            turn1New = FindAnyObjectByType<Turn1New>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        currentPlayer = player.transform;
         
     }
     IEnumerator RandomTurn()
@@ -33,24 +48,19 @@ public class FinalBoss : MonoBehaviour
 
         while (true)
         {
-            if( isTurn1 == true )
-            {
-                
-                
-                    yield return StartCoroutine(turn1(playerCollision.currentAreaTranform));
-                isTurnRunning = false;
-                isTurn1 = false;
-                yield return new WaitForSeconds(2f);
-            }
+            
             if (!isTurnRunning)
             {
                 Turn = Random.Range(0, 5);
+                anim.SetTrigger("Skill");
                 isTurnRunning = true;
                 switch (Turn)
                 {
                     case 0:
-                        isTurn1 = true;
-                        
+                        yield return StartCoroutine(turn1New.DownSpawm());
+                        yield return new WaitForSeconds(2f);
+                        yield return StartCoroutine(turn1New.UpSpawm());
+
                         break;
                     case 1:
                         Turn2.SetActive(true);
@@ -70,35 +80,40 @@ public class FinalBoss : MonoBehaviour
                         }
                         break;
                     case 4:
-                        yield return new WaitForSeconds(10f);
+                        yield return new WaitForSeconds(4f);
                         break;
                 }
+                Tele();
                 isTurnRunning = false;
             }
             yield return null;
         }
     }
-
-    IEnumerator turn1(Vector2 AreaPosition)
+    void Tele()
     {
-        
-        Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
-        Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
-        Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
-        Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
-        Instantiate(turn1Prefab, AreaPosition, Quaternion.identity);
-        yield return new WaitForSeconds(2f);
-        
+        float distanceToA = Vector3.Distance(transform.position, PointA.position);
+        float distanceToB = Vector3.Distance(transform.position, PointB.position);
+
+        if (distanceToA < 0.1f)
+        {
+            anim.SetTrigger("isTeleport");
+            transform.position = PointB.position;
+            transform.localScale = new Vector3(-Mathf.Abs(currenLocalScale.x), currenLocalScale.y, currenLocalScale.z);
+        }
+        else if (distanceToB < 0.1f)
+        {
+            anim.SetTrigger("isTeleport");
+            transform.position = PointA.position;
+            transform.localScale = new Vector3(Mathf.Abs(currenLocalScale.x), currenLocalScale.y, currenLocalScale.z);
+        }
     }
+    
     void SpawmTurn4()
     {
 
-        Vector3 spawnPos = player.position + player.up * 2.2f;
+        Vector3 spawnPos = currentPlayer.position + currentPlayer.up * 2.2f;
         Instantiate(Turn4pre, spawnPos, player.rotation);
+
     }
 
 }

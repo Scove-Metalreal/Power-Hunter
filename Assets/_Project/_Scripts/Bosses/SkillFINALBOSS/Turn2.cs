@@ -8,6 +8,10 @@ public class Turn2 : MonoBehaviour
     private int AddRotation = 0;
     void Start()
     {
+       
+    }
+    private void OnEnable()
+    {
         StartCoroutine(TurnAround());
     }
 

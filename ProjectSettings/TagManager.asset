@@ -17,6 +17,7 @@ TagManager:
   - PlayerHitbox
   - PowerUIText
   - BlockTurn1
+  - Turn4FX
   layers:
   - Default
   - TransparentFX

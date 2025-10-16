@@ -14,6 +14,7 @@ public class FinalBoss : MonoBehaviour
     public int enemiesPerTurn = 5;
     public GameObject Turn2;
     public GameObject Turn3;
+    public GameObject Turn4;
     public GameObject Turn4pre;
     public Transform positionSpawmTurn4;
     private Transform currentPlayer;
@@ -27,6 +28,7 @@ public class FinalBoss : MonoBehaviour
         anim = GetComponent<Animator>();
         Turn2.SetActive(false);
         Turn3.SetActive(false);
+        Turn4.SetActive(false);
         StartCoroutine(RandomTurn());
         transform.position = PointA.position;
         currenLocalScale = transform.localScale;
@@ -73,11 +75,9 @@ public class FinalBoss : MonoBehaviour
                         Turn3.SetActive(false);
                         break;
                     case 3:
-                        for (int i = 0; i < 5;i++)
-                        {
-                            SpawmTurn4();
-                            yield return new WaitForSeconds(2f);
-                        }
+                        Turn4.SetActive(true);
+                        yield return new WaitForSeconds(8f);
+                        Turn4.SetActive(false);
                         break;
                     case 4:
                         yield return new WaitForSeconds(4f);

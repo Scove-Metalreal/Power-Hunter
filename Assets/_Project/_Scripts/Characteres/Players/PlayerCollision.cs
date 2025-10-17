@@ -22,6 +22,12 @@ public class PlayerCollision : MonoBehaviour
     public int lifeCount = 3; // Tổng số mạng của người chơi (mặc định 3)
     public float respawnDelay = 1.2f; // Thời gian chờ trước khi hồi sinh
 
+    [Header("Shop Settings")]
+    public GameObject shopUI;       // Giao diện shop (gán trong Inspector)
+    private bool isNearShop = false; // Kiểm tra xem player có đang trong vùng shop không
+
+
+
     // Hàm Start được gọi một lần khi script được kích hoạt.
     void Start()
     {
@@ -99,6 +105,19 @@ public class PlayerCollision : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
+        // --- THÊM MỚI: Xử lý khi player vào vùng shop ---
+        if (collision.CompareTag("Shop"))
+        {
+            isNearShop = true;
+
+            // Tìm UI "Press E" nằm trong Shop (nếu có)
+            Transform pressEInShop = collision.transform.Find("Canvas");
+            if (pressEInShop != null)
+            {
+                pressEInShop.gameObject.SetActive(true);
+            }
+        }
     }
 
     // Hàm OnTriggerExit2D được gọi khi một Collider khác rời khỏi Trigger Collider của đối tượng này.
@@ -114,6 +133,21 @@ public class PlayerCollision : MonoBehaviour
         //         enemy.isCollidingWithPlayer = false;
         //     }
         // }
+
+        // --- THÊM MỚI: Khi player rời khỏi vùng shop ---
+        if (collision.CompareTag("Shop"))
+        {
+            isNearShop = false;
+
+            // Ẩn lại UI “Press E” của shop
+            Transform pressEInShop = collision.transform.Find("Canvas");
+            if (pressEInShop != null)
+            {
+                pressEInShop.gameObject.SetActive(false);
+            }
+
+            if (shopUI != null) shopUI.SetActive(false);
+        }
     }
 
     // <<< HÀM MỚI: Gom logic nhận sát thương và knockback vào một chỗ
@@ -236,6 +270,23 @@ public class PlayerCollision : MonoBehaviour
         {
             if (LoseUIPanel == null) Debug.LogWarning("LoseUIPanel is null when EndDeadAnimation is called.");
             if (gameManager == null) Debug.LogWarning("GameManager is null when EndDeadAnimation is called.");
+        }
+    }
+    void Update()
+    {
+        // --- THÊM LOGIC MỞ SHOP ---
+        // Kiểm tra khi người chơi đang trong vùng shop và nhấn phím E
+        if (isNearShop && Input.GetKeyDown(KeyCode.E))
+        {
+            if (shopUI != null)
+            {
+                bool isActive = shopUI.activeSelf;
+                shopUI.SetActive(!isActive); // Bật / tắt shop
+            }
+            else
+            {
+                Debug.LogWarning("ShopUI chưa được gán trong PlayerCollision!");
+            }
         }
     }
 }

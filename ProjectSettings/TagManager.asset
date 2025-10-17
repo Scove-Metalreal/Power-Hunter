@@ -18,6 +18,7 @@ TagManager:
   - PowerUIText
   - BlockTurn1
   - CheckPoint
+  - Shop
   layers:
   - Default
   - TransparentFX

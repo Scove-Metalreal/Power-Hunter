@@ -17,6 +17,10 @@ public class Bomb : MonoBehaviour
     {
         
     }
+    public void SetPlayer(PlayerController player)
+    {
+        playerController = player;
+    }
     public void DestroyObject()
     {
         Destroy(gameObject);
@@ -25,6 +29,16 @@ public class Bomb : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Turn4FX"))
         {
+
+            if (playerController == null)
+                playerController = FindAnyObjectByType<PlayerController>();
+
+            if (playerController == null)
+            {
+                Debug.LogWarning("PlayerController not found!");
+                return;
+            }
+
             anim.SetTrigger("Active");
             if (playerController.GrafityDown)
             {

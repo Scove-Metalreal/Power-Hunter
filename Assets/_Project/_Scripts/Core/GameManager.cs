@@ -3,173 +3,209 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject gamePauseUI;
-    public GameObject MenuOptionUI;
-    public PlayerController playerController;
-    public bool isGameEnd;
-    public static int SceneIndex;
+    public static GameManager Instance { get; private set; }
+
+    // UI references are now private and found by tag
+    private GameObject gamePauseUI;
+    private GameObject MenuOptionUI;
+    private GameObject FullMapUI;
+
+    [Header("Audio")]
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioClip clickClip;
-    public GameObject FullMapUI;
-    void Start()
+
+    private PlayerStat playerStat;
+    public bool isGameEnd;
+
+    private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
-        gamePauseUI.SetActive(false);
-        MenuOptionUI.SetActive(false);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        playerStat = FindObjectOfType<PlayerStat>();
+
+        // Find UI elements by tag. This is more flexible than public references.
+        // You will need to tag your UI GameObjects in the inspector.
+        gamePauseUI = GameObject.FindWithTag("PauseUI");
+        MenuOptionUI = GameObject.FindWithTag("OptionsUI");
+        if (scene.name != "MainMenu")
+        {
+            FullMapUI = GameObject.FindWithTag("FullMapUI");
+        }
+
+        // Reset UI state
+        if (gamePauseUI != null) gamePauseUI.SetActive(false);
+        if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
+        if (FullMapUI != null) FullMapUI.SetActive(false);
         isGameEnd = false;
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+
+        // Set cursor state
+        if (scene.name == "MainMenu")
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None;
         }
-        else {
+        else
+        {
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        FullMapUI.SetActive(false);
     }
 
-    // Update is called once per frame
+    // ... The rest of the file is the same ...
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isGameEnd == false )
+        if (playerStat != null && !isGameEnd && SceneManager.GetActiveScene().name != "MainMenu")
         {
-            if (SceneManager.GetActiveScene().buildIndex == 1)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.Confined;
-                Pause();
-                if (sfxSource != null && clickClip != null)
-                {
-                    sfxSource.PlayOneShot(clickClip);
-                }
+                TogglePause();
             }
-        }
-        if (SceneManager.GetActiveScene().buildIndex != 0)
-        {
-            if (Input.GetKey(KeyCode.LeftAlt))
+            if (Input.GetKeyDown(KeyCode.M) && FullMapUI != null)
             {
-                Cursor.visible = true;
-                Cursor.lockState = CursorLockMode.Confined;
-            }
-            else {
-                Cursor.visible = false;
-                Cursor.lockState = CursorLockMode.Locked;
+                FullMapUI.SetActive(!FullMapUI.activeSelf);
             }
         }
-        if (Input.GetKey(KeyCode.M))
-        {
-            FullMapUI.SetActive(true);
-        }
-        else {  FullMapUI.SetActive(false);}
     }
-    public void Option()
+
+    public void TogglePause()
     {
-        MenuOptionUI.SetActive(true);
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (gamePauseUI == null) return;
+        if (Time.timeScale > 0) Pause();
+        else Remuse();
     }
-    public void Again()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Time.timeScale = 1.0f;
-        isGameEnd = false;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        playerController.GrafityDown = true;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
-    }
+
     public void Pause()
     {
         Time.timeScale = 0f;
-        gamePauseUI.SetActive(true);
-
-        //Cursor.visible = true;
-        //Cursor.lockState = CursorLockMode.Confined;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (gamePauseUI != null) gamePauseUI.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        PlayClickSound();
     }
+
     public void Remuse()
     {
         Time.timeScale = 1f;
-        gamePauseUI.SetActive(false);
+        if (gamePauseUI != null) gamePauseUI.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if (sfxSource != null && clickClip != null)
+        PlayClickSound();
+    }
+
+    public void NewGame()
+    {
+        // Delete old save data for a clean start
+        if (SaveManager.Instance != null)
         {
-            sfxSource.PlayOneShot(clickClip);
+            SaveManager.Instance.DeleteSaveData();
+        }
+
+        SceneManager.LoadScene("Level 1");
+        Time.timeScale = 1f;
+    }
+
+    public void ContinueGame()
+    {
+        if (SaveManager.Instance != null)
+        {
+            SaveData data = SaveManager.Instance.LoadGame();
+            if (!string.IsNullOrEmpty(data.lastScene) && data.lastScene != "MainMenu")
+            {
+                SceneManager.LoadScene(data.lastScene);
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                NewGame();
+            }
         }
     }
+
+    public void SaveAtCheckpoint()
+    {
+        if (playerStat != null)
+        {
+            playerStat.SaveStats();
+            Debug.Log("Game saved at checkpoint!");
+        }
+    }
+
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
-    }
-    public void MainMenuInGameEndUI()
-    {
-        SceneManager.LoadScene("MainMenu");
-        isGameEnd = false;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
-    }
-    public void Play()  
-    {
-        if (SceneIndex == 0)
-        {
-            SceneIndex = 1;
-        }
-        SceneManager.LoadScene(SceneIndex);
         Time.timeScale = 1f;
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        SceneManager.LoadScene("MainMenu");
+        PlayClickSound();
     }
-    public void Back()
-    {
-        if (gamePauseUI.activeSelf == true  && gamePauseUI != null)
-        {
-            Time.timeScale = 1f;
-            gamePauseUI.SetActive(false);
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
-            if (sfxSource != null && clickClip != null)
-            {
-                sfxSource.PlayOneShot(clickClip);
-            }
-        }
 
-        if (MenuOptionUI.activeSelf == true && MenuOptionUI != null)
-        {
-            MenuOptionUI.SetActive(false);
-            if (sfxSource != null && clickClip != null)
-            {
-                sfxSource.PlayOneShot(clickClip);
-            }
-        }
-
-    }
-    public void Exitgame()
+    public void ExitGame()
     {
         Application.Quit();
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (playerStat != null)
+        {
+            playerStat.SaveStats();
+        }
+    }
+
+    public void ShowGameOverUI()
+    {
+        isGameEnd = true;
+        if (gamePauseUI != null) gamePauseUI.SetActive(false);
+
+        // Find the Lose UI by tag and activate it.
+        GameObject loseUIPanel = GameObject.FindWithTag("LoseUI");
+        if (loseUIPanel != null)
+        {
+            loseUIPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("Could not find GameObject with tag 'LoseUI'");
+        }
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    // --- UI Methods ---
+
+    public void Option()
+    {
+        if (MenuOptionUI != null) MenuOptionUI.SetActive(true);
+        PlayClickSound();
+    }
+
+    public void Back()
+    {
+        if (MenuOptionUI != null && MenuOptionUI.activeSelf) MenuOptionUI.SetActive(false);
+        PlayClickSound();
+    }
+
+    private void PlayClickSound()
+    {
         if (sfxSource != null && clickClip != null)
         {
             sfxSource.PlayOneShot(clickClip);
         }
     }
-    
 }

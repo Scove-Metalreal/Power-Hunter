@@ -6,21 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Roboto-Bold SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Attack 2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Death 1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Death 1.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Death 2.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Death 2.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Spawning.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/Spawning.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/monster001.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Characters/Enemies/monster001.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Bosses/BOSS4/NeonPhantom/NeonPhantom/Attack2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Bosses/BOSS4/NeonPhantom/NeonPhantom/Attack2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/FX/60 Retro Effect 32x32 Pack 1 Free/20.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/FX/60 Retro Effect 32x32 Pack 1 Free/20.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Tilemap/TITLE MAP16/Texture/TX Village Props.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Tilemap/TITLE MAP16/Texture/TX Village Props.png.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Bosses/SkillFinalBoss/Turn1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Bosses/SkillFinalBoss/Turn1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Enemies/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Enemies/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/System/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/System/MainMenu/MainMenu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerStat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
@@ -37,7 +31,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GlowBreathingEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/System/ExtractTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@6ec1efda8721/Editor/GridEditorUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ai.toolkit@48a271771d1a/Modules/Accounts/Services/Core/AccountApi.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -129,6 +125,7 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />

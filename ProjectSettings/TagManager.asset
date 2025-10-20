@@ -22,6 +22,8 @@ TagManager:
   - PauseUI
   - FullMapUI
   - OptionsUI
+  - Wind
+  - Minus100Heath
   layers:
   - Default
   - TransparentFX

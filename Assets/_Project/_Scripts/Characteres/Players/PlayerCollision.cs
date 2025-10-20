@@ -36,6 +36,10 @@ public class PlayerCollision : MonoBehaviour
         {
             HandleDamageAndKnockback(20f, collision.transform);
         }
+        if(collision.CompareTag("Minus100Heath"))
+        {
+            HandleDamageAndKnockback(100f, collision.transform);
+        }
 
         if (collision.CompareTag("EnemyHitbox"))
         {
@@ -84,7 +88,13 @@ public class PlayerCollision : MonoBehaviour
             if (shopUI != null) shopUI.SetActive(false);
         }
     }
-
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Wind"))
+        {
+            GetComponent<Rigidbody2D>().AddForce(Vector2.up * 2f,ForceMode2D.Impulse);
+        }
+    }
     private void HandleDamageAndKnockback(float damage, Transform damageSource)
     {
         playerStat.TakeDamage(damage);

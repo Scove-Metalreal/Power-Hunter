@@ -19,6 +19,9 @@ TagManager:
   - BlockTurn1
   - CheckPoint
   - Shop
+  - PauseUI
+  - FullMapUI
+  - OptionsUI
   layers:
   - Default
   - TransparentFX

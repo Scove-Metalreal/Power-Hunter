@@ -1,11 +1,13 @@
 using UnityEngine;
 using System.IO;
+using System.Text;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
 
     private string saveFilePath;
+    private const string EncryptionKey = "your-secret-key";
 
     private void Awake()
     {
@@ -21,9 +23,25 @@ public class SaveManager : MonoBehaviour
         }
     }
 
+    private string EncryptDecrypt(string data)
+    {
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < data.Length; i++)
+        {
+            result.Append((char)(data[i] ^ EncryptionKey[i % EncryptionKey.Length]));
+        }
+        return result.ToString();
+    }
+
     public void SaveGame(SaveData data)
     {
         string json = JsonUtility.ToJson(data, true);
+
+        if (!Application.isEditor)
+        {
+            json = EncryptDecrypt(json);
+        }
+
         File.WriteAllText(saveFilePath, json);
         Debug.Log("Game data saved to: " + saveFilePath);
     }
@@ -33,9 +51,23 @@ public class SaveManager : MonoBehaviour
         if (File.Exists(saveFilePath))
         {
             string json = File.ReadAllText(saveFilePath);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
-            Debug.Log("Game data loaded from: " + saveFilePath);
-            return data;
+
+            if (!Application.isEditor)
+            {
+                json = EncryptDecrypt(json);
+            }
+            
+            try
+            {
+                SaveData data = JsonUtility.FromJson<SaveData>(json);
+                Debug.Log("Game data loaded from: " + saveFilePath);
+                return data;
+            }
+            catch
+            {
+                Debug.LogWarning("Failed to load save data. Creating new save data.");
+                return new SaveData();
+            }
         }
         else
         {

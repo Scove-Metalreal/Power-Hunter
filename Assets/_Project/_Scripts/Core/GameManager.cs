@@ -52,10 +52,19 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        // If there is data to load, apply it after a short delay to ensure all objects are ready.
+        // If there is data to load, apply it. Otherwise, set up a new game.
         if (dataToLoad != null)
         {
             StartCoroutine(ApplyLoadedDataRoutine());
+        }
+        else
+        {
+            // This is a new game
+            PlayerStat playerStat = FindObjectOfType<PlayerStat>();
+            if (playerStat != null)
+            {
+                playerStat.ResetStats();
+            }
         }
 
         StartCoroutine(AutoSaveRoutine());
@@ -107,10 +116,10 @@ public class GameManager : MonoBehaviour
 
     #region --- New Game Flow Methods ---
 
-    public void Play()
+    public void NewGame()
     {
-        // Create a fresh SaveData object to ensure the next scene starts with default values.
-        dataToLoad = new SaveData();
+        // Set dataToLoad to null to signify a new game.
+        dataToLoad = null;
 
         SceneManager.LoadScene(1); // Assuming build index 1 is the first level
         Time.timeScale = 1f;
@@ -131,7 +140,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogWarning("No save data found! Starting a New Game.");
-            Play();
+            NewGame();
         }
     }
 
@@ -199,28 +208,20 @@ public class GameManager : MonoBehaviour
         // Apply Gravity Direction by calling the new method on PlayerController
         playerController.ApplyGravityDirection(dataToLoad.gravityDirection);
 
-        // Apply Stats and Upgrades
-        playerStat.MaxHealth = dataToLoad.maxHealth;
-        playerStat.MaxStamina = dataToLoad.maxStamina;
-        playerStat.MaxLives = dataToLoad.maxLives;
-        playerStat.PowerValue = dataToLoad.powerValue;
-        playerStat.healthUpgradeLevel = dataToLoad.healthUpgradeLevel;
-        playerStat.staminaUpgradeLevel = dataToLoad.staminaUpgradeLevel;
-        playerStat.livesUpgradeLevel = dataToLoad.livesUpgradeLevel;
-        playerStat.hasWallJump = dataToLoad.hasWallJump;
-        playerStat.jumpCooldownLevel = dataToLoad.jumpCooldownLevel;
-        playerStat.dashCooldownLevel = dataToLoad.dashCooldownLevel;
-        
-        playerStat.HeathPlayer = playerStat.MaxHealth;
-        playerStat.StaminaPlayer = playerStat.MaxStamina;
-        playerStat.CurrentLives = playerStat.MaxLives;
+        // CRITICAL FIX: Reset gravity scale to default after applying direction.
+        // This prevents issues where the game was saved with a modified gravity scale (e.g., during a dash).
+        if (playerController.Rigidbody != null)
+        {
+            playerController.Rigidbody.gravityScale = playerController.DefaultGravityScale;
+        }
+
+        // Apply Stats and Upgrades by calling the new method on PlayerStat
+        playerStat.ApplySaveData(dataToLoad);
 
         Debug.Log("Loaded data applied to player.");
 
         // IMPORTANT: Update UI after applying all data
-        // You need to create this UpdateUI() method in your PlayerStat script.
-        // It should update all UI elements like health bars, power value text, etc.
-        // playerStat.UpdateUI();
+        playerStat.UpdateUI();
 
         // Clear the static data holder after applying it
         dataToLoad = null;

@@ -27,14 +27,6 @@ public class Item : MonoBehaviour
     private Vector3 startPos;
     private Rigidbody2D rb;
 
-    // --- Tham chiếu đến UI ---
-    // Cách 1: Kéo thả trực tiếp (đơn giản nhưng không linh hoạt)
-    // public TextMeshProUGUI powerText; 
-    
-    // Cách 2: Tìm kiếm theo Tag (linh hoạt hơn)
-    private static TextMeshProUGUI powerText; // Dùng static để không phải tìm lại mỗi lần nhặt
-    private static int currentPlayerPower = 0; // Biến static để lưu trữ giá trị power chung
-
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -53,22 +45,6 @@ public class Item : MonoBehaviour
 
         // Lưu vị trí ban đầu để tạo hiệu ứng bay xung quanh nó
         startPos = transform.position;
-
-        // Tìm UI text nếu chưa được tìm thấy
-        if (powerText == null)
-        {
-            GameObject textObject = GameObject.FindGameObjectWithTag("PowerUIText"); // Đặt Tag này cho đối tượng Text trên Canvas
-            if (textObject != null)
-            {
-                powerText = textObject.GetComponent<TextMeshProUGUI>();
-                // Khởi tạo giá trị ban đầu cho UI
-                powerText.text = "Power: " + currentPlayerPower;
-            }
-            else
-            {
-                Debug.LogWarning("Không tìm thấy đối tượng UI với Tag 'PowerUIText'. Hãy chắc chắn bạn đã tạo và gán tag cho nó.");
-            }
-        }
     }
 
     // Hàm này được gọi bởi Enemy khi nó tạo ra vật phẩm
@@ -101,39 +77,25 @@ public class Item : MonoBehaviour
         }
     }
 
-    // Được gọi khi một collider khác đi vào trigger của vật phẩm
-    private void OnTriggerEnter2D(Collider2D collision)
+    // This method is now public so it can be called from PlayerCollision.cs
+    public void Pickup(GameObject player)
     {
-        // Kiểm tra xem có phải là người chơi không
-        if (collision.CompareTag("Player"))
+        PlayerStat playerStat = player.GetComponent<PlayerStat>();
+        if (playerStat != null)
         {
-            Pickup();
-        }
-    }
+            playerStat.AddPowerValue(powerValue);
+            Debug.Log("Player picked up item. Added " + powerValue + " power. New total: " + playerStat.PowerValue);
 
-    // Xử lý logic khi người chơi nhặt vật phẩm
-    void Pickup()
-    {
-        Debug.Log("Người chơi đã nhặt vật phẩm, tăng " + powerValue + " power!");
+            // Optional: Play sound or show effect here
+            // SoundManager.Instance.PlayPickupSound();
+            // EffectManager.Instance.ShowPickupEffect(transform.position);
 
-        // Tăng chỉ số power
-        currentPlayerPower += powerValue;
-
-        // Cập nhật UI
-        if (powerText != null)
-        {
-            powerText.text = "Power: " + currentPlayerPower;
+            // Destroy the item after pickup
+            Destroy(gameObject);
         }
         else
         {
-            Debug.LogWarning("Tham chiếu đến Power UI Text không tồn tại!");
+            Debug.LogWarning("Player object does not have a PlayerStat component!");
         }
-
-        // Có thể thêm hiệu ứng âm thanh hoặc hình ảnh ở đây
-        // SoundManager.Instance.PlayPickupSound();
-        // EffectManager.Instance.ShowPickupEffect(transform.position);
-
-        // Biến mất sau khi được nhặt
-        Destroy(gameObject);
     }
 }

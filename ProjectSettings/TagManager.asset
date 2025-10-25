@@ -24,6 +24,7 @@ TagManager:
   - OptionsUI
   - Wind
   - Minus100Heath
+  - Item
   layers:
   - Default
   - TransparentFX

@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Animator animator; // Tham chiếu đến thành phần Animator để điều khiển animation.
     private PlayerStat playerStat;              // Tham chiếu đến thành phần PlayerStat để quản lý các chỉ số của người chơi (ví dụ: Stamina).
     private PlayerAttackDefault playerAttack; // Tham chiếu đến script tấn công để có thể ngắt tấn công khi dash hoặc thực hiện attack dash.
+
+    // Public Getters for other scripts
+    public Rigidbody2D Rigidbody => rb;
+    public float DefaultGravityScale => defaultGravityScale;
     
     // Hàm này giúp bạn thấy được vòng tròn check ground trong cửa sổ Scene.
     // Rất hữu ích để debug hoặc điều chỉnh groundCheckRadius và groundCheck position.

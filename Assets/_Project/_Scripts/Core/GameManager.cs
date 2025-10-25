@@ -4,7 +4,7 @@ using System.Collections; // Required for Coroutines
 
 public class GameManager : MonoBehaviour
 {
-    // Singleton Instance
+    // Singleton Instance for the current scene
     public static GameManager Instance { get; private set; }
 
     [Header("UI")]
@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     [Header("Components & State")]
     public PlayerController playerController;
     public bool isGameEnd;
-    public static int SceneIndex; // Note: This is kept for compatibility but new methods don't use it.
     
     [Header("Audio")]
     [SerializeField] private AudioSource sfxSource;
@@ -29,23 +28,18 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        // Implement Singleton Pattern
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // Set the static instance to this GameManager for the current scene.
+        Instance = this;
     }
 
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        gamePauseUI.SetActive(false);
-        MenuOptionUI.SetActive(false);
+        playerController = FindObjectOfType<PlayerController>();
+
+        if (gamePauseUI != null) gamePauseUI.SetActive(false);
+        if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
+        if (FullMapUI != null) FullMapUI.SetActive(false);
+
         isGameEnd = false;
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
@@ -57,31 +51,26 @@ public class GameManager : MonoBehaviour
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
-        FullMapUI.SetActive(false);
 
-        // If there is data to load from a continue action, apply it now.
+        // If there is data to load, apply it after a short delay to ensure all objects are ready.
         if (dataToLoad != null)
         {
-            ApplyLoadedData();
+            StartCoroutine(ApplyLoadedDataRoutine());
         }
 
-        // Start the autosave routine
         StartCoroutine(AutoSaveRoutine());
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && isGameEnd == false)
+        if (Input.GetKeyDown(KeyCode.Escape) && !isGameEnd)
         {
-            if (SceneManager.GetActiveScene().buildIndex != 0) // Can pause in any playable scene
+            if (SceneManager.GetActiveScene().buildIndex != 0)
             {
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.Confined;
                 Pause();
-                if (sfxSource != null && clickClip != null)
-                {
-                    sfxSource.PlayOneShot(clickClip);
-                }
+                if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
             }
         }
         if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -93,7 +82,7 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                if (!gamePauseUI.activeSelf) // Don't hide cursor if game is paused
+                if (gamePauseUI != null && !gamePauseUI.activeSelf)
                 {
                     Cursor.visible = false;
                     Cursor.lockState = CursorLockMode.Locked;
@@ -102,15 +91,13 @@ public class GameManager : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.M))
         {
-            FullMapUI.SetActive(true);
+            if (FullMapUI != null) FullMapUI.SetActive(true);
         }
-        else { FullMapUI.SetActive(false); }
+        else { if (FullMapUI != null) FullMapUI.SetActive(false); }
     }
 
     void OnApplicationQuit()
     {
-        // This is called by Unity when the app is about to quit (e.g., Alt+F4).
-        // We save here to prevent progress loss on a forced quit.
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             Debug.Log("Application is quitting. Saving final game state...");
@@ -120,26 +107,22 @@ public class GameManager : MonoBehaviour
 
     #region --- New Game Flow Methods ---
 
-    // Method for the "New Game" button
     public void Play()
     {
-        // A new game always starts from the first level (assuming build index 1)
-        SceneManager.LoadScene(1);
+        // Create a fresh SaveData object to ensure the next scene starts with default values.
+        dataToLoad = new SaveData();
+
+        SceneManager.LoadScene(1); // Assuming build index 1 is the first level
         Time.timeScale = 1f;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
 
-    // Method for the "Continue" button
     public void ContinueGame()
     {
         SaveData data = SaveManager.Instance.LoadGame();
 
-        // Check if there is valid save data
         if (data != null && !string.IsNullOrEmpty(data.lastScene))
         {
             dataToLoad = data;
@@ -147,21 +130,15 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            // If no save data, start a new game instead
             Debug.LogWarning("No save data found! Starting a New Game.");
             Play();
         }
     }
 
-    // Method for the "Exit" button
     public void Exitgame()
     {
-        // Just tell the application to quit. The OnApplicationQuit() method will handle saving.
         Debug.Log("Exit button pressed. Application will now quit.");
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
         Application.Quit();
     }
 
@@ -171,18 +148,23 @@ public class GameManager : MonoBehaviour
 
     public void SaveGameState()
     {
+        if (playerController == null) playerController = FindObjectOfType<PlayerController>();
         if (playerController == null) return;
         PlayerStat playerStat = playerController.GetComponent<PlayerStat>();
         if (playerStat == null) return;
 
         SaveData data = new SaveData();
-        // Player Position and Scene
         data.lastScene = SceneManager.GetActiveScene().name;
         data.playerPositionX = playerController.transform.position.x;
         data.playerPositionY = playerController.transform.position.y;
         data.playerPositionZ = playerController.transform.position.z;
 
-        // Stats and Upgrades from PlayerStat
+        // Determine and save current gravity direction
+        if (playerController.GrafityUp) data.gravityDirection = GravityDirection.Up;
+        else if (playerController.GrafityLeft) data.gravityDirection = GravityDirection.Left;
+        else if (playerController.GrafityRight) data.gravityDirection = GravityDirection.Right;
+        else data.gravityDirection = GravityDirection.Down;
+
         data.maxHealth = playerStat.MaxHealth;
         data.maxStamina = playerStat.MaxStamina;
         data.maxLives = playerStat.MaxLives;
@@ -198,17 +180,26 @@ public class GameManager : MonoBehaviour
         Debug.Log("Game State Saved!");
     }
 
-    private void ApplyLoadedData()
+    // This is now a coroutine to ensure it runs after all Start() methods
+    private IEnumerator ApplyLoadedDataRoutine()
     {
-        if (playerController == null) return;
+        // Wait until the end of the frame to ensure all Start() methods have been called
+        yield return new WaitForEndOfFrame();
+
+        if (playerController == null) playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null || dataToLoad == null) yield break;
+        
         PlayerStat playerStat = playerController.GetComponent<PlayerStat>();
-        if (playerStat == null) return;
+        if (playerStat == null) yield break;
 
         // Apply Player Position
         Vector3 position = new Vector3(dataToLoad.playerPositionX, dataToLoad.playerPositionY, dataToLoad.playerPositionZ);
         playerController.transform.position = position;
 
-        // Apply Stats and Upgrades to PlayerStat
+        // Apply Gravity Direction by calling the new method on PlayerController
+        playerController.ApplyGravityDirection(dataToLoad.gravityDirection);
+
+        // Apply Stats and Upgrades
         playerStat.MaxHealth = dataToLoad.maxHealth;
         playerStat.MaxStamina = dataToLoad.maxStamina;
         playerStat.MaxLives = dataToLoad.maxLives;
@@ -220,12 +211,16 @@ public class GameManager : MonoBehaviour
         playerStat.jumpCooldownLevel = dataToLoad.jumpCooldownLevel;
         playerStat.dashCooldownLevel = dataToLoad.dashCooldownLevel;
         
-        // Restore current health/stamina to max after loading
         playerStat.HeathPlayer = playerStat.MaxHealth;
         playerStat.StaminaPlayer = playerStat.MaxStamina;
         playerStat.CurrentLives = playerStat.MaxLives;
 
         Debug.Log("Loaded data applied to player.");
+
+        // IMPORTANT: Update UI after applying all data
+        // You need to create this UpdateUI() method in your PlayerStat script.
+        // It should update all UI elements like health bars, power value text, etc.
+        // playerStat.UpdateUI();
 
         // Clear the static data holder after applying it
         dataToLoad = null;
@@ -237,7 +232,6 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(autoSaveInterval);
 
-            // Only auto-save if in a playable scene and the game is not paused or over
             if (SceneManager.GetActiveScene().buildIndex != 0 && Time.timeScale > 0f && !isGameEnd)
             {
                 Debug.Log("Auto-saving game state...");
@@ -251,11 +245,8 @@ public class GameManager : MonoBehaviour
     #region --- UI & Other Methods ---
     public void Option()
     {
-        MenuOptionUI.SetActive(true);
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (MenuOptionUI != null) MenuOptionUI.SetActive(true);
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
     public void Again()
     {
@@ -264,59 +255,43 @@ public class GameManager : MonoBehaviour
         isGameEnd = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        playerController.GrafityDown = true;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (playerController != null) playerController.GrafityDown = true;
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
     public void Pause()
     {
         Time.timeScale = 0f;
-        gamePauseUI.SetActive(true);
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (gamePauseUI != null) gamePauseUI.SetActive(true);
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
     public void Remuse()
     {
         Time.timeScale = 1f;
-        gamePauseUI.SetActive(false);
+        if (gamePauseUI != null) gamePauseUI.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
     public void MainMenu()
     {
-        // Before going to the main menu, save the game state if we are in a playable scene.
         if (SceneManager.GetActiveScene().buildIndex != 0)
         {
             SaveGameState();
         }
 
-        Time.timeScale = 1f; // Ensure time scale is reset
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
     public void MainMenuInGameEndUI()
     {
         SceneManager.LoadScene("MainMenu");
         isGameEnd = false;
-        if (sfxSource != null && clickClip != null)
-        {
-            sfxSource.PlayOneShot(clickClip);
-        }
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
     public void Back()
     {
-        if (gamePauseUI.activeSelf == true && gamePauseUI != null)
+        if (gamePauseUI != null && gamePauseUI.activeSelf)
         {
             Time.timeScale = 1f;
             gamePauseUI.SetActive(false);
@@ -328,7 +303,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (MenuOptionUI.activeSelf == true && MenuOptionUI != null)
+        if (MenuOptionUI != null && MenuOptionUI.activeSelf)
         {
             MenuOptionUI.SetActive(false);
             if (sfxSource != null && clickClip != null)
@@ -336,7 +311,6 @@ public class GameManager : MonoBehaviour
                 sfxSource.PlayOneShot(clickClip);
             }
         }
-
     }
     #endregion
 }

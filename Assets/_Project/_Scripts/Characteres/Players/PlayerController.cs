@@ -436,4 +436,33 @@ public class PlayerController : MonoBehaviour
         // Sau đó, trong `Update`, khi `isGround` trở thành true (nghĩa là đã tiếp đất theo trọng lực mới),
         // `isChangingGravity` sẽ được đặt lại thành false và `gravityScale` trở về bình thường.
     }
+
+    public void ApplyGravityDirection(GravityDirection direction)
+    {
+        // This logic is taken from PlayerSkillGrafity.cs to apply a saved gravity state
+        switch (direction)
+        {
+            case GravityDirection.Up:
+                Physics2D.gravity = Vector2.up * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+                GrafityDown = false; GrafityUp = true; GrafityLeft = false; GrafityRight = false;
+                break;
+            case GravityDirection.Left:
+                Physics2D.gravity = Vector2.left * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                GrafityDown = false; GrafityUp = false; GrafityLeft = true; GrafityRight = false;
+                break;
+            case GravityDirection.Right:
+                Physics2D.gravity = Vector2.right * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+                GrafityDown = false; GrafityUp = false; GrafityLeft = false; GrafityRight = true;
+                break;
+            case GravityDirection.Down:
+            default:
+                Physics2D.gravity = Vector2.down * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                GrafityDown = true; GrafityUp = false; GrafityLeft = false; GrafityRight = false;
+                break;
+        }
+    }
 }

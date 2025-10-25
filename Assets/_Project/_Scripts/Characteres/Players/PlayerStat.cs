@@ -35,22 +35,23 @@ public class PlayerStat : MonoBehaviour
 
     void Start()
     {
-        // NOTE: For this to work, you must create an empty GameObject in your scene
-        // and add the SaveManager.cs script to it.
-        if (SaveManager.Instance != null)
-        {
-            LoadStats();
-        }
-        else
-        {
-            Debug.LogError("SaveManager instance not found! Make sure a SaveManager is in your scene.");
-            // Fallback to default values if no save manager
-            HeathPlayer = MaxHealth = 100f;
-            StaminaPlayer = MaxStamina = 100f;
-            CurrentLives = MaxLives = 3;
-            UpdateHealthUI();
-            UpdateStaminaUI();
-        }
+        // The GameManager is now solely responsible for loading stats.
+        // This method now only ensures UI is initialized correctly on scene start.
+        UpdateHealthUI();
+        UpdateStaminaUI();
+    }
+
+    // Method called by GameManager after loading data to refresh all UI elements.
+    public void UpdateUI()
+    {
+        UpdateHealthUI();
+        UpdateStaminaUI();
+        
+        // TODO: Add any other UI updates here, for example, for PowerValue if you have a Text element for it.
+        // if (powerValueText != null)
+        // {
+        //     powerValueText.text = PowerValue.ToString();
+        // }
     }
 
     void Update()

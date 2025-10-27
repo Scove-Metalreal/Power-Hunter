@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public Animator animator; // Tham chiếu đến thành phần Animator để điều khiển animation.
     private PlayerStat playerStat;              // Tham chiếu đến thành phần PlayerStat để quản lý các chỉ số của người chơi (ví dụ: Stamina).
     private PlayerAttackDefault playerAttack; // Tham chiếu đến script tấn công để có thể ngắt tấn công khi dash hoặc thực hiện attack dash.
+
+    // Public Getters for other scripts
+    public Rigidbody2D Rigidbody => rb;
+    public float DefaultGravityScale => defaultGravityScale;
     
     // Hàm này giúp bạn thấy được vòng tròn check ground trong cửa sổ Scene.
     // Rất hữu ích để debug hoặc điều chỉnh groundCheckRadius và groundCheck position.
@@ -435,5 +439,34 @@ public class PlayerController : MonoBehaviour
         rb.gravityScale = defaultGravityScale * 3f; // Tăng mạnh gravity scale (ví dụ: gấp 3 lần) để người chơi nhanh chóng "bị hút" về phía trọng lực mới.
         // Sau đó, trong `Update`, khi `isGround` trở thành true (nghĩa là đã tiếp đất theo trọng lực mới),
         // `isChangingGravity` sẽ được đặt lại thành false và `gravityScale` trở về bình thường.
+    }
+
+    public void ApplyGravityDirection(GravityDirection direction)
+    {
+        // This logic is taken from PlayerSkillGrafity.cs to apply a saved gravity state
+        switch (direction)
+        {
+            case GravityDirection.Up:
+                Physics2D.gravity = Vector2.up * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, 180);
+                GrafityDown = false; GrafityUp = true; GrafityLeft = false; GrafityRight = false;
+                break;
+            case GravityDirection.Left:
+                Physics2D.gravity = Vector2.left * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, -90);
+                GrafityDown = false; GrafityUp = false; GrafityLeft = true; GrafityRight = false;
+                break;
+            case GravityDirection.Right:
+                Physics2D.gravity = Vector2.right * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, 90);
+                GrafityDown = false; GrafityUp = false; GrafityLeft = false; GrafityRight = true;
+                break;
+            case GravityDirection.Down:
+            default:
+                Physics2D.gravity = Vector2.down * 9.81f;
+                transform.rotation = Quaternion.Euler(0, 0, 0);
+                GrafityDown = true; GrafityUp = false; GrafityLeft = false; GrafityRight = false;
+                break;
+        }
     }
 }

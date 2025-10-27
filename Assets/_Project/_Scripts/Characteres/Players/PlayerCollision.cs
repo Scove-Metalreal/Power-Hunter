@@ -97,6 +97,16 @@ public class PlayerCollision : MonoBehaviour
             }
         }
 
+        // <<< LOGIC MỚI: Xử lý va chạm với vật phẩm (Item)
+        if (collision.CompareTag("Item"))
+        {
+            Item item = collision.GetComponent<Item>();
+            if (item != null)
+            {
+                item.Pickup(this.gameObject);
+            }
+        }
+
         if (collision.CompareTag("SpikeTrap"))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         

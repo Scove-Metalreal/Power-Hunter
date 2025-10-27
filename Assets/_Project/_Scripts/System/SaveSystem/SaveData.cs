@@ -1,5 +1,14 @@
 using UnityEngine;
 
+// Enum to represent the four possible gravity directions
+public enum GravityDirection
+{
+    Down,
+    Up,
+    Left,
+    Right
+}
+
 [System.Serializable]
 public class SaveData
 {
@@ -15,6 +24,9 @@ public class SaveData
     public int maxLives;
     public int powerValue;
 
+    // Player Gravity
+    public GravityDirection gravityDirection;
+
     // Upgrade Levels
     public int healthUpgradeLevel;
     public int staminaUpgradeLevel;
@@ -28,7 +40,6 @@ public class SaveData
     // Default values for a new game
     public SaveData()
     {
-        // Default position can be set to the start of the first level
         lastScene = "Level 1";
         playerPositionX = 0;
         playerPositionY = 0;
@@ -38,6 +49,8 @@ public class SaveData
         maxStamina = 100f;
         maxLives = 3;
         powerValue = 0;
+
+        gravityDirection = GravityDirection.Down; // Default gravity direction
 
         healthUpgradeLevel = 0;
         staminaUpgradeLevel = 0;

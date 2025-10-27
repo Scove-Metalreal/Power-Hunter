@@ -35,37 +35,45 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame(SaveData data)
     {
-        string json = JsonUtility.ToJson(data, true);
-
-        if (!Application.isEditor)
+        try
         {
-            json = EncryptDecrypt(json);
-        }
+            string json = JsonUtility.ToJson(data, true);
 
-        File.WriteAllText(saveFilePath, json);
-        Debug.Log("Game data saved to: " + saveFilePath);
+            if (!Application.isEditor)
+            {
+                json = EncryptDecrypt(json);
+            }
+
+            File.WriteAllText(saveFilePath, json);
+            Debug.Log("Game data saved to: " + saveFilePath);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Failed to save game data: " + e.Message);
+        }
     }
 
     public SaveData LoadGame()
     {
         if (File.Exists(saveFilePath))
         {
-            string json = File.ReadAllText(saveFilePath);
-
-            if (!Application.isEditor)
-            {
-                json = EncryptDecrypt(json);
-            }
-            
             try
             {
+                string json = File.ReadAllText(saveFilePath);
+
+                if (!Application.isEditor)
+                {
+                    json = EncryptDecrypt(json);
+                }
+                
                 SaveData data = JsonUtility.FromJson<SaveData>(json);
                 Debug.Log("Game data loaded from: " + saveFilePath);
                 return data;
             }
-            catch
+            catch (System.Exception e)
             {
-                Debug.LogWarning("Failed to load save data. Creating new save data.");
+                Debug.LogError("Failed to load save data due to an exception: " + e.Message);
+                Debug.LogWarning("Creating new save data as a fallback.");
                 return new SaveData();
             }
         }

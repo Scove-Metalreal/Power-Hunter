@@ -32,24 +32,24 @@ public class PlayerStat : MonoBehaviour
     public Slider HeathSilder;
     public TextMeshProUGUI HeathText;
     public Slider StaminaSlider;
+    public TextMeshProUGUI powerValueText; // Reference to the TextMeshPro UI for power value
 
     void Start()
     {
-        // NOTE: For this to work, you must create an empty GameObject in your scene
-        // and add the SaveManager.cs script to it.
-        if (SaveManager.Instance != null)
+        // The GameManager is responsible for telling this script whether to load data or reset.
+        // This method now only ensures UI is initialized correctly on scene start.
+        UpdateUI();
+    }
+
+    // Method called by GameManager after loading data to refresh all UI elements.
+    public void UpdateUI()
+    {
+        UpdateHealthUI();
+        UpdateStaminaUI();
+        
+        if (powerValueText != null)
         {
-            LoadStats();
-        }
-        else
-        {
-            Debug.LogError("SaveManager instance not found! Make sure a SaveManager is in your scene.");
-            // Fallback to default values if no save manager
-            HeathPlayer = MaxHealth = 100f;
-            StaminaPlayer = MaxStamina = 100f;
-            CurrentLives = MaxLives = 3;
-            UpdateHealthUI();
-            UpdateStaminaUI();
+            powerValueText.text = "Power: " + PowerValue.ToString();
         }
     }
 
@@ -74,10 +74,34 @@ public class PlayerStat : MonoBehaviour
     
     // --- Save/Load Integration ---
 
-    public void LoadStats()
+    public void ResetStats()
     {
-        SaveData data = SaveManager.Instance.LoadGame();
+        // Use the SaveData constructor to get default values
+        SaveData defaultData = new SaveData();
 
+        MaxHealth = defaultData.maxHealth;
+        MaxStamina = defaultData.maxStamina;
+        MaxLives = defaultData.maxLives;
+        PowerValue = defaultData.powerValue;
+        healthUpgradeLevel = defaultData.healthUpgradeLevel;
+        staminaUpgradeLevel = defaultData.staminaUpgradeLevel;
+        livesUpgradeLevel = defaultData.livesUpgradeLevel;
+        hasWallJump = defaultData.hasWallJump;
+        jumpCooldownLevel = defaultData.jumpCooldownLevel;
+        dashCooldownLevel = defaultData.dashCooldownLevel;
+
+        // Set current stats to max
+        HeathPlayer = MaxHealth;
+        StaminaPlayer = MaxStamina;
+        CurrentLives = MaxLives;
+
+        // Update the UI to reflect the reset stats
+        UpdateUI();
+        Debug.Log("Player stats reset to default for a new game.");
+    }
+
+    public void ApplySaveData(SaveData data)
+    {
         MaxHealth = data.maxHealth;
         MaxStamina = data.maxStamina;
         MaxLives = data.maxLives;
@@ -89,50 +113,14 @@ public class PlayerStat : MonoBehaviour
         jumpCooldownLevel = data.jumpCooldownLevel;
         dashCooldownLevel = data.dashCooldownLevel;
 
-        // Set current stats
+        // Set current stats to max
         HeathPlayer = MaxHealth;
         StaminaPlayer = MaxStamina;
         CurrentLives = MaxLives;
 
-        // This logic handles loading the player into the correct scene and position.
-        // We will need a corresponding script in the GameManager to handle the initial load.
-        if (data.lastScene != null && SceneManager.GetActiveScene().name != data.lastScene)
-        {
-            SceneManager.LoadScene(data.lastScene);
-        }
-        else
-        {
-            transform.position = new Vector3(data.playerPositionX, data.playerPositionY, data.playerPositionZ);
-        }
-
-        UpdateHealthUI();
-        UpdateStaminaUI();
-    }
-
-    public void SaveStats()
-    {
-        SaveData data = new SaveData();
-
-        // Player Position and Scene
-        data.lastScene = SceneManager.GetActiveScene().name;
-        data.playerPositionX = transform.position.x;
-        data.playerPositionY = transform.position.y;
-        data.playerPositionZ = transform.position.z;
-
-        // Stats and Upgrades
-        data.maxHealth = MaxHealth;
-        data.maxStamina = MaxStamina;
-        data.maxLives = MaxLives;
-        data.powerValue = PowerValue;
-        data.healthUpgradeLevel = healthUpgradeLevel;
-        data.staminaUpgradeLevel = staminaUpgradeLevel;
-        data.livesUpgradeLevel = livesUpgradeLevel;
-        data.hasWallJump = hasWallJump;
-        data.jumpCooldownLevel = jumpCooldownLevel;
-        data.dashCooldownLevel = dashCooldownLevel;
-
-        SaveManager.Instance.SaveGame(data);
-        Debug.Log("Player stats saved!");
+        // Update the UI to reflect the loaded stats
+        UpdateUI();
+        Debug.Log("Save data applied to player stats.");
     }
 
     // --- The rest of the methods are the same... ---
@@ -201,6 +189,10 @@ public class PlayerStat : MonoBehaviour
     public void AddPowerValue(int amount)
     {
         PowerValue += amount;
+        if (powerValueText != null)
+        {
+            powerValueText.text = "Power: " + PowerValue.ToString();
+        }
     }
 
     public bool UsePowerValue(int amount)
@@ -208,6 +200,10 @@ public class PlayerStat : MonoBehaviour
         if (PowerValue >= amount)
         {
             PowerValue -= amount;
+            if (powerValueText != null)
+            {
+                powerValueText.text = "Power: " + PowerValue.ToString();
+            }
             return true;
         }
         return false;

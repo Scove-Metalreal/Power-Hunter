@@ -108,8 +108,14 @@ public class PlayerCollision : MonoBehaviour
         }
 
         if (collision.CompareTag("SpikeTrap"))
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        
+        {
+            SpikeTrap trap = collision.GetComponent<SpikeTrap>();
+            if (trap != null)
+            {
+                trap.ActiceSpikeTrap();
+            }
+        }
+
         if (collision.CompareTag("Shop"))
         {
             isNearShop = true;

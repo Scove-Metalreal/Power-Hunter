@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FBHeath : MonoBehaviour
 {
-    private float Bossheath;
+    public float Bossheath;
     public float damagePlayer = 5f;
     public GameObject light33;
     public GameObject light66;
@@ -10,7 +10,7 @@ public class FBHeath : MonoBehaviour
     public GameObject winUIpanel;
     void Start()
     {
-        Bossheath = 100f;
+        Bossheath = 1000;
         light33.SetActive(false);
         light66.SetActive(false);
         light100.SetActive(true);
@@ -24,7 +24,7 @@ public class FBHeath : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("HItboxWeapon")) {
+        if(collision.gameObject.CompareTag("PlayerHitbox")) {
          Bossheath -= damagePlayer; 
             if(Bossheath >66 ||  Bossheath <= 100)
             {

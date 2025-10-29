@@ -25,6 +25,8 @@ TagManager:
   - Wind
   - Minus100Heath
   - Item
+  - Turn4FX
+  - SpikyTrap
   layers:
   - Default
   - TransparentFX

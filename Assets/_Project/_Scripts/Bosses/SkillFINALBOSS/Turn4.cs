@@ -25,6 +25,9 @@ public class Turn4 : MonoBehaviour
         while (true)
         {
             spawmBomb();
+            spawmBomb();
+            spawmBomb();
+            spawmBomb();
             yield return new WaitForSeconds(1f);
         }
     }

@@ -31,7 +31,9 @@ public class PlayerCollision : MonoBehaviour
     [Header("Shop Settings")] public GameObject shopUI; // Giao diện shop (gán trong Inspector)
     private bool isNearShop = false; // Kiểm tra xem player có đang trong vùng shop không
 
-
+    [Header("Level2")]
+    [SerializeField] private float windflyForce = 10f;
+    public GameObject Door1;
 
     // Hàm Start được gọi một lần khi script được kích hoạt.
     void Start()
@@ -53,6 +55,8 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.LogWarning("LoseUIPanel chưa được gán trong PlayerCollision!");
         }
+        Door1.SetActive(true);
+        
     }
 
     // --- XÓA BỎ: Toàn bộ logic check ground cũ đã được di chuyển sang PlayerController ---
@@ -63,7 +67,10 @@ public class PlayerCollision : MonoBehaviour
     // Hàm OnTriggerEnter2D được gọi khi một Collider khác đi vào Trigger Collider của đối tượng này.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if(collision.gameObject.CompareTag("ButtonDoor1"))
+        {
+            Door1.SetActive(false);
+        }
         if (collision.gameObject.CompareTag("GroundTrap"))
         {
             FindAnyObjectByType<FallingGround>().TriggerCollapse();
@@ -127,8 +134,15 @@ public class PlayerCollision : MonoBehaviour
             }
         }
     }
-    
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("WindFly"))
+        {
+            Vector2 forceDir = transform.up; 
+            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force);
+        }
+    }
     // Hàm OnTriggerExit2D được gọi khi một Collider khác rời khỏi Trigger Collider của đối tượng này.
     private void OnTriggerExit2D(Collider2D collision)
     {

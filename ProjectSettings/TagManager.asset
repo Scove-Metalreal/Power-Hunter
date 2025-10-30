@@ -25,6 +25,9 @@ TagManager:
   - Wind
   - Minus100Heath
   - Item
+  - Turn4FX
+  - WindFly
+  - ButtonDoor1
   layers:
   - Default
   - TransparentFX

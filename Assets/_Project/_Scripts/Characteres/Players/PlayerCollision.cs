@@ -67,7 +67,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.gameObject.CompareTag("GroundTrap"))
         {
             FindAnyObjectByType<FallingGround>().TriggerCollapse();
-            FindAnyObjectByType<CameraShake>().StartCoroutine(FindAnyObjectByType<CameraShake>().Shake());
+            // FindAnyObjectByType<CameraShake>().StartCoroutine(FindAnyObjectByType<CameraShake>().Shake());
         }
 
         // Xử lý va chạm với vùng chết (DeathZone).
@@ -107,12 +107,12 @@ public class PlayerCollision : MonoBehaviour
             }
         }
 
-        if (collision.CompareTag("SpikeTrap"))
+        if (collision.CompareTag("SpikyTrap"))
         {
-            SpikeTrap trap = collision.GetComponent<SpikeTrap>();
+            SpikyTrap trap = collision.GetComponent<SpikyTrap>();
             if (trap != null)
             {
-                trap.ActiceSpikeTrap();
+                HandleDamageAndKnockback(trap.damage, collision.transform);
             }
         }
 

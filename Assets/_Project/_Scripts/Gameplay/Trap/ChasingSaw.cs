@@ -34,6 +34,11 @@ public class ChasingSaw : MonoBehaviour
         {
             playerTransform = player.transform;
         }
+        else
+        {
+            Debug.LogError("ChasingSaw Error: Cannot find a GameObject with the 'Player' tag. The saw will not move. Please ensure your player object is tagged correctly.", gameObject);
+            BeginStopping(); // Stop immediately if no player is found
+        }
 
         // Start the countdown to stop chasing
         Invoke(nameof(BeginStopping), chaseDuration);
@@ -62,29 +67,34 @@ public class ChasingSaw : MonoBehaviour
             currentMoveSpeed = Mathf.Lerp(currentMoveSpeed, 0f, Time.deltaTime * 2f);
             rb.linearVelocity = rb.linearVelocity.normalized * currentMoveSpeed;
 
-            // After fully stopped, it might just sit there or be destroyed
             if (currentMoveSpeed < 0.1f)
             {
-                Destroy(gameObject, 2f); // Destroy after 2 seconds of being stopped
+                Destroy(gameObject, 2f);
             }
             return; // Don't execute chase logic if stopping
         }
 
         if (playerTransform == null)
         {
+            Debug.LogError("PlayerTransform became NULL in FixedUpdate. Stopping.");
             BeginStopping();
             return;
         }
 
         // --- Ground Following Logic ---
+        Debug.Log("Running Ground Check...");
         RaycastHit2D groundHit = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
 
         if (groundHit.collider == null)
         {
-            // No ground beneath, so it should fall
+            Debug.LogError("Ground Check FAILED. No ground detected beneath the saw. Check 'Ground Layer' in Inspector and spawn position.");
             rb.gravityScale = 2f; // Apply gravity
             BeginStopping(); // Stop trying to chase
             return;
+        }
+        else
+        {
+            Debug.Log($"<color=green>Ground Check SUCCESS. Hit '{groundHit.collider.name}'</color>");
         }
 
         // Adjust position to hover slightly above the ground
@@ -93,9 +103,11 @@ public class ChasingSaw : MonoBehaviour
         // Determine movement direction along the ground surface
         float moveDirection = (playerTransform.position.x > transform.position.x) ? 1f : -1f;
         Vector2 moveVector = new Vector2(groundHit.normal.y, -groundHit.normal.x) * moveDirection;
+        Debug.Log($"MoveDirection: {moveDirection}, GroundNormal: {groundHit.normal}, MoveVector: {moveVector}");
 
         // Apply velocity
         rb.linearVelocity = moveVector * currentMoveSpeed;
+        Debug.Log($"<color=cyan>Final Velocity set to: {rb.linearVelocity}</color>");
     }
 
     void OnCollisionEnter2D(Collision2D collision)

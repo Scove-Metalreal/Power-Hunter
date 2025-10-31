@@ -29,6 +29,7 @@ TagManager:
   - WindFly
   - ButtonDoor1
   - SpikyTrap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -41,8 +42,8 @@ TagManager:
   - Ground
   - Player
   - GroundTrap
-  - 
-  - 
+  - Projectiles
+  - HeldObject
   - 
   - 
   - 

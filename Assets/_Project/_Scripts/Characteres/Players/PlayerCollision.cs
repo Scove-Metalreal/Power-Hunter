@@ -55,7 +55,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.LogWarning("LoseUIPanel chưa được gán trong PlayerCollision!");
         }
-        Door1.SetActive(true);
+        // Door1.SetActive(true);
         
     }
 
@@ -67,6 +67,9 @@ public class PlayerCollision : MonoBehaviour
     // Hàm OnTriggerEnter2D được gọi khi một Collider khác đi vào Trigger Collider của đối tượng này.
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        // --- THÊM LOGGING ĐỂ DEBUG ---
+        Debug.Log($"Player triggered with GameObject: '{collision.gameObject.name}' which has tag: '{collision.tag}'");
+
         if(collision.gameObject.CompareTag("ButtonDoor1"))
         {
             Door1.SetActive(false);
@@ -116,10 +119,16 @@ public class PlayerCollision : MonoBehaviour
 
         if (collision.CompareTag("SpikyTrap"))
         {
+            Debug.Log("Collision with 'SpikyTrap' tag detected."); // LOG THÊM
             SpikyTrap trap = collision.GetComponent<SpikyTrap>();
             if (trap != null)
             {
                 HandleDamageAndKnockback(trap.damage, collision.transform);
+                Debug.Log("SpikyTrap contacted. Damage dealt."); // LOG RÕ HƠN
+            }
+            else
+            {
+                Debug.LogError($"GameObject '{collision.gameObject.name}' has the 'SpikyTrap' tag, but the 'SpikyTrap.cs' script is missing or not on the same object!"); // LOG LỖI
             }
         }
 
@@ -177,7 +186,7 @@ public class PlayerCollision : MonoBehaviour
     // Hàm này xử lý việc người chơi nhận sát thương và bị đẩy lùi (knockback).
     // damage: Lượng sát thương nhận vào.
     // damageSource: Transform của đối tượng gây sát thương, dùng để tính hướng knockback.
-    private void HandleDamageAndKnockback(float damage, Transform damageSource)
+    public void HandleDamageAndKnockback(float damage, Transform damageSource)
     {
         // Trừ máu người chơi.
         playerStat.TakeDamage(damage);

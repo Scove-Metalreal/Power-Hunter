@@ -6,6 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Foozle_2DS0007_Pixel_Trap_Pack/Foozle_2DTR0001_Pixel_Trap_Pack/Lightning Trap/PNGs/Lightning Trap - Level 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Foozle_2DS0007_Pixel_Trap_Pack/Foozle_2DTR0001_Pixel_Trap_Pack/Lightning Trap/PNGs/Lightning Trap - Level 2.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/00 All.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/00 All.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/Brick1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/Brick1.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/Shooter_Arrow_Trap.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/Shooter_Arrow_Trap.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +26,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Hitbox.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GlowBreathingEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/DamageZone.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/CollapsingPlatform.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/RicochetProjectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/RicochetTurret.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/SpikyTrap.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/_Scripts/System/ExtractTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.2d.tilemap@6ec1efda8721/Editor/GridEditorUtility.cs" root0="SKIP_HIGHLIGHTING" />
@@ -122,6 +134,7 @@
       <workItem from="1761355683603" duration="7299000" />
       <workItem from="1761403458614" duration="5182000" />
       <workItem from="1761566256625" duration="8310000" />
+      <workItem from="1761911075158" duration="18985000" />
     </task>
     <servers />
   </component>

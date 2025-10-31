@@ -28,6 +28,7 @@ TagManager:
   - Turn4FX
   - WindFly
   - ButtonDoor1
+  - SpikyTrap
   layers:
   - Default
   - TransparentFX

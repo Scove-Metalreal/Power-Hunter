@@ -6,16 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Trap/CollapsePlatform.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Trap/CollapsePlatform.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Trap/CollapsingPlatform.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Trap/CollapsingPlatform.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/11.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Trap/Trap and Weapon/11.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Textures/Icon/Gemini_Generated_Image_exx3ymexx3ymexx3.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Textures/Icon/Gemini_Generated_Image_exx3ymexx3ymexx3.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Physics/Bouncy_Material.physicsMaterial2D" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Physics/Bouncy_Material.physicsMaterial2D" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/Enemy.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Projectiles/RicochetProjectile_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Projectiles/RicochetProjectile_Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Players/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Players/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Players/Player.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Players/Player.prefab.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/ChasingSaw.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/ChasingSaw.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Core/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Core/AudioManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +136,7 @@
       <workItem from="1761403458614" duration="5182000" />
       <workItem from="1761566256625" duration="8310000" />
       <workItem from="1761911075158" duration="24954000" />
+      <workItem from="1762086634370" duration="1377000" />
     </task>
     <servers />
   </component>

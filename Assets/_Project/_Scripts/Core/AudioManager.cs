@@ -24,7 +24,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip potion;             // Check potion.mp3
     public AudioClip hitTrap;            // chạm trap.mp3
     public AudioClip lava;               // dính lava.mp3
-    public AudioClip victory;            // vitory.mp3
+    public AudioClip victory;            // victory.mp3
     public AudioClip gameOver;           // Game over.mp3
     public AudioClip nextStage;          // qua màn.mp3
 
@@ -136,5 +136,7 @@ public class AudioManager : MonoBehaviour
     public void PlayLava() => PlaySFX(lava);
     public void PlayVictory() => PlaySFX(victory);
     public void PlayGameOver() => PlaySFX(gameOver);
-    public void PlayNextStage() => PlaySFX(nextStage);
+    public void PlayNextStage() => PlaySFX(nextStage); 
+    
+    // TODO: thêm âm thanh chạy, nhảy, rớt (PlayerController.cs); hồi máu (gọi trong healingZone.cs); cái PlayTrap() nên cụ thể ra tại có nhiều loại trap, mỗi loại mỗi tiếng khác nhau; âm thanh lúc đổi trọng lực; 
 }

@@ -87,6 +87,14 @@ public class PlayerCollision : MonoBehaviour
             // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
             HandleDamageAndKnockback(20f, collision.transform);
         }
+        // Xử lí nâng cấp nhân vật
+        if (collision.gameObject.CompareTag("UpgradePoint"))
+        {
+            playerStat.UpgradeHealth(200);
+            playerStat.UpgradeStamina(50);
+            playerStat.AddLife();
+            Destroy(collision.gameObject);
+        }
 
         // <<< LOGIC MỚI: Xử lý va chạm với hitbox của Enemy
         // Khi người chơi va chạm với hitbox của kẻ địch.

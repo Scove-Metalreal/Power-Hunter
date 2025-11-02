@@ -30,6 +30,7 @@ TagManager:
   - ButtonDoor1
   - SpikyTrap
   - Enemy
+  - UpgradePoint
   layers:
   - Default
   - TransparentFX
@@ -44,7 +45,7 @@ TagManager:
   - GroundTrap
   - Projectiles
   - HeldObject
-  - 
+  - BackGround
   - 
   - 
   - 

@@ -25,6 +25,7 @@ public class CheckPoint : MonoBehaviour
             Debug.Log(">>> Checkpoint mới được kích hoạt (2D): " + name +
                       " | Vị trí: " + transform.position +
                       " | Thời gian: " + Time.time.ToString("F2") + "s");
+            AudioManager.Instance.PlayPotion();
         }
     }
 

@@ -5,6 +5,7 @@ using UnityEngine.Audio;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
+[DefaultExecutionOrder(-100)]
 public class AudioManager : MonoBehaviour
 {
     public Slider MusicSlider;
@@ -39,7 +40,23 @@ public class AudioManager : MonoBehaviour
 
             // tạo sfxPlayer để phát hiệu ứng nhanh
             sfxPlayer = gameObject.AddComponent<AudioSource>();
-            sfxPlayer.outputAudioMixerGroup = SFXMixer.FindMatchingGroups("SFX")[0];
+
+            // ------------------ PHẦN SỬA LỖI ------------------
+            // Tìm AudioMixerGroup "SFX" một cách an toàn
+            UnityEngine.Audio.AudioMixerGroup[] sfxGroups = SFXMixer.FindMatchingGroups("Master");
+
+            if (sfxGroups.Length > 0)
+            {
+                // Nếu tìm thấy group "SFX"
+                sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
+            }
+            else
+            {
+                // Lỗi nghiêm trọng: KHÔNG tìm thấy AudioMixerGroup "SFX"
+                Debug.LogError("AudioManager: KHÔNG TÌM THẤY AudioMixerGroup CÓ TÊN 'SFX' trong SFXMixer. Vui lòng kiểm tra lại AudioMixer!");
+                // Đảm bảo sfxPlayer vẫn hoạt động, có thể không có MixerGroup
+            }
+            // ----------------------------------------------------
         }
         else
         {

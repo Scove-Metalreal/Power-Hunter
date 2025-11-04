@@ -13,7 +13,8 @@ public class SpikeLV2 : MonoBehaviour
     {
         startPos = transform.position;                     
         targetPos = startPos - new Vector2(0, distance);    
-        transform.position = targetPos;                     
+        transform.position = targetPos; 
+        
     }
 
     void Update()

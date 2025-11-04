@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        playerController = FindObjectOfType<PlayerController>();
+        playerController = FindAnyObjectByType<PlayerController>();
 
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
         if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
@@ -60,12 +60,13 @@ public class GameManager : MonoBehaviour
         else
         {
             // This is a new game
-            PlayerStat playerStat = FindObjectOfType<PlayerStat>();
+            PlayerStat playerStat = FindAnyObjectByType<PlayerStat>();
             if (playerStat != null)
             {
                 playerStat.ResetStats();
             }
         }
+
 
         StartCoroutine(AutoSaveRoutine());
     }
@@ -157,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveGameState()
     {
-        if (playerController == null) playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null) playerController = FindAnyObjectByType<PlayerController>();
         if (playerController == null) return;
         PlayerStat playerStat = playerController.GetComponent<PlayerStat>();
         if (playerStat == null) return;
@@ -195,7 +196,7 @@ public class GameManager : MonoBehaviour
         // Wait until the end of the frame to ensure all Start() methods have been called
         yield return new WaitForEndOfFrame();
 
-        if (playerController == null) playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null) playerController = FindAnyObjectByType<PlayerController>();
         if (playerController == null || dataToLoad == null) yield break;
         
         PlayerStat playerStat = playerController.GetComponent<PlayerStat>();

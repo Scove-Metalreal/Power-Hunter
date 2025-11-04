@@ -86,6 +86,13 @@ public class PlayerCollision : MonoBehaviour
             // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
             // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
             HandleDamageAndKnockback(20f, collision.transform);
+            AudioManager.Instance.PlayTrap();
+        }if (collision.CompareTag("Minus100Heath"))
+        {
+            // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
+            // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
+            HandleDamageAndKnockback(100f, collision.transform);
+            AudioManager.Instance.PlayLava();
         }
         // Xử lí nâng cấp nhân vật
         if (collision.gameObject.CompareTag("UpgradePoint"))
@@ -140,16 +147,16 @@ public class PlayerCollision : MonoBehaviour
             }
         }
 
-        if (collision.CompareTag("Shop"))
-        {
-            isNearShop = true;
+        //if (collision.CompareTag("Shop"))
+        //{
+        //    isNearShop = true;
 
-            // Tìm UI "Press E" nằm trong Shop (nếu có)
-            Transform pressEInShop = collision.transform.Find("Canvas");
-            if (pressEInShop != null)
-            {
-            }
-        }
+        //    // Tìm UI "Press E" nằm trong Shop (nếu có)
+        //    Transform pressEInShop = collision.transform.Find("Canvas");
+        //    if (pressEInShop != null)
+        //    {
+        //    }
+        //}
     }
 
     private void OnTriggerStay2D(Collider2D collision)
@@ -158,6 +165,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Vector2 forceDir = transform.up; 
             GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force);
+            AudioManager.Instance.PlayWind();
         }
     }
     // Hàm OnTriggerExit2D được gọi khi một Collider khác rời khỏi Trigger Collider của đối tượng này.

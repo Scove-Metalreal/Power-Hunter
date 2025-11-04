@@ -99,6 +99,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
+
             Debug.Log($"Not enough PowerValue for Stamina upgrade. Need {cost}, have {playerStat.PowerValue}.");
         }
     }

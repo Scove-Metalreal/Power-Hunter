@@ -60,6 +60,7 @@ public class Portal : MonoBehaviour
             {
                 portalCoroutine = StartCoroutine(PortalSequence());
             }
+            AudioManager.Instance.PlayNextStage();
         }
     }
 

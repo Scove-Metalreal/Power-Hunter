@@ -25,7 +25,19 @@ public class CheckPoint : MonoBehaviour
             Debug.Log(">>> Checkpoint mới được kích hoạt (2D): " + name +
                       " | Vị trí: " + transform.position +
                       " | Thời gian: " + Time.time.ToString("F2") + "s");
-            AudioManager.Instance.PlayPotion();
+
+            // ===============================================
+            // DÒNG CODE ĐƯỢC SỬA ĐỂ KHẮC PHỤC LỖI NULL REFERENCE
+            // (Đảm bảo AudioManager đã tồn tại trước khi sử dụng Instance)
+            if (AudioManager.Instance != null)
+            {
+                AudioManager.Instance.PlayPotion();
+            }
+            else
+            {
+                Debug.LogWarning("AudioManager.Instance là NULL. Lỗi về thứ tự khởi tạo script. Âm thanh Checkpoint không được phát.");
+            }
+            // ===============================================
         }
     }
 

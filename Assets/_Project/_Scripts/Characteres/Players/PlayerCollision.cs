@@ -120,6 +120,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 Debug.LogWarning("Found 'EnemyHitbox' tag but no Hitbox component on: " + collision.gameObject.name);
             }
+            AudioManager.Instance.PlaySlashEnemy();
         }
 
         // <<< LOGIC MỚI: Xử lý va chạm với vật phẩm (Item)
@@ -145,6 +146,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 Debug.LogError($"GameObject '{collision.gameObject.name}' has the 'SpikyTrap' tag, but the 'SpikyTrap.cs' script is missing or not on the same object!"); // LOG LỖI
             }
+            AudioManager.Instance.PlayTrap();
         }
 
         //if (collision.CompareTag("Shop"))

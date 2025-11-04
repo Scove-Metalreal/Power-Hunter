@@ -6,8 +6,10 @@ public class RicochetTurret : MonoBehaviour
     [Header("Setup")]
     [Tooltip("The projectile prefab to be fired.")]
     public GameObject projectilePrefab;
-    [Tooltip("The part of the turret that rotates and fires. If null, the whole turret rotates.")]
+    [Tooltip("The part of the turret that rotates.")]
     public Transform rotatingPart;
+    [Tooltip("The exact point where projectiles will be spawned. Should be a child of the rotating part.")]
+    public Transform firePoint;
 
     [Header("Targeting & Firing")]
     [Tooltip("The radius within which the turret detects the player.")]
@@ -32,6 +34,11 @@ public class RicochetTurret : MonoBehaviour
         if (rotatingPart == null)
         {
             rotatingPart = transform; // Default to rotating the whole turret if not set
+        }
+
+        if (firePoint == null)
+        {
+            firePoint = rotatingPart; // Default to the rotating part if not set
         }
     }
 
@@ -69,8 +76,8 @@ public class RicochetTurret : MonoBehaviour
         // Reset cooldown
         fireCooldown = 1f / fireRate;
 
-        // Spawn the projectile at the rotating part's position and rotation
-        Instantiate(projectilePrefab, rotatingPart.position, rotatingPart.rotation);
+        // Spawn the projectile at the fire point's position and rotation
+        Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

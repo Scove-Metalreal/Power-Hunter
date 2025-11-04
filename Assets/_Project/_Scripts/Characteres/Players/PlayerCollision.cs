@@ -240,6 +240,13 @@ public class PlayerCollision : MonoBehaviour
             {
                 StartCoroutine(RespawnPlayer());
             }
+            else
+            {
+                if (playerController.animator != null)
+                {
+                    playerController.animator.SetBool("isDead", true);
+                }
+            }
         }
     }
 
@@ -297,7 +304,7 @@ public class PlayerCollision : MonoBehaviour
 
     public void EndDeadAnimation()
     {
-        Destroy(gameObject);
+        
 
         if (LoseUIPanel != null && gameManager != null)
         {

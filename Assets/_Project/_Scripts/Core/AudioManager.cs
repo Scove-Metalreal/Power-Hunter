@@ -28,8 +28,10 @@ public class AudioManager : MonoBehaviour
     public AudioClip victory;            // victory.mp3
     public AudioClip gameOver;           // Game over.mp3
     public AudioClip nextStage;          // qua màn.mp3
+    public AudioClip takeDamage;         // >>> MỚI THÊM: nhận damage
 
     private AudioSource sfxPlayer;
+    private AudioSource oneShotAreaPlayer; // >>> MỚI THÊM: dùng cho vùng âm thanh chỉ phát 1 lần
 
     private void Awake()
     {
@@ -41,22 +43,22 @@ public class AudioManager : MonoBehaviour
             // tạo sfxPlayer để phát hiệu ứng nhanh
             sfxPlayer = gameObject.AddComponent<AudioSource>();
 
-            // ------------------ PHẦN SỬA LỖI ------------------
-            // Tìm AudioMixerGroup "SFX" một cách an toàn
+            // >>> MỚI THÊM
+            oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
+            oneShotAreaPlayer.loop = false; // phát một lần rồi dừng
+
+            // Tìm AudioMixerGroup "Master" để gán cho AudioSource
             UnityEngine.Audio.AudioMixerGroup[] sfxGroups = SFXMixer.FindMatchingGroups("Master");
 
             if (sfxGroups.Length > 0)
             {
-                // Nếu tìm thấy group "SFX"
                 sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
+                oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
             }
             else
             {
-                // Lỗi nghiêm trọng: KHÔNG tìm thấy AudioMixerGroup "SFX"
-                Debug.LogError("AudioManager: KHÔNG TÌM THẤY AudioMixerGroup CÓ TÊN 'SFX' trong SFXMixer. Vui lòng kiểm tra lại AudioMixer!");
-                // Đảm bảo sfxPlayer vẫn hoạt động, có thể không có MixerGroup
+                Debug.LogError("AudioManager: KHÔNG TÌM THẤY AudioMixerGroup CÓ TÊN 'SFX' trong SFXMixer!");
             }
-            // ----------------------------------------------------
         }
         else
         {
@@ -136,7 +138,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    // ------------------ HÀM MỚI QUẢN LÝ ÂM THANH ------------------
+    // ------------------ QUẢN LÝ PHÁT ÂM THANH ------------------
 
     public void PlaySFX(AudioClip clip)
     {
@@ -144,7 +146,22 @@ public class AudioManager : MonoBehaviour
             sfxPlayer.PlayOneShot(clip);
     }
 
-    // Các hàm gọi nhanh
+    // >>> MỚI THÊM: phát âm thanh chỉ một lần khi player vào vùng
+    public void PlayAreaSoundOnce(AudioClip clip)
+    {
+        if (clip == null || oneShotAreaPlayer.isPlaying) return;
+        oneShotAreaPlayer.clip = clip;
+        oneShotAreaPlayer.Play();
+    }
+
+    // >>> MỚI THÊM: dừng vùng âm thanh khi ra khỏi
+    public void StopAreaSound()
+    {
+        if (oneShotAreaPlayer.isPlaying)
+            oneShotAreaPlayer.Stop();
+    }
+
+    // ------------------ CÁC HÀM GỌI NHANH ------------------
     public void PlayWind() => PlaySFX(windSound);
     public void PlaySlashEnemy() => PlaySFX(slashEnemy);
     public void PlaySlashBoss() => PlaySFX(slashBoss);
@@ -153,7 +170,8 @@ public class AudioManager : MonoBehaviour
     public void PlayLava() => PlaySFX(lava);
     public void PlayVictory() => PlaySFX(victory);
     public void PlayGameOver() => PlaySFX(gameOver);
-    public void PlayNextStage() => PlaySFX(nextStage); 
-    
-    // TODO: thêm âm thanh chạy, nhảy, rớt (PlayerController.cs); hồi máu (gọi trong healingZone.cs); cái PlayTrap() nên cụ thể ra tại có nhiều loại trap, mỗi loại mỗi tiếng khác nhau; âm thanh lúc đổi trọng lực; 
+    public void PlayNextStage() => PlaySFX(nextStage);
+
+    // >>> MỚI THÊM: âm thanh nhận damage
+    public void PlayTakeDamage() => PlaySFX(takeDamage);
 }

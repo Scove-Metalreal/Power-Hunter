@@ -361,6 +361,7 @@ public class Enemy : MonoBehaviour
             {
                 // Gọi hàm nhận sát thương của chính mình
                 TakeDamage(hitbox.damage);
+                
             }
         }
     }

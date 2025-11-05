@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/SpikyTrap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/SpikyTrap.cs" afterDir="false" />
-    </list>
+    <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +131,7 @@
       <workItem from="1762086634370" duration="1438000" />
       <workItem from="1762104821450" duration="617000" />
       <workItem from="1762223104737" duration="3414000" />
-      <workItem from="1762352152631" duration="5158000" />
+      <workItem from="1762352152631" duration="5496000" />
     </task>
     <servers />
   </component>

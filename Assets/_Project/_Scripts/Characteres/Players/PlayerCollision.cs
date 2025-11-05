@@ -120,7 +120,7 @@ public class PlayerCollision : MonoBehaviour
             {
                 Debug.LogWarning("Found 'EnemyHitbox' tag but no Hitbox component on: " + collision.gameObject.name);
             }
-            AudioManager.Instance.PlaySlashEnemy();
+            
         }
 
         // <<< LOGIC MỚI: Xử lý va chạm với vật phẩm (Item)
@@ -226,6 +226,7 @@ public class PlayerCollision : MonoBehaviour
         {
             Debug.LogWarning("Rigidbody2D not found for knockback on: " + gameObject.name);
         }
+        AudioManager.Instance.PlayTakeDamage();
 
         // Bắt đầu Coroutine để xử lý việc phục hồi sau knockback.
         StartCoroutine(RecoverFromKnockback(0.4f)); // Thời gian phục hồi là 0.4 giây.

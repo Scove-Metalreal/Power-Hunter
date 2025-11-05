@@ -96127,6 +96127,7 @@ MonoBehaviour:
   victory: {fileID: 8300000, guid: 7d38b269d949f0148b96de43eed64de3, type: 3}
   gameOver: {fileID: 8300000, guid: 038dc5874adb3bf49a609ff2d5fe1ffc, type: 3}
   nextStage: {fileID: 8300000, guid: f07434dd5757fee418f1e5feb0b6928a, type: 3}
+  takeDamage: {fileID: 8300000, guid: 408f11ef62264f244be62a5c9e65de27, type: 3}
 --- !u!114 &2657619311332530929
 MonoBehaviour:
   m_ObjectHideFlags: 0

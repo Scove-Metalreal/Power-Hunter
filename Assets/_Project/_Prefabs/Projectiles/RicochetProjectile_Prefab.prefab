@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RicochetProjectile
   damage: 10
-  moveSpeed: 15
+  moveSpeed: 20
   maxBounces: 4
 --- !u!1 &5526600585894974336
 GameObject:

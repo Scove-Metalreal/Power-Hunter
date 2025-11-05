@@ -136,7 +136,7 @@ public class PlayerCollision : MonoBehaviour
         if (collision.CompareTag("SpikyTrap"))
         {
             Debug.Log("Collision with 'SpikyTrap' tag detected."); // LOG THÊM
-            SpikyTrap trap = collision.GetComponent<SpikyTrap>();
+            SpikyTrap trap = collision.GetComponentInParent<SpikyTrap>();
             if (trap != null)
             {
                 HandleDamageAndKnockback(trap.damage, collision.transform);

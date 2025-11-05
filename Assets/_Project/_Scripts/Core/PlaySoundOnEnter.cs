@@ -1,16 +1,27 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class PlaySoundOnEnter : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    AudioSource source;
+    Collider2D soundTrigger;
+
+    void Awake()
     {
-        
+        source = GetComponent<AudioSource>();
+        soundTrigger = GetComponent<Collider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        
+        if (collider.gameObject.tag == "Player")
+        {
+            source.Play();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        // source.Play();
     }
 }
+

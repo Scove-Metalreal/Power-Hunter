@@ -86,8 +86,13 @@ public class PlayerCollision : MonoBehaviour
             // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
             // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
             HandleDamageAndKnockback(20f, collision.transform);
+            
+        }
+        if(collision.CompareTag("Player"))
+        {
             AudioManager.Instance.PlayTrap();
-        }if (collision.CompareTag("Minus100Heath"))
+        }
+        if (collision.CompareTag("Minus100Heath"))
         {
             // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
             // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
@@ -166,7 +171,10 @@ public class PlayerCollision : MonoBehaviour
         if(collision.gameObject.CompareTag("WindFly"))
         {
             Vector2 forceDir = transform.up; 
-            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force);
+            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force); 
+        }
+        if(collision.gameObject.CompareTag("Player"))
+        {
             AudioManager.Instance.PlayWind();
         }
     }

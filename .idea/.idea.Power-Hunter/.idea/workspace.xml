@@ -6,6 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Items/Texture/00_Pixel_FX_Texture.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/Items/Texture/00_Pixel_FX_Texture.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/CheckPoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/CheckPoint.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/GateReal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/GateReal.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/item.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/item.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +59,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../Build/ver2\Power Hunter.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../Build/ver3\Power Hunter.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\Project05_PowerHunter\Build\ver2" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -133,6 +139,7 @@
       <workItem from="1762086634370" duration="1438000" />
       <workItem from="1762104821450" duration="617000" />
       <workItem from="1762223104737" duration="3414000" />
+      <workItem from="1762352152631" duration="1601000" />
     </task>
     <servers />
   </component>

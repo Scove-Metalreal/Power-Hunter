@@ -103650,7 +103650,7 @@ MonoBehaviour:
   windSound: {fileID: 8300000, guid: 2c7b8be780c4f784da53fa8ae15680ce, type: 3}
   slashEnemy: {fileID: 8300000, guid: ca914b23810691d47828aadc13058f7e, type: 3}
   slashBoss: {fileID: 8300000, guid: 473f4f1887cea8a468008a52e5b03edf, type: 3}
-  potion: {fileID: 8300000, guid: 734a6c6f62f96c446aff1ca1dccc059f, type: 3}
+  potion: {fileID: 8300000, guid: 3efb9e89fedbefe458211224cc36b8d4, type: 3}
   hitTrap: {fileID: 8300000, guid: f436de759337635469a5e0035db554a0, type: 3}
   lava: {fileID: 8300000, guid: 5ca789cac65ebf04ca17638dedcb11ec, type: 3}
   victory: {fileID: 8300000, guid: 7d38b269d949f0148b96de43eed64de3, type: 3}

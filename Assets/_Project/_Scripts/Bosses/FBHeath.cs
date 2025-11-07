@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class FBHeath : MonoBehaviour
 {
@@ -14,9 +15,11 @@ public class FBHeath : MonoBehaviour
     private SpriteRenderer sprite;
     private Color originalColor;
     private bool isFlashing = false;
-
+    
+    public TextMeshProUGUI timeTMP;
     void Start()
     {
+       
         Bossheath = 1000f;
         sprite = GetComponent<SpriteRenderer>();
         if (sprite != null)
@@ -46,6 +49,8 @@ public class FBHeath : MonoBehaviour
             {
                 Time.timeScale = 0f;
                 winUIpanel.SetActive(true);
+                timeTMP.text = GameManager.FormatTime();
+                GameManager.ResetTimer();
             }
         }
     }

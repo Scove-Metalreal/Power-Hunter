@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
     // Autosave settings
     private float autoSaveInterval = 300f; // 300 seconds = 5 minutes
-
+    public static float playTime = 0f;
     private void Awake()
     {
         // Set the static instance to this GameManager for the current scene.
@@ -73,6 +73,15 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        if (Time.timeScale == 1f)
+        {
+            string scene = SceneManager.GetActiveScene().name;
+
+            if (scene == "Level1" || scene == "Level2" || scene == "FinalBoss")
+            {
+                playTime += Time.deltaTime;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Escape) && !isGameEnd)
         {
             if (SceneManager.GetActiveScene().buildIndex != 0)
@@ -114,7 +123,20 @@ public class GameManager : MonoBehaviour
             SaveGameState();
         }
     }
+    public static void ResetTimer()
+    {
+        playTime = 0f;
+    }
 
+    public static string FormatTime()
+    {
+        int minutes = Mathf.FloorToInt(playTime / 60);
+        int seconds = Mathf.FloorToInt(playTime % 60);
+        int milliseconds = Mathf.FloorToInt((playTime * 1000) % 1000);
+
+
+        return $"{minutes:00}:{seconds:00}:{milliseconds:000}";
+    }
     #region --- New Game Flow Methods ---
 
     public void NewGame()

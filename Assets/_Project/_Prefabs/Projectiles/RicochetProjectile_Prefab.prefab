@@ -171,7 +171,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RicochetProjectile
   damage: 10
   moveSpeed: 20
-  maxBounces: 4
+  maxBounces: 5
+  canDuplicate: 1
+  maxDuplications: 5
+  duplicationRandomness: 10
 --- !u!1 &5526600585894974336
 GameObject:
   m_ObjectHideFlags: 0

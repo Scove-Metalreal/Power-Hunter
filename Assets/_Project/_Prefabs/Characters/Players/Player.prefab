@@ -5206,8 +5206,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGround: 1
-  groundCheckDefaultRadius: 0.05
-  groundCheckWallJumpRadius: 0.3
   minDashSpeed: 10
   maxDashSpeed: 20
   timeToMaxCharge: 1
@@ -5321,8 +5319,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.039189816, y: 0.055274963}
-  m_Size: {x: 0.4033804, y: 0.61115265}
+  m_Offset: {x: -0.039189816, y: 0.06993437}
+  m_Size: {x: 0.4033804, y: 0.58183384}
   m_Direction: 0
 --- !u!1 &6041166447581813332
 GameObject:
@@ -5391,8 +5389,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.025917292, y: 0.06264877}
-  m_Size: {x: 0.31448793, y: 0.6247368}
+  m_Offset: {x: -0.025917292, y: 0.07801771}
+  m_Size: {x: 0.31448793, y: 0.5939989}
   m_Direction: 0
 --- !u!114 &1658161583537338403
 MonoBehaviour:
@@ -5512,7 +5510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2020368056031095109
 Transform:
   m_ObjectHideFlags: 0

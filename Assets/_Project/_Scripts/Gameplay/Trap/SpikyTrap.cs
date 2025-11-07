@@ -43,8 +43,9 @@ public class SpikyTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Chỉ kích hoạt bẫy khi "hurtbox" của người chơi đi vào, không dùng tag "Player" nữa
-        if (mode == TrapMode.Retractable && other.GetComponent<PlayerHurtbox>() != null && !isTrapActive)
+        // Do Layer Collision Matrix đã được thiết lập, chúng ta có thể chắc chắn 
+        // rằng bất cứ thứ gì vào đây đều là PlayerHurtbox. Không cần kiểm tra thêm.
+        if (mode == TrapMode.Retractable && !isTrapActive)
         {
             isPlayerInRange = true;
             StartCoroutine(ActivateTrap());
@@ -53,8 +54,8 @@ public class SpikyTrap : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        // Tương tự, chỉ xử lý khi "hurtbox" của người chơi thoát ra
-        if (mode == TrapMode.Retractable && other.GetComponent<PlayerHurtbox>() != null)
+        // Tương tự, không cần kiểm tra 'other' là gì, vì chỉ có PlayerHurtbox mới có thể thoát ra.
+        if (mode == TrapMode.Retractable)
         {
             isPlayerInRange = false;
         }

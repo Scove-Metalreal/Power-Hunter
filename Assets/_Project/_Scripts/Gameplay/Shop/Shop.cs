@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI; // Cần cho Button
 
 public class Shop : MonoBehaviour
 {
@@ -16,8 +17,15 @@ public class Shop : MonoBehaviour
     public int baseLivesCost = 500;
     // Lives increase by 1 per upgrade, no need for a separate variable.
 
+    [Tooltip("Chi phí một lần để mở khóa Wall Jump")]
+    public int wallJumpCost = 750;
+
     [Header("Cost Progression")]
     public float costMultiplier = 1.5f;
+
+    [Header("Button References")]
+    [Tooltip("Kéo Button nâng cấp Wall Jump vào đây")]
+    public Button wallJumpButton;
 
     private PlayerStat playerStat; // Store a reference to the player's stats
     private bool canOpenShop = false;
@@ -45,6 +53,12 @@ public class Shop : MonoBehaviour
         bool isOpening = !shopMenuUI.activeSelf;
         shopMenuUI.SetActive(isOpening);
 
+        // Nếu đang mở shop, cập nhật trạng thái các nút
+        if (isOpening)
+        {
+            UpdateShopButtons();
+        }
+
         // Pause or resume the game
         Time.timeScale = isOpening ? 0f : 1f;
 
@@ -59,73 +73,94 @@ public class Shop : MonoBehaviour
         }
     }
 
+    // <<< HÀM MỚI >>>
+    // Cập nhật trạng thái của các nút trong shop (ví dụ: vô hiệu hóa nếu đã mua)
+    private void UpdateShopButtons()
+    {
+        if (playerStat == null) return;
+
+        // Vô hiệu hóa nút Wall Jump nếu người chơi đã có kỹ năng này
+        if (wallJumpButton != null)
+        {
+            if (playerStat.hasWallJump)
+            {
+                wallJumpButton.interactable = false;
+                // Tùy chọn: thay đổi text của nút để hiển thị "Đã Mua"
+                // wallJumpButton.GetComponentInChildren<TMPro.TextMeshProUGUI>().text = "Đã Mua";
+            }
+            else
+            {
+                wallJumpButton.interactable = true;
+            }
+        }
+    }
+
     #region --- Upgrade Logic ---
 
-    // Can be called by UI buttons to purchase the health upgrade
     public void PurchaseHealthUpgrade()
     {
         if (playerStat == null) return;
-
         int cost = CalculateCost(baseHealthCost, playerStat.healthUpgradeLevel);
-
         if (playerStat.UsePowerValue(cost))
         {
             playerStat.UpgradeHealth(healthIncreasePerLevel);
-            Debug.Log($"Successfully upgraded Health for {cost} PowerValue. New level: {playerStat.healthUpgradeLevel}");
-            
-            // Immediately save the game to commit the transaction
             GameManager.Instance.SaveGameState();
-        }
-        else
-        {
-            Debug.Log($"Not enough PowerValue for Health upgrade. Need {cost}, have {playerStat.PowerValue}.");
         }
     }
 
-    // Can be called by UI buttons to purchase the stamina upgrade
     public void PurchaseStaminaUpgrade()
     {
         if (playerStat == null) return;
-
         int cost = CalculateCost(baseStaminaCost, playerStat.staminaUpgradeLevel);
-
         if (playerStat.UsePowerValue(cost))
         {
             playerStat.UpgradeStamina(staminaIncreasePerLevel);
-            Debug.Log($"Successfully upgraded Stamina for {cost} PowerValue. New level: {playerStat.staminaUpgradeLevel}");
-
-            // Immediately save the game to commit the transaction
             GameManager.Instance.SaveGameState();
-        }
-        else
-        {
-
-            Debug.Log($"Not enough PowerValue for Stamina upgrade. Need {cost}, have {playerStat.PowerValue}.");
         }
     }
 
-    // Can be called by UI buttons to purchase the life upgrade
     public void PurchaseLifeUpgrade()
     {
         if (playerStat == null) return;
-
         int cost = CalculateCost(baseLivesCost, playerStat.livesUpgradeLevel);
-
         if (playerStat.UsePowerValue(cost))
         {
             playerStat.AddLife();
-            Debug.Log($"Successfully upgraded Lives for {cost} PowerValue. New level: {playerStat.livesUpgradeLevel}");
+            GameManager.Instance.SaveGameState();
+        }
+    }
 
-            // Immediately save the game to commit the transaction
+    // <<< HÀM MỚI >>>
+    // Được gọi bởi nút UI để mua kỹ năng nhảy tường
+    public void PurchaseWallJump()
+    {
+        if (playerStat == null) return;
+
+        // Kiểm tra nếu đã có kỹ năng rồi thì không làm gì cả
+        if (playerStat.hasWallJump)
+        {
+            Debug.Log("Player already has Wall Jump.");
+            return;
+        }
+
+        // Thử trừ tiền và thực hiện nâng cấp
+        if (playerStat.UsePowerValue(wallJumpCost))
+        {
+            playerStat.UnlockWallJump();
+            Debug.Log($"Successfully unlocked Wall Jump for {wallJumpCost} PowerValue.");
+            
+            // Cập nhật lại trạng thái nút ngay lập tức
+            UpdateShopButtons();
+
+            // Lưu game
             GameManager.Instance.SaveGameState();
         }
         else
         {
-            Debug.Log($"Not enough PowerValue for Lives upgrade. Need {cost}, have {playerStat.PowerValue}.");
+            Debug.Log($"Not enough PowerValue for Wall Jump. Need {wallJumpCost}, have {playerStat.PowerValue}.");
         }
     }
 
-    // Helper method to calculate the cost based on the current level
     public int CalculateCost(int baseCost, int level)
     {
         return Mathf.RoundToInt(baseCost * Mathf.Pow(costMultiplier, level));
@@ -135,12 +170,10 @@ public class Shop : MonoBehaviour
 
     #region --- Triggers ---
 
-    // When player enters the shop's trigger area
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            // Get the PlayerStat component to interact with
             playerStat = collision.GetComponent<PlayerStat>();
             if (playerStat != null)
             {
@@ -150,17 +183,13 @@ public class Shop : MonoBehaviour
         }
     }
 
-    // When player leaves the shop's trigger area
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
             canOpenShop = false;
-            playerStat = null; // Clear the reference
-
+            playerStat = null;
             if (pressEUI != null) pressEUI.SetActive(false);
-
-            // If the player walks away, close the shop menu
             if (shopMenuUI != null && shopMenuUI.activeSelf)
             {
                 ToggleShopMenu();

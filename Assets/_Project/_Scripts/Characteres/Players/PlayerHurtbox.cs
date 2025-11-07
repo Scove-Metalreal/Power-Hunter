@@ -35,8 +35,21 @@ public class PlayerHurtbox : MonoBehaviour
         // If the handler is not found, do nothing.
         if (playerCollisionHandler == null) return;
 
-        // --- DAMAGE LOGIC MOVED FROM PlayerCollision.cs ---
         Debug.Log($"Player Hurtbox triggered with GameObject: '{collision.gameObject.name}' which has tag: '{collision.tag}'");
+
+        // Xử lý nhặt vật phẩm (Item)
+        if (collision.CompareTag("Item"))
+        {
+            Item item = collision.GetComponent<Item>();
+            if (item != null)
+            {
+                // Gọi hàm Pickup và truyền vào object Player chính (object cha)
+                item.Pickup(playerCollisionHandler.gameObject);
+                return; // Sau khi nhặt item thì không cần check các va chạm khác
+            }
+        }
+
+        // --- DAMAGE LOGIC MOVED FROM PlayerCollision.cs ---
 
         // Xử lý va chạm với vùng chết (DeathZone).
         if (collision.CompareTag("DeathZone"))

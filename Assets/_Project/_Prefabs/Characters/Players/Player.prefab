@@ -132,8 +132,7 @@ GameObject:
   - component: {fileID: 5408356559895682538}
   - component: {fileID: 3652442906628462167}
   - component: {fileID: 7095132925921082212}
-  - component: {fileID: 4728194393589683061}
-  - component: {fileID: 3388155479060923627}
+  - component: {fileID: 4107850805931593334}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -150,7 +149,7 @@ Transform:
   m_GameObject: {fileID: 4855480321419955698}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.45, y: -17.7, z: 0}
+  m_LocalPosition: {x: -3.84, y: -14.94, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -307,11 +306,13 @@ MonoBehaviour:
   jumpStaminaCost: 8
   jumpCutMultiplier: 0.5
   groundCheck: {fileID: 751299856120483099}
-  groundCheckRadius: 0.2
+  groundCheckRadius: 0.05
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   isGround: 1
+  groundCheckDefaultRadius: 0.05
+  groundCheckWallJumpRadius: 0.3
   minDashSpeed: 10
   maxDashSpeed: 20
   timeToMaxCharge: 1
@@ -386,13 +387,13 @@ MonoBehaviour:
   livesUpgradeLevel: 0
   jumpCooldownLevel: 0
   dashCooldownLevel: 0
-  hasWallJump: 0
+  hasWallJump: 1
   HeathSilder: {fileID: 0}
   HeathText: {fileID: 0}
   StaminaSlider: {fileID: 0}
   powerValueText: {fileID: 0}
---- !u!58 &4728194393589683061
-CircleCollider2D:
+--- !u!70 &4107850805931593334
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -421,31 +422,13 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.24374962, y: 0.12924933}
-  m_Radius: 1.4710586
---- !u!114 &3388155479060923627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4855480321419955698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1635537e8250ed248b1954d3d822fa0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
-  holdPoint: {fileID: 5580588028278857480}
-  throwAngle: 30
-  minThrowForce: 5
-  maxThrowForce: 20
-  maxChargeTime: 2
-  chargeBarCanvas: {fileID: 0}
-  chargeBarFill: {fileID: 0}
+  m_Offset: {x: -0.039189816, y: 0.055274963}
+  m_Size: {x: 0.4033804, y: 0.61115265}
+  m_Direction: 0
 --- !u!1 &6041166447581813332
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +520,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5580588028278857480}
+  - component: {fileID: 4633095431516077468}
+  - component: {fileID: 5120393265364702562}
   m_Layer: 9
   m_Name: Holding_Point
   m_TagString: Untagged
@@ -559,6 +544,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7590396838322265989}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &4633095431516077468
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500636007851310287}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 0.5
+--- !u!114 &5120393265364702562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7500636007851310287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1635537e8250ed248b1954d3d822fa0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInteraction
+  holdPoint: {fileID: 5580588028278857480}
+  throwAngle: 30
+  minThrowForce: 5
+  maxThrowForce: 20
+  maxChargeTime: 2
+  chargeBarCanvas: {fileID: 0}
+  chargeBarFill: {fileID: 0}
 --- !u!1 &7800202569979940367
 GameObject:
   m_ObjectHideFlags: 0

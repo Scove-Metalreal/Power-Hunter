@@ -81,15 +81,20 @@ public class PlayerHurtbox : MonoBehaviour
         // Va chạm với bẫy gai
         if (collision.CompareTag("SpikyTrap"))
         {
-            SpikyTrap trap = collision.GetComponentInParent<SpikyTrap>();
-            if (trap != null)
+            // Chỉ gây sát thương nếu va chạm với collider vật lý (không phải trigger)
+            // Điều này giúp phân biệt giữa vùng kích hoạt và phần gai nhọn gây sát thương.
+            if (!collision.isTrigger)
             {
-                playerCollisionHandler.HandleDamageAndKnockback(trap.damage, collision.transform);
-                if (AudioManager.Instance != null) AudioManager.Instance.PlayTrap();
-            }
-            else
-            {
-                Debug.LogError($"GameObject '{collision.gameObject.name}' has the 'SpikyTrap' tag, but the 'SpikyTrap.cs' script is missing!");
+                SpikyTrap trap = collision.GetComponentInParent<SpikyTrap>();
+                if (trap != null)
+                {
+                    playerCollisionHandler.HandleDamageAndKnockback(trap.damage, collision.transform);
+                    if (AudioManager.Instance != null) AudioManager.Instance.PlayTrap();
+                }
+                else
+                {
+                    Debug.LogError($"GameObject '{collision.gameObject.name}' has the 'SpikyTrap' tag, but the 'SpikyTrap.cs' script is missing!");
+                }
             }
         }
     }

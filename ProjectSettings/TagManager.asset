@@ -47,10 +47,10 @@ TagManager:
   - HeldObject
   - BackGround
   - Test
-  - 
-  - 
-  - 
-  - 
+  - PlayerHurtbox
+  - InteractionZone
+  - Interactable
+  - Traps
   - 
   - 
   - 

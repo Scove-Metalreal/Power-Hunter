@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 8050180514903483015}
   - component: {fileID: 3990719222178103487}
   - component: {fileID: 1658161583537338403}
-  m_Layer: 9
+  m_Layer: 15
   m_Name: HitBox
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   - component: {fileID: 5580588028278857480}
   - component: {fileID: 4633095431516077468}
   - component: {fileID: 5120393265364702562}
-  m_Layer: 9
+  m_Layer: 16
   m_Name: Holding_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

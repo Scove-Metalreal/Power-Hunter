@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3221576266806451642}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spiky (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 5202252812532306903}
   - component: {fileID: 672595501360482353}
   - component: {fileID: 6385591353934807086}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spike_B_0
   m_TagString: SpikyTrap
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -211,7 +211,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739f000d1f8acaf44a49729ebe2047d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikyTrap
+  mode: 0
   damage: 10
+  spikeObject: {fileID: 0}
+  activationDelay: 0.5
+  spikeHeight: 1
+  spikeSpeed: 10
+  stayUpDuration: 1
 --- !u!1 &2864434830317705712
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +231,7 @@ GameObject:
   - component: {fileID: 6321644680495143732}
   - component: {fileID: 8961941593697590849}
   - component: {fileID: 2768733644184769622}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spike_B_0
   m_TagString: SpikyTrap
   m_Icon: {fileID: 0}
@@ -335,7 +341,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -390,7 +396,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739f000d1f8acaf44a49729ebe2047d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikyTrap
+  mode: 0
   damage: 10
+  spikeObject: {fileID: 0}
+  activationDelay: 0.5
+  spikeHeight: 1
+  spikeSpeed: 10
+  stayUpDuration: 1
 --- !u!1 &2970078278768397538
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8125567288211519523}
   - component: {fileID: 6012968116312879924}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -484,7 +496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4624627605011472339}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spikies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +534,7 @@ GameObject:
   - component: {fileID: 7323903612362047829}
   - component: {fileID: 8818311168240473749}
   - component: {fileID: 4995289530893345866}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spike_B_0
   m_TagString: SpikyTrap
   m_Icon: {fileID: 0}
@@ -632,7 +644,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -687,7 +699,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 739f000d1f8acaf44a49729ebe2047d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikyTrap
+  mode: 0
   damage: 10
+  spikeObject: {fileID: 0}
+  activationDelay: 0.5
+  spikeHeight: 1
+  spikeSpeed: 10
+  stayUpDuration: 1
 --- !u!1 &5183854731578789523
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +715,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7866446128641930082}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spiky
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -731,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1052381870247815249}
   - component: {fileID: 5685123394128506805}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -814,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6142861153609863551}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Spiky (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -848,7 +866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4501793581670636052}
   - component: {fileID: 8373027516902861109}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

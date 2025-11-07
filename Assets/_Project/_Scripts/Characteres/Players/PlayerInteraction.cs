@@ -31,11 +31,21 @@ public class PlayerInteraction : MonoBehaviour
     private bool isChargingThrow = false;
     private float chargeTime = 0f;
 
+    // --- Component References ---
+    private PlayerController playerController;
+
     private void Start()
     {
         GetComponent<CircleCollider2D>().isTrigger = true;
         if (holdPoint == null) Debug.LogError("Hold Point is not set!", gameObject);
         if (chargeBarCanvas != null) chargeBarCanvas.alpha = 0; // Hide charge bar initially
+
+        // Lấy tham chiếu đến PlayerController để biết hướng của người chơi
+        playerController = GetComponentInParent<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerInteraction script requires a PlayerController script on the same GameObject.", gameObject);
+        }
     }
 
     private void Update()
@@ -66,7 +76,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void HandleThrowing()
     {
-        if (heldObject == null) return;
+        if (heldObject == null || playerController == null) return;
 
         if (Input.GetMouseButtonDown(1))
         {
@@ -82,33 +92,34 @@ public class PlayerInteraction : MonoBehaviour
             if (chargeBarFill != null) chargeBarFill.fillAmount = chargeTime / maxChargeTime;
         }
 
-                if (Input.GetMouseButtonUp(1) && isChargingThrow)
-                {
-                    float chargePercentage = chargeTime / maxChargeTime;
-                    float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
-        
-                    // --- Calculate Angled Throw Direction ---
-                    // 1. Determine horizontal direction based on player flip state
-                    float horizontalDirection = (transform.localScale.x < 0) ? -1f : 1f;
-                    
-                    // 2. Convert angle from degrees to radians for Sin/Cos
-                    float angleInRadians = throwAngle * Mathf.Deg2Rad;
-        
-                    // 3. Create the final vector with both horizontal and vertical components
-                    Vector2 throwDirection = new Vector2(
-                        horizontalDirection * Mathf.Cos(angleInRadians),
-                        Mathf.Sin(angleInRadians)
-                    );
-        
-                    ThrowableObject objectToThrow = heldObject;
-                    heldObject = null;
-                    objectToThrow.OnThrow(throwDirection, throwForce);
-        
-                    isChargingThrow = false;
-                    chargeTime = 0f;
-                    if (chargeBarCanvas != null) chargeBarCanvas.alpha = 0;
-                    if (chargeBarFill != null) chargeBarFill.fillAmount = 0;
-                }    }
+        if (Input.GetMouseButtonUp(1) && isChargingThrow)
+        {
+            float chargePercentage = chargeTime / maxChargeTime;
+            float throwForce = Mathf.Lerp(minThrowForce, maxThrowForce, chargePercentage);
+
+            // --- SỬA LỖI: Tính toán hướng ném dựa trên hướng của người chơi ---
+            float horizontalDirection = playerController.Direction;
+            float angleInRadians = throwAngle * Mathf.Deg2Rad;
+
+            // Lấy vector "phải" và "lên" tương đối của người chơi tại thời điểm ném
+            Vector2 playerRight = playerController.transform.right;
+            Vector2 playerUp = playerController.transform.up;
+
+            // Kết hợp chúng để tạo ra vector ném cuối cùng. 
+            // Vector này sẽ tự động xoay theo người chơi, bất kể trọng lực như thế nào.
+            Vector2 throwDirection = (playerRight * horizontalDirection * Mathf.Cos(angleInRadians)) + 
+                                     (playerUp * Mathf.Sin(angleInRadians));
+
+            ThrowableObject objectToThrow = heldObject;
+            heldObject = null;
+            objectToThrow.OnThrow(throwDirection, throwForce);
+
+            isChargingThrow = false;
+            chargeTime = 0f;
+            if (chargeBarCanvas != null) chargeBarCanvas.alpha = 0;
+            if (chargeBarFill != null) chargeBarFill.fillAmount = 0;
+        }
+    }
 
     private void PickupObject(ThrowableObject throwable)
     {

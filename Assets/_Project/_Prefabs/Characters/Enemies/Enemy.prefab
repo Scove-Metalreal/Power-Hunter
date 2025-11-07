@@ -458,7 +458,7 @@ MonoBehaviour:
     m_Bits: 256
   loseSightTime: 3
   maxHealth: 20
-  itemDropPrefab: {fileID: 1053248099105651158, guid: 43ccfead38a1bef438f2a4783f0eed18, type: 3}
+  itemDropPrefab: {fileID: 5960741479065593772, guid: 3ef08155531e41d4a9f43575b62f2eac, type: 3}
   dropChance: 1
   attack1HitboxPrefab: {fileID: 3031616454288993865, guid: b50a7fcfa45025f4bb8925e243e1ced5, type: 3}
   attack1Point: {fileID: 7272739892601854274}

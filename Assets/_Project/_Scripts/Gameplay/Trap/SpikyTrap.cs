@@ -43,7 +43,8 @@ public class SpikyTrap : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (mode == TrapMode.Retractable && other.CompareTag("Player") && !isTrapActive)
+        // Chỉ kích hoạt bẫy khi "hurtbox" của người chơi đi vào, không dùng tag "Player" nữa
+        if (mode == TrapMode.Retractable && other.GetComponent<PlayerHurtbox>() != null && !isTrapActive)
         {
             isPlayerInRange = true;
             StartCoroutine(ActivateTrap());
@@ -52,22 +53,13 @@ public class SpikyTrap : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (mode == TrapMode.Retractable && other.CompareTag("Player"))
+        // Tương tự, chỉ xử lý khi "hurtbox" của người chơi thoát ra
+        if (mode == TrapMode.Retractable && other.GetComponent<PlayerHurtbox>() != null)
         {
             isPlayerInRange = false;
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (mode == TrapMode.Static && collision.gameObject.CompareTag("Player"))
-        {
-            // In Static mode, deal damage on contact
-            // You would call a method on the player to deal damage, for example:
-            // collision.gameObject.GetComponent<PlayerHealth>()?.TakeDamage(damage);
-            Debug.Log("Player hit by static trap. Damage: " + damage);
-        }
-    }
 
     private IEnumerator ActivateTrap()
     {

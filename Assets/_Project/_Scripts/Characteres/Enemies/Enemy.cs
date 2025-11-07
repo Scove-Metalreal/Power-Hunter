@@ -390,4 +390,8 @@ public class Enemy : MonoBehaviour
             Gizmos.DrawWireSphere(attack2Point.position, 0.2f);
         }
     }
+
+	public void EndDead() {
+			Destroy(gameObject);
+		}
 }

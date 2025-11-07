@@ -31,6 +31,7 @@ TagManager:
   - SpikyTrap
   - Enemy
   - UpgradePoint
+  - Busk
   layers:
   - Default
   - TransparentFX

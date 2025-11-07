@@ -15,23 +15,48 @@ public class AudioManager : MonoBehaviour
     public Toggle musicToggle;
     public Toggle SFXToggle;
 
-    // ------------------ PHẦN MỚI THÊM ------------------
+    // ------------------ SINGLETON ------------------
     public static AudioManager Instance;
 
     [Header("Danh sách âm thanh")]
-    public AudioClip windSound;          // Gió.mp3
-    public AudioClip slashEnemy;         // chém enemy.mp3
-    public AudioClip slashBoss;          // chém boss.mp3
-    public AudioClip potion;             // Check potion.mp3
-    public AudioClip hitTrap;            // chạm trap.mp3
-    public AudioClip lava;               // dính lava.mp3
-    public AudioClip victory;            // victory.mp3
-    public AudioClip gameOver;           // Game over.mp3
-    public AudioClip nextStage;          // qua màn.mp3
-    public AudioClip takeDamage;         // >>> MỚI THÊM: nhận damage
+    public AudioClip windSound;
+    public AudioClip slashEnemy;
+    public AudioClip slashBoss;
+    public AudioClip potion;
+    public AudioClip hitTrap;
+    public AudioClip lava;
+    public AudioClip victory;
+    public AudioClip gameOver;
+    public AudioClip nextStage;
+    public AudioClip takeDamage;
+
+    public AudioClip walk;
+    public AudioClip jump;
+    public AudioClip fall;
+    public AudioClip pauseOn;
+    public AudioClip pauseOff;
+    public AudioClip bossSkill1;
+    public AudioClip bossSkill2;
+    public AudioClip bossSkill3;
+    public AudioClip hitTower;
+    public AudioClip bushWalk;
 
     private AudioSource sfxPlayer;
-    private AudioSource oneShotAreaPlayer; // >>> MỚI THÊM: dùng cho vùng âm thanh chỉ phát 1 lần
+    private AudioSource oneShotAreaPlayer;
+
+    // ------------------ QUẢN LÝ TRẠNG THÁI ÂM THANH ------------------
+    public enum SoundType
+    {
+        None,
+        Jump,
+        Fall,
+        Walk,
+        Damage,
+        BossSkill,
+        Other
+    }
+
+    private SoundType currentSoundType = SoundType.None;
 
     private void Awake()
     {
@@ -40,16 +65,11 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // tạo sfxPlayer để phát hiệu ứng nhanh
             sfxPlayer = gameObject.AddComponent<AudioSource>();
-
-            // >>> MỚI THÊM
             oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
-            oneShotAreaPlayer.loop = false; // phát một lần rồi dừng
+            oneShotAreaPlayer.loop = false;
 
-            // Tìm AudioMixerGroup "Master" để gán cho AudioSource
             UnityEngine.Audio.AudioMixerGroup[] sfxGroups = SFXMixer.FindMatchingGroups("Master");
-
             if (sfxGroups.Length > 0)
             {
                 sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
@@ -57,7 +77,7 @@ public class AudioManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError("AudioManager: KHÔNG TÌM THẤY AudioMixerGroup CÓ TÊN 'SFX' trong SFXMixer!");
+                Debug.LogError("AudioManager: Không tìm thấy group 'SFX' trong AudioMixer!");
             }
         }
         else
@@ -94,10 +114,6 @@ public class AudioManager : MonoBehaviour
         SFXToggle.isOn = true;
     }
 
-    void Update()
-    {
-    }
-
     void SetVolume(float value)
     {
         float dB = Mathf.Log10(Mathf.Clamp(value, 0.0001f, 1f)) * 20f;
@@ -115,13 +131,9 @@ public class AudioManager : MonoBehaviour
         if (MusicSlider != null)
             MusicSlider.interactable = isOn;
         if (isOn)
-        {
             SetVolume(MusicSlider.value);
-        }
         else
-        {
             musicMixer.SetFloat("MusicVolume", -80f);
-        }
     }
 
     private void OnToggleSFX(bool isOn)
@@ -129,24 +141,35 @@ public class AudioManager : MonoBehaviour
         if (SFXSlider != null)
             SFXSlider.interactable = isOn;
         if (isOn)
-        {
             SetSFXVolume(SFXSlider.value);
-        }
         else
-        {
             SFXMixer.SetFloat("SFXVolume", -80f);
-        }
     }
 
-    // ------------------ QUẢN LÝ PHÁT ÂM THANH ------------------
-
-    public void PlaySFX(AudioClip clip)
+    // ------------------ HỆ THỐNG PHÁT ÂM THANH ------------------
+    private void PlaySFX(AudioClip clip, SoundType type)
     {
-        if (clip != null && sfxPlayer != null)
-            sfxPlayer.PlayOneShot(clip);
+        if (clip == null) return;
+
+        // Nếu đang phát loại khác thì dừng luôn
+        if (currentSoundType != type && sfxPlayer.isPlaying)
+        {
+            sfxPlayer.Stop();
+        }
+
+        sfxPlayer.clip = clip;
+        sfxPlayer.Play();
+        currentSoundType = type;
     }
 
-    // >>> MỚI THÊM: phát âm thanh chỉ một lần khi player vào vùng
+    public void StopCurrentSound()
+    {
+        if (sfxPlayer.isPlaying)
+            sfxPlayer.Stop();
+        currentSoundType = SoundType.None;
+    }
+
+    // ------------------ PHÁT ÂM THANH KHU VỰC ------------------
     public void PlayAreaSoundOnce(AudioClip clip)
     {
         if (clip == null || oneShotAreaPlayer.isPlaying) return;
@@ -154,7 +177,6 @@ public class AudioManager : MonoBehaviour
         oneShotAreaPlayer.Play();
     }
 
-    // >>> MỚI THÊM: dừng vùng âm thanh khi ra khỏi
     public void StopAreaSound()
     {
         if (oneShotAreaPlayer.isPlaying)
@@ -162,16 +184,25 @@ public class AudioManager : MonoBehaviour
     }
 
     // ------------------ CÁC HÀM GỌI NHANH ------------------
-    public void PlayWind() => PlaySFX(windSound);
-    public void PlaySlashEnemy() => PlaySFX(slashEnemy);
-    public void PlaySlashBoss() => PlaySFX(slashBoss);
-    public void PlayPotion() => PlaySFX(potion);
-    public void PlayTrap() => PlaySFX(hitTrap);
-    public void PlayLava() => PlaySFX(lava);
-    public void PlayVictory() => PlaySFX(victory);
-    public void PlayGameOver() => PlaySFX(gameOver);
-    public void PlayNextStage() => PlaySFX(nextStage);
+    public void PlayWind() => PlaySFX(windSound, SoundType.Other);
+    public void PlaySlashEnemy() => PlaySFX(slashEnemy, SoundType.Other);
+    public void PlaySlashBoss() => PlaySFX(slashBoss, SoundType.BossSkill);
+    public void PlayPotion() => PlaySFX(potion, SoundType.Other);
+    public void PlayTrap() => PlaySFX(hitTrap, SoundType.Other);
+    public void PlayLava() => PlaySFX(lava, SoundType.Other);
+    public void PlayVictory() => PlaySFX(victory, SoundType.Other);
+    public void PlayGameOver() => PlaySFX(gameOver, SoundType.Other);
+    public void PlayNextStage() => PlaySFX(nextStage, SoundType.Other);
+    public void PlayTakeDamage() => PlaySFX(takeDamage, SoundType.Damage);
 
-    // >>> MỚI THÊM: âm thanh nhận damage
-    public void PlayTakeDamage() => PlaySFX(takeDamage);
+    public void PlayWalk() => PlaySFX(walk, SoundType.Walk);
+    public void PlayJump() => PlaySFX(jump, SoundType.Jump);
+    public void PlayFall() => PlaySFX(fall, SoundType.Fall);
+    public void PlayPauseOn() => PlaySFX(pauseOn, SoundType.Other);
+    public void PlayPauseOff() => PlaySFX(pauseOff, SoundType.Other);
+    public void PlayBossSkill1() => PlaySFX(bossSkill1, SoundType.BossSkill);
+    public void PlayBossSkill2() => PlaySFX(bossSkill2, SoundType.BossSkill);
+    public void PlayBossSkill3() => PlaySFX(bossSkill3, SoundType.BossSkill);
+    public void PlayHitTower() => PlaySFX(hitTower, SoundType.Other);
+    public void PlayBushWalk() => PlaySFX(bushWalk, SoundType.Walk);
 }

@@ -52,6 +52,7 @@ public class FBHeath : MonoBehaviour
                 timeTMP.text = GameManager.FormatTime();
                 GameManager.ResetTimer();
             }
+            AudioManager.Instance.PlayHitTower();
         }
     }
 

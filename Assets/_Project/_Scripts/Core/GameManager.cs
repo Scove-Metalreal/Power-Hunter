@@ -287,6 +287,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         if (gamePauseUI != null) gamePauseUI.SetActive(true);
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        AudioManager.Instance.PlayPauseOn();
     }
     public void Remuse()
     {

@@ -421,7 +421,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -456,6 +456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8050180514903483015}
   - component: {fileID: 3990719222178103487}
+  - component: {fileID: 1658161583537338403}
   m_Layer: 9
   m_Name: HitBox
   m_TagString: Player
@@ -508,13 +509,25 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.025917292, y: 0.06264877}
   m_Size: {x: 0.31448793, y: 0.6247368}
   m_Direction: 0
+--- !u!114 &1658161583537338403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041166447581813332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14bb5a4b18570774997eef4915ed075f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHurtbox
 --- !u!1 &7500636007851310287
 GameObject:
   m_ObjectHideFlags: 0

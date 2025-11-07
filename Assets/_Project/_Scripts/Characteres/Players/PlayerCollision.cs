@@ -65,10 +65,12 @@ public class PlayerCollision : MonoBehaviour
     // Điều này giúp script này chỉ tập trung vào xử lý va chạm và các hiệu ứng liên quan.
 
     // Hàm OnTriggerEnter2D được gọi khi một Collider khác đi vào Trigger Collider của đối tượng này.
+    // LƯU Ý: Collider này nên là một trigger lớn xung quanh người chơi để phát hiện các tương tác
+    // như vật phẩm, cửa hàng, v.v. Logic nhận sát thương đã được chuyển sang PlayerHurtbox.cs.
     private void OnTriggerEnter2D(Collider2D collision)
     {
         // --- THÊM LOGGING ĐỂ DEBUG ---
-        Debug.Log($"Player triggered with GameObject: '{collision.gameObject.name}' which has tag: '{collision.tag}'");
+        Debug.Log($"Player (Interaction Zone) triggered with GameObject: '{collision.gameObject.name}' which has tag: '{collision.tag}'");
 
         if(collision.gameObject.CompareTag("ButtonDoor1"))
         {
@@ -79,26 +81,7 @@ public class PlayerCollision : MonoBehaviour
             FindAnyObjectByType<FallingGround>().TriggerCollapse();
             // FindAnyObjectByType<CameraShake>().StartCoroutine(FindAnyObjectByType<CameraShake>().Shake());
         }
-
-        // Xử lý va chạm với vùng chết (DeathZone).
-        if (collision.CompareTag("DeathZone"))
-        {
-            // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
-            // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
-            HandleDamageAndKnockback(20f, collision.transform);
-            
-        }
-        if(collision.CompareTag("Player"))
-        {
-            AudioManager.Instance.PlayTrap();
-        }
-        if (collision.CompareTag("Minus100Heath"))
-        {
-            // Dùng lại logic knockback và sát thương chung để xử lý va chạm DeathZone.
-            // Lượng sát thương là 20f. Transform của DeathZone được truyền vào để tính hướng knockback.
-            HandleDamageAndKnockback(100f, collision.transform);
-            AudioManager.Instance.PlayLava();
-        }
+        
         // Xử lí nâng cấp nhân vật
         if (collision.gameObject.CompareTag("UpgradePoint"))
         {
@@ -108,27 +91,7 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        // <<< LOGIC MỚI: Xử lý va chạm với hitbox của Enemy
-        // Khi người chơi va chạm với hitbox của kẻ địch.
-        if (collision.CompareTag("EnemyHitbox"))
-        {
-            // Lấy component Hitbox từ đối tượng va chạm để biết thông tin (ví dụ: sát thương).
-            Hitbox hitbox = collision.GetComponent<Hitbox>();
-            if (hitbox != null)
-            {
-                Debug.Log("<color=cyan>PLAYER: Đã va chạm với EnemyHitbox!</color>"); // <<< THÊM DÒNG NÀY
-                Debug.Log("PLAYER: Đọc được " + hitbox.damage + " sát thương từ hitbox.");
-                // Gọi hàm xử lý sát thương và knockback với thông tin từ hitbox.
-                HandleDamageAndKnockback(hitbox.damage, collision.transform);
-            }
-            else
-            {
-                Debug.LogWarning("Found 'EnemyHitbox' tag but no Hitbox component on: " + collision.gameObject.name);
-            }
-            
-        }
-
-        // <<< LOGIC MỚI: Xử lý va chạm với vật phẩm (Item)
+        // Xử lý va chạm với vật phẩm (Item)
         if (collision.CompareTag("Item"))
         {
             Item item = collision.GetComponent<Item>();
@@ -136,22 +99,6 @@ public class PlayerCollision : MonoBehaviour
             {
                 item.Pickup(this.gameObject);
             }
-        }
-
-        if (collision.CompareTag("SpikyTrap"))
-        {
-            Debug.Log("Collision with 'SpikyTrap' tag detected."); // LOG THÊM
-            SpikyTrap trap = collision.GetComponentInParent<SpikyTrap>();
-            if (trap != null)
-            {
-                HandleDamageAndKnockback(trap.damage, collision.transform);
-                Debug.Log("SpikyTrap contacted. Damage dealt."); // LOG RÕ HƠN
-            }
-            else
-            {
-                Debug.LogError($"GameObject '{collision.gameObject.name}' has the 'SpikyTrap' tag, but the 'SpikyTrap.cs' script is missing or not on the same object!"); // LOG LỖI
-            }
-            AudioManager.Instance.PlayTrap();
         }
 
         //if (collision.CompareTag("Shop"))

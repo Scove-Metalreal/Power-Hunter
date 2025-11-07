@@ -1,16 +1,63 @@
 using UnityEngine;
 
-public class SaveData : MonoBehaviour
+// Enum to represent the four possible gravity directions
+public enum GravityDirection
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    Down,
+    Up,
+    Left,
+    Right
+}
 
-    // Update is called once per frame
-    void Update()
+[System.Serializable]
+public class SaveData
+{
+    // Player Position & Scene
+    public string lastScene;
+    public float playerPositionX;
+    public float playerPositionY;
+    public float playerPositionZ;
+
+    // Player Stats
+    public float maxHealth;
+    public float maxStamina;
+    public int maxLives;
+    public int powerValue;
+
+    // Player Gravity
+    public GravityDirection gravityDirection;
+
+    // Upgrade Levels
+    public int healthUpgradeLevel;
+    public int staminaUpgradeLevel;
+    public int livesUpgradeLevel;
+
+    // Abilities
+    public bool hasWallJump;
+    public int jumpCooldownLevel;
+    public int dashCooldownLevel;
+
+    // Default values for a new game
+    public SaveData()
     {
-        
+        lastScene = "Level 1";
+        playerPositionX = 0;
+        playerPositionY = 0;
+        playerPositionZ = 0;
+
+        maxHealth = 100f;
+        maxStamina = 100f;
+        maxLives = 3;
+        powerValue = 0;
+
+        gravityDirection = GravityDirection.Down; // Default gravity direction
+
+        healthUpgradeLevel = 0;
+        staminaUpgradeLevel = 0;
+        livesUpgradeLevel = 0;
+
+        hasWallJump = false;
+        jumpCooldownLevel = 0;
+        dashCooldownLevel = 0;
     }
 }

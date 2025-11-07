@@ -7,6 +7,31 @@ TagManager:
   - Ground
   - HItboxWeapon
   - cantMove
+  - DeathZone
+  - FindPlayer
+  - EnemyHitbox
+  - SpikeTrap
+  - Gate
+  - GroundTrap
+  - Area1
+  - PlayerHitbox
+  - PowerUIText
+  - BlockTurn1
+  - CheckPoint
+  - Shop
+  - PauseUI
+  - FullMapUI
+  - OptionsUI
+  - Wind
+  - Minus100Heath
+  - Item
+  - Turn4FX
+  - WindFly
+  - ButtonDoor1
+  - SpikyTrap
+  - Enemy
+  - UpgradePoint
+  - Busk
   layers:
   - Default
   - TransparentFX
@@ -14,19 +39,19 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Grid
+  - IconPlayer
+  - Ground
+  - Player
+  - GroundTrap
+  - Projectiles
+  - HeldObject
+  - BackGround
+  - Test
+  - PlayerHurtbox
+  - InteractionZone
+  - Interactable
+  - Traps
   - 
   - 
   - 
@@ -54,7 +79,13 @@ TagManager:
     uniqueID: 745451509
     locked: 0
   - name: Tilemap
-    uniqueID: 1730001233
+    uniqueID: 1260712897
+    locked: 0
+  - name: UI
+    uniqueID: 4024655881
+    locked: 0
+  - name: Item
+    uniqueID: 1026271707
     locked: 0
   m_RenderingLayers:
   - Default

@@ -369,54 +369,98 @@ public class PlayerController : MonoBehaviour
     // }
 
     // Hàm này quản lý việc chuyển đổi giữa các trạng thái animation (idle, running, jumping, falling).
+    static AudioManager.SoundType lastSound = AudioManager.SoundType.None;
     void UpdateAnimationState()
     {
         // Lấy input từ trục ngang để xác định xem người chơi có đang di chuyển hay không.
         float moveInput = Input.GetAxisRaw("Horizontal");
+
+        // Lưu trạng thái âm thanh trước đó để tránh gọi lại liên tục
+        
 
         // Xử lý animation khi người chơi đang ở trên mặt đất.
         if (isGround)
         {
             animator.SetBool("isJumping", false); // Đảm bảo animation nhảy tắt.
             animator.SetBool("isFalling", false); // Đảm bảo animation rơi tắt.
-            
+
             // Nếu có input di chuyển và không ở trạng thái dash hoặc đang tụ lực dash.
-            if (moveInput != 0 && !isDash && !isChargingDash) // Kiểm tra cả `isChargingDash`.
+            if (moveInput != 0 && !isDash && !isChargingDash)
             {
-                animator.SetBool("isRunning", true); // Bật animation chạy.
-                animator.SetBool("isIdie", false);  // Tắt animation đứng yên.
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isIdie", false);
+
+                if (lastSound != AudioManager.SoundType.Walk)
+                {
+                    AudioManager.Instance.PlayWalk(); // phát âm bước chân
+                    lastSound = AudioManager.SoundType.Walk;
+                }
             }
-            else // Nếu không có input di chuyển hoặc đang dash/tụ lực dash.
+            else // Nếu không di chuyển hoặc đang dash/tụ lực dash.
             {
-                animator.SetBool("isRunning", false); // Tắt animation chạy.
-                animator.SetBool("isIdie", true);   // Bật animation đứng yên.
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isIdie", true);
+
+                if (lastSound == AudioManager.SoundType.Walk)
+                {
+                    AudioManager.Instance.StopCurrentSound(); // dừng âm bước chân
+                    lastSound = AudioManager.SoundType.None;
+                }
+            }
+
+            // Khi vừa tiếp đất (từ nhảy hoặc rơi xuống)
+            if (lastSound == AudioManager.SoundType.Jump || lastSound == AudioManager.SoundType.Fall)
+            {
+                AudioManager.Instance.PlayHitTower(); // hiệu ứng tiếp đất
+                lastSound = AudioManager.SoundType.Other;
             }
         }
         else // Xử lý animation khi người chơi đang ở trên không (nhảy hoặc rơi).
         {
-            animator.SetBool("isRunning", false); // Tắt animation chạy.
-            animator.SetBool("isIdie", false);    // Tắt animation đứng yên.
-            
-            // Xác định trạng thái (nhảy lên hay rơi xuống) dựa trên vận tốc tương đối với trọng lực.
-            float verticalVelocity = 0;
-            if (GrafityDown) verticalVelocity = rb.linearVelocity.y;    // Vận tốc y khi trọng lực xuống.
-            if (GrafityUp) verticalVelocity = -rb.linearVelocity.y;     // Vận tốc y âm khi trọng lực lên (để lấy độ cao).
-            if (GrafityLeft) verticalVelocity = rb.linearVelocity.x;    // Vận tốc x khi trọng lực trái.
-            if (GrafityRight) verticalVelocity = -rb.linearVelocity.x;  // Vận tốc x âm khi trọng lực phải (để lấy độ cao).
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isIdie", false);
 
-            // So sánh vận tốc với một ngưỡng nhỏ để xác định.
-            if (verticalVelocity > 0.1f) // Nếu vận tốc dương (nghĩa là đang bay lên hoặc di chuyển ra khỏi bề mặt).
+            float verticalVelocity = 0;
+            if (GrafityDown) verticalVelocity = rb.linearVelocity.y;
+            if (GrafityUp) verticalVelocity = -rb.linearVelocity.y;
+            if (GrafityLeft) verticalVelocity = rb.linearVelocity.x;
+            if (GrafityRight) verticalVelocity = -rb.linearVelocity.x;
+
+            if (verticalVelocity > 0.1f) // đang bay lên
             {
-                animator.SetBool("isJumping", true); // Bật animation nhảy.
-                animator.SetBool("isFalling", false); // Tắt animation rơi.
+                animator.SetBool("isJumping", true);
+                animator.SetBool("isFalling", false);
+
+                if (lastSound != AudioManager.SoundType.Jump)
+                {
+                    AudioManager.Instance.PlayJump(); // âm nhảy
+                    lastSound = AudioManager.SoundType.Jump;
+                }
             }
-            else // Nếu vận tốc không đủ lớn hoặc âm (nghĩa là đang rơi xuống hoặc hướng về bề mặt).
+            else // đang rơi
             {
-                animator.SetBool("isJumping", false); // Tắt animation nhảy.
-                animator.SetBool("isFalling", true);  // Bật animation rơi.
+                animator.SetBool("isJumping", false);
+                animator.SetBool("isFalling", true);
+
+                if (lastSound != AudioManager.SoundType.Fall)
+                {
+                    AudioManager.Instance.PlayFall(); // âm rơi
+                    lastSound = AudioManager.SoundType.Fall;
+                }
+            }
+        }
+
+        // Nếu đang dash hoặc tụ lực dash
+        if (isDash || isChargingDash)
+        {
+            if (lastSound != AudioManager.SoundType.BossSkill)
+            {
+                AudioManager.Instance.PlayBossSkill1(); // âm dash
+                lastSound = AudioManager.SoundType.BossSkill;
             }
         }
     }
+
 
     // Hàm này chịu trách nhiệm xoay nhân vật theo hướng `Direction`.
     void Flip()

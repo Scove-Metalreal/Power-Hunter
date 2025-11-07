@@ -91,16 +91,6 @@ public class PlayerCollision : MonoBehaviour
             Destroy(collision.gameObject);
         }
 
-        // Xử lý va chạm với vật phẩm (Item)
-        if (collision.CompareTag("Item"))
-        {
-            Item item = collision.GetComponent<Item>();
-            if (item != null)
-            {
-                item.Pickup(this.gameObject);
-            }
-        }
-
         //if (collision.CompareTag("Shop"))
         //{
         //    isNearShop = true;

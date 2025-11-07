@@ -12,6 +12,10 @@ public class Item : MonoBehaviour
     [Tooltip("Tần số của hiệu ứng bay (càng cao càng nhanh).")]
     public float frequency = 1f;    // Tốc độ của chu kỳ bay lên xuống
 
+    [Header("Hiệu ứng Quay")]
+    [Tooltip("Tốc độ quay của vật phẩm (độ/giây). Quay thuận kim đồng hồ.")]
+    public float rotationSpeed = 50f;
+
     [Header("Thuộc tính Vật phẩm")]
     [Tooltip("Lượng 'power' mà vật phẩm này cộng cho người chơi.")]
     public int powerValue = 1;
@@ -26,6 +30,7 @@ public class Item : MonoBehaviour
     // Biến nội bộ
     private Vector3 startPos;
     private Rigidbody2D rb;
+    private Vector3 bobbingAxis; // Trục bay lên xuống, được lưu lại để không bị ảnh hưởng bởi hiệu ứng quay
 
     void Awake()
     {
@@ -43,8 +48,9 @@ public class Item : MonoBehaviour
         // Hủy vật phẩm sau khoảng thời gian lifeTime
         Destroy(gameObject, lifeTime);
 
-        // Lưu vị trí ban đầu để tạo hiệu ứng bay xung quanh nó
+        // Lưu vị trí và trục bay ban đầu
         startPos = transform.position;
+        bobbingAxis = transform.up; // Lưu lại trục "lên" ban đầu
     }
 
     // Hàm này được gọi bởi Enemy khi nó tạo ra vật phẩm
@@ -52,19 +58,22 @@ public class Item : MonoBehaviour
     {
         gravityDirection = gravityDir.normalized;
         // Xoay vật phẩm để nó "đứng" đúng hướng với trọng lực
-        // Tương tự như cách Enemy được xoay
         float angle = Mathf.Atan2(-gravityDirection.y, -gravityDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle - 90);
         
-        // Cập nhật lại vị trí bắt đầu sau khi đã xoay
+        // Cập nhật lại vị trí và trục bay sau khi đã xoay
         startPos = transform.position;
+        bobbingAxis = transform.up; // Lưu lại trục "lên" mới sau khi xoay
     }
 
     void Update()
     {
-        // Tạo hiệu ứng bay lên xuống mượt mà
-        // Chúng ta sẽ tính toán vị trí bay dựa trên trục "lên" của vật phẩm, bất kể hướng trọng lực
-        Vector3 bobbingOffset = transform.up * Mathf.Sin(Time.time * frequency) * amplitude;
+        // --- Quay vật phẩm ---
+        transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+
+        // --- Bay lên xuống (nhấp nhô) ---
+        // Sử dụng trục `bobbingAxis` đã lưu để hiệu ứng nhấp nhô không bị ảnh hưởng bởi việc quay
+        Vector3 bobbingOffset = bobbingAxis * Mathf.Sin(Time.time * frequency) * amplitude;
         transform.position = startPos + bobbingOffset;
     }
     
@@ -86,12 +95,36 @@ public class Item : MonoBehaviour
             playerStat.AddPowerValue(powerValue);
             Debug.Log("Player picked up item. Added " + powerValue + " power. New total: " + playerStat.PowerValue);
 
-            // Optional: Play sound or show effect here
-            // SoundManager.Instance.PlayPickupSound();
-            // EffectManager.Instance.ShowPickupEffect(transform.position);
+            // --- LOGIC MỚI: Kích hoạt hiệu ứng tan biến và tự hủy ---
 
-            // Destroy the item after pickup
-            Destroy(gameObject);
+            // Vô hiệu hóa collider ngay lập tức để không thể nhặt lại
+            GetComponent<Collider2D>().enabled = false;
+            
+            // Tắt hiệu ứng nhấp nhô và quay của script này
+            this.enabled = false; 
+
+            ParticleAttractorOnDestroy attractor = null;
+            if (transform.parent != null)
+            {
+                attractor = transform.parent.GetComponent<ParticleAttractorOnDestroy>();
+            }
+
+            if (attractor != null)
+            {
+                // Nếu tìm thấy script hiệu ứng trên object cha, kích hoạt nó.
+                // Script đó sẽ tự hủy object cha (và cả item này) sau khi chạy xong.
+                attractor.StartDestroySequence();
+            }
+            else if (transform.parent != null)
+            {
+                // Nếu không có script hiệu ứng, nhưng có object cha, hủy cha như cũ.
+                Destroy(transform.parent.gameObject);
+            }
+            else
+            {
+                // Nếu không có cha, chỉ hủy chính nó.
+                Destroy(gameObject);
+            }
         }
         else
         {

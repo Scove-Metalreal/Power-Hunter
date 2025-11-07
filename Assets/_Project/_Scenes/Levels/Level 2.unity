@@ -1473,7 +1473,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 7590396836808082850}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -46164,7 +46164,9 @@ MonoBehaviour:
   baseStaminaCost: 100
   staminaIncreasePerLevel: 20
   baseLivesCost: 500
+  wallJumpCost: 750
   costMultiplier: 1.5
+  wallJumpButton: {fileID: 0}
 --- !u!1001 &927575806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -92486,6 +92488,107 @@ Transform:
   - {fileID: 209237952}
   m_Father: {fileID: 813946208}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2066522882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4855480321419955698, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_Name
+      value: Player (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120393265364702562, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: chargeBarFill
+      value: 
+      objectReference: {fileID: 1992173242}
+    - target: {fileID: 5120393265364702562, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: chargeBarCanvas
+      value: 
+      objectReference: {fileID: 1638132245}
+    - target: {fileID: 5177949223517653408, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: Door1
+      value: 
+      objectReference: {fileID: 470420505}
+    - target: {fileID: 5177949223517653408, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: shopUI
+      value: 
+      objectReference: {fileID: 1351873064}
+    - target: {fileID: 5177949223517653408, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: LoseUIPanel
+      value: 
+      objectReference: {fileID: 702271363}
+    - target: {fileID: 5177949223517653408, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1724173479}
+    - target: {fileID: 5408356559895682538, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: SfxSource
+      value: 
+      objectReference: {fileID: 554736089599485409}
+    - target: {fileID: 7095132925921082212, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: HeathText
+      value: 
+      objectReference: {fileID: 3321462627751295988}
+    - target: {fileID: 7095132925921082212, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: HeathSilder
+      value: 
+      objectReference: {fileID: 2079301055330645315}
+    - target: {fileID: 7095132925921082212, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: StaminaSlider
+      value: 
+      objectReference: {fileID: 8697341884118189276}
+    - target: {fileID: 7095132925921082212, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: powerValueText
+      value: 
+      objectReference: {fileID: 1792427171}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.40233016
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -15.319689
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7590396838322265989, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7360cc8a504e4d2418b17c4234921d0e, type: 3}
 --- !u!1 &2067085535
 GameObject:
   m_ObjectHideFlags: 0
@@ -103092,7 +103195,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 7590396836808082850}
+    TrackingTarget: {fileID: 0}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -103825,7 +103928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2770977a10e4d4b49a7e08ae30b5846e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MinimapFollow
-  player: {fileID: 7590396836808082850}
+  player: {fileID: 0}
 --- !u!212 &2667327677771232278
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -117789,6 +117892,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isGround: 1
+  groundCheckDefaultRadius: 0.2
+  groundCheckWallJumpRadius: 0.4
   minDashSpeed: 10
   maxDashSpeed: 20
   timeToMaxCharge: 1
@@ -118336,6 +118441,7 @@ SceneRoots:
   - {fileID: 1040429440}
   - {fileID: 7270928367603315764}
   - {fileID: 1079816837}
+  - {fileID: 2066522882}
   - {fileID: 7590396836808082850}
   - {fileID: 945471832}
   - {fileID: 966561455}

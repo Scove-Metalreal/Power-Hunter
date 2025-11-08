@@ -117886,14 +117886,13 @@ MonoBehaviour:
   jumpForce: 10
   jumpStaminaCost: 8
   jumpCutMultiplier: 0.5
+  isWalkingOnBusk: 0
   groundCheck: {fileID: 751299857894774588}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
   isGround: 1
-  groundCheckDefaultRadius: 0.2
-  groundCheckWallJumpRadius: 0.4
   minDashSpeed: 10
   maxDashSpeed: 20
   timeToMaxCharge: 1

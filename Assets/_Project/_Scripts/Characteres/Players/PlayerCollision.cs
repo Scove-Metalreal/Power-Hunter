@@ -90,6 +90,7 @@ public class PlayerCollision : MonoBehaviour
             playerStat.AddLife();
             Destroy(collision.gameObject);
         }
+        
 
         //if (collision.CompareTag("Shop"))
         //{
@@ -105,14 +106,23 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("WindFly"))
+        if (collision.gameObject.CompareTag("WindFly"))
         {
-            Vector2 forceDir = transform.up; 
-            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force); 
+            Vector2 forceDir = transform.up;
+            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force);
         }
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             AudioManager.Instance.PlayWind();
+        }
+
+        // <<< THÊM MỚI: Logic kiểm tra đang đi trên cỏ/bụi rậm (busk) >>>
+        if (collision.gameObject.CompareTag("Busk"))
+        {
+            if (playerController != null)
+            {
+                playerController.isWalkingOnBusk = true;
+            }
         }
     }
     // Hàm OnTriggerExit2D được gọi khi một Collider khác rời khỏi Trigger Collider của đối tượng này.
@@ -142,6 +152,13 @@ public class PlayerCollision : MonoBehaviour
             }
 
             if (shopUI != null) shopUI.SetActive(false);
+        }
+        if (collision.gameObject.CompareTag("Busk"))
+        {
+            if (playerController != null)
+            {
+                playerController.isWalkingOnBusk = false;
+            }
         }
     }
 

@@ -81,5 +81,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4242d841358e5244bdf22e7398d10ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealingZone
-  healPerSecond: 50
-  maxHealth: 100
+  healPerSecond: 5

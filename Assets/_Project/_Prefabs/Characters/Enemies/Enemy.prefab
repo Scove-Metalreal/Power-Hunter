@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1970639520356107312}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: WallCheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 35263424316536075}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.315, y: 0.081, z: 0}
+  m_LocalPosition: {x: -0.315, y: -0.258, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7272739892601854274}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: SpawmAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4411452524246908126}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: SpawmAttack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6152647004227790147}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: GroundCheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 3035974708923962965}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0541, y: -0.2037, z: 0}
+  m_LocalPosition: {x: 0.0541, y: -0.267, z: 0}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -134,7 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7162285249524729474}
   - component: {fileID: 5426666698606644141}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: ColliderFindPlayer
   m_TagString: FindPlayer
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 1628325847745598553}
   - component: {fileID: 883473791606797110}
   - component: {fileID: 5324954161572664729}
-  m_Layer: 0
+  m_Layer: 19
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!95 &883473791606797110
 Animator:
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   patrolSpeed: 0.5
   chaseSpeed: 1.5
+  jumpForce: 100
   detectionRange: 8
   attackRange: 0.7
   whatIsPlayer:
@@ -457,7 +458,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   loseSightTime: 3
+  jumpCooldown: 2
+  ledgeCheckDistance: 0.5
+  canRandomlyJump: 1
+  minTimeBetweenRandomJumps: 3
+  maxTimeBetweenRandomJumps: 7
   maxHealth: 20
+  knockbackForce: 5
   itemDropPrefab: {fileID: 5960741479065593772, guid: 3ef08155531e41d4a9f43575b62f2eac, type: 3}
   dropChance: 1
   attack1HitboxPrefab: {fileID: 3031616454288993865, guid: b50a7fcfa45025f4bb8925e243e1ced5, type: 3}
@@ -465,7 +472,7 @@ MonoBehaviour:
   attack2HitboxPrefab: {fileID: 4546812865732836210, guid: 19c767db1fe568e46a438b8d4d7bd3b6, type: 3}
   attack2Point: {fileID: 4411452524246908126}
   attackCooldown: 2
-  gravityStrength: 50
+  gravityStrength: 150
   groundCheckPoint: {fileID: 6152647004227790147}
   wallCheckPoint: {fileID: 1970639520356107312}
   checkDistance: 1

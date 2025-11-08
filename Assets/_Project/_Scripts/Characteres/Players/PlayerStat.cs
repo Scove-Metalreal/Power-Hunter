@@ -59,8 +59,12 @@ public class PlayerStat : MonoBehaviour
         HeathSilder.value = Mathf.MoveTowards(HeathSilder.value, targetHealth, 25f * Time.unscaledDeltaTime);
         StaminaSlider.value = Mathf.MoveTowards(StaminaSlider.value, targetStamina, 25f * Time.unscaledDeltaTime);
 
-        // Update health text
-        HeathText.text = $"{Math.Round(HeathSilder.value, 0)} / {MaxHealth}";
+        // Update health text to show percentage
+        if (MaxHealth > 0)
+        {
+            float healthPercent = (HeathSilder.value / MaxHealth) * 100f;
+            HeathText.text = $"{healthPercent:F0}%";
+        }
 
         // Regenerate stamina
         if (StaminaPlayer < MaxStamina)
@@ -139,6 +143,16 @@ public class PlayerStat : MonoBehaviour
         {
             HeathPlayer = 0;
             HandlePlayerDeath();
+        }
+        targetHealth = HeathPlayer;
+    }
+
+    public void Heal(float amount)
+    {
+        HeathPlayer += amount;
+        if (HeathPlayer > MaxHealth)
+        {
+            HeathPlayer = MaxHealth;
         }
         targetHealth = HeathPlayer;
     }

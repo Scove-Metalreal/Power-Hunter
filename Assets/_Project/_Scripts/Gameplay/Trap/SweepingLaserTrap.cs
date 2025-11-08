@@ -1,3 +1,4 @@
+using Unity.AppUI.Core;
 using UnityEngine;
 
 [RequireComponent(typeof(LineRenderer))]
@@ -23,6 +24,7 @@ public class SweepingLaserTrap : MonoBehaviour
     [Tooltip("The layer the player is on. The laser will damage anything on this layer.")]
     public LayerMask playerLayer;
 
+    public GameObject lineParticle;
 
     // --- Private References ---
     private LineRenderer lineRenderer;
@@ -36,6 +38,7 @@ public class SweepingLaserTrap : MonoBehaviour
         lineRenderer.positionCount = 2;
         lineRenderer.startWidth = laserWidth;
         lineRenderer.endWidth = laserWidth;
+        
     }
 
     void Update()
@@ -55,6 +58,11 @@ public class SweepingLaserTrap : MonoBehaviour
 
         // Step 4: Handle Player Collision (with knockback on first hit)
         float laserLength = Vector2.Distance(transform.position, laserEndPoint);
+        Vector2 direction = laserEndPoint - (Vector2)transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        lineParticle.transform.position = laserEndPoint;
+        lineParticle.transform.rotation = Quaternion.Euler(0,0,angle);
         RaycastHit2D playerHit = Physics2D.Raycast(transform.position, laserDirection, laserLength, playerLayer);
 
         if (playerHit.collider != null)

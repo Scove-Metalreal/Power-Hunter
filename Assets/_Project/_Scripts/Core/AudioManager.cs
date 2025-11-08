@@ -40,9 +40,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip bossSkill3;
     public AudioClip hitTower;
     public AudioClip bushWalk;
+    public AudioClip menuBGM; // <<< THÊM MỚI: Nhạc nền Menu
+    public AudioClip level1BGM; // <<< THÊM MỚI: Nhạc nền Level 1
 
     private AudioSource sfxPlayer;
     private AudioSource oneShotAreaPlayer;
+    private AudioSource musicPlayer; // <<< THÊM MỚI: AudioSource cho Music/BGM
 
     // ------------------ QUẢN LÝ TRẠNG THÁI ÂM THANH ------------------
     public enum SoundType
@@ -69,11 +72,19 @@ public class AudioManager : MonoBehaviour
             oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
             oneShotAreaPlayer.loop = false;
 
+            musicPlayer = gameObject.AddComponent<AudioSource>(); // <<< QUAN TRỌNG: Khởi tạo
+            musicPlayer.loop = true; // Nhạc nền phải lặp lại
+
             UnityEngine.Audio.AudioMixerGroup[] sfxGroups = SFXMixer.FindMatchingGroups("Master");
+            UnityEngine.Audio.AudioMixerGroup[] musicGroups = musicMixer.FindMatchingGroups("Master");
             if (sfxGroups.Length > 0)
             {
                 sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
                 oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
+            }
+            if (musicGroups.Length > 0)
+            {
+                musicPlayer.outputAudioMixerGroup = musicGroups[0]; // Gán Mixer Group
             }
             else
             {
@@ -160,6 +171,23 @@ public class AudioManager : MonoBehaviour
         sfxPlayer.clip = clip;
         sfxPlayer.Play();
         currentSoundType = type;
+    }
+    public void StopMusic()
+    {
+        // <<< SẼ DỪNG BẤT KỲ NHẠC NỀN NÀO ĐANG CHẠY TRÊN musicPlayer >>>
+        if (musicPlayer != null && musicPlayer.isPlaying)
+            musicPlayer.Stop();
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        if (clip == null || musicPlayer == null) return;
+
+        // <<< QUAN TRỌNG: Dừng âm thanh cũ trước >>>
+        StopMusic();
+
+        musicPlayer.clip = clip;
+        musicPlayer.Play();
     }
 
     public void StopCurrentSound()

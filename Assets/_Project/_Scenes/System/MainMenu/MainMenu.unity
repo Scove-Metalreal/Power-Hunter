@@ -2372,6 +2372,19 @@ MonoBehaviour:
   victory: {fileID: 8300000, guid: 7d38b269d949f0148b96de43eed64de3, type: 3}
   gameOver: {fileID: 8300000, guid: 038dc5874adb3bf49a609ff2d5fe1ffc, type: 3}
   nextStage: {fileID: 8300000, guid: f07434dd5757fee418f1e5feb0b6928a, type: 3}
+  takeDamage: {fileID: 0}
+  walk: {fileID: 0}
+  jump: {fileID: 0}
+  fall: {fileID: 0}
+  pauseOn: {fileID: 0}
+  pauseOff: {fileID: 0}
+  bossSkill1: {fileID: 0}
+  bossSkill2: {fileID: 0}
+  bossSkill3: {fileID: 0}
+  hitTower: {fileID: 0}
+  bushWalk: {fileID: 0}
+  menuBGM: {fileID: 8300000, guid: e963098a5e73f9946894ffb49c41faa0, type: 3}
+  level1BGM: {fileID: 8300000, guid: 7bc44f29f96154d43a8233ffae5140c1, type: 3}
 --- !u!114 &534966731817675193
 MonoBehaviour:
   m_ObjectHideFlags: 0

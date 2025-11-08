@@ -53,22 +53,26 @@ public class FinalBoss : MonoBehaviour
             
             if (!isTurnRunning)
             {
-                Turn = Random.Range(0, 5);
+                Turn = Random.Range(0, 6);
                 anim.SetTrigger("Skill");
                 isTurnRunning = true;
                 switch (Turn)
                 {
                     case 0:
+                        Turn2.SetActive(true);
                         yield return StartCoroutine(turn1New.DownSpawm());
                         yield return new WaitForSeconds(2f);
                         yield return StartCoroutine(turn1New.UpSpawm());
+                        Turn2.SetActive(false);
                         AudioManager.Instance.PlayBossSkill1();
                         break;
                         
                     case 1:
                         Turn2.SetActive(true);
+                        Turn4.SetActive(true);
                         yield return new WaitForSeconds(8f);
                         Turn2.SetActive(false);
+                        Turn4.SetActive(false);
                         AudioManager.Instance.PlayBossSkill2();
                         break;
                     case 2:
@@ -86,6 +90,14 @@ public class FinalBoss : MonoBehaviour
                     case 4:
                         yield return new WaitForSeconds(4f);
                         AudioManager.Instance.PlayBossSkill3();
+                        break;
+                    case 5:
+                        Turn4.SetActive(true);
+                        yield return StartCoroutine(turn1New.DownSpawm());
+                        yield return new WaitForSeconds(2f);
+                        yield return StartCoroutine(turn1New.UpSpawm());
+                        Turn4.SetActive(false);
+                        AudioManager.Instance.PlayBossSkill1();
                         break;
                 }
                 Tele();

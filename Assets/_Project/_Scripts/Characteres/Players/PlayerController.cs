@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public float jumpStaminaCost = 10f; // Chi phí stamina cho mỗi lần nhảy.
     [Range(0f, 1f)] // Tạo một thanh trượt trong Inspector từ 0 đến 1 cho giá trị này.
     public float jumpCutMultiplier = 0.5f; // Tỷ lệ giảm vận tốc khi nhả nút nhảy (giúp tùy chỉnh độ cao nhảy).
+    [HideInInspector] public bool isWalkingOnBusk = false;
 
     private Rigidbody2D rb;         // Tham chiếu đến thành phần Rigidbody2D của người chơi để xử lý vật lý.
 
@@ -381,8 +382,8 @@ public class PlayerController : MonoBehaviour
         // Xử lý animation khi người chơi đang ở trên mặt đất.
         if (isGround)
         {
-            animator.SetBool("isJumping", false); // Đảm bảo animation nhảy tắt.
-            animator.SetBool("isFalling", false); // Đảm bảo animation rơi tắt.
+            animator.SetBool("isJumping", false);
+            animator.SetBool("isFalling", false);
 
             // Nếu có input di chuyển và không ở trạng thái dash hoặc đang tụ lực dash.
             if (moveInput != 0 && !isDash && !isChargingDash)
@@ -390,11 +391,34 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isRunning", true);
                 animator.SetBool("isIdie", false);
 
-                if (lastSound != AudioManager.SoundType.Walk)
+                // --- LOGIC ÂM THANH BƯỚC CHÂN CẬP NHẬT ---
+                if (isWalkingOnBusk) // Nếu đang đi trên cỏ/bụi rậm
                 {
-                    AudioManager.Instance.PlayWalk(); // phát âm bước chân
-                    lastSound = AudioManager.SoundType.Walk;
+                    // Nếu âm thanh cuối không phải là âm thanh đi trên cỏ (ví dụ: Other), DỪNG âm thanh cũ và PHÁT âm thanh mới.
+                    if (lastSound != AudioManager.SoundType.Other)
+                    {
+                        // Dừng âm thanh hiện tại (ví dụ: Walk)
+                        AudioManager.Instance.StopCurrentSound();
+
+                        // Phát âm thanh đi trên cỏ
+                        AudioManager.Instance.PlayBossSkill1(); // Giả định đây là âm thanh đi trên cỏ
+                        lastSound = AudioManager.SoundType.Other;
+                    }
                 }
+                else // Đi bộ bình thường
+                {
+                    // Nếu âm thanh cuối không phải là âm thanh đi bộ (Walk), DỪNG âm thanh cũ và PHÁT âm thanh mới.
+                    if (lastSound != AudioManager.SoundType.Walk)
+                    {
+                        // Dừng âm thanh hiện tại (ví dụ: Other - đi trên cỏ)
+                        AudioManager.Instance.StopCurrentSound();
+
+                        // Phát âm bước chân thường
+                        AudioManager.Instance.PlayWalk();
+                        lastSound = AudioManager.SoundType.Walk;
+                    }
+                }
+                // <<< KẾT THÚC THAY ĐỔI LOGIC ÂM THANH BƯỚC CHÂN >>>
             }
             else // Nếu không di chuyển hoặc đang dash/tụ lực dash.
             {
@@ -402,6 +426,11 @@ public class PlayerController : MonoBehaviour
                 animator.SetBool("isIdie", true);
 
                 if (lastSound == AudioManager.SoundType.Walk)
+                {
+                    AudioManager.Instance.StopCurrentSound(); // dừng âm bước chân
+                    lastSound = AudioManager.SoundType.None;
+                }
+                if (lastSound == AudioManager.SoundType.Walk || lastSound == AudioManager.SoundType.Other)
                 {
                     AudioManager.Instance.StopCurrentSound(); // dừng âm bước chân
                     lastSound = AudioManager.SoundType.None;

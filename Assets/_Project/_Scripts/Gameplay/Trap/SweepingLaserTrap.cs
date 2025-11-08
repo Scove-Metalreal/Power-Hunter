@@ -58,7 +58,8 @@ public class SweepingLaserTrap : MonoBehaviour
 
         // Step 4: Handle Player Collision (with knockback on first hit)
         float laserLength = Vector2.Distance(transform.position, laserEndPoint);
-        float angle = Mathf.Atan2(laserEndPoint.y, laserEndPoint.x) * Mathf.Rad2Deg - 90f;
+        Vector2 direction = laserEndPoint - (Vector2)transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         lineParticle.transform.position = laserEndPoint;
         lineParticle.transform.rotation = Quaternion.Euler(0,0,angle);

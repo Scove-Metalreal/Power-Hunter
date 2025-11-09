@@ -81,10 +81,7 @@ public class AudioManager : MonoBehaviour
             {
                 sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
                 oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
-            }
-            if (musicGroups.Length > 0)
-            {
-                musicPlayer.outputAudioMixerGroup = musicGroups[0]; // Gán Mixer Group
+                musicPlayer.outputAudioMixerGroup = musicGroups[0];
             }
             else
             {
@@ -174,7 +171,6 @@ public class AudioManager : MonoBehaviour
     }
     public void StopMusic()
     {
-        // <<< SẼ DỪNG BẤT KỲ NHẠC NỀN NÀO ĐANG CHẠY TRÊN musicPlayer >>>
         if (musicPlayer != null && musicPlayer.isPlaying)
             musicPlayer.Stop();
     }
@@ -182,10 +178,7 @@ public class AudioManager : MonoBehaviour
     public void PlayMusic(AudioClip clip)
     {
         if (clip == null || musicPlayer == null) return;
-
-        // <<< QUAN TRỌNG: Dừng âm thanh cũ trước >>>
         StopMusic();
-
         musicPlayer.clip = clip;
         musicPlayer.Play();
     }

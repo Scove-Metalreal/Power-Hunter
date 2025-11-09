@@ -304,15 +304,27 @@ public class GameManager : MonoBehaviour
             SaveGameState();
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        Debug.Log("da nhan");
     }
     public void MainMenuInGameEndUI()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+
         SceneManager.LoadScene("MainMenu");
         isGameEnd = false;
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        Debug.Log("da nhan");
     }
     public void Back()
     {

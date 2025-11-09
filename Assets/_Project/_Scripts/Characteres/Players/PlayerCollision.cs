@@ -267,12 +267,12 @@ public class PlayerCollision : MonoBehaviour
 
     public void EndDeadAnimation()
     {
-        
+
 
         if (LoseUIPanel != null && gameManager != null)
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None; // <<< THAY ĐỔI: Sử dụng None để giải phóng chuột hoàn toàn cho UI
             LoseUIPanel.SetActive(true);
             gameManager.isGameEnd = true;
 

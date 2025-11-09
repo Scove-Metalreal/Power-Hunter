@@ -16,8 +16,8 @@ public class DamageZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // When player enters the zone, get their PlayerStat component.
-        if (collision.CompareTag("Player"))
+        // Khi hurtbox của người chơi đi vào, lấy component PlayerStat
+        if (collision.GetComponent<PlayerHurtbox>() != null)
         {
             playerToDamage = collision.GetComponentInParent<PlayerStat>();
         }
@@ -25,8 +25,8 @@ public class DamageZone : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // When player leaves, clear the reference so they stop taking damage.
-        if (collision.CompareTag("Player"))
+        // Khi hurtbox của người chơi rời đi, xóa tham chiếu
+        if (collision.GetComponent<PlayerHurtbox>() != null)
         {
             playerToDamage = null;
         }

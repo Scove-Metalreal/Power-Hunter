@@ -81,4 +81,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed33735b5d581e438dfc8266ca343b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageZone
-  damagePerSecond: 5
+  damagePerSecond: 1

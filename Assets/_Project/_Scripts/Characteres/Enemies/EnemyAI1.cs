@@ -8,13 +8,16 @@ public class EnemyAI1 : MonoBehaviour
     [SerializeField] Vector2 rightCheckSize, roofCheckSize, groundCheckSize;
     [SerializeField] LayerMask groundLayer, platform  ;
     [SerializeField]bool goingUp = true;
-
+    private Animator anim;
+    [SerializeField] GameObject enemyHitbox;
     private bool touchedGround, touchedRoof, touchedRight;
     private Rigidbody2D EnemyRB;
 
 
     void Start()
     {
+        enemyHitbox.SetActive(true);
+        anim = GetComponent<Animator>();
         EnemyRB = GetComponent<Rigidbody2D>();
     }
 
@@ -71,5 +74,18 @@ public class EnemyAI1 : MonoBehaviour
         Gizmos.DrawWireCube(groundCheck.transform.position, groundCheckSize);
         Gizmos.DrawWireCube(roofCheck.transform.position, roofCheckSize);
         Gizmos.DrawWireCube(rightCheck.transform.position, rightCheckSize);
+    }
+    public void endAnimationDead()
+    {
+        Destroy(gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("PlayerHitbox"))
+        {
+            GetComponent<Rigidbody2D>().gravityScale = 1;
+            enemyHitbox.SetActive(false);
+            anim.SetTrigger("isDead");
+        }
     }
 }

@@ -61,13 +61,13 @@ public class RicochetProjectile : MonoBehaviour
             {
                 PerformExplosion();
             }
-        }
 
-        // Xử lý nảy (bounce)
-        bounceCount++;
-        if (bounceCount >= maxBounces)
-        {
-            Destroy(gameObject);
+            // Xử lý nảy (bounce)
+            bounceCount++;
+            if (bounceCount >= maxBounces)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -125,11 +125,5 @@ public class RicochetProjectile : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
-    {
-        if (rb.linearVelocity.magnitude > 0)
-        {
-            rb.linearVelocity = rb.linearVelocity.normalized * moveSpeed;
-        }
-    }
+
 }

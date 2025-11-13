@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject gamePauseUI;
     public GameObject MenuOptionUI;
     public GameObject FullMapUI;
+    public GameObject TutorialUI;
 
     [Header("Components & State")]
     public PlayerController playerController;
@@ -39,8 +40,13 @@ public class GameManager : MonoBehaviour
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
         if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
         if (FullMapUI != null) FullMapUI.SetActive(false);
+        if (TutorialUI != null)
+        {
+            TutorialUI.SetActive(false);
+        }
+        else { }
 
-        isGameEnd = false;
+            isGameEnd = false;
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Cursor.visible = true;
@@ -272,6 +278,11 @@ public class GameManager : MonoBehaviour
         if (MenuOptionUI != null) MenuOptionUI.SetActive(true);
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
+    public void Tutorial()
+    {
+        if (TutorialUI != null) TutorialUI.SetActive(true);
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+    }
     public void Again()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -343,6 +354,14 @@ public class GameManager : MonoBehaviour
         if (MenuOptionUI != null && MenuOptionUI.activeSelf)
         {
             MenuOptionUI.SetActive(false);
+            if (sfxSource != null && clickClip != null)
+            {
+                sfxSource.PlayOneShot(clickClip);
+            }
+        }
+        if (TutorialUI != null && TutorialUI.activeSelf)
+        {
+            TutorialUI.SetActive(false);
             if (sfxSource != null && clickClip != null)
             {
                 sfxSource.PlayOneShot(clickClip);

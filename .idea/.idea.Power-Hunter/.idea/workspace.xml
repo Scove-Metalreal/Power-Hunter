@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/Gruzzers.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Characters/Enemies/Gruzzers.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Projectiles/RicochetProjectile_Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Projectiles/RicochetProjectile_Prefab.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Weapons.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Weapons/Projectiles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/Item_root.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Prefabs/Items/Item_root.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/RicochetProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Trap/RicochetProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,6 +142,7 @@
       <workItem from="1762519028845" duration="36613000" />
       <workItem from="1762659205117" duration="97000" />
       <workItem from="1762950651849" duration="1674000" />
+      <workItem from="1763000335213" duration="130000" />
     </task>
     <servers />
   </component>

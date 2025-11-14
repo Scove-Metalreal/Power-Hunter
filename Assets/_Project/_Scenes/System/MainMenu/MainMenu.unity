@@ -7449,17 +7449,17 @@ MonoBehaviour:
   victory: {fileID: 8300000, guid: 7d38b269d949f0148b96de43eed64de3, type: 3}
   gameOver: {fileID: 8300000, guid: 038dc5874adb3bf49a609ff2d5fe1ffc, type: 3}
   nextStage: {fileID: 8300000, guid: f07434dd5757fee418f1e5feb0b6928a, type: 3}
-  takeDamage: {fileID: 0}
-  walk: {fileID: 0}
-  jump: {fileID: 0}
-  fall: {fileID: 0}
-  pauseOn: {fileID: 0}
-  pauseOff: {fileID: 0}
-  bossSkill1: {fileID: 0}
-  bossSkill2: {fileID: 0}
-  bossSkill3: {fileID: 0}
-  hitTower: {fileID: 0}
-  bushWalk: {fileID: 0}
+  takeDamage: {fileID: 8300000, guid: 408f11ef62264f244be62a5c9e65de27, type: 3}
+  walk: {fileID: 8300000, guid: 312ed0aa6c300c44eab69e4c110f39ce, type: 3}
+  jump: {fileID: 8300000, guid: 8ef99de4972d3344dbb2847f22a0e6a5, type: 3}
+  fall: {fileID: 8300000, guid: 29a6efd3ee2418f4396890300ced607d, type: 3}
+  pauseOn: {fileID: 8300000, guid: f562f2d8d940d5f42a0756a948333f82, type: 3}
+  pauseOff: {fileID: 8300000, guid: f562f2d8d940d5f42a0756a948333f82, type: 3}
+  bossSkill1: {fileID: 8300000, guid: 273ac313b86da794199a0dfaaab4e1cb, type: 3}
+  bossSkill2: {fileID: 8300000, guid: 3cbee159de5e1e343921b8ae6a649689, type: 3}
+  bossSkill3: {fileID: 8300000, guid: ed04f99bd47636749bfc11b8780580e5, type: 3}
+  hitTower: {fileID: 8300000, guid: 7c29428e4bc921a4aa17cf884462d79f, type: 3}
+  bushWalk: {fileID: 8300000, guid: f557ed2ca4abd994c8a310538898fa72, type: 3}
   menuBGM: {fileID: 8300000, guid: e963098a5e73f9946894ffb49c41faa0, type: 3}
   level1BGM: {fileID: 8300000, guid: 7bc44f29f96154d43a8233ffae5140c1, type: 3}
 --- !u!114 &534966731817675193

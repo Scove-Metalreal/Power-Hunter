@@ -142,7 +142,7 @@ public class PlayerStat : MonoBehaviour
         if (HeathPlayer <= 0)
         {
             HeathPlayer = 0;
-            HandlePlayerDeath();
+            //HandlePlayerDeath();
         }
         targetHealth = HeathPlayer;
     }
@@ -157,20 +157,20 @@ public class PlayerStat : MonoBehaviour
         targetHealth = HeathPlayer;
     }
 
-    private void HandlePlayerDeath()
-    {
-        CurrentLives--;
-        if (CurrentLives > 0)
-        {
-            HeathPlayer = MaxHealth;
-            targetHealth = MaxHealth;
-            Debug.Log("Life lost. Lives remaining: " + CurrentLives);
-        }
-        else
-        {
-            Debug.Log("Game Over!");
-        }
-    }
+    //private void HandlePlayerDeath()
+    //{
+    //    CurrentLives--;
+    //    if (CurrentLives > 0)
+    //    {
+    //        HeathPlayer = MaxHealth;
+    //        targetHealth = MaxHealth;
+    //        Debug.Log("Life lost. Lives remaining: " + CurrentLives);
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Game Over!");
+    //    }
+    //}
 
     public void UpgradeHealth(float amount)
     {

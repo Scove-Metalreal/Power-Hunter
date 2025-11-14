@@ -4681,6 +4681,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350873596}
   m_CullTransparentMesh: 1
+--- !u!1 &1355598188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7764541411348173943, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+  m_PrefabInstance: {fileID: 2115093633}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1364593283
 GameObject:
   m_ObjectHideFlags: 0
@@ -6941,12 +6946,24 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
   m_PrefabInstance: {fileID: 2115093633}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1355598188}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5c296417e8d1b54e87fb3bcadd08871, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::_Project._Scripts.System.SimpleMiniMap
+--- !u!114 &1959092610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1355598188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e989b294384872242be8604eb61fcd99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
 --- !u!1 &2054446655
 GameObject:
   m_ObjectHideFlags: 0
@@ -7154,7 +7171,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7764541411348173943, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1959092610}
   m_SourcePrefab: {fileID: 100100000, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
 --- !u!1 &2115243702
 GameObject:

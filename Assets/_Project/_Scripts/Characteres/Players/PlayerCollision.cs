@@ -24,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
     public GameObject LoseUIPanel; // Tham chiếu đến GameObject chứa bảng UI hiển thị khi người chơi thua.
 
     [Header("Player Lives")] // --- THÊM ---
-    public int lifeCount = 3; // Tổng số mạng của người chơi (mặc định 3)
+    //public int lifeCount = 3; // Tổng số mạng của người chơi (mặc định 3)
 
     public float respawnDelay = 1.2f; // Thời gian chờ trước khi hồi sinh
 
@@ -196,10 +196,10 @@ public class PlayerCollision : MonoBehaviour
         // --- THÊM: Xử lý mạng sống và respawn ---
         if (playerStat.HeathPlayer <= 0)
         {
-            lifeCount--;
-            Debug.Log("Player mất 1 mạng, còn lại: " + lifeCount);
+            playerStat.CurrentLives--;
+            Debug.Log("Player mất 1 mạng, còn lại: " + playerStat.CurrentLives);
 
-            if (lifeCount > 0)
+            if (playerStat.CurrentLives > 0)
             {
                 StartCoroutine(RespawnPlayer());
             }
@@ -234,7 +234,8 @@ public class PlayerCollision : MonoBehaviour
         }
 
         transform.position = respawnPos;
-        playerStat.HeathPlayer = 100f; // --- SỬA LẠI: Hồi máu đầy theo cách 3 ---
+        playerStat.HeathPlayer = playerStat.MaxHealth; // --- SỬA LẠI: Hồi máu đầy theo cách 3 ---
+        playerStat.UpdateUI();
         Debug.Log("Hồi sinh tại checkpoint: " + respawnPos);
 
         if (playerController != null)

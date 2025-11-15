@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     // Autosave settings
     private float autoSaveInterval = 300f; // 300 seconds = 5 minutes
     public static float playTime = 0f;
+    public PlayerStat playerStat;
     private void Awake()
     {
         // Set the static instance to this GameManager for the current scene.
@@ -36,7 +37,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         playerController = FindAnyObjectByType<PlayerController>();
-
+        playerStat = FindAnyObjectByType<PlayerStat>();
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
         if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
         if (FullMapUI != null) FullMapUI.SetActive(false);
@@ -367,6 +368,25 @@ public class GameManager : MonoBehaviour
                 sfxSource.PlayOneShot(clickClip);
             }
         }
+    }
+    #endregion
+
+    #region --- SHOP ---
+    public void Buy1()
+    {
+        playerStat.UpgradeHealth(50);
+    }
+    public void Buy3()
+    {
+        playerStat.UpgradeStamina(20);
+    }
+    public void Buy2()
+    {
+        playerStat.AddLife();
+    }
+    public void Buy4()
+    {
+        playerStat.UnlockWallJump();
     }
     #endregion
 }

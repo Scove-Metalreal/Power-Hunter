@@ -26,7 +26,7 @@ public class Turn2 : MonoBehaviour
         while (true)
         {
             
-            for (int i = 0; i < 360; i = i + 45)
+            for (int i = 0; i < 360; i = i + 20)
             {
                 SpawmBullet(i + AddRotation);
                 yield return new WaitForSeconds(.05f);

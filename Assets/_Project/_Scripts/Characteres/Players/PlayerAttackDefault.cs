@@ -25,7 +25,12 @@ public class PlayerAttackDefault : MonoBehaviour
     public AudioClip SwingSlash3;
     public AudioClip SwingSlash4;
     public AudioClip SwingSlash5;
-    
+
+    void Start()
+    {
+        // SfxSource = Fin;
+        
+    }
     // Hàm Update được gọi mỗi frame. Dùng để xử lý input và logic dựa trên thời gian.
     void Update()
     {

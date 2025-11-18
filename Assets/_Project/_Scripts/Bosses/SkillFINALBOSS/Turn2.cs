@@ -4,7 +4,7 @@ using UnityEngine;
 public class Turn2 : MonoBehaviour
 {
     public GameObject Bullet;
-    public float bulletSpeed = 5f;
+    public float bulletSpeed = 40f;
     private int AddRotation = 0;
     void Start()
     {
@@ -26,14 +26,14 @@ public class Turn2 : MonoBehaviour
         while (true)
         {
             
-            for (int i = 0; i < 360; i = i + 20)
+            for (int i = 0; i < 360; i = i + 1)
             {
                 SpawmBullet(i + AddRotation);
                 yield return new WaitForSeconds(.05f);
                 
 
             }
-            AddRotation = (AddRotation + 10) % 360;
+            AddRotation = (AddRotation + 100) % 360;
             yield return new WaitForSeconds(.1f);
             
         }

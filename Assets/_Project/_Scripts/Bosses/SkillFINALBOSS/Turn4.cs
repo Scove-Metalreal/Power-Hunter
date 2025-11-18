@@ -5,17 +5,8 @@ using UnityEngine;
 public class Turn4 : MonoBehaviour
 {
     public GameObject BombPre;
-    public float force = 5f;
-    void Start()
-    {
-        
-    }
+    public float force = 10f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
      void OnEnable()
     {
         StartCoroutine(spawm());

@@ -1,0 +1,9 @@
+{
+    "name": "TestScoreManager",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}

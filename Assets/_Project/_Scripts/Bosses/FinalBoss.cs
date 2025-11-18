@@ -65,8 +65,10 @@ public class FinalBoss : MonoBehaviour
                     case 0:
                         Turn2.SetActive(true);
                         yield return StartCoroutine(turn1New.DownSpawm());
+                        yield return StartCoroutine(turn1New.LeftSpawm());
                         yield return new WaitForSeconds(2f);
                         yield return StartCoroutine(turn1New.UpSpawm());
+                        yield return StartCoroutine(turn1New.RightSpawm());
                         Turn2.SetActive(false);
                         AudioManager.Instance.PlayBossSkill1();
                         break;
@@ -98,8 +100,10 @@ public class FinalBoss : MonoBehaviour
                     case 5:
                         Turn4.SetActive(true);
                         yield return StartCoroutine(turn1New.DownSpawm());
+                        yield return StartCoroutine(turn1New.LeftSpawm());
                         yield return new WaitForSeconds(2f);
                         yield return StartCoroutine(turn1New.UpSpawm());
+                        yield return StartCoroutine(turn1New.RightSpawm());
                         Turn4.SetActive(false);
                         AudioManager.Instance.PlayBossSkill1();
                         break;

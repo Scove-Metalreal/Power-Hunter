@@ -6,11 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Bosses/SkillFINALBOSS/SpawmTurn3.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Bosses/SkillFINALBOSS/SpawmTurn3.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Bosses/SkillFINALBOSS/Turn2.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Bosses/SkillFINALBOSS/Turn2.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Bosses/SkillFINALBOSS/Turn4.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Bosses/SkillFINALBOSS/Turn4.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Interactables/DestructibleChest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Gameplay/Interactables/DestructibleChest.cs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/Cloister-Black-Light SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/Cloister-Black-Light SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,9 +158,14 @@
       <workItem from="1762950651849" duration="1674000" />
       <workItem from="1763000335213" duration="130000" />
       <workItem from="1763040555938" duration="1413000" />
+<<<<<<< Updated upstream
       <workItem from="1763176656865" duration="1846000" />
       <workItem from="1763384855927" duration="7566000" />
       <workItem from="1763431242511" duration="3646000" />
+=======
+      <workItem from="1763176656865" duration="1023000" />
+      <workItem from="1763385304327" duration="4177000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioClip clickClip;
 
+    [Header("Shop")] 
+    [SerializeField] private GameObject button1;[SerializeField] private GameObject button2;[SerializeField] private GameObject button3;[SerializeField] private GameObject button4;
+
+    [SerializeField] private GameObject SOLD1;[SerializeField] private GameObject SOLD2;[SerializeField] private GameObject SOLD3;[SerializeField] private GameObject SOLD4;
+    [SerializeField] private GameObject Text1;[SerializeField] private GameObject Text2;[SerializeField] private GameObject Text3;[SerializeField] private GameObject Text4;
     // Data container for loading state across scenes
     public static SaveData dataToLoad = null;
 
@@ -36,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        
         playerController = FindAnyObjectByType<PlayerController>();
         playerStat = FindAnyObjectByType<PlayerStat>();
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
@@ -375,18 +381,22 @@ public class GameManager : MonoBehaviour
     public void Buy1()
     {
         playerStat.UpgradeHealth(50);
+        playerStat.UsePowerValue(20);
     }
     public void Buy3()
     {
         playerStat.UpgradeStamina(20);
+        playerStat.UsePowerValue(20);
     }
     public void Buy2()
     {
         playerStat.AddLife();
+        playerStat.UsePowerValue(50);
     }
     public void Buy4()
     {
         playerStat.UnlockWallJump();
+        playerStat.UsePowerValue(200);
     }
     #endregion
 }

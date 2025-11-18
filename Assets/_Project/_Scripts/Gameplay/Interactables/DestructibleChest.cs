@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using NUnit.Framework;
 
 /// <summary>
 /// Một lớp (class) để định nghĩa cấu trúc của một lần rớt đồ.
@@ -128,3 +129,5 @@ public class DestructibleChest : MonoBehaviour
         return 0;
     }
 }
+
+

@@ -5,33 +5,32 @@ public class FinalBoss : MonoBehaviour
 {
     public PlayerCollision playerCollision;
     public int Turn;
-    public bool isAttack = false;
-    
-    
-    public GameObject turn1Prefab;
-    public Transform player;
     public bool isTurnRunning = false;
-    public int enemiesPerTurn = 5;
+    
     public GameObject Turn2;
     public GameObject Turn3;
     public GameObject Turn4;
-    public GameObject Turn4pre;
-    public Transform positionSpawmTurn4;
-    private Transform currentPlayer;
-    public Transform PointA;
-    public Transform PointB;
     private Animator anim;
     public Vector3 currenLocalScale;
     public Turn1New turn1New;
+    
+    [SerializeField] float moveSpeed;
+    [SerializeField] Vector2 moveDirection = new Vector2(1f, 0.25f);
+    [SerializeField] GameObject rightCheck, roofCheck, groundCheck;
+    [SerializeField] Vector2 rightCheckSize, roofCheckSize, groundCheckSize;
+    [SerializeField] LayerMask groundLayer, platform  ;
+    [SerializeField]bool goingUp = true;
+    private bool touchedGround, touchedRoof, touchedRight;
+    private Rigidbody2D EnemyRB;
     void Start()
     {
+        EnemyRB = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         Turn2.SetActive(false);
         Turn3.SetActive(false);
         Turn4.SetActive(false);
         StartCoroutine(RandomTurn());
-        transform.position = PointA.position;
-        currenLocalScale = transform.localScale;
+        
         turn1New = GetComponent<Turn1New>();
         if (turn1New == null)
         {
@@ -42,8 +41,13 @@ public class FinalBoss : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentPlayer = player.transform;
-        
+
+        HitLogic();
+    }
+
+    void FixedUpdate()
+    {
+        EnemyRB.linearVelocity = moveDirection * moveSpeed;
     }
     IEnumerator RandomTurn()
     {
@@ -100,37 +104,56 @@ public class FinalBoss : MonoBehaviour
                         AudioManager.Instance.PlayBossSkill1();
                         break;
                 }
-                Tele();
+                
                 isTurnRunning = false;
             }
             yield return null;
         }
     }
-    void Tele()
+    
+    void HitLogic()
     {
-        float distanceToA = Vector3.Distance(transform.position, PointA.position);
-        float distanceToB = Vector3.Distance(transform.position, PointB.position);
+        touchedRight = HitDetector(rightCheck, rightCheckSize, (groundLayer | platform));
+        touchedRoof = HitDetector(roofCheck, roofCheckSize, (groundLayer | platform));
+        touchedGround = HitDetector(groundCheck, groundCheckSize, (groundLayer | platform ));
 
-        if (distanceToA < 0.1f)
+        if (touchedRight)
         {
-            anim.SetTrigger("isTeleport");
-            transform.position = PointB.position;
-            transform.localScale = new Vector3(-Mathf.Abs(currenLocalScale.x), currenLocalScale.y, currenLocalScale.z);
+            Flip();
         }
-        else if (distanceToB < 0.1f)
+        if (touchedRoof && goingUp)
         {
-            anim.SetTrigger("isTeleport");
-            transform.position = PointA.position;
-            transform.localScale = new Vector3(Mathf.Abs(currenLocalScale.x), currenLocalScale.y, currenLocalScale.z);
+            ChangeYDirection();
+        }
+        if (touchedGround && !goingUp)
+        {
+            ChangeYDirection();
         }
     }
-    
-    void SpawmTurn4()
+
+    bool HitDetector(GameObject gameObject, Vector2 size, LayerMask layer)
     {
+        return Physics2D.OverlapBox(gameObject.transform.position, size, 0f, layer);
+    }
 
-        Vector3 spawnPos = currentPlayer.position + currentPlayer.up * 2.2f;
-        Instantiate(Turn4pre, spawnPos, player.rotation);
+    void ChangeYDirection()
+    {
+        moveDirection.y = -moveDirection.y;
+        goingUp = !goingUp;
+    }
 
+    void Flip()
+    {
+        transform.Rotate(new Vector2(0, 180));
+        moveDirection.x = -moveDirection.x;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireCube(groundCheck.transform.position, groundCheckSize);
+        Gizmos.DrawWireCube(roofCheck.transform.position, roofCheckSize);
+        Gizmos.DrawWireCube(rightCheck.transform.position, rightCheckSize);
     }
 
 }

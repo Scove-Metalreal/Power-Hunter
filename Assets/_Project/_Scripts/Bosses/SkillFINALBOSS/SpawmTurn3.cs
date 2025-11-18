@@ -5,12 +5,8 @@ public class SpawmTurn3 : MonoBehaviour
 {
     public Transform player;
     public GameObject bulletPre;
-    public float speedBullet =7f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-       
-    }
+    public float speedBullet =12f;
+    
     void OnEnable()
     {
         StartCoroutine(spawm());
@@ -36,7 +32,7 @@ public class SpawmTurn3 : MonoBehaviour
         float angle = Mathf.Atan2(huong.y, huong.x) * Mathf.Rad2Deg;
         Quaternion rotation = Quaternion.Euler(0, 0, angle + 180f);
         var bullet = Instantiate(bulletPre, transform.position, rotation);
-        bullet.GetComponent<Rigidbody2D>().linearVelocity = huong * 7f;
+        bullet.GetComponent<Rigidbody2D>().linearVelocity = huong * 12f;
         Destroy(bullet,3f);
     }
 }

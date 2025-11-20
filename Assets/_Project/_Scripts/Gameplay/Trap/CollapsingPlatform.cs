@@ -11,6 +11,8 @@ public class CollapsingPlatform : MonoBehaviour
     [SerializeField] private float shakeDuration = 1f;
     [Tooltip("Delay after the platform starts falling before it is destroyed.")]
     [SerializeField] private float destroyDelay = 3f;
+    [Tooltip("Time in seconds after collapsing before the platform reappears.")]
+    [SerializeField] private float respawnTime = 60f;
 
     [Header("Shake Effect")]
     [Tooltip("How violently the platform shakes.")]
@@ -32,6 +34,7 @@ public class CollapsingPlatform : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
     private Vector3 pointA; // Start position
+    private Collider2D[] colliders; // Cached colliders
     private bool isCollapsing = false;
     private bool _hasBeenActivated = false;
 
@@ -45,6 +48,7 @@ public class CollapsingPlatform : MonoBehaviour
         }
 
         pointA = transform.position;
+        colliders = GetComponents<Collider2D>(); // Cache colliders for resetting
 
         // Start moving immediately if it's configured to do so.
         if (canMove && !waitForPlayerStart)
@@ -58,6 +62,7 @@ public class CollapsingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            // Parent the player to the platform for smooth movement
             collision.transform.SetParent(transform);
 
             // If movement hasn't started yet, start it.
@@ -80,6 +85,7 @@ public class CollapsingPlatform : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            // Unparent the player when they leave the platform
             collision.transform.SetParent(null);
         }
     }
@@ -133,18 +139,95 @@ public class CollapsingPlatform : MonoBehaviour
 
         animator.SetTrigger("Collapse");
 
-        Collider2D[] colliders = GetComponents<Collider2D>();
+        // Unparent the player before the platform falls
+        foreach (Transform child in transform)
+        {
+            if (child.CompareTag("Player"))
+            {
+                child.SetParent(null);
+            }
+        }
+
+        // Disable colliders so objects fall through
         foreach (var col in colliders)
         {
             col.enabled = false;
         }
 
+        // Make the platform fall
         if (rb == null)
         {
             rb = gameObject.AddComponent<Rigidbody2D>();
         }
         rb.isKinematic = false;
 
-        Destroy(gameObject, destroyDelay);
+        // Start the reset process instead of destroying the object
+        StartCoroutine(ResetAfterDelay(destroyDelay, respawnTime));
+    }
+
+    /// <summary>
+    /// Hides the platform after it falls, waits for a delay, then resets it.
+    /// </summary>
+    private IEnumerator ResetAfterDelay(float fallDelay, float resetDelay)
+    {
+        // 1. Wait for the platform to fall off-screen
+        yield return new WaitForSeconds(fallDelay);
+
+        // 2. Hide the platform
+        gameObject.SetActive(false);
+
+        // 3. Wait for the respawn timer
+        yield return new WaitForSeconds(resetDelay);
+
+        // 4. Reset the platform to its initial state
+        ResetPlatform();
+    }
+
+    /// <summary>
+    /// Resets the platform to its original position and state.
+    /// </summary>
+    public void ResetPlatform()
+    {
+        // Stop any running coroutines to prevent conflicts
+        StopAllCoroutines();
+
+        // Reset state flags
+        isCollapsing = false;
+        _hasBeenActivated = false;
+
+        // Reset position and rotation
+        transform.position = pointA;
+        transform.rotation = Quaternion.identity;
+
+        // Reset Rigidbody to be kinematic and static
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            rb.linearVelocity = Vector2.zero;
+            rb.angularVelocity = 0f;
+        }
+
+        // Re-enable all colliders
+        foreach (var col in colliders)
+        {
+            col.enabled = true;
+        }
+
+        // Reset the animator to its initial state
+        if (animator != null)
+        {
+            animator.Rebind();
+            animator.Update(0f);
+        }
+
+        // Ensure the GameObject is active
+        gameObject.SetActive(true);
+
+        // Restart the movement coroutine if the platform is set to move automatically
+        if (canMove && !waitForPlayerStart)
+        {
+            _hasBeenActivated = true;
+            StartCoroutine(MovementSequence());
+        }
     }
 }

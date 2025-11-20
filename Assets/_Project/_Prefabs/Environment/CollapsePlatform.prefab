@@ -47,6 +47,8 @@ GameObject:
   - component: {fileID: 7322465960259440952}
   - component: {fileID: 3391658948805427702}
   - component: {fileID: 838386676825830112}
+  - component: {fileID: 8563740762582211547}
+  - component: {fileID: 7607054389342726642}
   m_Layer: 8
   m_Name: CollapsePlatform_child
   m_TagString: Untagged
@@ -137,7 +139,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 09f84ee5ba6332243a07be31c94989ab, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -243,6 +245,38 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.18, y: 0.18}
   m_EdgeRadius: 0
+--- !u!114 &8563740762582211547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629452544395006876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5da6a6eecbe71b4580383545190fd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlowBreathingEffect
+  colorPropertyName: _Color1
+  minIntensity: 0.38
+  maxIntensity: 4.51
+  breathingSpeed: 1.06
+--- !u!114 &7607054389342726642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629452544395006876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5da6a6eecbe71b4580383545190fd4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GlowBreathingEffect
+  colorPropertyName: _Color2
+  minIntensity: 1.5
+  maxIntensity: 3.5
+  breathingSpeed: 1
 --- !u!1 &4256844462799495897
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +325,8 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 1, g: 0.84484917, b: 0.3537736, a: 1}
+  m_Intensity: 0.3
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 00000000c3f7ad01c3cfe3b5f5af6e2cc1f3244b0960e3efdba92b3d

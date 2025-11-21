@@ -283,6 +283,7 @@ MonoBehaviour:
     m_Bits: 256
   goingUp: 1
   enemyHitbox: {fileID: 5081325142394709423}
+  Item: {fileID: 5960741479065593772, guid: 3ef08155531e41d4a9f43575b62f2eac, type: 3}
 --- !u!95 &1697641294
 Animator:
   serializedVersion: 7

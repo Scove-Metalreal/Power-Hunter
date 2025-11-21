@@ -12,7 +12,7 @@ public class EnemyAI1 : MonoBehaviour
     [SerializeField] GameObject enemyHitbox;
     private bool touchedGround, touchedRoof, touchedRight;
     private Rigidbody2D EnemyRB;
-
+    public GameObject Item;
 
     void Start()
     {
@@ -86,6 +86,7 @@ public class EnemyAI1 : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 1;
             enemyHitbox.SetActive(false);
             anim.SetTrigger("isDead");
+            Instantiate(Item,transform.position,transform.rotation);
         }
     }
 }

@@ -55498,7 +55498,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1435248977
 RectTransform:
   m_ObjectHideFlags: 0
@@ -58767,18 +58767,18 @@ MonoBehaviour:
   isGameEnd: 0
   sfxSource: {fileID: 554736089599485409}
   clickClip: {fileID: 8300000, guid: 576f44f217977b84bb559eb854c7474a, type: 3}
-  button1: {fileID: 0}
-  button2: {fileID: 0}
-  button3: {fileID: 0}
-  button4: {fileID: 0}
-  SOLD1: {fileID: 0}
-  SOLD2: {fileID: 0}
-  SOLD3: {fileID: 0}
-  SOLD4: {fileID: 0}
-  Text1: {fileID: 0}
-  Text2: {fileID: 0}
-  Text3: {fileID: 0}
-  Text4: {fileID: 0}
+  button1: {fileID: 1018404221}
+  button2: {fileID: 798502482}
+  button3: {fileID: 1201737641}
+  button4: {fileID: 1484822722}
+  SOLD1: {fileID: 549147477}
+  SOLD2: {fileID: 1174945678}
+  SOLD3: {fileID: 1328265651}
+  SOLD4: {fileID: 1525715232}
+  Text1: {fileID: 808187552}
+  Text2: {fileID: 1842384116}
+  Text3: {fileID: 1919598408}
+  Text4: {fileID: 633767147}
   playerStat: {fileID: 0}
 --- !u!4 &1724173480
 Transform:

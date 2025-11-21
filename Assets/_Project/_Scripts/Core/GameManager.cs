@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections; // Required for Coroutines
+using System.Collections;
+using TMPro; // Required for Coroutines
 
 public class GameManager : MonoBehaviour
 {
@@ -23,9 +24,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Shop")] 
     [SerializeField] private GameObject button1;[SerializeField] private GameObject button2;[SerializeField] private GameObject button3;[SerializeField] private GameObject button4;
-
     [SerializeField] private GameObject SOLD1;[SerializeField] private GameObject SOLD2;[SerializeField] private GameObject SOLD3;[SerializeField] private GameObject SOLD4;
-    [SerializeField] private GameObject Text1;[SerializeField] private GameObject Text2;[SerializeField] private GameObject Text3;[SerializeField] private GameObject Text4;
+    [SerializeField] private TextMeshProUGUI Text1;[SerializeField] private TextMeshProUGUI Text2;[SerializeField] private TextMeshProUGUI Text3;[SerializeField] private TextMeshProUGUI Text4;
+    private static int buyCount1 = 0;private static int buyCount2 = 0;private static int buyCount3 = 0;private static int buyCount4 = 0;
     // Data container for loading state across scenes
     public static SaveData dataToLoad = null;
 
@@ -380,23 +381,86 @@ public class GameManager : MonoBehaviour
     #region --- SHOP ---
     public void Buy1()
     {
-        playerStat.UpgradeHealth(50);
-        playerStat.UsePowerValue(20);
+        buyCount1++;
+        switch (buyCount1)
+        {
+            case 1:
+                playerStat.UpgradeHealth(50);
+                playerStat.UsePowerValue(20);
+                Text1.text = "30";
+                break;
+            case 2:
+                playerStat.UpgradeHealth(50);
+                playerStat.UsePowerValue(30);
+                Text1.text = "40";
+                break;
+            case 3:
+                playerStat.UpgradeHealth(50);
+                playerStat.UsePowerValue(40);
+                button1.SetActive(false);
+                SOLD1.SetActive(true);
+                break;
+            
+        }
+        
     }
     public void Buy3()
     {
-        playerStat.UpgradeStamina(20);
-        playerStat.UsePowerValue(20);
+        buyCount3++;
+        switch (buyCount2)
+        {
+            case 1:
+                playerStat.UpgradeStamina(20);
+                playerStat.UsePowerValue(20);
+                Text3.text = "40";
+                break;
+            case 2:
+                playerStat.UpgradeStamina(20);
+                playerStat.UsePowerValue(40);
+                Text3.text = "60";
+                break;
+            case 3:
+                playerStat.UpgradeStamina(20);
+                playerStat.UsePowerValue(60);
+                button3.SetActive(false);
+                SOLD3.SetActive(true);
+                break;
+            
+        }
+        
     }
     public void Buy2()
     {
-        playerStat.AddLife();
-        playerStat.UsePowerValue(50);
+        buyCount2++;
+        switch (buyCount2)
+        {
+            case 1:
+                playerStat.AddLife();
+                playerStat.UsePowerValue(50);
+                Text2.text = "100";
+                break;
+            case 2:
+                playerStat.AddLife();
+                playerStat.UsePowerValue(100);
+                Text2.text = "150";
+                break;
+            case 3:
+                playerStat.AddLife();
+                playerStat.UsePowerValue(150);
+                button2.SetActive(false);
+                SOLD2.SetActive(true);
+                break;
+            
+        }
+        
     }
     public void Buy4()
     {
+        
         playerStat.UnlockWallJump();
         playerStat.UsePowerValue(200);
+        button4.SetActive(false);
+        SOLD4.SetActive(true);
     }
     #endregion
 }

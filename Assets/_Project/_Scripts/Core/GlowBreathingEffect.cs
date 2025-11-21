@@ -25,18 +25,18 @@ public class GlowBreathingEffect : MonoBehaviour
     void Start()
     {
         // ----- THAY ĐỔI DUY NHẤT LÀ Ở ĐÂY -----
-        // Lấy TilemapRenderer thay vì SpriteRenderer
-        TilemapRenderer tilemapRenderer = GetComponent<TilemapRenderer>();
+        // Lấy component Renderer chung, có thể là SpriteRenderer hoặc TilemapRenderer
+        Renderer renderer = GetComponent<Renderer>();
 
-        if (tilemapRenderer == null)
+        if (renderer == null)
         {
-            Debug.LogError("Không tìm thấy TilemapRenderer trên GameObject này!");
+            Debug.LogError("Không tìm thấy component Renderer (ví dụ: SpriteRenderer, TilemapRenderer) trên GameObject này!");
             this.enabled = false;
             return;
         }
 
         // Phần còn lại giữ nguyên
-        materialInstance = tilemapRenderer.material;
+        materialInstance = renderer.material;
         propertyID = Shader.PropertyToID(colorPropertyName);
 
         if (materialInstance.HasProperty(propertyID))

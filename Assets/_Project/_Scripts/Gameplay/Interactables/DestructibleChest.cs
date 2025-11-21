@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using NUnit.Framework;
 
 /// <summary>
 /// Một lớp (class) để định nghĩa cấu trúc của một lần rớt đồ.
@@ -26,12 +25,14 @@ public class DestructibleChest : MonoBehaviour
     public int health = 1;
 
     [Header("Loot Settings")]
-    [Tooltip("Prefab của item sẽ được thả ra khi object này bị phá hủy.")]
+    [Tooltip("Prefab của item sẽ được thả ra khi object này bị phá hủy. Prefab này NÊN có script ThrowableObject.")]
     public GameObject itemPrefab;
     [Tooltip("Bảng tỷ lệ rớt item. Tổng weight không nhất thiết phải là 100.")]
     public List<LootDrop> lootTable;
-    [Tooltip("Bán kính tối đa mà các item sẽ văng ra xung quanh.")]
-    public float dropSpreadRadius = 1.0f;
+
+    [Header("Splinter Effect")]
+    [Tooltip("Lực văng ra của các item khi rương bị phá hủy.")]
+    public float dropForce = 5f;
 
     [Header("Effects")]
     [Tooltip("Prefab hiệu ứng (ví dụ: khói, mảnh vỡ) sẽ xuất hiện khi object bị phá hủy.")]
@@ -82,14 +83,22 @@ public class DestructibleChest : MonoBehaviour
         // 2. Xác định số lượng item sẽ rớt ra dựa trên bảng tỷ lệ
         int amountToDrop = GetRandomLootAmount();
 
-        // 3. Thả item ra xung quanh vị trí của rương
+        // 3. Thả item ra với hiệu ứng văng ra (splinter effect)
         if (itemPrefab != null && amountToDrop > 0)
         {
             for (int i = 0; i < amountToDrop; i++)
             {
-                // Tạo một vị trí ngẫu nhiên trong một vòng tròn
-                Vector2 spawnPosition = (Vector2)transform.position + (Random.insideUnitCircle * dropSpreadRadius);
-                Instantiate(itemPrefab, spawnPosition, Quaternion.identity);
+                // Tạo item tại vị trí của rương
+                GameObject droppedItem = Instantiate(itemPrefab, transform.position, Quaternion.identity);
+                
+                // Lấy Rigidbody2D của item và áp dụng lực văng
+                Rigidbody2D rb = droppedItem.GetComponent<Rigidbody2D>();
+                if (rb != null)
+                {
+                    // Tạo một hướng văng ngẫu nhiên
+                    Vector2 randomDirection = Random.insideUnitCircle.normalized;
+                    rb.AddForce(randomDirection * dropForce, ForceMode2D.Impulse);
+                }
             }
         }
 

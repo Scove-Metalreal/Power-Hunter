@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
     public static float playTime = 0f;
     public PlayerStat playerStat;
     public GameObject[] LifeUI;
+    private FBHeath fbHeath;
     private void Awake()
     {
         // Set the static instance to this GameManager for the current scene.
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        fbHeath = FindAnyObjectByType<FBHeath>();
         playerController = FindAnyObjectByType<PlayerController>();
         playerStat = FindAnyObjectByType<PlayerStat>();
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
@@ -142,6 +143,14 @@ public class GameManager : MonoBehaviour
             {
                 LifeUI[i].SetActive(false);
             }
+        }
+
+        if (fbHeath.Bossheath <= 0)
+        {
+            buyCount1 = 0;
+            buyCount2 = 0;
+            buyCount3 = 0;
+            buyCount4 = 0;
         }
     }
 
@@ -400,22 +409,49 @@ public class GameManager : MonoBehaviour
         buyCount1++;
         switch (buyCount1)
         {
+            case 0:
+                Text1.text = "20";
+                button1.SetActive(true);
+                SOLD1.SetActive(false);
+                break;
             case 1:
-                playerStat.UpgradeHealth(50);
-                playerStat.UsePowerValue(20);
-                Text1.text = "30";
+                if (playerStat.PowerValue >= 20)
+                {
+                    playerStat.UpgradeHealth(50);
+                    playerStat.UsePowerValue(20);
+                    Text1.text = "30";
+                    
+                }
+                else
+                {
+                    buyCount1--;
+                }
                 break;
             case 2:
-                playerStat.UpgradeHealth(50);
-                playerStat.UsePowerValue(30);
-                Text1.text = "40";
+                if (playerStat.PowerValue >= 30)
+                {
+                    playerStat.UpgradeHealth(50);
+                    playerStat.UsePowerValue(30);
+                    Text1.text = "40";
+                }
+                else
+                {
+                    buyCount1--;
+                }
                 break;
             case 3:
-                playerStat.UpgradeHealth(50);
-                playerStat.UsePowerValue(40);
-                button1.SetActive(false);
-                SOLD1.SetActive(true);
-                buyCount1 = 0;
+                if (playerStat.PowerValue >= 40)
+                {
+                    playerStat.UpgradeHealth(50);
+                    playerStat.UsePowerValue(40);
+                    button1.SetActive(false);
+                    SOLD1.SetActive(true);
+                    buyCount1 = 0;
+                }
+                else
+                {
+                    buyCount1--;
+                }
                 break;
             
         }
@@ -429,22 +465,48 @@ public class GameManager : MonoBehaviour
         buyCount3++;
         switch (buyCount3)
         {
+            case 0:
+                Text3.text = "20";
+                button3.SetActive(true);
+                SOLD3.SetActive(false);
+                break;
             case 1:
-                playerStat.UpgradeStamina(20);
-                playerStat.UsePowerValue(20);
-                Text3.text = "40";
+                if (playerStat.PowerValue >= 20)
+                {
+                    playerStat.UpgradeStamina(20);
+                    playerStat.UsePowerValue(20);
+                    Text3.text = "40";
+                }
+                else
+                {
+                    buyCount3--;
+                }
                 break;
             case 2:
-                playerStat.UpgradeStamina(20);
-                playerStat.UsePowerValue(40);
-                Text3.text = "60";
+                if (playerStat.PowerValue >= 40)
+                {
+                    playerStat.UpgradeStamina(20);
+                    playerStat.UsePowerValue(40);
+                    Text3.text = "60";
+                }
+                else
+                {
+                    buyCount3--;
+                }
                 break;
             case 3:
-                playerStat.UpgradeStamina(20);
-                playerStat.UsePowerValue(60);
-                button3.SetActive(false);
-                SOLD3.SetActive(true);
-                buyCount3 = 0;
+                if (playerStat.PowerValue >= 60)
+                {
+                    playerStat.UpgradeStamina(20);
+                    playerStat.UsePowerValue(60);
+                    button3.SetActive(false);
+                    SOLD3.SetActive(true);
+                    buyCount3 = 0;
+                }
+                else
+                {
+                    buyCount3--;
+                }
                 break;
             
         }
@@ -458,22 +520,48 @@ public class GameManager : MonoBehaviour
         buyCount2++;
         switch (buyCount2)
         {
+            case 0:
+                Text2.text = "50";
+                button2.SetActive(true);
+                SOLD2.SetActive(false);
+                break;
             case 1:
-                playerStat.AddLife();
-                playerStat.UsePowerValue(50);
-                Text2.text = "100";
+                if (playerStat.PowerValue >= 50)
+                {
+                    playerStat.AddLife();
+                    playerStat.UsePowerValue(50);
+                    Text2.text = "100";
+                }
+                else
+                {
+                    buyCount2--;
+                }
                 break;
             case 2:
-                playerStat.AddLife();
-                playerStat.UsePowerValue(100);
-                Text2.text = "150";
+                if (playerStat.PowerValue >= 100)
+                {
+                    playerStat.AddLife();
+                    playerStat.UsePowerValue(100);
+                    Text2.text = "150";
+                }
+                else
+                {
+                    buyCount2--;
+                }
                 break;
             case 3:
-                playerStat.AddLife();
-                playerStat.UsePowerValue(150);
-                button2.SetActive(false);
-                SOLD2.SetActive(true);
-                
+                if (playerStat.PowerValue >= 150)
+                {
+                    playerStat.AddLife();
+                    playerStat.UsePowerValue(150);
+                    button2.SetActive(false);
+                    SOLD2.SetActive(true);
+                    buyCount2 = 0;
+                }
+                else
+                {
+                    buyCount2--;
+                }
                 break;
             
         }
@@ -485,11 +573,28 @@ public class GameManager : MonoBehaviour
     }
     public void Buy4()
     {
+        buyCount4++;
+        switch (buyCount4) 
+        {
+            case 0:
+                button4.SetActive(true);
+                SOLD4.SetActive(false);
+                break;
+            case 1:
+                if (playerStat.PowerValue >= 200)
+                {
+                    playerStat.UnlockWallJump();
+                    playerStat.UsePowerValue(200);
+                    button4.SetActive(false);
+                    SOLD4.SetActive(true);
+                }
+                else
+                {
+                    buyCount4--;
+                }
+                break;
+        }
         
-        playerStat.UnlockWallJump();
-        playerStat.UsePowerValue(200);
-        button4.SetActive(false);
-        SOLD4.SetActive(true);
     }
     #endregion
 }

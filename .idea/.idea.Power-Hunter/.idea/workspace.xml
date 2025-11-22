@@ -70,7 +70,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\App\6000.3.0a3-x86_64\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="E:\App\6000.3.0a3\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Project05_PowerHunter\Power-Hunter -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Project05_PowerHunter\Power-Hunter" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -80,7 +80,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="E:\App\6000.3.0a3-x86_64\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="E:\App\6000.3.0a3\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Project05_PowerHunter\Power-Hunter -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Project05_PowerHunter\Power-Hunter" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -164,6 +164,7 @@
       <workItem from="1763469685820" duration="2718000" />
       <workItem from="1763711603486" duration="2340000" />
       <workItem from="1763776053302" duration="6365000" />
+      <workItem from="1763813918296" duration="1528000" />
     </task>
     <servers />
   </component>

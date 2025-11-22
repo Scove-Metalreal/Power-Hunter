@@ -19,7 +19,7 @@ public class FBHeath : MonoBehaviour
     public TextMeshProUGUI timeTMP;
     void Start()
     {
-       
+        
         Bossheath = 1000f;
         sprite = GetComponent<SpriteRenderer>();
         if (sprite != null)
@@ -47,6 +47,7 @@ public class FBHeath : MonoBehaviour
             
             if (Bossheath <= 0)
             {
+                
                 Time.timeScale = 0f;
                 winUIpanel.SetActive(true);
                 timeTMP.text = GameManager.FormatTime();

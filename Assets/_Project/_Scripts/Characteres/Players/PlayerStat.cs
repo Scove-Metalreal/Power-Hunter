@@ -6,6 +6,7 @@ using UnityEngine.UI; // Needed for saving scene name
 
 public class PlayerStat : MonoBehaviour
 {
+    private PlayerController _playerController;
     [Header("Core Stats")]
     public float HeathPlayer;
     public float MaxHealth;
@@ -39,6 +40,7 @@ public class PlayerStat : MonoBehaviour
         // The GameManager is responsible for telling this script whether to load data or reset.
         // This method now only ensures UI is initialized correctly on scene start.
         UpdateUI();
+        _playerController =  GetComponent<PlayerController>();
     }
 
     // Method called by GameManager after loading data to refresh all UI elements.
@@ -51,6 +53,8 @@ public class PlayerStat : MonoBehaviour
         {
             powerValueText.text = "Power: " + PowerValue.ToString();
         }
+
+       
     }
 
     void Update()
@@ -74,6 +78,15 @@ public class PlayerStat : MonoBehaviour
                 StaminaPlayer = MaxStamina;
             targetStamina = StaminaPlayer;
         }
+        if (hasWallJump == true)
+        {
+            _playerController.groundCheckRadius = 0.48f;
+        }
+        else
+        {
+            _playerController.groundCheckRadius = 0.05f;
+        }
+        
     }
     
     // --- Save/Load Integration ---
@@ -198,6 +211,7 @@ public class PlayerStat : MonoBehaviour
     public void UnlockWallJump()
     {
         hasWallJump = true;
+        
     }
 
     public void AddPowerValue(int amount)

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private float autoSaveInterval = 300f; // 300 seconds = 5 minutes
     public static float playTime = 0f;
     public PlayerStat playerStat;
+    public GameObject[] LifeUI;
     private void Awake()
     {
         // Set the static instance to this GameManager for the current scene.
@@ -81,7 +82,9 @@ public class GameManager : MonoBehaviour
             }
         }
 
-
+        for (int i = 0; i< playerStat.CurrentLives;i++){
+            LifeUI[i].SetActive(true);
+        }
         StartCoroutine(AutoSaveRoutine());
     }
 
@@ -127,6 +130,19 @@ public class GameManager : MonoBehaviour
             if (FullMapUI != null) FullMapUI.SetActive(true);
         }
         else { if (FullMapUI != null) FullMapUI.SetActive(false); }
+
+        if (playerStat.CurrentLives > 0)
+        {
+            for (int i = 0; (i) < playerStat.CurrentLives; (i)++)
+            {
+                LifeUI[i].SetActive(true);
+            }
+
+            for (int i = 0; i >= playerStat.CurrentLives; i++)
+            {
+                LifeUI[i].SetActive(false);
+            }
+        }
     }
 
     void OnApplicationQuit()
@@ -399,10 +415,14 @@ public class GameManager : MonoBehaviour
                 playerStat.UsePowerValue(40);
                 button1.SetActive(false);
                 SOLD1.SetActive(true);
+                buyCount1 = 0;
                 break;
             
         }
-        
+        if (buyCount1 > 3)
+        {
+            buyCount1 = 0;
+        }
     }
     public void Buy3()
     {
@@ -424,10 +444,14 @@ public class GameManager : MonoBehaviour
                 playerStat.UsePowerValue(60);
                 button3.SetActive(false);
                 SOLD3.SetActive(true);
+                buyCount3 = 0;
                 break;
             
         }
-        
+        if (buyCount3 > 3)
+        {
+            buyCount3 = 0;
+        }
     }
     public void Buy2()
     {
@@ -449,10 +473,15 @@ public class GameManager : MonoBehaviour
                 playerStat.UsePowerValue(150);
                 button2.SetActive(false);
                 SOLD2.SetActive(true);
+                
                 break;
             
         }
-        
+
+        if (buyCount2 > 3)
+        {
+            buyCount2 = 0;
+        }
     }
     public void Buy4()
     {

@@ -4,10 +4,11 @@ using UnityEngine.SceneManagement;
 public class PlayerSkillGrafity : MonoBehaviour
 {
     private PlayerController playerController;
-    
+    private PlayerStat playerStat;
     void Start()
     {
         playerController = GetComponent<PlayerController>();
+        playerStat = GetComponent<PlayerStat>();
     }
 
     void Update()
@@ -17,12 +18,41 @@ public class PlayerSkillGrafity : MonoBehaviour
             // Kiểm tra nếu người chơi đang không trong quá trình đổi trọng lực thì mới cho đổi tiếp
             if (Input.GetKey(KeyCode.LeftControl))
             {
-                if (Input.GetKeyDown(KeyCode.S)) ChangeGravity(Vector2.down, 0, true, false, false, false);
-                if (Input.GetKeyDown(KeyCode.W)) ChangeGravity(Vector2.up, 180, false, true, false, false);
+                if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (playerStat.StaminaPlayer >= 20)
+                    {
+                        ChangeGravity(Vector2.down, 0, true, false, false, false);
+                        playerStat.UseStamina(20);
+                    }
+                }
+
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    if (playerStat.StaminaPlayer >= 20)
+                    {
+                        ChangeGravity(Vector2.up, 180, false, true, false, false);
+                        playerStat.UseStamina(20);
+                    }
+                }
                 
                 // --- SỬA LỖI Ở ĐÂY: Đảo ngược góc xoay cho A và D ---
-                if (Input.GetKeyDown(KeyCode.A)) ChangeGravity(Vector2.left, -90, false, false, true, false); // Đổi thành -90
-                if (Input.GetKeyDown(KeyCode.D)) ChangeGravity(Vector2.right, 90, false, false, false, true);  // Đổi thành 90
+                if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (playerStat.StaminaPlayer >= 20)
+                    {
+                        ChangeGravity(Vector2.left, -90, false, false, true, false); // Đổi thành -90
+                        playerStat.UseStamina(20);
+                    }
+                }
+                if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (playerStat.StaminaPlayer >= 20)
+                    {
+                        ChangeGravity(Vector2.right, 90, false, false, false, true); // Đổi thành 90
+                        playerStat.UseStamina(20);
+                    }
+                }
             }
         }
     }

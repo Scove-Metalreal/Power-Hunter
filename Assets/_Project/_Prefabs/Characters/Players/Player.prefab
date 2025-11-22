@@ -5270,10 +5270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a76f8935785044e85d8faa5057cd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStat
-  HeathPlayer: 500
-  MaxHealth: 100
+  HeathPlayer: 50
+  MaxHealth: 50
   StaminaPlayer: 0
-  MaxStamina: 100
+  MaxStamina: 50
   CurrentLives: 3
   MaxLives: 3
   PowerValue: 0

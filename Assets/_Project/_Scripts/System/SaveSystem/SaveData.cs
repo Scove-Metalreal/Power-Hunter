@@ -45,8 +45,8 @@ public class SaveData
         playerPositionY = 0;
         playerPositionZ = 0;
 
-        maxHealth = 100f;
-        maxStamina = 100f;
+        maxHealth = 50f;
+        maxStamina = 50f;
         maxLives = 3;
         powerValue = 0;
 

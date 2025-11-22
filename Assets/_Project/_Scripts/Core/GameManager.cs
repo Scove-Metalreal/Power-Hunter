@@ -407,7 +407,7 @@ public class GameManager : MonoBehaviour
     public void Buy3()
     {
         buyCount3++;
-        switch (buyCount2)
+        switch (buyCount3)
         {
             case 1:
                 playerStat.UpgradeStamina(20);

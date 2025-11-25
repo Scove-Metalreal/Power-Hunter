@@ -168,6 +168,12 @@ public class PlayerCollision : MonoBehaviour
     // damageSource: Transform của đối tượng gây sát thương, dùng để tính hướng knockback.
     public void HandleDamageAndKnockback(float damage, Transform damageSource)
     {
+        // --- FIX: Nếu máu đã bằng 0, không nhận thêm sát thương và không xử lý gì nữa ---
+        if (playerStat.HeathPlayer <= 0)
+        {
+            return;
+        }
+        
         // Trừ máu người chơi.
         playerStat.TakeDamage(damage);
 
@@ -196,6 +202,15 @@ public class PlayerCollision : MonoBehaviour
         // --- THÊM: Xử lý mạng sống và respawn ---
         if (playerStat.HeathPlayer <= 0)
         {
+            // --- FIX: Tắt tất cả hitbox (collider dạng trigger) để không nhận thêm sát thương ---
+            var colliders = GetComponentsInChildren<Collider2D>();
+            foreach (var col in colliders)
+            {
+                if (col.isTrigger)
+                {
+                    col.enabled = false;
+                }
+            }
             
             playerStat.CurrentLives--;
             Debug.Log("Player mất 1 mạng, còn lại: " + playerStat.CurrentLives);
@@ -238,6 +253,16 @@ public class PlayerCollision : MonoBehaviour
         playerStat.HeathPlayer = playerStat.MaxHealth; // --- SỬA LẠI: Hồi máu đầy theo cách 3 ---
         playerStat.UpdateUI();
         Debug.Log("Hồi sinh tại checkpoint: " + respawnPos);
+
+        // --- FIX: Bật lại tất cả hitbox (collider dạng trigger) ---
+        var colliders = GetComponentsInChildren<Collider2D>(true); // true để lấy cả collider đang bị tắt
+        foreach (var col in colliders)
+        {
+            if (col.isTrigger)
+            {
+                col.enabled = true;
+            }
+        }
 
         if (playerController != null)
         {

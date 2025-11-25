@@ -7309,6 +7309,38 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: SOLD1
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: SOLD2
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: SOLD3
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: SOLD4
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: button1
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: button2
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: button3
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
+      propertyPath: button4
+      value: 
+      objectReference: {fileID: 1391571800}
+    - target: {fileID: 7618637582828254120, guid: 0944d9eb2939a99418acc216d0e1a094, type: 3}
       propertyPath: FullMapUI
       value: 
       objectReference: {fileID: 1391571800}

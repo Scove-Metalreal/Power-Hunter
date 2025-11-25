@@ -87,6 +87,8 @@ public class GameManager : MonoBehaviour
             LifeUI[i].SetActive(true);
         }
         StartCoroutine(AutoSaveRoutine());
+
+        
     }
 
     void Update()
@@ -145,7 +147,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (fbHeath.Bossheath <= 0 || playerStat.CurrentLives <= 0)
+        if (fbHeath != null && (fbHeath.Bossheath <= 0 || playerStat.CurrentLives <= 0))
         {
             buyCount1 = 0;
             buyCount2 = 0;

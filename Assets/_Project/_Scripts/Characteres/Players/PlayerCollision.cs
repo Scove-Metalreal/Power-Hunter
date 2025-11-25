@@ -196,6 +196,7 @@ public class PlayerCollision : MonoBehaviour
         // --- THÊM: Xử lý mạng sống và respawn ---
         if (playerStat.HeathPlayer <= 0)
         {
+            
             playerStat.CurrentLives--;
             Debug.Log("Player mất 1 mạng, còn lại: " + playerStat.CurrentLives);
 

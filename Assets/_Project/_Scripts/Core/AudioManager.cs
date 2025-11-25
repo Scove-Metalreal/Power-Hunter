@@ -63,34 +63,25 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
+        Instance = this;
+
+       
+
+        sfxPlayer = gameObject.AddComponent<AudioSource>();
+        oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
+        oneShotAreaPlayer.loop = false;
+
+        musicPlayer = gameObject.AddComponent<AudioSource>();
+        musicPlayer.loop = true;
+
+        var sfxGroups = SFXMixer.FindMatchingGroups("Master");
+        var musicGroups = musicMixer.FindMatchingGroups("Master");
+
+        if (sfxGroups.Length > 0)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            sfxPlayer = gameObject.AddComponent<AudioSource>();
-            oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
-            oneShotAreaPlayer.loop = false;
-
-            musicPlayer = gameObject.AddComponent<AudioSource>(); // <<< QUAN TRỌNG: Khởi tạo
-            musicPlayer.loop = true; // Nhạc nền phải lặp lại
-
-            UnityEngine.Audio.AudioMixerGroup[] sfxGroups = SFXMixer.FindMatchingGroups("Master");
-            UnityEngine.Audio.AudioMixerGroup[] musicGroups = musicMixer.FindMatchingGroups("Master");
-            if (sfxGroups.Length > 0)
-            {
-                sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
-                oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
-                musicPlayer.outputAudioMixerGroup = musicGroups[0];
-            }
-            else
-            {
-                Debug.LogError("AudioManager: Không tìm thấy group 'SFX' trong AudioMixer!");
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
+            sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
+            oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
+            musicPlayer.outputAudioMixerGroup = musicGroups[0];
         }
     }
 

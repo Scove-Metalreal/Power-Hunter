@@ -76,19 +76,20 @@ public class GameManager : MonoBehaviour
         else
         {
             // This is a new game
-            PlayerStat playerStat = FindAnyObjectByType<PlayerStat>();
+            playerStat = FindAnyObjectByType<PlayerStat>();
             if (playerStat != null)
             {
                 playerStat.ResetStats();
             }
-        }
+           
 
-        for (int i = 0; i< playerStat.CurrentLives;i++){
-            LifeUI[i].SetActive(true);
         }
+        
         StartCoroutine(AutoSaveRoutine());
 
-        
+        playerController.ApplyGravityDirection(GravityDirection.Down);
+        playerController.Rigidbody.gravityScale = playerController.DefaultGravityScale;
+
     }
 
     void Update()
@@ -134,20 +135,25 @@ public class GameManager : MonoBehaviour
         }
         else { if (FullMapUI != null) FullMapUI.SetActive(false); }
 
-        if (playerStat.CurrentLives > 0)
+        if (playerStat != null && playerStat.CurrentLives > 0)
         {
-            for (int i = 0; (i) < playerStat.CurrentLives; (i)++)
+            for (int i = 0; i < LifeUI.Length; i++)
             {
-                LifeUI[i].SetActive(true);
-            }
-
-            for (int i = 0; i >= playerStat.CurrentLives; i++)
-            {
-                LifeUI[i].SetActive(false);
+                if (i < playerStat.CurrentLives)
+                    LifeUI[i].SetActive(true);
+                else
+                    LifeUI[i].SetActive(false);
             }
         }
 
-        if (fbHeath != null && (fbHeath.Bossheath <= 0 || playerStat.CurrentLives <= 0))
+        if (fbHeath != null && fbHeath.Bossheath <= 0 )
+        {
+            buyCount1 = 0;
+            buyCount2 = 0;
+            buyCount3 = 0;
+            buyCount4 = 0;
+        }
+        if (playerStat != null && playerStat.CurrentLives <= 0 )
         {
             buyCount1 = 0;
             buyCount2 = 0;
@@ -320,13 +326,15 @@ public class GameManager : MonoBehaviour
     }
     public void Again()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
         isGameEnd = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         if (playerController != null) playerController.GrafityDown = true;
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        
     }
     public void Pause()
     {

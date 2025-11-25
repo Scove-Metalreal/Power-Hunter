@@ -21,12 +21,7 @@ public class Turn4 : MonoBehaviour
             spawmBomb();
             spawmBomb();
             spawmBomb();
-            spawmBomb();
-            spawmBomb();
-            spawmBomb();
-            spawmBomb();
-            spawmBomb();
-            spawmBomb();
+            
             yield return new WaitForSeconds(1f);
         }
     }

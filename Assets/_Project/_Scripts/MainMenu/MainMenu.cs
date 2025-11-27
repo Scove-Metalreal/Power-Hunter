@@ -24,8 +24,14 @@ public class MainMenu : MonoBehaviour
         box.SetActive(true);
     }
     public void PlayGame()
-    { 
-      SceneManager.LoadScene("Level 1"); 
+    {
+        // Dừng nhạc nền Main Menu
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+
+        SceneManager.LoadScene("Level 1");
     }
     public void ExitGame()
     { 

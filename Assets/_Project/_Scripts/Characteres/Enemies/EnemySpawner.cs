@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
     public bool spawnOnPlayerEnter = true; // Spawn khi người chơi đi vào tầm?
     public bool respawnable = false; // Có thể spawn lại sau khi enemy bị tiêu diệt?
     public float respawnTime = 10f; // Thời gian hồi sinh.
+    
+    
 
     private bool hasSpawned = false;
     private GameObject spawnedEnemy;
@@ -56,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
         if (enemyPrefab != null)
         {
             // Tạo đối tượng Enemy
-            spawnedEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            spawnedEnemy = Instantiate(enemyPrefab, transform.position, Quaternion.Euler(0,180,0))  ;
             
             // Lấy script Enemy từ đối tượng vừa tạo
             Enemy enemyScript = spawnedEnemy.GetComponent<Enemy>();

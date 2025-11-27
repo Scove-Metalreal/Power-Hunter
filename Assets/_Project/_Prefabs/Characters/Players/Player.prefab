@@ -49,7 +49,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3
+  m_Intensity: 10
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: c3cfe3b5c3f7ad0100000000f5af6e2cdba92b3d
@@ -135,7 +135,7 @@ ParticleSystem:
   looping: 1
   prewarm: 0
   playOnAwake: 1
-  useUnscaledTime: 0
+  useUnscaledTime: 1
   autoRandomSeed: 1
   startDelay:
     serializedVersion: 2
@@ -1060,7 +1060,7 @@ ParticleSystem:
     m_BurstCount: 1
     m_Bursts:
     - serializedVersion: 2
-      time: 0
+      time: 1
       countCurve:
         serializedVersion: 2
         minMaxState: 3
@@ -1115,7 +1115,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
       cycleCount: 1
-      repeatInterval: 0.01
+      repeatInterval: 2
       probability: 1
   SizeModule:
     enabled: 1
@@ -5004,7 +5004,7 @@ Transform:
   m_GameObject: {fileID: 3033931882250906579}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0566, y: -0.2605, z: 0}
+  m_LocalPosition: {x: -0.0566, y: -0.235, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5179,7 +5179,6 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   KnockBackSpeed: 5
   LoseUIPanel: {fileID: 0}
-  lifeCount: 3
   respawnDelay: 1.2
   shopUI: {fileID: 0}
   windflyForce: 10
@@ -5200,11 +5199,12 @@ MonoBehaviour:
   jumpForce: 10
   jumpStaminaCost: 8
   jumpCutMultiplier: 0.5
+  isWalkingOnBusk: 0
   groundCheck: {fileID: 751299856120483099}
   groundCheckRadius: 0.05
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 524544
   isGround: 1
   minDashSpeed: 10
   maxDashSpeed: 20
@@ -5213,6 +5213,8 @@ MonoBehaviour:
   dashStaminaCost: 10
   isDash: 0
   isChargingDash: 0
+  stompJumpForce: 10
+  stompDamage: 25
   GrafityDown: 0
   GrafityUp: 0
   GrafityLeft: 0
@@ -5268,10 +5270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a76f8935785044e85d8faa5057cd80, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStat
-  HeathPlayer: 500
-  MaxHealth: 100
+  HeathPlayer: 50
+  MaxHealth: 50
   StaminaPlayer: 0
-  MaxStamina: 100
+  MaxStamina: 50
   CurrentLives: 3
   MaxLives: 3
   PowerValue: 0
@@ -5319,8 +5321,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.039189816, y: 0.06993437}
-  m_Size: {x: 0.4033804, y: 0.58183384}
+  m_Offset: {x: -0.034210563, y: 0.09582853}
+  m_Size: {x: 0.37748694, y: 0.5559397}
   m_Direction: 0
 --- !u!1 &6041166447581813332
 GameObject:
@@ -5389,8 +5391,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.025917292, y: 0.07801771}
-  m_Size: {x: 0.31448793, y: 0.5939989}
+  m_Offset: {x: -0.025917292, y: 0.0961175}
+  m_Size: {x: 0.31448793, y: 0.55779934}
   m_Direction: 0
 --- !u!114 &1658161583537338403
 MonoBehaviour:
@@ -5510,7 +5512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2020368056031095109
 Transform:
   m_ObjectHideFlags: 0
@@ -5552,7 +5554,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 1228cb2010202a442882c67f8c2d0b5a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

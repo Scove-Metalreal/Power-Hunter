@@ -22,6 +22,6 @@ public class Intro : MonoBehaviour
     public void EndAnimIntro()
     {
         Time.timeScale = 1f;
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

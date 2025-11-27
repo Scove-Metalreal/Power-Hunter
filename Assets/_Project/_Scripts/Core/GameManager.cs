@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections; // Required for Coroutines
+using System.Collections;
+using TMPro; // Required for Coroutines
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     public GameObject gamePauseUI;
     public GameObject MenuOptionUI;
     public GameObject FullMapUI;
+    public GameObject TutorialUI;
 
     [Header("Components & State")]
     public PlayerController playerController;
@@ -20,12 +22,20 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioSource sfxSource;
     [SerializeField] private AudioClip clickClip;
 
+    [Header("Shop")] 
+    [SerializeField] private GameObject button1;[SerializeField] private GameObject button2;[SerializeField] private GameObject button3;[SerializeField] private GameObject button4;
+    [SerializeField] private GameObject SOLD1;[SerializeField] private GameObject SOLD2;[SerializeField] private GameObject SOLD3;[SerializeField] private GameObject SOLD4;
+    [SerializeField] private TextMeshProUGUI Text1;[SerializeField] private TextMeshProUGUI Text2;[SerializeField] private TextMeshProUGUI Text3;[SerializeField] private TextMeshProUGUI Text4;
+    private static int buyCount1 = 0;private static int buyCount2 = 0;private static int buyCount3 = 0;private static int buyCount4 = 0;
     // Data container for loading state across scenes
     public static SaveData dataToLoad = null;
 
     // Autosave settings
     private float autoSaveInterval = 300f; // 300 seconds = 5 minutes
     public static float playTime = 0f;
+    public PlayerStat playerStat;
+    public GameObject[] LifeUI;
+    private FBHeath fbHeath;
     private void Awake()
     {
         // Set the static instance to this GameManager for the current scene.
@@ -34,13 +44,19 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        fbHeath = FindAnyObjectByType<FBHeath>();
         playerController = FindAnyObjectByType<PlayerController>();
-
+        playerStat = FindAnyObjectByType<PlayerStat>();
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
         if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
         if (FullMapUI != null) FullMapUI.SetActive(false);
+        if (TutorialUI != null)
+        {
+            TutorialUI.SetActive(false);
+        }
+        else { }
 
-        isGameEnd = false;
+            isGameEnd = false;
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             Cursor.visible = true;
@@ -60,15 +76,20 @@ public class GameManager : MonoBehaviour
         else
         {
             // This is a new game
-            PlayerStat playerStat = FindAnyObjectByType<PlayerStat>();
+            playerStat = FindAnyObjectByType<PlayerStat>();
             if (playerStat != null)
             {
                 playerStat.ResetStats();
             }
+           
+
         }
-
-
+        
         StartCoroutine(AutoSaveRoutine());
+
+        playerController.ApplyGravityDirection(GravityDirection.Down);
+        playerController.Rigidbody.gravityScale = playerController.DefaultGravityScale;
+
     }
 
     void Update()
@@ -113,6 +134,32 @@ public class GameManager : MonoBehaviour
             if (FullMapUI != null) FullMapUI.SetActive(true);
         }
         else { if (FullMapUI != null) FullMapUI.SetActive(false); }
+
+        if (playerStat != null && playerStat.CurrentLives > 0)
+        {
+            for (int i = 0; i < LifeUI.Length; i++)
+            {
+                if (i < playerStat.CurrentLives)
+                    LifeUI[i].SetActive(true);
+                else
+                    LifeUI[i].SetActive(false);
+            }
+        }
+
+        if (fbHeath != null && fbHeath.Bossheath <= 0 )
+        {
+            buyCount1 = 0;
+            buyCount2 = 0;
+            buyCount3 = 0;
+            buyCount4 = 0;
+        }
+        if (playerStat != null && playerStat.CurrentLives <= 0 )
+        {
+            buyCount1 = 0;
+            buyCount2 = 0;
+            buyCount3 = 0;
+            buyCount4 = 0;
+        }
     }
 
     void OnApplicationQuit()
@@ -272,15 +319,22 @@ public class GameManager : MonoBehaviour
         if (MenuOptionUI != null) MenuOptionUI.SetActive(true);
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
     }
+    public void Tutorial()
+    {
+        if (TutorialUI != null) TutorialUI.SetActive(true);
+        if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+    }
     public void Again()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1.0f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        
         isGameEnd = false;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         if (playerController != null) playerController.GrafityDown = true;
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        
     }
     public void Pause()
     {
@@ -304,15 +358,27 @@ public class GameManager : MonoBehaviour
             SaveGameState();
         }
 
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        Debug.Log("da nhan");
     }
     public void MainMenuInGameEndUI()
     {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.StopMusic();
+        }
+
         SceneManager.LoadScene("MainMenu");
         isGameEnd = false;
         if (sfxSource != null && clickClip != null) sfxSource.PlayOneShot(clickClip);
+        Debug.Log("da nhan");
     }
     public void Back()
     {
@@ -336,6 +402,209 @@ public class GameManager : MonoBehaviour
                 sfxSource.PlayOneShot(clickClip);
             }
         }
+        if (TutorialUI != null && TutorialUI.activeSelf)
+        {
+            TutorialUI.SetActive(false);
+            if (sfxSource != null && clickClip != null)
+            {
+                sfxSource.PlayOneShot(clickClip);
+            }
+        }
+    }
+    #endregion
+
+    #region --- SHOP ---
+    public void Buy1()
+    {
+        buyCount1++;
+        switch (buyCount1)
+        {
+            case 0:
+                Text1.text = "20";
+                button1.SetActive(true);
+                SOLD1.SetActive(false);
+                break;
+            case 1:
+                if (playerStat.PowerValue >= 20)
+                {
+                    playerStat.UpgradeHealth(50);
+                    playerStat.UsePowerValue(20);
+                    Text1.text = "30";
+                    
+                }
+                else
+                {
+                    buyCount1--;
+                }
+                break;
+            case 2:
+                if (playerStat.PowerValue >= 30)
+                {
+                    playerStat.UpgradeHealth(50);
+                    playerStat.UsePowerValue(30);
+                    Text1.text = "40";
+                }
+                else
+                {
+                    buyCount1--;
+                }
+                break;
+            case 3:
+                if (playerStat.PowerValue >= 40)
+                {
+                    playerStat.UpgradeHealth(50);
+                    playerStat.UsePowerValue(40);
+                    button1.SetActive(false);
+                    SOLD1.SetActive(true);
+                    buyCount1 = 0;
+                }
+                else
+                {
+                    buyCount1--;
+                }
+                break;
+            
+        }
+        if (buyCount1 > 3)
+        {
+            buyCount1 = 0;
+        }
+    }
+    public void Buy3()
+    {
+        buyCount3++;
+        switch (buyCount3)
+        {
+            case 0:
+                Text3.text = "20";
+                button3.SetActive(true);
+                SOLD3.SetActive(false);
+                break;
+            case 1:
+                if (playerStat.PowerValue >= 20)
+                {
+                    playerStat.UpgradeStamina(20);
+                    playerStat.UsePowerValue(20);
+                    Text3.text = "40";
+                }
+                else
+                {
+                    buyCount3--;
+                }
+                break;
+            case 2:
+                if (playerStat.PowerValue >= 40)
+                {
+                    playerStat.UpgradeStamina(20);
+                    playerStat.UsePowerValue(40);
+                    Text3.text = "60";
+                }
+                else
+                {
+                    buyCount3--;
+                }
+                break;
+            case 3:
+                if (playerStat.PowerValue >= 60)
+                {
+                    playerStat.UpgradeStamina(20);
+                    playerStat.UsePowerValue(60);
+                    button3.SetActive(false);
+                    SOLD3.SetActive(true);
+                    buyCount3 = 0;
+                }
+                else
+                {
+                    buyCount3--;
+                }
+                break;
+            
+        }
+        if (buyCount3 > 3)
+        {
+            buyCount3 = 0;
+        }
+    }
+    public void Buy2()
+    {
+        buyCount2++;
+        switch (buyCount2)
+        {
+            case 0:
+                Text2.text = "50";
+                button2.SetActive(true);
+                SOLD2.SetActive(false);
+                break;
+            case 1:
+                if (playerStat.PowerValue >= 50)
+                {
+                    playerStat.AddLife();
+                    playerStat.UsePowerValue(50);
+                    Text2.text = "100";
+                }
+                else
+                {
+                    buyCount2--;
+                }
+                break;
+            case 2:
+                if (playerStat.PowerValue >= 100)
+                {
+                    playerStat.AddLife();
+                    playerStat.UsePowerValue(100);
+                    Text2.text = "150";
+                }
+                else
+                {
+                    buyCount2--;
+                }
+                break;
+            case 3:
+                if (playerStat.PowerValue >= 150)
+                {
+                    playerStat.AddLife();
+                    playerStat.UsePowerValue(150);
+                    button2.SetActive(false);
+                    SOLD2.SetActive(true);
+                    buyCount2 = 0;
+                }
+                else
+                {
+                    buyCount2--;
+                }
+                break;
+            
+        }
+
+        if (buyCount2 > 3)
+        {
+            buyCount2 = 0;
+        }
+    }
+    public void Buy4()
+    {
+        buyCount4++;
+        switch (buyCount4) 
+        {
+            case 0:
+                button4.SetActive(true);
+                SOLD4.SetActive(false);
+                break;
+            case 1:
+                if (playerStat.PowerValue >= 200)
+                {
+                    playerStat.UnlockWallJump();
+                    playerStat.UsePowerValue(200);
+                    button4.SetActive(false);
+                    SOLD4.SetActive(true);
+                }
+                else
+                {
+                    buyCount4--;
+                }
+                break;
+        }
+        
     }
     #endregion
 }

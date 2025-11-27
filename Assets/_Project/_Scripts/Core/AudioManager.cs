@@ -40,9 +40,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip bossSkill3;
     public AudioClip hitTower;
     public AudioClip bushWalk;
+    public AudioClip menuBGM; // <<< THÊM MỚI: Nhạc nền Menu
+    public AudioClip level1BGM; // <<< THÊM MỚI: Nhạc nền Level 1
 
     private AudioSource sfxPlayer;
     private AudioSource oneShotAreaPlayer;
+    private AudioSource musicPlayer; // <<< THÊM MỚI: AudioSource cho Music/BGM
 
     // ------------------ QUẢN LÝ TRẠNG THÁI ÂM THANH ------------------
     public enum SoundType
@@ -60,29 +63,25 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+        Instance = this;
 
-            sfxPlayer = gameObject.AddComponent<AudioSource>();
-            oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
-            oneShotAreaPlayer.loop = false;
+       
 
-            UnityEngine.Audio.AudioMixerGroup[] sfxGroups = SFXMixer.FindMatchingGroups("Master");
-            if (sfxGroups.Length > 0)
-            {
-                sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
-                oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
-            }
-            else
-            {
-                Debug.LogError("AudioManager: Không tìm thấy group 'SFX' trong AudioMixer!");
-            }
-        }
-        else
+        sfxPlayer = gameObject.AddComponent<AudioSource>();
+        oneShotAreaPlayer = gameObject.AddComponent<AudioSource>();
+        oneShotAreaPlayer.loop = false;
+
+        musicPlayer = gameObject.AddComponent<AudioSource>();
+        musicPlayer.loop = true;
+
+        var sfxGroups = SFXMixer.FindMatchingGroups("Master");
+        var musicGroups = musicMixer.FindMatchingGroups("Master");
+
+        if (sfxGroups.Length > 0)
         {
-            Destroy(gameObject);
+            sfxPlayer.outputAudioMixerGroup = sfxGroups[0];
+            oneShotAreaPlayer.outputAudioMixerGroup = sfxGroups[0];
+            musicPlayer.outputAudioMixerGroup = musicGroups[0];
         }
     }
 
@@ -160,6 +159,19 @@ public class AudioManager : MonoBehaviour
         sfxPlayer.clip = clip;
         sfxPlayer.Play();
         currentSoundType = type;
+    }
+    public void StopMusic()
+    {
+        if (musicPlayer != null && musicPlayer.isPlaying)
+            musicPlayer.Stop();
+    }
+
+    public void PlayMusic(AudioClip clip)
+    {
+        if (clip == null || musicPlayer == null) return;
+        StopMusic();
+        musicPlayer.clip = clip;
+        musicPlayer.Play();
     }
 
     public void StopCurrentSound()

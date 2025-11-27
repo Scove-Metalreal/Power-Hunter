@@ -24,7 +24,7 @@ public class PlayerCollision : MonoBehaviour
     public GameObject LoseUIPanel; // Tham chiếu đến GameObject chứa bảng UI hiển thị khi người chơi thua.
 
     [Header("Player Lives")] // --- THÊM ---
-    public int lifeCount = 3; // Tổng số mạng của người chơi (mặc định 3)
+    //public int lifeCount = 3; // Tổng số mạng của người chơi (mặc định 3)
 
     public float respawnDelay = 1.2f; // Thời gian chờ trước khi hồi sinh
 
@@ -90,6 +90,7 @@ public class PlayerCollision : MonoBehaviour
             playerStat.AddLife();
             Destroy(collision.gameObject);
         }
+        
 
         //if (collision.CompareTag("Shop"))
         //{
@@ -105,14 +106,23 @@ public class PlayerCollision : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("WindFly"))
+        if (collision.gameObject.CompareTag("WindFly"))
         {
-            Vector2 forceDir = transform.up; 
-            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force); 
+            Vector2 forceDir = transform.up;
+            GetComponent<Rigidbody2D>().AddForce(forceDir * windflyForce * Time.deltaTime, ForceMode2D.Force);
         }
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             AudioManager.Instance.PlayWind();
+        }
+
+        // <<< THÊM MỚI: Logic kiểm tra đang đi trên cỏ/bụi rậm (busk) >>>
+        if (collision.gameObject.CompareTag("Busk"))
+        {
+            if (playerController != null)
+            {
+                playerController.isWalkingOnBusk = true;
+            }
         }
     }
     // Hàm OnTriggerExit2D được gọi khi một Collider khác rời khỏi Trigger Collider của đối tượng này.
@@ -143,6 +153,13 @@ public class PlayerCollision : MonoBehaviour
 
             if (shopUI != null) shopUI.SetActive(false);
         }
+        if (collision.gameObject.CompareTag("Busk"))
+        {
+            if (playerController != null)
+            {
+                playerController.isWalkingOnBusk = false;
+            }
+        }
     }
 
     // <<< HÀM MỚI: Gom logic nhận sát thương và knockback vào một chỗ
@@ -151,6 +168,12 @@ public class PlayerCollision : MonoBehaviour
     // damageSource: Transform của đối tượng gây sát thương, dùng để tính hướng knockback.
     public void HandleDamageAndKnockback(float damage, Transform damageSource)
     {
+        // --- FIX: Nếu máu đã bằng 0, không nhận thêm sát thương và không xử lý gì nữa ---
+        if (playerStat.HeathPlayer <= 0)
+        {
+            return;
+        }
+        
         // Trừ máu người chơi.
         playerStat.TakeDamage(damage);
 
@@ -179,10 +202,20 @@ public class PlayerCollision : MonoBehaviour
         // --- THÊM: Xử lý mạng sống và respawn ---
         if (playerStat.HeathPlayer <= 0)
         {
-            lifeCount--;
-            Debug.Log("Player mất 1 mạng, còn lại: " + lifeCount);
+            // --- FIX: Tắt tất cả hitbox (collider dạng trigger) để không nhận thêm sát thương ---
+            var colliders = GetComponentsInChildren<Collider2D>();
+            foreach (var col in colliders)
+            {
+                if (col.isTrigger)
+                {
+                    col.enabled = false;
+                }
+            }
+            
+            playerStat.CurrentLives--;
+            Debug.Log("Player mất 1 mạng, còn lại: " + playerStat.CurrentLives);
 
-            if (lifeCount > 0)
+            if (playerStat.CurrentLives > 0)
             {
                 StartCoroutine(RespawnPlayer());
             }
@@ -217,8 +250,19 @@ public class PlayerCollision : MonoBehaviour
         }
 
         transform.position = respawnPos;
-        playerStat.HeathPlayer = 100f; // --- SỬA LẠI: Hồi máu đầy theo cách 3 ---
+        playerStat.HeathPlayer = playerStat.MaxHealth; // --- SỬA LẠI: Hồi máu đầy theo cách 3 ---
+        playerStat.UpdateUI();
         Debug.Log("Hồi sinh tại checkpoint: " + respawnPos);
+
+        // --- FIX: Bật lại tất cả hitbox (collider dạng trigger) ---
+        var colliders = GetComponentsInChildren<Collider2D>(true); // true để lấy cả collider đang bị tắt
+        foreach (var col in colliders)
+        {
+            if (col.isTrigger)
+            {
+                col.enabled = true;
+            }
+        }
 
         if (playerController != null)
         {
@@ -250,12 +294,12 @@ public class PlayerCollision : MonoBehaviour
 
     public void EndDeadAnimation()
     {
-        
+
 
         if (LoseUIPanel != null && gameManager != null)
         {
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.lockState = CursorLockMode.None; // <<< THAY ĐỔI: Sử dụng None để giải phóng chuột hoàn toàn cho UI
             LoseUIPanel.SetActive(true);
             gameManager.isGameEnd = true;
 

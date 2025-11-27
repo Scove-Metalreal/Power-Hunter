@@ -7,7 +7,7 @@ public class PlayerHurtbox : MonoBehaviour
 {
     // Reference to the main collision handler on the parent object.
     private PlayerCollision playerCollisionHandler;
-
+    private PlayerStat playerStatHandler;
     void Start()
     {
         // Find the PlayerCollision script on the parent GameObject.
@@ -28,6 +28,7 @@ public class PlayerHurtbox : MonoBehaviour
             Debug.LogWarning("The collider on PlayerHurtbox should be set to 'Is Trigger'. Forcing it now.", gameObject);
             col.isTrigger = true;
         }
+        playerStatHandler = GetComponentInParent<PlayerStat>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -54,7 +55,10 @@ public class PlayerHurtbox : MonoBehaviour
         // Xử lý va chạm với vùng chết (DeathZone).
         if (collision.CompareTag("DeathZone"))
         {
-            playerCollisionHandler.HandleDamageAndKnockback(20f, collision.transform);
+            if (playerStatHandler.HeathPlayer > 0) 
+            {
+                playerCollisionHandler.HandleDamageAndKnockback(20f, collision.transform);
+            }
         }
 
         if (collision.CompareTag("Minus100Heath"))

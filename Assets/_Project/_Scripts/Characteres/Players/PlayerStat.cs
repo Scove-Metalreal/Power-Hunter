@@ -6,6 +6,7 @@ using UnityEngine.UI; // Needed for saving scene name
 
 public class PlayerStat : MonoBehaviour
 {
+    private PlayerController _playerController;
     [Header("Core Stats")]
     public float HeathPlayer;
     public float MaxHealth;
@@ -39,6 +40,7 @@ public class PlayerStat : MonoBehaviour
         // The GameManager is responsible for telling this script whether to load data or reset.
         // This method now only ensures UI is initialized correctly on scene start.
         UpdateUI();
+        _playerController =  GetComponent<PlayerController>();
     }
 
     // Method called by GameManager after loading data to refresh all UI elements.
@@ -51,6 +53,8 @@ public class PlayerStat : MonoBehaviour
         {
             powerValueText.text = "Power: " + PowerValue.ToString();
         }
+
+       
     }
 
     void Update()
@@ -59,8 +63,12 @@ public class PlayerStat : MonoBehaviour
         HeathSilder.value = Mathf.MoveTowards(HeathSilder.value, targetHealth, 25f * Time.unscaledDeltaTime);
         StaminaSlider.value = Mathf.MoveTowards(StaminaSlider.value, targetStamina, 25f * Time.unscaledDeltaTime);
 
-        // Update health text
-        HeathText.text = $"{Math.Round(HeathSilder.value, 0)} / {MaxHealth}";
+        // Update health text to show percentage
+        if (MaxHealth > 0)
+        {
+            float healthPercent = (HeathSilder.value / MaxHealth) * 100f;
+            HeathText.text = $"{healthPercent:F0}%";
+        }
 
         // Regenerate stamina
         if (StaminaPlayer < MaxStamina)
@@ -70,6 +78,15 @@ public class PlayerStat : MonoBehaviour
                 StaminaPlayer = MaxStamina;
             targetStamina = StaminaPlayer;
         }
+        if (hasWallJump == true)
+        {
+            _playerController.groundCheckRadius = 0.48f;
+        }
+        else
+        {
+            _playerController.groundCheckRadius = 0.05f;
+        }
+        
     }
     
     // --- Save/Load Integration ---
@@ -138,25 +155,35 @@ public class PlayerStat : MonoBehaviour
         if (HeathPlayer <= 0)
         {
             HeathPlayer = 0;
-            HandlePlayerDeath();
+            //HandlePlayerDeath();
         }
         targetHealth = HeathPlayer;
     }
 
-    private void HandlePlayerDeath()
+    public void Heal(float amount)
     {
-        CurrentLives--;
-        if (CurrentLives > 0)
+        HeathPlayer += amount;
+        if (HeathPlayer > MaxHealth)
         {
             HeathPlayer = MaxHealth;
-            targetHealth = MaxHealth;
-            Debug.Log("Life lost. Lives remaining: " + CurrentLives);
         }
-        else
-        {
-            Debug.Log("Game Over!");
-        }
+        targetHealth = HeathPlayer;
     }
+
+    //private void HandlePlayerDeath()
+    //{
+    //    CurrentLives--;
+    //    if (CurrentLives > 0)
+    //    {
+    //        HeathPlayer = MaxHealth;
+    //        targetHealth = MaxHealth;
+    //        Debug.Log("Life lost. Lives remaining: " + CurrentLives);
+    //    }
+    //    else
+    //    {
+    //        Debug.Log("Game Over!");
+    //    }
+    //}
 
     public void UpgradeHealth(float amount)
     {
@@ -184,6 +211,7 @@ public class PlayerStat : MonoBehaviour
     public void UnlockWallJump()
     {
         hasWallJump = true;
+        
     }
 
     public void AddPowerValue(int amount)

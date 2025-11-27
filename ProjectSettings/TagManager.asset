@@ -52,8 +52,8 @@ TagManager:
   - InteractionZone
   - Interactable
   - Traps
-  - 
-  - 
+  - Enemy
+  - Portal
   - 
   - 
   - 

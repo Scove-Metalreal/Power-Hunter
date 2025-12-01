@@ -40,6 +40,44 @@ public class GameManager : MonoBehaviour
     {
         // Set the static instance to this GameManager for the current scene.
         Instance = this;
+
+        // Subscribe to the scene unloaded event to act as a safety net.
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+    }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe when this GameManager is destroyed to prevent memory leaks.
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        if (playerStat != null)
+        {
+            playerStat.OnStatsChanged -= SaveGameState;
+        }
+    }
+
+    // This method is a safety net that automatically preserves player stats
+    // if a scene is changed by calling SceneManager.LoadScene() directly,
+    // instead of using the proper GameManager.GoToScene() method.
+    private void OnSceneUnloaded(Scene current)
+    {
+        // If dataToLoad is null, it means GoToScene() was NOT called.
+        if (dataToLoad == null && current.buildIndex != 0)
+        {
+            Debug.LogWarning("GameManager: Unmanaged scene transition detected! Saving stats...");
+            
+            SaveData data = CreateSaveDataObject();
+            if (data != null)
+            {
+                // Primary method: use the static variable.
+                dataToLoad = data;
+
+                // Backup method: save data to PlayerPrefs in case the static variable is lost.
+                string json = JsonUtility.ToJson(data);
+                PlayerPrefs.SetString("stat_transfer_backup", json);
+                PlayerPrefs.Save();
+                Debug.Log("GameManager: Player stats backed up to PlayerPrefs for scene transition.");
+            }
+        }
     }
 
     void Start()
@@ -47,6 +85,12 @@ public class GameManager : MonoBehaviour
         fbHeath = FindAnyObjectByType<FBHeath>();
         playerController = FindAnyObjectByType<PlayerController>();
         playerStat = FindAnyObjectByType<PlayerStat>();
+        if (playerStat != null)
+        {
+            playerStat.OnStatsChanged += SaveGameState;
+            Debug.Log("GameManager: Subscribed to PlayerStat changes for auto-saving.");
+        }
+
         if (gamePauseUI != null) gamePauseUI.SetActive(false);
         if (MenuOptionUI != null) MenuOptionUI.SetActive(false);
         if (FullMapUI != null) FullMapUI.SetActive(false);
@@ -68,13 +112,24 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
         }
 
+        // If dataToLoad (static variable) is null, check for a PlayerPrefs backup.
+        if (dataToLoad == null && PlayerPrefs.HasKey("stat_transfer_backup"))
+        {
+            Debug.LogWarning("GameManager.Start: dataToLoad was null, loading from PlayerPrefs backup.");
+            string json = PlayerPrefs.GetString("stat_transfer_backup");
+            dataToLoad = JsonUtility.FromJson<SaveData>(json);
+            PlayerPrefs.DeleteKey("stat_transfer_backup"); // Clean up the backup key.
+        }
+
         // If there is data to load, apply it. Otherwise, set up a new game.
         if (dataToLoad != null)
         {
+            Debug.Log("GameManager.Start: Found data to load. Applying stats.");
             StartCoroutine(ApplyLoadedDataRoutine());
         }
         else
         {
+            Debug.LogWarning("GameManager.Start: No data to load found. Resetting stats for a new game.");
             // This is a new game
             playerStat = FindAnyObjectByType<PlayerStat>();
             if (playerStat != null)
@@ -82,18 +137,40 @@ public class GameManager : MonoBehaviour
                 playerStat.ResetStats();
             }
            
-
+            StartCoroutine(SetupNewGamePlayerState());
         }
         
         StartCoroutine(AutoSaveRoutine());
+    }
 
-        playerController.ApplyGravityDirection(GravityDirection.Down);
-        playerController.Rigidbody.gravityScale = playerController.DefaultGravityScale;
+    private IEnumerator SetupNewGamePlayerState()
+    {
+        // Wait for all Start() methods to run, ensuring components like Rigidbody are initialized.
+        yield return new WaitForEndOfFrame();
 
+        if (playerController != null && playerController.Rigidbody != null)
+        {
+            playerController.ApplyGravityDirection(GravityDirection.Down);
+            playerController.Rigidbody.gravityScale = playerController.DefaultGravityScale;
+        }
+        else
+        {
+            Debug.LogWarning("GameManager could not set initial player gravity. PlayerController or its Rigidbody was not found.");
+        }
     }
 
     void Update()
     {
+        // Proactively keep references to the player components cached.
+        if (playerController == null)
+        {
+            playerController = FindAnyObjectByType<PlayerController>();
+        }
+        if (playerStat == null && playerController != null)
+        {
+            playerStat = playerController.GetComponent<PlayerStat>();
+        }
+
         if (Time.timeScale == 1f)
         {
             string scene = SceneManager.GetActiveScene().name;
@@ -134,6 +211,15 @@ public class GameManager : MonoBehaviour
             if (FullMapUI != null) FullMapUI.SetActive(true);
         }
         else { if (FullMapUI != null) FullMapUI.SetActive(false); }
+
+        if ((Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)) && Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            if (playerStat != null)
+            {
+                playerStat.AddPowerValue(100);
+                Debug.Log("CHEAT: +100 Power");
+            }
+        }
 
         if (playerStat != null && playerStat.CurrentLives > 0)
         {
@@ -188,8 +274,15 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        // Set dataToLoad to null to signify a new game.
-        dataToLoad = null;
+        // Clear any lingering transfer data to signify a new game.
+        if(SaveManager.Instance != null) SaveManager.Instance.dataToTransfer = null;
+
+        // Delete the existing save file to ensure a truly fresh start.
+        if (SaveManager.Instance != null)
+        {
+            SaveManager.Instance.DeleteSaveData();
+            Debug.Log("GameManager: Existing save data deleted for New Game.");
+        }
 
         SceneManager.LoadScene(1); // Assuming build index 1 is the first level
         Time.timeScale = 1f;
@@ -225,38 +318,80 @@ public class GameManager : MonoBehaviour
 
     #region --- Save/Load Helpers ---
 
-    public void SaveGameState()
+    // Creates a SaveData object from the current player state.
+    private SaveData CreateSaveDataObject()
     {
-        if (playerController == null) playerController = FindAnyObjectByType<PlayerController>();
-        if (playerController == null) return;
-        PlayerStat playerStat = playerController.GetComponent<PlayerStat>();
-        if (playerStat == null) return;
+        // Use the references cached by GameManager's Start() or Update() methods.
+        if (this.playerController == null || this.playerStat == null)
+        {
+            Debug.LogError("Save Failed: GameManager is missing a required reference to PlayerController or PlayerStat.");
+            return null;
+        }
 
         SaveData data = new SaveData();
         data.lastScene = SceneManager.GetActiveScene().name;
-        data.playerPositionX = playerController.transform.position.x;
-        data.playerPositionY = playerController.transform.position.y;
-        data.playerPositionZ = playerController.transform.position.z;
+        data.playerPositionX = this.playerController.transform.position.x;
+        data.playerPositionY = this.playerController.transform.position.y;
+        data.playerPositionZ = this.playerController.transform.position.z;
 
         // Determine and save current gravity direction
-        if (playerController.GrafityUp) data.gravityDirection = GravityDirection.Up;
-        else if (playerController.GrafityLeft) data.gravityDirection = GravityDirection.Left;
-        else if (playerController.GrafityRight) data.gravityDirection = GravityDirection.Right;
+        if (this.playerController.GrafityUp) data.gravityDirection = GravityDirection.Up;
+        else if (this.playerController.GrafityLeft) data.gravityDirection = GravityDirection.Left;
+        else if (this.playerController.GrafityRight) data.gravityDirection = GravityDirection.Right;
         else data.gravityDirection = GravityDirection.Down;
 
-        data.maxHealth = playerStat.MaxHealth;
-        data.maxStamina = playerStat.MaxStamina;
-        data.maxLives = playerStat.MaxLives;
-        data.powerValue = playerStat.PowerValue;
-        data.healthUpgradeLevel = playerStat.healthUpgradeLevel;
-        data.staminaUpgradeLevel = playerStat.staminaUpgradeLevel;
-        data.livesUpgradeLevel = playerStat.livesUpgradeLevel;
-        data.hasWallJump = playerStat.hasWallJump;
-        data.jumpCooldownLevel = playerStat.jumpCooldownLevel;
-        data.dashCooldownLevel = playerStat.dashCooldownLevel;
+        // Pull all stats from the cached playerStat reference.
+        data.maxHealth = this.playerStat.MaxHealth;
+        data.heathPlayer = this.playerStat.HeathPlayer;
+        data.maxStamina = this.playerStat.MaxStamina;
+        data.maxLives = this.playerStat.MaxLives;
+        data.currentLives = this.playerStat.CurrentLives;
+        data.powerValue = this.playerStat.PowerValue;
+        data.healthUpgradeLevel = this.playerStat.healthUpgradeLevel;
+        data.staminaUpgradeLevel = this.playerStat.staminaUpgradeLevel;
+        data.livesUpgradeLevel = this.playerStat.livesUpgradeLevel;
+        data.hasWallJump = this.playerStat.hasWallJump;
+        data.jumpCooldownLevel = this.playerStat.jumpCooldownLevel;
+        data.dashCooldownLevel = this.playerStat.dashCooldownLevel;
 
-        SaveManager.Instance.SaveGame(data);
-        Debug.Log("Game State Saved!");
+        return data;
+    }
+
+    public void SaveGameState()
+    {
+        SaveData data = CreateSaveDataObject();
+        if (data != null)
+        {
+            SaveManager.Instance.SaveGame(data);
+            Debug.Log("Game State Saved!");
+        }
+    }
+
+    // Use this method to transition between gameplay scenes to ensure player stats are carried over.
+    public void GoToScene(string sceneName)
+    {
+        // Create a data object with the current player state.
+        SaveData dataForNextScene = CreateSaveDataObject();
+
+        if (dataForNextScene != null)
+        {
+            // Set the static variable so the next scene can find the data.
+            GameManager.dataToLoad = dataForNextScene;
+
+            // Also perform a full save to disk before we leave the current scene.
+            SaveGameState();
+
+            Debug.Log($"Transitioning to scene: {sceneName} with player data.");
+            Time.timeScale = 1f; // Ensure time is running for the next scene.
+            SceneManager.LoadScene(sceneName);
+        }
+        else
+        {
+            // Fallback if data can't be created for some reason.
+            Debug.LogError($"Could not create save data. Transitioning to scene {sceneName} without saving stats.");
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(sceneName);
+        }
     }
 
     // This is now a coroutine to ensure it runs after all Start() methods

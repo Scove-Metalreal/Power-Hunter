@@ -212,7 +212,7 @@ public class PlayerCollision : MonoBehaviour
                 }
             }
             
-            playerStat.CurrentLives--;
+            playerStat.DecreaseLife(); // Use the new method to correctly update and save lives.
             Debug.Log("Player mất 1 mạng, còn lại: " + playerStat.CurrentLives);
 
             if (playerStat.CurrentLives > 0)

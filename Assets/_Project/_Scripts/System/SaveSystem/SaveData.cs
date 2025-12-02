@@ -20,8 +20,10 @@ public class SaveData
 
     // Player Stats
     public float maxHealth;
+    public float heathPlayer; // Current Health
     public float maxStamina;
     public int maxLives;
+    public int currentLives; // Current Lives
     public int powerValue;
 
     // Player Gravity
@@ -46,8 +48,10 @@ public class SaveData
         playerPositionZ = 0;
 
         maxHealth = 50f;
+        heathPlayer = 50f; // Default to max
         maxStamina = 50f;
         maxLives = 3;
+        currentLives = 3; // Default to max
         powerValue = 0;
 
         gravityDirection = GravityDirection.Down; // Default gravity direction

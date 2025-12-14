@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1ed0f5b2-7705-4f2d-8d94-fd6f9fe72ae8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Power-Hunter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Animations/Bosses/Final/Turn1/Turn1.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Animations/Bosses/Final/Turn1/Turn1.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Arts/_Sprites/UI/Alebardium/Bloodlines UI/Font/PauseGame.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/FinalBoss.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/Levels/Level 2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scenes/System/MainMenu/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scenes/System/MainMenu/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerStat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Characteres/Players/PlayerStat.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/Core/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Scripts/System/SaveSystem/SaveManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Project/_Settings/Input/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Project/_Settings/Input/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,6 +162,8 @@
       <workItem from="1763815911157" duration="253000" />
       <workItem from="1764034193425" duration="4287000" />
       <workItem from="1764585661968" duration="11412000" />
+      <workItem from="1764939071652" duration="2833000" />
+      <workItem from="1764987485927" duration="762000" />
     </task>
     <servers />
   </component>

@@ -6,8 +6,11 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance { get; private set; }
 
+    // This field will act as a reliable courier for carrying save data between scenes.
+    public SaveData dataToTransfer = null;
+
     private string saveFilePath;
-    private const string EncryptionKey = "your-secret-key";
+    private const string EncryptionKey = "1989";
 
     private void Awake()
     {
@@ -91,5 +94,10 @@ public class SaveManager : MonoBehaviour
             File.Delete(saveFilePath);
             Debug.Log("Save data deleted.");
         }
+    }
+
+    public bool SaveFileExists()
+    {
+        return File.Exists(saveFilePath);
     }
 }

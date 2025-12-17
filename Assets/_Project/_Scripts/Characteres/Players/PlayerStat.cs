@@ -6,6 +6,8 @@ using UnityEngine.UI; // Needed for saving scene name
 
 public class PlayerStat : MonoBehaviour
 {
+    public event Action OnStatsChanged;
+    
     private PlayerController _playerController;
     [Header("Core Stats")]
     public float HeathPlayer;
@@ -93,32 +95,30 @@ public class PlayerStat : MonoBehaviour
 
     public void ResetStats()
     {
-        // Use the SaveData constructor to get default values
-        SaveData defaultData = new SaveData();
-
-        MaxHealth = defaultData.maxHealth;
-        MaxStamina = defaultData.maxStamina;
-        MaxLives = defaultData.maxLives;
-        PowerValue = defaultData.powerValue;
-        healthUpgradeLevel = defaultData.healthUpgradeLevel;
-        staminaUpgradeLevel = defaultData.staminaUpgradeLevel;
-        livesUpgradeLevel = defaultData.livesUpgradeLevel;
-        hasWallJump = defaultData.hasWallJump;
-        jumpCooldownLevel = defaultData.jumpCooldownLevel;
-        dashCooldownLevel = defaultData.dashCooldownLevel;
-
-        // Set current stats to max
-        HeathPlayer = MaxHealth;
-        StaminaPlayer = MaxStamina;
-        CurrentLives = MaxLives;
-
-        // Update the UI to reflect the reset stats
-        UpdateUI();
-        Debug.Log("Player stats reset to default for a new game.");
+        // This method is called when a scene starts without receiving transfer data.
+        // First, check if a save file already exists on disk.
+        if (SaveManager.Instance != null && SaveManager.Instance.SaveFileExists())
+        {
+            // If a file exists, load it. This ensures that even if the live transfer fails,
+            // the most recent data from the disk is used instead of resetting progress.
+            Debug.Log("ResetStats: Save file found on disk. Loading data instead of resetting.");
+            SaveData existingData = SaveManager.Instance.LoadGame();
+            if (existingData != null)
+            {
+                ApplySaveData(existingData);
+            }
+        }
+        else
+        {
+            // If no save file exists, this is a true "New Game". Apply the default values.
+            Debug.Log("ResetStats: No save file found. Applying default values for a new game.");
+            ApplySaveData(new SaveData());
+        }
     }
 
     public void ApplySaveData(SaveData data)
     {
+        // Load max values
         MaxHealth = data.maxHealth;
         MaxStamina = data.maxStamina;
         MaxLives = data.maxLives;
@@ -130,10 +130,16 @@ public class PlayerStat : MonoBehaviour
         jumpCooldownLevel = data.jumpCooldownLevel;
         dashCooldownLevel = data.dashCooldownLevel;
 
-        // Set current stats to max
-        HeathPlayer = MaxHealth;
+        // Load current values, with safety checks
+        CurrentLives = data.currentLives;
+        HeathPlayer = data.heathPlayer;
+
+        // Safety check: Don't load into a dead or near-dead state.
+        if (CurrentLives <= 0) CurrentLives = data.maxLives;
+        if (HeathPlayer <= 0) HeathPlayer = data.maxHealth;
+        
+        // Restore stamina to full on load
         StaminaPlayer = MaxStamina;
-        CurrentLives = MaxLives;
 
         // Update the UI to reflect the loaded stats
         UpdateUI();
@@ -147,6 +153,7 @@ public class PlayerStat : MonoBehaviour
         StaminaPlayer -= energy;
         if (StaminaPlayer < 0) { StaminaPlayer = 0; }
         targetStamina = StaminaPlayer;
+        OnStatsChanged?.Invoke();
     }
 
     public void TakeDamage(float damage)
@@ -158,6 +165,7 @@ public class PlayerStat : MonoBehaviour
             //HandlePlayerDeath();
         }
         targetHealth = HeathPlayer;
+        OnStatsChanged?.Invoke();
     }
 
     public void Heal(float amount)
@@ -168,6 +176,7 @@ public class PlayerStat : MonoBehaviour
             HeathPlayer = MaxHealth;
         }
         targetHealth = HeathPlayer;
+        OnStatsChanged?.Invoke();
     }
 
     //private void HandlePlayerDeath()
@@ -191,6 +200,7 @@ public class PlayerStat : MonoBehaviour
         HeathPlayer = MaxHealth;
         healthUpgradeLevel++;
         UpdateHealthUI();
+        OnStatsChanged?.Invoke();
     }
 
     public void UpgradeStamina(float amount)
@@ -199,6 +209,7 @@ public class PlayerStat : MonoBehaviour
         StaminaPlayer = MaxStamina;
         staminaUpgradeLevel++;
         UpdateStaminaUI();
+        OnStatsChanged?.Invoke();
     }
 
     public void AddLife()
@@ -206,12 +217,19 @@ public class PlayerStat : MonoBehaviour
         MaxLives++;
         CurrentLives++;
         livesUpgradeLevel++;
+        OnStatsChanged?.Invoke();
+    }
+
+    public void DecreaseLife()
+    {
+        CurrentLives--;
+        OnStatsChanged?.Invoke(); // Notify that lives have changed.
     }
     
     public void UnlockWallJump()
     {
         hasWallJump = true;
-        
+        OnStatsChanged?.Invoke();
     }
 
     public void AddPowerValue(int amount)
@@ -221,6 +239,7 @@ public class PlayerStat : MonoBehaviour
         {
             powerValueText.text = "Power: " + PowerValue.ToString();
         }
+        OnStatsChanged?.Invoke();
     }
 
     public bool UsePowerValue(int amount)
@@ -232,6 +251,7 @@ public class PlayerStat : MonoBehaviour
             {
                 powerValueText.text = "Power: " + PowerValue.ToString();
             }
+            OnStatsChanged?.Invoke();
             return true;
         }
         return false;
@@ -251,4 +271,5 @@ public class PlayerStat : MonoBehaviour
         targetStamina = StaminaPlayer;
     }
 }
+
 
